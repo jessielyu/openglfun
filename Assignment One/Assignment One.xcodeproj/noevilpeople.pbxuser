@@ -10,11 +10,11 @@
 	};
 	E2518F180DA1C3BE0090CF70 /* PBXBookmark */ = {
 		isa = PBXBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.c */;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
 	};
 	E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.c */;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
 		name = "main.c: 427";
 		rLen = 0;
 		rLoc = 10840;
@@ -139,7 +139,7 @@
 					20,
 					219,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -177,12 +177,17 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 228668041;
-			PBXWorkspaceStateSaveDate = 228668041;
+			PBXPerProjectTemplateStateSaveDate = 228769846;
+			PBXWorkspaceStateSaveDate = 228769846;
 		};
 		perUserProjectItems = {
-			E2518F180DA1C3BE0090CF70 /* PBXBookmark */ = E2518F180DA1C3BE0090CF70 /* PBXBookmark */;
-			E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */ = E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */;
+			E2518F180DA1C3BE0090CF70 = E2518F180DA1C3BE0090CF70 /* PBXBookmark */;
+			E2518F3E0DA2BA850090CF70 = E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */;
+			E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */ = E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */;
+			E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */ = E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */;
+			E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */ = E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */;
+			E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */ = E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */;
+			E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */ = E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E287C85B0D9DBC1700E4D40A /* Source Control */;
 		userBuildSettings = {
@@ -193,6 +198,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryName = "OpenGL Fun";
 		};
 	};
 	E287C85C0D9DBC1700E4D40A /* Code sense */ = {
@@ -242,13 +248,61 @@
 			sepNavWindowFrame = "{{15, 64}, {803, 809}}";
 		};
 	};
-	E287C8BB0D9ED94000E4D40A /* main.c */ = {
+	E287C8BB0D9ED94000E4D40A /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {557, 10276}}";
-			sepNavSelRange = "{17788, 29}";
-			sepNavVisRange = "{16620, 317}";
+			sepNavIntBoundsRect = "{{0, 0}, {744, 10136}}";
+			sepNavSelRange = "{12382, 0}";
+			sepNavVisRange = "{14114, 1434}";
 			sepNavWindowFrame = "{{194, 69}, {803, 809}}";
 		};
+	};
+	E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		name = "main.c: 427";
+		rLen = 0;
+		rLoc = 10840;
+		rType = 0;
+		vrLen = 1489;
+		vrLoc = 0;
+	};
+	E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		name = "main.cpp: 427";
+		rLen = 0;
+		rLoc = 10840;
+		rType = 0;
+		vrLen = 1489;
+		vrLoc = 0;
+	};
+	E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error:   initializing argument 2 of 'void glutTimerFunc(unsigned int, void (*)(int), int)'";
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		rLen = 1;
+		rLoc = 706;
+		rType = 1;
+	};
+	E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		name = "main.cpp: 707";
+		rLen = 39;
+		rLoc = 17722;
+		rType = 0;
+		vrLen = 1362;
+		vrLoc = 17108;
+	};
+	E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		name = "main.cpp: 489";
+		rLen = 0;
+		rLoc = 12382;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 14114;
 	};
 	E2D2E2FF0D9EF9D600B0C6B2 /* data.h */ = {
 		uiCtxt = {

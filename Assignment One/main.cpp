@@ -486,7 +486,7 @@ void display()
 }
 
 // This function does the animation for mario
-void update()
+void update(GLint timeElapsed)
 {
 	// Keep track of what frame we're on (not really using this anymore)
 	frame++;

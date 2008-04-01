@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E22C05510D9F3A2100D0D3C5 /* texture.raw in Resources */ = {isa = PBXBuildFile; fileRef = E22C05500D9F3A2100D0D3C5 /* texture.raw */; };
 		E22C06C70DA0106C00D0D3C5 /* ground.raw in Resources */ = {isa = PBXBuildFile; fileRef = E22C06C60DA0106C00D0D3C5 /* ground.raw */; };
 		E22C07240DA0272E00D0D3C5 /* bricks.raw in Resources */ = {isa = PBXBuildFile; fileRef = E22C07230DA0272E00D0D3C5 /* bricks.raw */; };
 		E22C07470DA02A0500D0D3C5 /* qblock1.raw in Resources */ = {isa = PBXBuildFile; fileRef = E22C07460DA02A0500D0D3C5 /* qblock1.raw */; };
@@ -30,12 +29,11 @@
 		E25474830D9F3339004FEE67 /* cloud.raw in Resources */ = {isa = PBXBuildFile; fileRef = E25474820D9F3339004FEE67 /* cloud.raw */; };
 		E287C8710D9DBD0300E4D40A /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E287C8700D9DBD0300E4D40A /* GLUT.framework */; };
 		E287C8750D9DBD2700E4D40A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E287C8740D9DBD2700E4D40A /* OpenGL.framework */; };
-		E287C8BC0D9ED94000E4D40A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E287C8BB0D9ED94000E4D40A /* main.c */; };
+		E287C8BC0D9ED94000E4D40A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E287C8BB0D9ED94000E4D40A /* main.cpp */; };
 		E2D2E3010D9EF9DF00B0C6B2 /* data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D2E3000D9EF9DF00B0C6B2 /* data.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E22C05500D9F3A2100D0D3C5 /* texture.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = texture.raw; sourceTree = "<group>"; };
 		E22C06C60DA0106C00D0D3C5 /* ground.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ground.raw; sourceTree = "<group>"; };
 		E22C07230DA0272E00D0D3C5 /* bricks.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bricks.raw; sourceTree = "<group>"; };
 		E22C07460DA02A0500D0D3C5 /* qblock1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = qblock1.raw; sourceTree = "<group>"; };
@@ -55,12 +53,12 @@
 		E2518EE90DA18AFE0090CF70 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E2518EF10DA18CB40090CF70 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		E2518F110DA1C0860090CF70 /* realmario.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = realmario.icns; sourceTree = "<group>"; };
-		E25474820D9F3339004FEE67 /* cloud.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloud.raw; sourceTree = "<group>"; };
+		E25474820D9F3339004FEE67 /* cloud.raw */ = {isa = PBXFileReference; lastKnownFileType = text; path = cloud.raw; sourceTree = "<group>"; };
 		E287C8680D9DBC7400E4D40A /* SMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E287C86B0D9DBC7400E4D40A /* XcodeGLUT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XcodeGLUT-Info.plist"; sourceTree = "<group>"; };
 		E287C8700D9DBD0300E4D40A /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		E287C8740D9DBD2700E4D40A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
-		E287C8BB0D9ED94000E4D40A /* main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = main.c; sourceTree = "<group>"; };
+		E287C8BB0D9ED94000E4D40A /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = main.cpp; sourceTree = "<group>"; };
 		E2D2E2FF0D9EF9D600B0C6B2 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
 		E2D2E3000D9EF9DF00B0C6B2 /* data.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = data.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				E2518F110DA1C0860090CF70 /* realmario.icns */,
-				E22C05500D9F3A2100D0D3C5 /* texture.raw */,
 				E22C08220DA04D1300D0D3C5 /* coin1.raw */,
 				E22C07640DA02D6E00D0D3C5 /* bush.raw */,
 				E22C07460DA02A0500D0D3C5 /* qblock1.raw */,
@@ -119,7 +116,7 @@
 			children = (
 				E2D2E3000D9EF9DF00B0C6B2 /* data.cpp */,
 				E2D2E2FF0D9EF9D600B0C6B2 /* data.h */,
-				E287C8BB0D9ED94000E4D40A /* main.c */,
+				E287C8BB0D9ED94000E4D40A /* main.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25474830D9F3339004FEE67 /* cloud.raw in Resources */,
-				E22C05510D9F3A2100D0D3C5 /* texture.raw in Resources */,
 				E22C06C70DA0106C00D0D3C5 /* ground.raw in Resources */,
 				E22C07240DA0272E00D0D3C5 /* bricks.raw in Resources */,
 				E22C07470DA02A0500D0D3C5 /* qblock1.raw in Resources */,
@@ -234,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E287C8BC0D9ED94000E4D40A /* main.c in Sources */,
+				E287C8BC0D9ED94000E4D40A /* main.cpp in Sources */,
 				E2D2E3010D9EF9DF00B0C6B2 /* data.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
