@@ -1,5 +1,15 @@
 // !$*UTF8*$!
 {
+	E22B3D520DA2CDE4004849C8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
+		name = "main.cpp: 649";
+		rLen = 0;
+		rLoc = 15910;
+		rType = 0;
+		vrLen = 1491;
+		vrLoc = 14328;
+	};
 	E2518EE90DA18AFE0090CF70 /* readme.txt */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1046, 681}}";
@@ -8,23 +18,19 @@
 			sepNavWindowFrame = "{{16, 69}, {803, 809}}";
 		};
 	};
-	E2518F180DA1C3BE0090CF70 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-	};
-	E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */ = {
+	E260D3CD0DA2DA1A008A0F62 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-		name = "main.c: 427";
+		name = "main.cpp: 649";
 		rLen = 0;
-		rLoc = 10840;
+		rLoc = 15910;
 		rType = 0;
-		vrLen = 1489;
-		vrLoc = 0;
+		vrLen = 1491;
+		vrLoc = 14328;
 	};
 	E287C8570D9DBC1700E4D40A /* Project object */ = {
 		activeArchitecture = i386;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = E287C86A0D9DBC7400E4D40A /* SMB */;
 		activeTarget = E287C8670D9DBC7400E4D40A /* SMB */;
 		addToTargets = (
@@ -73,7 +79,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					131,
+					130.58349609375,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -177,17 +183,13 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 228769846;
-			PBXWorkspaceStateSaveDate = 228769846;
+			PBXPerProjectTemplateStateSaveDate = 228776455;
+			PBXWorkspaceStateSaveDate = 228776455;
 		};
 		perUserProjectItems = {
-			E2518F180DA1C3BE0090CF70 = E2518F180DA1C3BE0090CF70 /* PBXBookmark */;
-			E2518F3E0DA2BA850090CF70 = E2518F3E0DA2BA850090CF70 /* PBXTextBookmark */;
-			E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */ = E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */;
-			E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */ = E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */;
-			E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */ = E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */;
-			E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */ = E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */;
-			E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */ = E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */;
+			E22B3D520DA2CDE4004849C8 = E22B3D520DA2CDE4004849C8 /* PBXTextBookmark */;
+			E260D3CD0DA2DA1A008A0F62 /* PBXTextBookmark */ = E260D3CD0DA2DA1A008A0F62 /* PBXTextBookmark */;
+			E2C8D7BA0DA2C215000A3DD6 = E2C8D7BA0DA2C215000A3DD6 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E287C85B0D9DBC1700E4D40A /* Source Control */;
 		userBuildSettings = {
@@ -250,51 +252,13 @@
 	};
 	E287C8BB0D9ED94000E4D40A /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {744, 10136}}";
-			sepNavSelRange = "{12382, 0}";
-			sepNavVisRange = "{14114, 1434}";
-			sepNavWindowFrame = "{{194, 69}, {803, 809}}";
+			sepNavIntBoundsRect = "{{0, 0}, {744, 10276}}";
+			sepNavSelRange = "{15910, 0}";
+			sepNavVisRange = "{14328, 1491}";
+			sepNavWindowFrame = "{{84, 69}, {803, 809}}";
 		};
 	};
-	E2C8D77F0DA2C04C000A3DD6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-		name = "main.c: 427";
-		rLen = 0;
-		rLoc = 10840;
-		rType = 0;
-		vrLen = 1489;
-		vrLoc = 0;
-	};
-	E2C8D7810DA2C06C000A3DD6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-		name = "main.cpp: 427";
-		rLen = 0;
-		rLoc = 10840;
-		rType = 0;
-		vrLen = 1489;
-		vrLoc = 0;
-	};
-	E2C8D7A50DA2C0AC000A3DD6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "error:   initializing argument 2 of 'void glutTimerFunc(unsigned int, void (*)(int), int)'";
-		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-		rLen = 1;
-		rLoc = 706;
-		rType = 1;
-	};
-	E2C8D7A70DA2C0BC000A3DD6 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
-		name = "main.cpp: 707";
-		rLen = 39;
-		rLoc = 17722;
-		rType = 0;
-		vrLen = 1362;
-		vrLoc = 17108;
-	};
-	E2C8D7AA0DA2C0DD000A3DD6 /* PBXTextBookmark */ = {
+	E2C8D7BA0DA2C215000A3DD6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E287C8BB0D9ED94000E4D40A /* main.cpp */;
 		name = "main.cpp: 489";
