@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E2C8D7AA0DA2C0DD000A3DD6</string>
+						<string>E260D3CD0DA2DA1A008A0F62</string>
 						<key>history</key>
 						<array>
-							<string>E2C8D7A50DA2C0AC000A3DD6</string>
+							<string>E22B3D520DA2CDE4004849C8</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>194 125 803 753 0 0 1440 878 </string>
+				<string>212 125 803 753 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -310,15 +310,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>E287C8550D9DBC1700E4D40A</string>
-								<string>E22C0A910DA1019000D0D3C5</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>1C37FAAC04509CD000000102</string>
+								<string>1C08E77C0454961000C914BD</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
-									<integer>0</integer>
+									<integer>10</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -422,9 +422,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E2C8D77D0DA2C04C000A3DD6</string>
+				<string>E260D3CB0DA2DA1A008A0F62</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E2C8D77E0DA2C04C000A3DD6</string>
+				<string>E260D3CC0DA2DA1A008A0F62</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -560,9 +560,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/noevilpeople/Documents/RIT/Computer Graphics I/Assignment One/Assignment One.xcodeproj</string>
-		<string>E287C87C0D9DBEB100E4D40A</string>
 		<string>E2518F190DA1C3BE0090CF70</string>
+		<string>/Users/noevilpeople/Documents/RIT/Computer Graphics I/Assignment One/Assignment One.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>45 481 690 397 0 0 1440 878 </string>
@@ -586,7 +585,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>main.cpp</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -603,8 +602,6 @@
 							<string>144pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -644,7 +641,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E287C87C0D9DBEB100E4D40A</string>
-				<string>E2C8D7A80DA2C0BC000A3DD6</string>
+				<string>E22B3D480DA2C252004849C8</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -655,7 +652,7 @@
 			<key>WindowToolGUID</key>
 			<string>E287C87C0D9DBEB100E4D40A</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -764,13 +761,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>E2518EC50DA1622D0090CF70</string>
+				<string>E22B3D490DA2C252004849C8</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>E2518EC60DA1622D0090CF70</string>
-				<string>E2518EC70DA1622D0090CF70</string>
-				<string>E2518EC80DA1622D0090CF70</string>
-				<string>E2518EC90DA1622D0090CF70</string>
-				<string>E2518ECA0DA1622D0090CF70</string>
+				<string>E22B3D4A0DA2C252004849C8</string>
+				<string>E22B3D4B0DA2C252004849C8</string>
+				<string>E22B3D4C0DA2C252004849C8</string>
+				<string>E22B3D4D0DA2C252004849C8</string>
+				<string>E22B3D4E0DA2C252004849C8</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -932,7 +929,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>E2518ECB0DA1622D0090CF70</string>
+				<string>E22B3D4F0DA2C252004849C8</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
