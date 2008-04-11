@@ -1,5 +1,25 @@
 // !$*UTF8*$!
 {
+	E23020620DAEEBAC005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
+		name = "main.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E23020630DAEEBD2005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
+		name = "main.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
 	E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
@@ -69,12 +89,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 229564372;
-			PBXWorkspaceStateSaveDate = 229564372;
+			PBXPerProjectTemplateStateSaveDate = 229567400;
+			PBXWorkspaceStateSaveDate = 229567400;
 		};
 		perUserProjectItems = {
-			E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */ = E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */;
-			E2E7CECD0DAEDFB100672DF2 /* PBXTextBookmark */ = E2E7CECD0DAEDFB100672DF2 /* PBXTextBookmark */;
+			E23020620DAEEBAC005E0D0C /* PBXTextBookmark */ = E23020620DAEEBAC005E0D0C /* PBXTextBookmark */;
+			E23020630DAEEBD2005E0D0C /* PBXTextBookmark */ = E23020630DAEEBD2005E0D0C /* PBXTextBookmark */;
+			E2A9175A0DAEDFD900EEFD12 = E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */;
+			E2E7CECD0DAEDFB100672DF2 = E2E7CECD0DAEDFB100672DF2 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E2E7CE9C0DAEDEFA00672DF2 /* Source Control */;
 		userBuildSettings = {
@@ -85,6 +107,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryName = "OpenGL Fun";
 		};
 	};
 	E2E7CE9D0DAEDEFA00672DF2 /* Code sense */ = {
