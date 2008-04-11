@@ -10,7 +10,7 @@
 		E230207E0DAEEC73005E0D0C /* setPixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23020780DAEEC73005E0D0C /* setPixel.cpp */; };
 		E230207F0DAEEC73005E0D0C /* paint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23020790DAEEC73005E0D0C /* paint.cpp */; };
 		E23020800DAEEC73005E0D0C /* fillTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207A0DAEEC73005E0D0C /* fillTest.cpp */; };
-		E23020810DAEEC73005E0D0C /* drawStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207B0DAEEC73005E0D0C /* drawStuff.cpp */; };
+		E23020810DAEEC73005E0D0C /* DrawStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */; };
 		E23020820DAEEC73005E0D0C /* clipTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207C0DAEEC73005E0D0C /* clipTest.cpp */; };
 		E23020830DAEEC73005E0D0C /* lineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207D0DAEEC73005E0D0C /* lineTest.cpp */; };
 		E2E7CEB10DAEDF8000672DF2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E7CEAF0DAEDF8000672DF2 /* GLUT.framework */; };
@@ -22,7 +22,7 @@
 		E23020780DAEEC73005E0D0C /* setPixel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = setPixel.cpp; sourceTree = "<group>"; };
 		E23020790DAEEC73005E0D0C /* paint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paint.cpp; sourceTree = "<group>"; };
 		E230207A0DAEEC73005E0D0C /* fillTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fillTest.cpp; sourceTree = "<group>"; };
-		E230207B0DAEEC73005E0D0C /* drawStuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drawStuff.cpp; sourceTree = "<group>"; };
+		E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawStuff.cpp; sourceTree = "<group>"; };
 		E230207C0DAEEC73005E0D0C /* clipTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipTest.cpp; sourceTree = "<group>"; };
 		E230207D0DAEEC73005E0D0C /* lineTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lineTest.cpp; sourceTree = "<group>"; };
 		E2E7CEA80DAEDF1400672DF2 /* Assignment Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Two.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +51,7 @@
 				E23020780DAEEC73005E0D0C /* setPixel.cpp */,
 				E23020790DAEEC73005E0D0C /* paint.cpp */,
 				E230207A0DAEEC73005E0D0C /* fillTest.cpp */,
-				E230207B0DAEEC73005E0D0C /* drawStuff.cpp */,
+				E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */,
 				E230207C0DAEEC73005E0D0C /* clipTest.cpp */,
 				E230207D0DAEEC73005E0D0C /* lineTest.cpp */,
 				E2E7CEB70DAEDF9300672DF2 /* main.cpp */,
@@ -127,7 +127,7 @@
 				E230207E0DAEEC73005E0D0C /* setPixel.cpp in Sources */,
 				E230207F0DAEEC73005E0D0C /* paint.cpp in Sources */,
 				E23020800DAEEC73005E0D0C /* fillTest.cpp in Sources */,
-				E23020810DAEEC73005E0D0C /* drawStuff.cpp in Sources */,
+				E23020810DAEEC73005E0D0C /* DrawStuff.cpp in Sources */,
 				E23020820DAEEC73005E0D0C /* clipTest.cpp in Sources */,
 				E23020830DAEEC73005E0D0C /* lineTest.cpp in Sources */,
 			);

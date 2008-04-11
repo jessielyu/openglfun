@@ -1,33 +1,146 @@
 // !$*UTF8*$!
 {
-	E23020620DAEEBAC005E0D0C /* PBXTextBookmark */ = {
+	E23020780DAEEC73005E0D0C /* setPixel.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 681}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 148}";
+			sepNavWindowFrame = "{{15, 64}, {803, 809}}";
+		};
+	};
+	E23020790DAEEC73005E0D0C /* paint.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 7644}}";
+			sepNavSelRange = "{3427, 43}";
+			sepNavVisRange = "{3336, 221}";
+			sepNavWindowFrame = "{{15, 64}, {803, 809}}";
+		};
+	};
+	E230207A0DAEEC73005E0D0C /* fillTest.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 2618}}";
+			sepNavSelRange = "{187, 0}";
+			sepNavVisRange = "{0, 1068}";
+			sepNavWindowFrame = "{{15, 64}, {803, 809}}";
+		};
+	};
+	E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 826}}";
+			sepNavSelRange = "{126, 9}";
+			sepNavVisRange = "{0, 951}";
+			sepNavWindowFrame = "{{37, -59}, {803, 809}}";
+		};
+	};
+	E23020A30DAEF3A7005E0D0C /* DrawStuff.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = DrawStuff.h;
+		path = "/Users/noevilpeople/Documents/RIT/Computer Graphics I/Assignment Two/DrawStuff.h";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {744, 681}}";
+			sepNavSelRange = "{25, 0}";
+			sepNavVisRange = "{0, 339}";
+		};
+	};
+	E23020BD0DAEF6D1005E0D0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
-		name = "main.cpp: 1";
+		comments = "error: 'drawLine' was not declared in this scope";
+		fRef = E23020790DAEEC73005E0D0C /* paint.cpp */;
+		rLen = 1;
+		rLoc = 141;
+		rType = 1;
+	};
+	E23020BF0DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E23020A30DAEF3A7005E0D0C /* DrawStuff.h */;
+		name = "DrawStuff.h: 3";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 25;
 		rType = 0;
-		vrLen = 0;
+		vrLen = 339;
 		vrLoc = 0;
 	};
-	E23020630DAEEBD2005E0D0C /* PBXTextBookmark */ = {
+	E23020C00DAEFBE5005E0D0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
-		name = "main.cpp: 1";
-		rLen = 0;
-		rLoc = 0;
+		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
+		name = "DrawStuff.cpp: 6";
+		rLen = 9;
+		rLoc = 126;
 		rType = 0;
-		vrLen = 0;
+		vrLen = 951;
 		vrLoc = 0;
 	};
-	E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */ = {
+	E23020C10DAEFBE5005E0D0C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
-		name = "main.cpp: 1";
+		fRef = E230207A0DAEEC73005E0D0C /* fillTest.cpp */;
+		name = "fillTest.cpp: 8";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 187;
 		rType = 0;
-		vrLen = 0;
+		vrLen = 1018;
+		vrLoc = 0;
+	};
+	E23020C20DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
+		name = "DrawStuff.cpp: 15";
+		rLen = 0;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 951;
+		vrLoc = 0;
+	};
+	E23020C30DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E23020A30DAEF3A7005E0D0C /* DrawStuff.h */;
+		name = "DrawStuff.h: 3";
+		rLen = 0;
+		rLoc = 25;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 0;
+	};
+	E23020C40DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
+		name = "DrawStuff.cpp: 6";
+		rLen = 9;
+		rLoc = 126;
+		rType = 0;
+		vrLen = 951;
+		vrLoc = 0;
+	};
+	E23020C50DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E23020790DAEEC73005E0D0C /* paint.cpp */;
+		name = "paint.cpp: 142";
+		rLen = 43;
+		rLoc = 3427;
+		rType = 0;
+		vrLen = 1671;
+		vrLoc = 0;
+	};
+	E23020C60DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E230207A0DAEEC73005E0D0C /* fillTest.cpp */;
+		name = "fillTest.cpp: 8";
+		rLen = 0;
+		rLoc = 187;
+		rType = 0;
+		vrLen = 1018;
+		vrLoc = 0;
+	};
+	E23020C70DAEFBE5005E0D0C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E23020790DAEEC73005E0D0C /* paint.cpp */;
+		name = "paint.cpp: 25";
+		rLen = 0;
+		rLoc = 1160;
+		rType = 0;
+		vrLen = 1671;
 		vrLoc = 0;
 	};
 	E2E7CE980DAEDEFA00672DF2 /* Project object */ = {
@@ -36,7 +149,6 @@
 		activeExecutable = E2E7CEAA0DAEDF1400672DF2 /* Assignment Two */;
 		activeTarget = E2E7CEA70DAEDF1400672DF2 /* Assignment Two */;
 		addToTargets = (
-			E2E7CEA70DAEDF1400672DF2 /* Assignment Two */,
 		);
 		codeSenseManager = E2E7CE9D0DAEDEFA00672DF2 /* Code sense */;
 		executables = (
@@ -89,14 +201,20 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 229567400;
-			PBXWorkspaceStateSaveDate = 229567400;
+			PBXPerProjectTemplateStateSaveDate = 229571636;
+			PBXWorkspaceStateSaveDate = 229571636;
 		};
 		perUserProjectItems = {
-			E23020620DAEEBAC005E0D0C /* PBXTextBookmark */ = E23020620DAEEBAC005E0D0C /* PBXTextBookmark */;
-			E23020630DAEEBD2005E0D0C /* PBXTextBookmark */ = E23020630DAEEBD2005E0D0C /* PBXTextBookmark */;
-			E2A9175A0DAEDFD900EEFD12 = E2A9175A0DAEDFD900EEFD12 /* PBXTextBookmark */;
-			E2E7CECD0DAEDFB100672DF2 = E2E7CECD0DAEDFB100672DF2 /* PBXTextBookmark */;
+			E23020BD0DAEF6D1005E0D0C = E23020BD0DAEF6D1005E0D0C /* PBXTextBookmark */;
+			E23020BF0DAEFBE5005E0D0C = E23020BF0DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C00DAEFBE5005E0D0C = E23020C00DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C10DAEFBE5005E0D0C = E23020C10DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C20DAEFBE5005E0D0C = E23020C20DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C30DAEFBE5005E0D0C = E23020C30DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C40DAEFBE5005E0D0C = E23020C40DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C50DAEFBE5005E0D0C = E23020C50DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C60DAEFBE5005E0D0C = E23020C60DAEFBE5005E0D0C /* PBXTextBookmark */;
+			E23020C70DAEFBE5005E0D0C = E23020C70DAEFBE5005E0D0C /* PBXTextBookmark */;
 		};
 		sourceControlManager = E2E7CE9C0DAEDEFA00672DF2 /* Source Control */;
 		userBuildSettings = {
@@ -150,15 +268,5 @@
 			sepNavVisRange = "{0, 0}";
 			sepNavWindowFrame = "{{15, 64}, {803, 809}}";
 		};
-	};
-	E2E7CECD0DAEDFB100672DF2 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */;
-		name = "main.cpp: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
 	};
 }
