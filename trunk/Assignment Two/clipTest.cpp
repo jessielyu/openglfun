@@ -3,11 +3,13 @@
  *
  *  This program is designed to test polygon clipping
  */
+#include "ClipTest.h"
 
 #include <GLUT/glut.h>         /* glut.h includes gl.h and glu.h*/
+#include "DrawStuff.h"
 
-void clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
-                  int outy[], int x0, int y0, int xq, int y1);
+//void clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
+//                  int outy[], int x0, int y0, int xq, int y1);
 
 int quad1x[4] = { 20, 20, 40, 40 };
 int quad1y[4] = { 20, 40, 40, 20 };
@@ -28,7 +30,7 @@ int wx[50];
 int wy[50];
 int wl;
 
-void print_loop( int n, int x[], int y[] ) {
+void ClipTest::print_loop( int n, int x[], int y[] ) {
    int i;
 
    glBegin( GL_LINE_LOOP );
@@ -39,7 +41,7 @@ void print_loop( int n, int x[], int y[] ) {
 
 }
 
-void print_poly( int n, int x[], int y[] ) {
+void ClipTest::print_poly( int n, int x[], int y[] ) {
    int i;
 
    glBegin( GL_POLYGON );
@@ -50,7 +52,7 @@ void print_poly( int n, int x[], int y[] ) {
 
 }
 
-void display( void ) {
+void ClipTest::displayClip( void ) {
     int i;
 
    /*
@@ -76,7 +78,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 4, quad1x, quad1y, &wl, wx, wy, 10, 10, 50, 50 );
+   DrawStuff:: clipPolygon( 4, quad1x, quad1y, &wl, wx, wy, 10, 10, 50, 50 );
    glColor3f( 1.0, 0.0, 0.0 );		/* red */
    print_loop( 4, quad1x, quad1y );
    print_poly( wl, wx, wy );
@@ -86,7 +88,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 4, quad2x, quad2y, &wl, wx, wy, 10, 10, 50, 50 );
+   DrawStuff:: clipPolygon( 4, quad2x, quad2y, &wl, wx, wy, 10, 10, 50, 50 );
    /* shouldn't draw anything! */
    if( wl > 0 ) {
       glColor3f( 0.0, 1.0, 0.0 );		/* green */
@@ -99,7 +101,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 4, quad3x, quad3y, &wl, wx, wy, 30, 10, 70, 80 );
+   DrawStuff:: clipPolygon( 4, quad3x, quad3y, &wl, wx, wy, 30, 10, 70, 80 );
    glColor3f( 0.0, 0.0, 1.0 );		/* blue */
    print_loop( 4, quad3x, quad3y );
    print_poly( wl, wx, wy );
@@ -109,7 +111,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 4, quad4x, quad4y, &wl, wx, wy, 10, 10, 50, 50 );
+   DrawStuff:: clipPolygon( 4, quad4x, quad4y, &wl, wx, wy, 10, 10, 50, 50 );
    glColor3f( 1.0, 0.0, 1.0 );		/* magenta */
    print_loop( 4, quad4x, quad4y );
    print_poly( wl, wx, wy );
@@ -119,7 +121,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 5, pent1x, pent1y, &wl, wx, wy, 90, 20, 100, 30 );
+   DrawStuff:: clipPolygon( 5, pent1x, pent1y, &wl, wx, wy, 90, 20, 100, 30 );
    glColor3f( 0.5, 0.5, 1.0 );		/* reddish-greenish-blue ? */
    print_loop( 5, pent1x, pent1y );
    print_poly( wl, wx, wy );
@@ -129,7 +131,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 5, pent1x, pent1y, &wl, wx, wy, 90, 34, 120, 60 );
+   DrawStuff:: clipPolygon( 5, pent1x, pent1y, &wl, wx, wy, 90, 34, 120, 60 );
    glColor3f( 1.0, 0.5, 1.0 );		/* red-greenish-blue ? */
    print_loop( 5, pent1x, pent1y );
    print_poly( wl, wx, wy );
@@ -139,7 +141,7 @@ void display( void ) {
     */
 
    wl = 0;
-   clipPolygon( 7, hept1x, hept1y, &wl, wx, wy, 90, 80, 130, 110 );
+   DrawStuff:: clipPolygon( 7, hept1x, hept1y, &wl, wx, wy, 90, 80, 130, 110 );
    glColor3f( 0.0, 0.0, 0.0 );		/* black */
    print_loop( 7, hept1x, hept1y );
    print_poly( wl, wx, wy );
@@ -156,30 +158,30 @@ void display( void ) {
  * Main routine - GLUT setup and initialization
  */
 
-int main( int argc, char** argv ) {
-
-   /*
-    * Initializes GLUT and should be used before any OpenGL functions
-    */
-   glutInit( &argc, argv );
-
-   /*
-    * Creates window on screen with title in argument
-    */
-   glutCreateWindow( "Filled Polygon Test" );
-
-   /*
-    * Callback function; causes "display()" to be called each time there
-    * is a display callback.
-    */
-   glutDisplayFunc( display );
-
-   /*
-    * Causes program to enter an event-processing loop; should be last
-    * statement in main()
-    */
-   glutMainLoop( );
-
-   return 0;
-
-}
+//int main( int argc, char** argv ) {
+//
+//   /*
+//    * Initializes GLUT and should be used before any OpenGL functions
+//    */
+//   glutInit( &argc, argv );
+//
+//   /*
+//    * Creates window on screen with title in argument
+//    */
+//   glutCreateWindow( "Filled Polygon Test" );
+//
+//   /*
+//    * Callback function; causes "display()" to be called each time there
+//    * is a display callback.
+//    */
+//   glutDisplayFunc( displayClip );
+//
+//   /*
+//    * Causes program to enter an event-processing loop; should be last
+//    * statement in main()
+//    */
+//   glutMainLoop( );
+//
+//   return 0;
+//
+//}

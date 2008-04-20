@@ -26,27 +26,29 @@
  * and to clear the drawing screen or to quit.
  * 
  */
+#include "Paint.h"
+#include "SetPixel.h"
 
 #define NULL 0
-#include <GLUT/glut.h>         /* glut.h includes gl.h and glu.h*/
-#include "drawStuff.cpp"
+//#include <GLUT/glut.h>         /* glut.h includes gl.h and glu.h*/
+#include "DrawStuff.h"
 
-void mouse( int, int, int, int );
-void display( void );
-void myReshape( GLsizei, GLsizei );
-
-void myinit( void );
-
-void drawLineLoop( int, int [], int [] );
-
-void screen_box( int, int, int );
-void right_menu( int );
-void middle_menu( int );
-void color_menu( int );
-void fill_menu( int );
-
-int pick( int, int );
-void setPixel (int x, int y);
+//void mouse( int, int, int, int );
+//void displayPaint( void );
+//void myReshape( GLsizei, GLsizei );
+//
+//void myinit( void );
+//
+//void drawLineLoop( int, int [], int [] );
+//
+//void screen_box( int, int, int );
+//void right_menu( int );
+//void middle_menu( int );
+//void color_menu( int );
+//void fill_menu( int );
+//
+//int pick( int, int );
+//void setPixel (int x, int y);
 
 /* 
  * Global variables
@@ -62,7 +64,7 @@ int fill = 0;			               /* fill flag */
  * Callback function for reshaping window when resized or moved 
  */
 
-void myReshape( GLsizei width, GLsizei height ) {
+void Paint::myReshape( GLsizei width, GLsizei height ) {
 
    /* 
     * Adjust clipping area, i.e., viewWindow 
@@ -100,7 +102,7 @@ void myReshape( GLsizei width, GLsizei height ) {
  * Initialization 
  */
 
-void myinit( void ) {
+void Paint::myinit( void ) {
 
    /* 
     * Set viewport, GL_MODELVIEW matrix is default
@@ -135,13 +137,13 @@ void myinit( void ) {
  * Draw line loop of n lines
  */
 
-void drawLineLoop( int n, int *x, int *y ) {
+void Paint::drawLineLoop( int n, int *x, int *y ) {
 
    int i;
 
-   drawLine( x[n-1], y[n-1], x[0], y[0] );
+   DrawStuff::drawLine( x[n-1], y[n-1], x[0], y[0] );
    for (i = 0; i < n-1; i++ ) {
-      drawLine( x[i], y[i], x[i+1], y[i+1] );
+      DrawStuff::drawLine( x[i], y[i], x[i+1], y[i+1] );
    }
 
 }
@@ -151,7 +153,7 @@ void drawLineLoop( int n, int *x, int *y ) {
  * Callback function for mouse interaction 
  */
 
-void mouse( int button, int state, int x, int y ) {
+void Paint::mouse( int button, int state, int x, int y ) {
 
    static int draw_mode = 0;    /* drawing mode */
    static int count;		/* left clicks made in this drawing mode */
@@ -195,7 +197,7 @@ void mouse( int button, int state, int x, int y ) {
        */
       } else if ( draw_mode == 1  &&  count != 0 ) {
 
-         drawLine( xp[0], yp[0], x, windowHeight - y );
+         DrawStuff::drawLine( xp[0], yp[0], x, windowHeight - y );
 
          /* 
           * Turn off draw mode when done 
@@ -222,7 +224,7 @@ void mouse( int button, int state, int x, int y ) {
          xp[3] = x;     yp[3] = yp[0];
 
          if ( fill ) {
-            drawPolygon( 4, xp, yp );
+            DrawStuff:: drawPolygon( 4, xp, yp );
          } else {
             drawLineLoop( 4, xp, yp );
          }
@@ -255,7 +257,7 @@ void mouse( int button, int state, int x, int y ) {
       } else if ( draw_mode == 3  &&  count == 2 ) {
          xp[2] = x;     yp[2] = windowHeight - y;
          if ( fill ) {
-	    drawPolygon( 3, xp, yp );
+	    DrawStuff:: drawPolygon( 3, xp, yp );
          } else {
 	    drawLineLoop( 3, xp, yp );
          }
@@ -269,7 +271,7 @@ void mouse( int button, int state, int x, int y ) {
        */
       } else if ( draw_mode == 4 ) {
          y = windowHeight - y;
-         setPixel (x, y);
+         SetPixel::setPixel (x, y);
          /*
          glPointSize( 3.0 );
          glBegin( GL_POINTS );
@@ -291,7 +293,7 @@ void mouse( int button, int state, int x, int y ) {
  * Selection of what to draw 
  */
 
-int pick( int x, int y ) {
+int Paint::pick( int x, int y ) {
 
    y = windowHeight - y;
    if ( y < windowHeight - windowWidth / 10 ) 
@@ -314,7 +316,7 @@ int pick( int x, int y ) {
  * Draws boxes representing what can be chosen to draw 
  */
 
-void screen_box( int x, int y, int length ) {
+void Paint::screen_box( int x, int y, int length ) {
 
     glBegin( GL_QUADS );
         glVertex2i( x, y );
@@ -330,12 +332,12 @@ void screen_box( int x, int y, int length ) {
  * Handles selection from "right" menu 
  */ 
 
-void right_menu( int id ) {
+void Paint::right_menu( int id ) {
 
    if ( id == 1 ) {
       //exit(1);  	/* quit */
    } else {
-      display( );	/* clear */
+      displayPaint( );	/* clear */
    }
 
 }
@@ -345,7 +347,7 @@ void right_menu( int id ) {
  * Handles color menu selection 
  */
 
-void color_menu( int id ) {
+void Paint::color_menu( int id ) {
 
    if ( id == 1 ) { 
       red = 1.0; green = 0.0; blue = 0.0; /* red     */
@@ -372,7 +374,7 @@ void color_menu( int id ) {
  * Handles selection from fill menu 
  */
 
-void fill_menu( int id ) {
+void Paint::fill_menu( int id ) {
 
    if ( id == 1 ) {
        fill = 1; 	/* Turn fill on  */
@@ -387,7 +389,7 @@ void fill_menu( int id ) {
  * Initialize and cleared display 
  */
 
-void display( void ) {
+void Paint::displayPaint( void ) {
 
    /* 
     * Save attributes
@@ -475,52 +477,52 @@ void display( void ) {
  * Main program - GLUT initialization 
  */
 
-int main( int argc, char** argv ) {
-
-   int c_menu, p_menu, f_menu;
-
-   glutInit( &argc, argv );
-   glutInitDisplayMode( GLUT_SINGLE | GLUT_RGB );
-   glutCreateWindow( "Paint" );
-   glutDisplayFunc( display );
-
-   /* 
-    * Create color submenu 
-    */
-   c_menu = glutCreateMenu( color_menu );
-   glutAddMenuEntry( "Red",     1 );
-   glutAddMenuEntry( "Green",   2 );
-   glutAddMenuEntry( "Blue",    3 );
-   glutAddMenuEntry( "Cyan",    4 );
-   glutAddMenuEntry( "Magenta", 5 );
-   glutAddMenuEntry( "Yellow",  6 );
-   glutAddMenuEntry( "White",   7 );
-   glutAddMenuEntry( "Black",   8 );
-
-   /* 
-    * Create fill on/off submenu 
-    */
-   f_menu = glutCreateMenu( fill_menu );
-   glutAddMenuEntry( "fill on", 1 );
-   glutAddMenuEntry( "fill off", 2 );
-
-   /* 
-    * Create right_menu
-    */
-   glutCreateMenu( right_menu );
-   glutAddSubMenu( "Colors", c_menu );
-   glutAddSubMenu( "Fill", f_menu );
-   glutAddMenuEntry( "clear", 2 );
-   glutAddMenuEntry( "quit",  1 );
-   glutAttachMenu( GLUT_RIGHT_BUTTON );
-
-   myinit ( );
-
-   glutReshapeFunc ( myReshape ); 
-   glutMouseFunc ( mouse );
-
-   glutMainLoop( );
-
-   return 0;
-
-}
+//int main( int argc, char** argv ) {
+//
+//   int c_menu, p_menu, f_menu;
+//
+//   glutInit( &argc, argv );
+//   glutInitDisplayMode( GLUT_SINGLE | GLUT_RGB );
+//   glutCreateWindow( "Paint" );
+//   glutDisplayFunc( display );
+//
+//   /* 
+//    * Create color submenu 
+//    */
+//   c_menu = glutCreateMenu( color_menu );
+//   glutAddMenuEntry( "Red",     1 );
+//   glutAddMenuEntry( "Green",   2 );
+//   glutAddMenuEntry( "Blue",    3 );
+//   glutAddMenuEntry( "Cyan",    4 );
+//   glutAddMenuEntry( "Magenta", 5 );
+//   glutAddMenuEntry( "Yellow",  6 );
+//   glutAddMenuEntry( "White",   7 );
+//   glutAddMenuEntry( "Black",   8 );
+//
+//   /* 
+//    * Create fill on/off submenu 
+//    */
+//   f_menu = glutCreateMenu( fill_menu );
+//   glutAddMenuEntry( "fill on", 1 );
+//   glutAddMenuEntry( "fill off", 2 );
+//
+//   /* 
+//    * Create right_menu
+//    */
+//   glutCreateMenu( right_menu );
+//   glutAddSubMenu( "Colors", c_menu );
+//   glutAddSubMenu( "Fill", f_menu );
+//   glutAddMenuEntry( "clear", 2 );
+//   glutAddMenuEntry( "quit",  1 );
+//   glutAttachMenu( GLUT_RIGHT_BUTTON );
+//
+//   myinit ( );
+//
+//   glutReshapeFunc ( myReshape ); 
+//   glutMouseFunc ( mouse );
+//
+//   glutMainLoop( );
+//
+//   return 0;
+//
+//}
