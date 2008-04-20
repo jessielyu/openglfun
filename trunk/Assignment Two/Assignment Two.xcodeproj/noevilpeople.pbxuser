@@ -374,7 +374,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 223";
 		rLen = 0;
-		rLoc = 5475;
+		rLoc = 5433;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 3128;
@@ -384,7 +384,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 223";
 		rLen = 0;
-		rLoc = 5475;
+		rLoc = 5433;
 		rType = 0;
 		vrLen = 748;
 		vrLoc = 0;
@@ -422,7 +422,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 219";
 		rLen = 64;
-		rLoc = 5475;
+		rLoc = 5433;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 3128;
@@ -452,7 +452,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 224";
 		rLen = 0;
-		rLoc = 5521;
+		rLoc = 5479;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 3250;
@@ -482,7 +482,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 262";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4891;
 		rType = 0;
 		vrLen = 808;
 		vrLoc = 3701;
@@ -502,7 +502,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 263";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4891;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 3590;
@@ -512,7 +512,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 263";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4891;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 3590;
@@ -542,7 +542,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 286";
 		rLen = 144;
-		rLoc = 5539;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 3953;
@@ -552,7 +552,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 288";
 		rLen = 0;
-		rLoc = 5564;
+		rLoc = 5522;
 		rType = 0;
 		vrLen = 898;
 		vrLoc = 3873;
@@ -562,7 +562,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 265";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4891;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 3873;
@@ -592,7 +592,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 265";
 		rLen = 0;
-		rLoc = 4845;
+		rLoc = 4891;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 3873;
@@ -742,7 +742,7 @@
 		comments = "error: 'edgeTable' was not declared in this scope";
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 1;
-		rLoc = 320;
+		rLoc = 322;
 		rType = 1;
 	};
 	E28CF5560DBADAD000D61ACF /* PBXTextBookmark */ = {
@@ -888,7 +888,7 @@
 		comments = "error: no matching function for call to 'std::list<DrawStuff::Bucket, std::allocator<DrawStuff::Bucket> >::sort(<unknown type>)'";
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 1;
-		rLoc = 362;
+		rLoc = 358;
 		rType = 1;
 	};
 	E28CF5700DBADDF600D61ACF /* PBXTextBookmark */ = {
@@ -896,7 +896,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 329";
 		rLen = 0;
-		rLoc = 5958;
+		rLoc = 5916;
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 4594;
@@ -906,7 +906,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 305";
 		rLen = 6;
-		rLoc = 5442;
+		rLoc = 5400;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 3247;
@@ -916,7 +916,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 305";
 		rLen = 6;
-		rLoc = 5442;
+		rLoc = 5400;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 3247;
@@ -936,7 +936,7 @@
 		comments = "error: no matching function for call to 'std::list<DrawStuff::Bucket, std::allocator<DrawStuff::Bucket> >::sort(<unknown type>)'";
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 1;
-		rLoc = 362;
+		rLoc = 358;
 		rType = 1;
 	};
 	E28CF5780DBAE51100D61ACF /* PBXTextBookmark */ = {
@@ -984,7 +984,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 342";
 		rLen = 24;
-		rLoc = 5938;
+		rLoc = 5896;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 4958;
@@ -1014,7 +1014,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 310";
 		rLen = 24;
-		rLoc = 5149;
+		rLoc = 5259;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 4449;
@@ -1024,7 +1024,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 7560;
+		rLoc = 7518;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 4958;
@@ -1074,7 +1074,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 310";
 		rLen = 24;
-		rLoc = 5149;
+		rLoc = 5259;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 4449;
@@ -1094,7 +1094,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 7472;
+		rLoc = 7430;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 4906;
@@ -1116,7 +1116,7 @@
 		comments = "error: 'dy' was not declared in this scope";
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 1;
-		rLoc = 351;
+		rLoc = 347;
 		rType = 1;
 	};
 	E28CF5900DBAE7F000D61ACF /* PBXTextBookmark */ = {
@@ -1144,7 +1144,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 7472;
+		rLoc = 7430;
 		rType = 0;
 		vrLen = 837;
 		vrLoc = 4806;
@@ -1164,7 +1164,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 7472;
+		rLoc = 7430;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 5029;
@@ -1194,7 +1194,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 7472;
+		rLoc = 7430;
 		rType = 0;
 		vrLen = 999;
 		vrLoc = 5149;
@@ -1204,7 +1204,7 @@
 		comments = "error: 'struct std::_List_const_iterator<DrawStuff::Bucket>' has no member named 'yMax'";
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 1;
-		rLoc = 379;
+		rLoc = 375;
 		rType = 1;
 	};
 	E28CF59C0DBAEA5200D61ACF /* PBXTextBookmark */ = {
@@ -1212,7 +1212,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 316";
 		rLen = 12;
-		rLoc = 5461;
+		rLoc = 5419;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 4546;
@@ -1222,7 +1222,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 368";
 		rLen = 0;
-		rLoc = 6503;
+		rLoc = 6461;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 5312;
@@ -1232,7 +1232,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 350";
 		rLen = 0;
-		rLoc = 6007;
+		rLoc = 5965;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 5547;
@@ -1242,7 +1242,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 393";
 		rLen = 0;
-		rLoc = 7310;
+		rLoc = 7268;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 5458;
@@ -1252,7 +1252,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 411";
 		rLen = 0;
-		rLoc = 7306;
+		rLoc = 7264;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 2645;
@@ -1262,7 +1262,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 411";
 		rLen = 0;
-		rLoc = 7306;
+		rLoc = 7264;
 		rType = 0;
 		vrLen = 739;
 		vrLoc = 2645;
@@ -1332,7 +1332,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 338";
 		rLen = 0;
-		rLoc = 5713;
+		rLoc = 5671;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 4992;
@@ -1342,7 +1342,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 338";
 		rLen = 0;
-		rLoc = 5713;
+		rLoc = 5671;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 4992;
@@ -1412,12 +1412,12 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 346";
 		rLen = 0;
-		rLoc = 5857;
+		rLoc = 5815;
 		rType = 0;
 		vrLen = 909;
 		vrLoc = 5371;
 	};
-	E28CF5DD0DBAF6D200D61ACF /* DrawStuff.cpp:410 */ = {
+	E28CF5DD0DBAF6D200D61ACF /* DrawStuff.cpp:406 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1429,12 +1429,12 @@
 		functionName = "DrawStuff::drawPolygon( int n, int x[], int y[] )";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 410;
+		lineNumber = 406;
 		location = "Assignment Two";
 		modificationTime = 230418790.152284;
 		state = 2;
 	};
-	E28CF5DF0DBAF70400D61ACF /* DrawStuff.cpp:421 */ = {
+	E28CF5DF0DBAF70400D61ACF /* DrawStuff.cpp:417 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1446,12 +1446,12 @@
 		functionName = "DrawStuff::drawPolygon( int n, int x[], int y[] )";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 421;
+		lineNumber = 417;
 		location = "Assignment Two";
 		modificationTime = 230418790.152537;
 		state = 1;
 	};
-	E28CF5E10DBAF73A00D61ACF /* DrawStuff.cpp:355 */ = {
+	E28CF5E10DBAF73A00D61ACF /* DrawStuff.cpp:351 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1463,7 +1463,7 @@
 		functionName = "DrawStuff::drawPolygon( int n, int x[], int y[] )";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 355;
+		lineNumber = 351;
 		location = "Assignment Two";
 		modificationTime = 230418790.152695;
 		state = 2;
@@ -1473,7 +1473,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 407";
 		rLen = 0;
-		rLoc = 7180;
+		rLoc = 7138;
 		rType = 0;
 		vrLen = 844;
 		vrLoc = 5036;
@@ -1483,12 +1483,12 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 408";
 		rLen = 0;
-		rLoc = 7226;
+		rLoc = 7184;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 6273;
 	};
-	E28CF5E70DBAF95D00D61ACF /* DrawStuff.cpp:428 */ = {
+	E28CF5E70DBAF95D00D61ACF /* DrawStuff.cpp:424 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1500,7 +1500,7 @@
 		functionName = "DrawStuff::drawPolygon( int n, int x[], int y[] )";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 428;
+		lineNumber = 424;
 		location = "Assignment Two";
 		modificationTime = 230418790.152864;
 		state = 2;
@@ -1520,7 +1520,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 408";
 		rLen = 0;
-		rLoc = 7226;
+		rLoc = 7184;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 6273;
@@ -1530,7 +1530,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 408";
 		rLen = 0;
-		rLoc = 7226;
+		rLoc = 7184;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 6273;
@@ -1550,7 +1550,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 345";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 5813;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 6273;
@@ -1560,7 +1560,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 414";
 		rLen = 0;
-		rLoc = 7393;
+		rLoc = 7351;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 6228;
@@ -1570,7 +1570,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 414";
 		rLen = 0;
-		rLoc = 7393;
+		rLoc = 7351;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 6228;
@@ -1580,7 +1580,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 414";
 		rLen = 0;
-		rLoc = 7393;
+		rLoc = 7351;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 6228;
@@ -1620,7 +1620,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 340";
 		rLen = 0;
-		rLoc = 5735;
+		rLoc = 5693;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4770;
@@ -1630,7 +1630,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 329";
 		rLen = 0;
-		rLoc = 5566;
+		rLoc = 5524;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 5138;
@@ -1640,7 +1640,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 329";
 		rLen = 0;
-		rLoc = 5566;
+		rLoc = 5524;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 5138;
@@ -1690,7 +1690,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 404";
 		rLen = 0;
-		rLoc = 7116;
+		rLoc = 7074;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 6384;
@@ -1710,7 +1710,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 410";
 		rLen = 0;
-		rLoc = 7233;
+		rLoc = 7191;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 6384;
@@ -1740,7 +1740,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 404";
 		rLen = 0;
-		rLoc = 7116;
+		rLoc = 7074;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 6384;
@@ -1760,7 +1760,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 333";
 		rLen = 0;
-		rLoc = 5627;
+		rLoc = 5585;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 4770;
@@ -1770,7 +1770,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 333";
 		rLen = 0;
-		rLoc = 5627;
+		rLoc = 5585;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 4770;
@@ -1780,7 +1780,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 333";
 		rLen = 0;
-		rLoc = 5627;
+		rLoc = 5585;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 4770;
@@ -1870,7 +1870,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 445";
 		rLen = 0;
-		rLoc = 8104;
+		rLoc = 8062;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 7922;
@@ -1900,7 +1900,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 450";
 		rLen = 0;
-		rLoc = 11287;
+		rLoc = 11245;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 6612;
@@ -1920,7 +1920,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 450";
 		rLen = 0;
-		rLoc = 11287;
+		rLoc = 11245;
 		rType = 0;
 		vrLen = 1123;
 		vrLoc = 6612;
@@ -1940,7 +1940,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 444";
 		rLen = 0;
-		rLoc = 8020;
+		rLoc = 7978;
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 0;
@@ -1990,7 +1990,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 454";
 		rLen = 10;
-		rLoc = 11285;
+		rLoc = 11243;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 6985;
@@ -2010,7 +2010,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 454";
 		rLen = 3;
-		rLoc = 11285;
+		rLoc = 11243;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 7041;
@@ -2040,7 +2040,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 454";
 		rLen = 1145;
-		rLoc = 10140;
+		rLoc = 10098;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 7041;
@@ -2060,7 +2060,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 465";
 		rLen = 0;
-		rLoc = 11280;
+		rLoc = 11238;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 7009;
@@ -2080,7 +2080,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 465";
 		rLen = 0;
-		rLoc = 11280;
+		rLoc = 11238;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 7009;
@@ -2100,7 +2100,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 465";
 		rLen = 0;
-		rLoc = 11280;
+		rLoc = 11238;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 7050;
@@ -2120,7 +2120,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 477";
 		rLen = 0;
-		rLoc = 10723;
+		rLoc = 10681;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 7254;
@@ -2140,7 +2140,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 478";
 		rLen = 0;
-		rLoc = 10925;
+		rLoc = 10883;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 7253;
@@ -2160,7 +2160,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 471";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 7262;
@@ -2180,7 +2180,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 445";
 		rLen = 0;
-		rLoc = 8104;
+		rLoc = 8062;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 7922;
@@ -2200,7 +2200,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 7487;
@@ -2210,7 +2210,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 7256;
@@ -2220,7 +2220,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 7256;
@@ -2270,7 +2270,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 8569;
@@ -2290,7 +2290,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 8142;
@@ -2310,7 +2310,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9751;
+		rLoc = 9709;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 8569;
@@ -2350,7 +2350,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 10507;
+		rLoc = 10465;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 7487;
@@ -2380,7 +2380,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 10507;
+		rLoc = 10465;
 		rType = 0;
 		vrLen = 877;
 		vrLoc = 8675;
@@ -2400,7 +2400,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 10507;
+		rLoc = 10465;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 7413;
@@ -2420,7 +2420,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 10507;
+		rLoc = 10465;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 7487;
@@ -2435,7 +2435,7 @@
 		vrLen = 1240;
 		vrLoc = 2567;
 	};
-	E28CF6840DBB954F00D61ACF /* DrawStuff.cpp:533 */ = {
+	E28CF6840DBB954F00D61ACF /* DrawStuff.cpp:529 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2447,12 +2447,12 @@
 		functionName = "DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[], int outy[], int x0, int y0, int x1, int y1)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 533;
+		lineNumber = 529;
 		location = "Assignment Two";
 		modificationTime = 230418790.153018;
 		state = 1;
 	};
-	E28CF6860DBB955100D61ACF /* DrawStuff.cpp:534 */ = {
+	E28CF6860DBB955100D61ACF /* DrawStuff.cpp:530 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2464,12 +2464,12 @@
 		functionName = "DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[], int outy[], int x0, int y0, int x1, int y1)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 534;
+		lineNumber = 530;
 		location = "Assignment Two";
 		modificationTime = 230418790.153173;
 		state = 1;
 	};
-	E28CF6880DBB955200D61ACF /* DrawStuff.cpp:535 */ = {
+	E28CF6880DBB955200D61ACF /* DrawStuff.cpp:531 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2481,12 +2481,12 @@
 		functionName = "DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[], int outy[], int x0, int y0, int x1, int y1)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 535;
+		lineNumber = 531;
 		location = "Assignment Two";
 		modificationTime = 230418790.153326;
 		state = 1;
 	};
-	E28CF68A0DBB955200D61ACF /* DrawStuff.cpp:536 */ = {
+	E28CF68A0DBB955200D61ACF /* DrawStuff.cpp:532 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2498,7 +2498,7 @@
 		functionName = "DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[], int outy[], int x0, int y0, int x1, int y1)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 536;
+		lineNumber = 532;
 		location = "Assignment Two";
 		modificationTime = 230418790.15348;
 		state = 1;
@@ -2528,7 +2528,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 470";
 		rLen = 0;
-		rLoc = 9220;
+		rLoc = 9178;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 8044;
@@ -2547,7 +2547,7 @@
 		isa = PBXTextBookmark;
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 0;
-		rLoc = 574;
+		rLoc = 570;
 		rType = 1;
 	};
 	E28CF6970DBB973D00D61ACF /* PBXTextBookmark */ = {
@@ -2555,7 +2555,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 480";
 		rLen = 0;
-		rLoc = 9504;
+		rLoc = 9462;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 8128;
@@ -2575,7 +2575,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 10454;
+		rLoc = 10412;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 8128;
@@ -2595,7 +2595,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 542";
 		rLen = 0;
-		rLoc = 11283;
+		rLoc = 11241;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 8060;
@@ -2615,7 +2615,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 10454;
+		rLoc = 10412;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 8060;
@@ -2635,7 +2635,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 10496;
+		rLoc = 10454;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 8060;
@@ -2655,7 +2655,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 10454;
+		rLoc = 10412;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 8060;
@@ -2675,7 +2675,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 7907;
@@ -2745,7 +2745,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 481";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 7936;
@@ -2765,7 +2765,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 487";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 8005;
@@ -2775,7 +2775,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 8005;
@@ -2785,7 +2785,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 486";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 7915;
@@ -2795,7 +2795,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 485";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7915;
@@ -2805,7 +2805,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 485";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 7947;
@@ -2815,7 +2815,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 485";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 928;
 		vrLoc = 7947;
@@ -2825,7 +2825,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 482";
 		rLen = 0;
-		rLoc = 8875;
+		rLoc = 8833;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 7587;
@@ -2835,7 +2835,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 473";
 		rLen = 0;
-		rLoc = 8875;
+		rLoc = 8833;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 7587;
@@ -2845,7 +2845,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 473";
 		rLen = 0;
-		rLoc = 8875;
+		rLoc = 8833;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 7587;
@@ -2855,7 +2855,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 473";
 		rLen = 0;
-		rLoc = 8875;
+		rLoc = 8833;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 7587;
@@ -2895,7 +2895,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 499";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 8147;
@@ -2905,7 +2905,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 500";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 7963;
@@ -2915,7 +2915,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 499";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 957;
 		vrLoc = 7963;
@@ -2925,7 +2925,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 8109;
@@ -2935,7 +2935,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 8007;
@@ -2945,7 +2945,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 8069;
@@ -2955,7 +2955,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 8069;
@@ -2965,7 +2965,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 506";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 8147;
@@ -2975,7 +2975,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 8147;
@@ -2985,7 +2985,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 506";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 8147;
@@ -2995,7 +2995,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 506";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 8147;
@@ -3005,7 +3005,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 506";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1082;
 		vrLoc = 8147;
@@ -3015,7 +3015,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 509";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 8405;
@@ -3025,7 +3025,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 511";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 8405;
@@ -3035,7 +3035,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 509";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 8405;
@@ -3045,7 +3045,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 509";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 8405;
@@ -3055,7 +3055,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 8405;
@@ -3065,7 +3065,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 8109;
@@ -3075,7 +3075,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 8109;
@@ -3095,7 +3095,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 8109;
@@ -3125,7 +3125,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 0;
-		rLoc = 10133;
+		rLoc = 10091;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 8109;
@@ -3165,7 +3165,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 9835;
+		rLoc = 9793;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 8109;
@@ -3175,7 +3175,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 507";
 		rLen = 0;
-		rLoc = 9831;
+		rLoc = 9789;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 8147;
@@ -3185,7 +3185,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9742;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 8147;
@@ -3195,7 +3195,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9742;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 8147;
@@ -3205,7 +3205,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 49;
-		rLoc = 9784;
+		rLoc = 9742;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 8147;
@@ -3215,7 +3215,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 504";
 		rLen = 49;
-		rLoc = 9784;
+		rLoc = 9742;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 8147;
@@ -3255,7 +3255,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 505";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9742;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 8183;
@@ -3275,7 +3275,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 9783;
+		rLoc = 9741;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 7528;
@@ -3285,7 +3285,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 9783;
+		rLoc = 9741;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 7528;
@@ -3305,7 +3305,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 500";
 		rLen = 0;
-		rLoc = 9643;
+		rLoc = 9601;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 8439;
@@ -3315,7 +3315,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 500";
 		rLen = 0;
-		rLoc = 9643;
+		rLoc = 9601;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 8439;
@@ -3325,7 +3325,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 500";
 		rLen = 0;
-		rLoc = 9643;
+		rLoc = 9601;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 8439;
@@ -3335,7 +3335,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 498";
 		rLen = 0;
-		rLoc = 9321;
+		rLoc = 9279;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 7883;
@@ -3345,7 +3345,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 498";
 		rLen = 0;
-		rLoc = 9321;
+		rLoc = 9279;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 7883;
@@ -3385,7 +3385,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 9321;
+		rLoc = 9279;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 8311;
@@ -3404,7 +3404,7 @@
 		isa = PBXTextBookmark;
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 528;
 		rType = 1;
 	};
 	E28CF7250DBBC48A00D61ACF /* PBXTextBookmark */ = {
@@ -3412,7 +3412,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 503";
 		rLen = 0;
-		rLoc = 9321;
+		rLoc = 9279;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 8311;
@@ -3432,7 +3432,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 517";
 		rLen = 0;
-		rLoc = 9781;
+		rLoc = 9739;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 8377;
@@ -3442,7 +3442,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 517";
 		rLen = 0;
-		rLoc = 9777;
+		rLoc = 9735;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 8377;
@@ -3452,7 +3452,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 510";
 		rLen = 0;
-		rLoc = 9524;
+		rLoc = 9482;
 		rType = 0;
 		vrLen = 986;
 		vrLoc = 8489;
@@ -3471,7 +3471,7 @@
 		isa = PBXTextBookmark;
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		rLen = 0;
-		rLoc = 532;
+		rLoc = 528;
 		rType = 1;
 	};
 	E28CF7350DBBC60F00D61ACF /* PBXTextBookmark */ = {
@@ -3479,7 +3479,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 510";
 		rLen = 0;
-		rLoc = 9524;
+		rLoc = 9482;
 		rType = 0;
 		vrLen = 986;
 		vrLoc = 8489;
@@ -3499,7 +3499,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 459";
 		rLen = 0;
-		rLoc = 8361;
+		rLoc = 8319;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 7294;
@@ -3509,7 +3509,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 529";
 		rLen = 0;
-		rLoc = 9768;
+		rLoc = 9726;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 8843;
@@ -3519,7 +3519,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 527";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 8843;
@@ -3529,7 +3529,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 522";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 8416;
@@ -3549,7 +3549,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 522";
 		rLen = 0;
-		rLoc = 9536;
+		rLoc = 9494;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 8416;
@@ -3609,7 +3609,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 527";
 		rLen = 0;
-		rLoc = 9710;
+		rLoc = 9668;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 9372;
@@ -3636,7 +3636,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 514";
 		rLen = 0;
-		rLoc = 9451;
+		rLoc = 9409;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 9424;
@@ -3656,7 +3656,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 527";
 		rLen = 0;
-		rLoc = 9710;
+		rLoc = 9668;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 9372;
@@ -3696,7 +3696,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 485";
 		rLen = 343;
-		rLoc = 8875;
+		rLoc = 8833;
 		rType = 0;
 		vrLen = 901;
 		vrLoc = 8234;
@@ -3706,7 +3706,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 304";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 4732;
@@ -3730,7 +3730,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 304";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 4732;
@@ -3740,7 +3740,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 304";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 4732;
@@ -3760,7 +3760,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 304";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 4732;
@@ -3799,8 +3799,8 @@
 		isa = PBXTextBookmark;
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 318";
-		rLen = 112;
-		rLoc = 5226;
+		rLen = 0;
+		rLoc = 5295;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 4732;
@@ -3820,7 +3820,7 @@
 		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
 		name = "DrawStuff.cpp: 321";
 		rLen = 0;
-		rLoc = 5182;
+		rLoc = 5292;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 5005;
@@ -3833,14 +3833,14 @@
 		addToTargets = (
 		);
 		breakpoints = (
-			E28CF5DD0DBAF6D200D61ACF /* DrawStuff.cpp:410 */,
-			E28CF5DF0DBAF70400D61ACF /* DrawStuff.cpp:421 */,
-			E28CF5E10DBAF73A00D61ACF /* DrawStuff.cpp:355 */,
-			E28CF5E70DBAF95D00D61ACF /* DrawStuff.cpp:428 */,
-			E28CF6840DBB954F00D61ACF /* DrawStuff.cpp:533 */,
-			E28CF6860DBB955100D61ACF /* DrawStuff.cpp:534 */,
-			E28CF6880DBB955200D61ACF /* DrawStuff.cpp:535 */,
-			E28CF68A0DBB955200D61ACF /* DrawStuff.cpp:536 */,
+			E28CF5DD0DBAF6D200D61ACF /* DrawStuff.cpp:406 */,
+			E28CF5DF0DBAF70400D61ACF /* DrawStuff.cpp:417 */,
+			E28CF5E10DBAF73A00D61ACF /* DrawStuff.cpp:351 */,
+			E28CF5E70DBAF95D00D61ACF /* DrawStuff.cpp:424 */,
+			E28CF6840DBB954F00D61ACF /* DrawStuff.cpp:529 */,
+			E28CF6860DBB955100D61ACF /* DrawStuff.cpp:530 */,
+			E28CF6880DBB955200D61ACF /* DrawStuff.cpp:531 */,
+			E28CF68A0DBB955200D61ACF /* DrawStuff.cpp:532 */,
 		);
 		codeSenseManager = E2E7CE9D0DAEDEFA00672DF2 /* Code sense */;
 		executables = (
