@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>E28CF66A0DBB915200D61ACF</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>DrawStuff.cpp</string>
+				<string>DrawStuff.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,17 +212,17 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>E28CF66D0DBB920900D61ACF</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>DrawStuff.cpp</string>
+						<string>DrawStuff.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E28CF7790DBBEBC900D61ACF</string>
+						<string>E28CF7B90DBBF20700D61ACF</string>
 						<key>history</key>
 						<array>
-							<string>E28CF7590DBBC85F00D61ACF</string>
 							<string>E28CF7600DBBE95C00D61ACF</string>
-							<string>E28CF7670DBBE96500D61ACF</string>
-							<string>E28CF7610DBBE95C00D61ACF</string>
+							<string>E28CF7B50DBBF20700D61ACF</string>
+							<string>E28CF7B60DBBF20700D61ACF</string>
+							<string>E28CF7590DBBC85F00D61ACF</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -263,6 +263,9 @@
 							<string>E28CF7630DBBE95C00D61ACF</string>
 							<string>E28CF7640DBBE95C00D61ACF</string>
 							<string>E28CF7680DBBE96500D61ACF</string>
+							<string>E28CF7B30DBBF1A100D61ACF</string>
+							<string>E28CF7B70DBBF20700D61ACF</string>
+							<string>E28CF7B80DBBF20700D61ACF</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -355,19 +358,18 @@
 								<string>E2E7CE960DAEDEFA00672DF2</string>
 								<string>E28CF7780DBBEB4E00D61ACF</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>1C08E77C0454961000C914BD</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>25</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 338}}</string>
+							<string>{{0, 206}, {186, 338}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -611,9 +613,9 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>E23020960DAEECED005E0D0C</string>
-		<string>E28CF66A0DBB915200D61ACF</string>
 		<string>E28CF77A0DBBEBC900D61ACF</string>
 		<string>/Users/noevilpeople/Documents/RIT/Computer Graphics I/Assignment Two/Assignment Two.xcodeproj</string>
+		<string>E28CF66A0DBB915200D61ACF</string>
 	</array>
 	<key>WindowString</key>
 	<string>267 150 690 397 0 0 1440 878 </string>

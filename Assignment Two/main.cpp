@@ -10,9 +10,9 @@
 void display()
 {
 	//LineTest::displayLines();
-	glColor3ub(255,255,255);
-	FillTest::displayPolygons();
-	//ClipTest::displayClip();
+//	glColor3ub(255,255,255);
+//	FillTest::displayPolygons();
+	ClipTest::displayClip();
 	//Paint::displayPaint();
 }
 
