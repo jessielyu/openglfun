@@ -211,59 +211,10 @@ void DrawStuff::drawLine( int p1x, int p1y, int p2x, int p2y)
 	} 
 }
 
-
+using namespace std; // for list
 /* 
  * Draw filled polygon 
  */
-
-
-struct Edge{
-	int x1;
-	int y1;
-	int x2;
-	int y2;
-};
-
-// Sort bucket on x
-bool DrawStuff::sortBuckets(Bucket bucketOne, Bucket bucketTwo)
-{
-	if (bucketOne.x < bucketTwo.x)
-	{
-		return true;
-	}
-	else if (bucketOne.x > bucketTwo.x)
-	{
-		return false;
-	}
-	// The same x, sort on 1/m
-	else
-	{
-//		float recipSlopeOne = 1.0f / (bucketOne.dy/bucketOne.dx);
-//		float recipSlopeTwo = 1.0f / (bucketTwo.dy/bucketTwo.dx);
-//		
-//		if (recipSlopeOne < recipSlopeTwo)
-//		{
-//			return true;
-//		}
-//		else
-//		{
-//			return false;
-//		}
-		if (bucketOne.invSlope < bucketTwo.invSlope)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-
-	}
-}
-
-using namespace std;
-
 void DrawStuff::drawPolygon( int n, int x[], int y[] ) {
 	
 	int yMaxAll = INT_MIN;	// Hold the maximum y value
