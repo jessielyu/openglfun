@@ -3,11 +3,12 @@
  *
  *  This program is designed to test "drawLine".
  */
+#include "LineTest.h"
 
 #include <GLUT/glut.h>         /* glut.h includes gl.h and glu.h*/
-#include "drawStuff.cpp"
+#include "DrawStuff.h"
 
-void display( void ) {
+void LineTest::displayLines(  ) {
 
    /* 
     * Clear window  - glClear clears all buffers whose bits are set in mask
@@ -31,29 +32,29 @@ void display( void ) {
    /* 
     * Use drawLine from Student's to draw 
     */
-   drawLine( 100, 100, 100, 150 );  /* Vertical */
-   drawLine( 100, 100, 100, 50 );   /* Vertical */
+   DrawStuff::drawLine( 100, 100, 100, 150 );  /* Vertical */
+   DrawStuff::drawLine( 100, 100, 100, 50 );   /* Vertical */
 
-   drawLine( 100, 100, 50, 100 );   /* Horizontal */
-   drawLine( 100, 100, 150, 100 );  /* Horizontal */
+   DrawStuff::drawLine( 100, 100, 50, 100 );   /* Horizontal */
+   DrawStuff::drawLine( 100, 100, 150, 100 );  /* Horizontal */
 
-   drawLine( 100, 100, 150, 150 );  /* + diagonal */
-   drawLine( 100, 100, 50, 50 );    /* + diagonal */
+   DrawStuff::drawLine( 100, 100, 150, 150 );  /* + diagonal */
+   DrawStuff::drawLine( 100, 100, 50, 50 );    /* + diagonal */
 
-   drawLine( 100, 100, 50, 150 );   /* - diagonal */
-   drawLine( 100, 100, 150, 50 );   /* - diagonal */
+   DrawStuff::drawLine( 100, 100, 50, 150 );   /* - diagonal */
+   DrawStuff::drawLine( 100, 100, 150, 50 );   /* - diagonal */
 
-   drawLine( 100, 100, 150, 125 );  /* shallow + slope */
-   drawLine( 100, 100, 50, 75 );    /* shallow + slope */
+   DrawStuff::drawLine( 100, 100, 150, 125 );  /* shallow + slope */
+   DrawStuff::drawLine( 100, 100, 50, 75 );    /* shallow + slope */
 
-   drawLine( 100, 100, 150, 75 );   /* shallow - slope */
-   drawLine( 100, 100, 50, 125 );   /* shallow - slope */
+   DrawStuff::drawLine( 100, 100, 150, 75 );   /* shallow - slope */
+   DrawStuff::drawLine( 100, 100, 50, 125 );   /* shallow - slope */
 
-   drawLine( 100, 100, 125, 150 );  /* steep + slope */
-   drawLine( 100, 100, 75, 50 );    /* steep + slope */
+   DrawStuff::drawLine( 100, 100, 125, 150 );  /* steep + slope */
+   DrawStuff::drawLine( 100, 100, 75, 50 );    /* steep + slope */
 
-   drawLine( 100, 100, 125, 50 );   /* steep - slope */
-   drawLine( 100, 100, 75, 150 );   /* steep - slope */
+   DrawStuff::drawLine( 100, 100, 125, 50 );   /* steep - slope */
+   DrawStuff::drawLine( 100, 100, 75, 150 );   /* steep - slope */ //problem line
 
    /* Forces OpenGL commands to be displayed */
    glFlush( );
@@ -65,30 +66,30 @@ void display( void ) {
  * Main routine - GLUT setup and initialization 
  */
 
-int main( int argc, char** argv ) {
-
-   /* 
-    * Initializes GLUT and should be used before any OpenGL functions 
-    */
-   glutInit( &argc, argv );
-
-   /* 
-    * Creates window on screen with title in argument 
-    */
-   glutCreateWindow( "Line Test" );
-
-   /* 
-    * Callback function; causes "display()" to be called each time there
-    * is a display callback. 
-    */
-   glutDisplayFunc( display );
-
-   /* 
-    * Causes program to enter an event-processing loop; should be last
-    * statement in main() 
-    */
-   glutMainLoop( );
-
-   return 0;
-
-}
+//int main( int argc, char** argv ) {
+//
+//   /* 
+//    * Initializes GLUT and should be used before any OpenGL functions 
+//    */
+//   glutInit( &argc, argv );
+//
+//   /* 
+//    * Creates window on screen with title in argument 
+//    */
+//   glutCreateWindow( "Line Test" );
+//
+//   /* 
+//    * Callback function; causes "display()" to be called each time there
+//    * is a display callback. 
+//    */
+//   glutDisplayFunc( displayLines );
+//
+//   /* 
+//    * Causes program to enter an event-processing loop; should be last
+//    * statement in main() 
+//    */
+//   glutMainLoop( );
+//
+//   return 0;
+//
+//}
