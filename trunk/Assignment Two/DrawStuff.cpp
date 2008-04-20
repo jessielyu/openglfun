@@ -322,36 +322,41 @@ void DrawStuff::drawPolygon( int n, int x[], int y[] ) {
 	// Size of the vector is yMaxAll, the greatest Y value we have
 	vector< list<Bucket> > edgeTable(yMaxAll);
 	
-	
+	// For each edge, fill in the bucket info
 	for (list<Edge>::const_iterator i = edges.begin(); i != edges.end(); i++)
 	{
 		const Edge& e = *i;
 		Bucket tempBucket;
-		int yMin;
+		
+		int yMin;	// Store yMin, this is which list to add it to
+		
+		// Find yMax
 		if (e.y1 > e.y2)
 		{
 			tempBucket.yMax = e.y1;
-			tempBucket.x = e.x2;
+			tempBucket.x = e.x2;	// x is the x value at yMin, NOT yMax
 			yMin = e.y2;
 		}
 		else
 		{
 			tempBucket.yMax = e.y2;
-			tempBucket.x = e.x1;
+			tempBucket.x = e.x1;	// x is the x value at yMin, NOT yMax
 			yMin = e.y1;
 		}
 		
+		// Calculate dx and dy
 		tempBucket.dx = e.x1 - e.x2;
 		tempBucket.dy = e.y1 - e.y2;
 		
-		// inverse slope
+		// store the inverse slope to increment x
 		tempBucket.invSlope = (float)tempBucket.dx/(float)tempBucket.dy;
 		
-		
+		// Add this to yMin pos in the edge table
 		edgeTable[yMin].push_back(tempBucket);
 		
 	}
 	
+	// Sort the edge table (with our defined < operator)
 	for (int i = 0; i < edgeTable.size(); i++)
 	{
 		if (!edgeTable[i].empty())
@@ -360,40 +365,23 @@ void DrawStuff::drawPolygon( int n, int x[], int y[] ) {
 		}
 	}
 	
+	// Active edge table
 	list<Bucket> activeEdgeTable;
 	
-	//activeEdgeTable.
-	
+	// For each scan line
 	for (int scanLine = 0; scanLine < edgeTable.size(); scanLine++)
 	{
-		// Buckets to remove from AET;
-		//list<Bucket> toRemoveAET;
-	
+		// Delete Buckets from the AET where yMax = scanLine
 		for (list<Bucket>::iterator i = activeEdgeTable.begin(); i != activeEdgeTable.end(); i++)
 		{
 			const Bucket& e = *i;
 		
 			if (e.yMax == scanLine)
 			{
-				// Add to remove list
-				//toRemoveAET.push_back(e);
 				activeEdgeTable.erase(i);
-				//activeEdgeTable.erase(<#iterator __position#>);
 			}
 			
 		}
-		
-		//activeEdgeTable.remove_if(yMax == scanLine);
-		
-		//activeEdgeTable.r
-		
-		// Actually remove
-//		for (list<Bucket>::const_iterator i = toRemoveAET.begin(); i != toRemoveAET.end(); i++)
-//		{
-//			const Bucket& e = *i;
-//			
-//			
-//		}
 
 		// add the edges on this scan line to active list
 		while(!edgeTable[scanLine].empty())
@@ -405,40 +393,29 @@ void DrawStuff::drawPolygon( int n, int x[], int y[] ) {
 		// sort them according to our defined < operator
 		activeEdgeTable.sort();
 		
+		// Figure out how many pairs of edges we have, we'll fill between them
 		int numPairs = activeEdgeTable.size()/2;
 		
+		// For each pair of edges, draw a line between their current x
 		list<Bucket>::iterator aeti = activeEdgeTable.begin();
 		for (int i = 0; i < numPairs; i++)
 		{
-			
-			//aeti += i*2;
 			const Bucket& bucketOne = *aeti;
 			const Bucket& bucketTwo = *(++aeti);
+			
+			// use our draw line function, has a special case for 0 slope lines
 			drawLine(bucketOne.x, scanLine, bucketTwo.x, scanLine);
 			
 			aeti++;
 		}
 		
+		// Incrememnt x by the inverse slope for each edge
 		for (list<Bucket>::iterator i = activeEdgeTable.begin(); i != activeEdgeTable.end(); i++)
 		{
 			Bucket& bucket = *i;
 			bucket.x += bucket.invSlope;
 		}
 	}
-	
-
-  /* Your task is to rewrite this using only calls to setPixel() */
-//  
-//int i;
-//
-// glBegin( GL_POLYGON ); 
-//    for (i = 0; i < n; i++ ) {
-//      glVertex2i( x[i], y[i] );
-//    }
-// glEnd( );
-
-
-
 }
 
 
@@ -451,10 +428,10 @@ void DrawStuff::drawPolygon( int n, int x[], int y[] ) {
 void DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
                   int outy[], int x0, int y0, int x1, int y1)
 {
-  /* provide your implementation here */
-	
+	// ClipEdge for each edge
 	ClipEdge bottom, left, top, right;
 	
+	// Calculate the points, slope, dx and dy for each clip edge
 	bottom.x1 = x0;
 	bottom.y1 = y0;
 	bottom.x2 = x1;
@@ -487,6 +464,7 @@ void DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
 	left.dy = left.y2-left.y1;
 	left.slope = (float)left.dy/(float)left.dx;
 	
+	// Debug for printing the clipping window
 //	glColor3ub(0,0,0);
 //	glBegin(GL_LINES);
 //	
@@ -501,6 +479,7 @@ void DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
 //	
 //	glEnd();
 	
+	// Temporary arrays to hold the output at the different stages
 	int outX1[50];
 	int outX2[50];
 	int outX3[50];
@@ -509,100 +488,88 @@ void DrawStuff::clipPolygon (int in, int inx[], int iny[], int *out, int outx[],
 	int outY2[50];
 	int outY3[50];
 	
-//	for (int i = 0; i < in; i++)
-//	{
-//		outX1[i] = 0;
-//		outX2[i] = 0;
-//		outX3[i] = 0;
-//	
-//		outY1[i] = 0;
-//		outY2[i] = 0;
-//		outY3[i] = 0;
-//	}
-	
+	// Temporary length variables at the different stages
 	int length1;
 	int length2;
 	int length3;
 	
-	//cout << *in;
-	
+	// clip against each edge, results of current goes to next
 	SHPC(inx, iny, outX1, outY1, in, &length1, right);
 	SHPC(outX1, outY1, outX2, outY2, length1, &length2, top);
 	SHPC(outX2, outY2, outX3, outY3, length2, &length3, left);
 	SHPC(outX3, outY3, outx, outy, length3, out, bottom);
-	
-	cout << *out;
-	
-//	int i = 0;
-//	while (i < 1)
-//	{
-//		i++;
-//	}
-	
-//	for (int i = 0; i < in; i++)
-//	{
-//		cout << "Vertex in " << i << ": x: " << inx[i] << " y: " << iny[i] << "\r";
-//	}
-//	
-//	cout << "Out size: " << *out << "\n";
-//	
-//	for (int i = 0; i < *out; i++)
-//	{
-//		cout << "Vertex out " << i << ": x: " << outx[i] << " y: " << outy[i] << "\r";
-//	}
-  
 }
 
+// Clips against one edge, using the ClipEdge struct
 void DrawStuff::SHPC(int inX[], int inY[], int outX[], int outY[], int inLength, int *outLength, ClipEdge clipboundry)
 {
+	// outlength is initially zero
 	*outLength = 0;
+	
+	// previous point for the first one is the last point in our list
 	int px = inX[inLength-1];
 	int py = inY[inLength-1];
 	
+	// for each point, check which case we are
 	for (int i = 0; i < inLength; i++)
 	{
+		// Our current point
 		int vx = inX[i];
 		int vy = inY[i];
 		
+		// If this point is inside (Case 1 & 4)
 		if (clipboundry.isInside(vx, vy))
 		{
+			// If both are inside (Case 1)
 			if (clipboundry.isInside(px, py))
 			{
+				// Store the current point in our output
 				outX[*outLength] = vx;
 				outY[*outLength] = vy;
 				(*outLength)++;
 			}
+			// If just current is inside (Case 4)
 			else
 			{
-				int intx;
-				int inty;
-				//void intersect(int edgeX1, int edgeY1, int edgeX2, int edgeY2, int* xOut, int* yOut)
+				int intx;	// New clipped point
+				int inty;	// New clipped point
+				
+				// Clip against the edge
 				clipboundry.intersect(px, py, vx, vy, &intx, &inty);
 				
+				// Add this new point
 				outX[*outLength] = intx;
 				outY[*outLength] = inty;
 				(*outLength)++;
 				
+				// Then add our current point (it's still inside)
 				outX[*outLength] = vx;
 				outY[*outLength] = vy;
 				(*outLength)++;
 			}
 		}
+		// Current point is NOT inside (case 2 & 3)
 		else
 		{
+			// If the previous point was
 			if (clipboundry.isInside(px, py))
 			{
-				int intx;
-				int inty;
-				//void intersect(int edgeX1, int edgeY1, int edgeX2, int edgeY2, int* xOut, int* yOut)
+				int intx;	// New clipped point
+				int inty;	// New clipped point
+
+				// Clip against the edge
 				clipboundry.intersect(px, py, vx, vy, &intx, &inty);
 				
+				// Only store this new clipped point, omit the current point
 				outX[*outLength] = intx;
 				outY[*outLength] = inty;
 				(*outLength)++;
 			}
+			
+			// Case 3 has no output, both points are outside
 		}
 		
+		// Next time the previous point is the current point
 		px = vx;
 		py = vy;
 	}

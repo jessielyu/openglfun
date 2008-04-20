@@ -6,12 +6,13 @@
 class DrawStuff
 {
 struct Bucket{
-	int yMax;
-	float x;
-	int dx;
-	int dy;
-	float invSlope;
+	int yMax;	// yMax of the edge
+	float x;	// current x value (initially x of ymin point)
+	int dx;		// Change in x
+	int dy;		// Change in y
+	float invSlope;		// Inverse slope (1/m) or 1/(dy/dx)
 	
+	// Define the < operator so we can use the sort() function on a list of buckets
 	bool operator<(const Bucket& bucketTwo)
 	{
 		if (x < bucketTwo.x)
@@ -25,17 +26,6 @@ struct Bucket{
 		// The same x, sort on 1/m
 		else
 		{
-	//		float recipSlopeOne = 1.0f / (bucketOne.dy/bucketOne.dx);
-	//		float recipSlopeTwo = 1.0f / (bucketTwo.dy/bucketTwo.dx);
-	//		
-	//		if (recipSlopeOne < recipSlopeTwo)
-	//		{
-	//			return true;
-	//		}
-	//		else
-	//		{
-	//			return false;
-	//		}
 			if (invSlope < bucketTwo.invSlope)
 			{
 				return true;
