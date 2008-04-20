@@ -13,6 +13,7 @@
 		E23020820DAEEC73005E0D0C /* clipTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207C0DAEEC73005E0D0C /* clipTest.cpp */; };
 		E23020830DAEEC73005E0D0C /* lineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E230207D0DAEEC73005E0D0C /* lineTest.cpp */; };
 		E23020D90DAEFD30005E0D0C /* paint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23020D80DAEFD30005E0D0C /* paint.cpp */; };
+		E28CF8200DBBF97600D61ACF /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E28CF81F0DBBF97600D61ACF /* readme.txt */; };
 		E2E7CEB10DAEDF8000672DF2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E7CEAF0DAEDF8000672DF2 /* GLUT.framework */; };
 		E2E7CEB20DAEDF8000672DF2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E7CEB00DAEDF8000672DF2 /* OpenGL.framework */; };
 		E2E7CEB80DAEDF9300672DF2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E7CEB70DAEDF9300672DF2 /* main.cpp */; };
@@ -31,6 +32,7 @@
 		E23021F30DAFB3EF005E0D0C /* ClipTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClipTest.h; sourceTree = "<group>"; };
 		E23022060DAFB4F3005E0D0C /* Paint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paint.h; sourceTree = "<group>"; };
 		E23022110DAFB602005E0D0C /* SetPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPixel.h; sourceTree = "<group>"; };
+		E28CF81F0DBBF97600D61ACF /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E2E7CEA80DAEDF1400672DF2 /* Assignment Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Two.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7CEAB0DAEDF1400672DF2 /* Assignment Two-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Assignment Two-Info.plist"; sourceTree = "<group>"; };
 		E2E7CEAF0DAEDF8000672DF2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
@@ -79,6 +81,7 @@
 				E2E7CEB00DAEDF8000672DF2 /* OpenGL.framework */,
 				E2E7CEA90DAEDF1400672DF2 /* Products */,
 				E2E7CEAB0DAEDF1400672DF2 /* Assignment Two-Info.plist */,
+				E28CF81F0DBBF97600D61ACF /* readme.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28CF8200DBBF97600D61ACF /* readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +163,10 @@
 		E2E7CE990DAEDEFA00672DF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Debug;
@@ -166,6 +174,10 @@
 		E2E7CE9A0DAEDEFA00672DF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = YES;
 			};
 			name = Release;
