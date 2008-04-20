@@ -18,9 +18,9 @@
 	};
 	E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {823, 9016}}";
-			sepNavSelRange = "{5182, 0}";
-			sepNavVisRange = "{5005, 933}";
+			sepNavIntBoundsRect = "{{0, 0}, {823, 8904}}";
+			sepNavSelRange = "{5430, 0}";
+			sepNavVisRange = "{5089, 895}";
 			sepNavWindowFrame = "{{398, 69}, {882, 809}}";
 		};
 	};
@@ -3825,6 +3825,26 @@
 		vrLen = 933;
 		vrLoc = 5005;
 	};
+	E28CF7760DBBEAEC00D61ACF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
+		name = "DrawStuff.cpp: 330";
+		rLen = 0;
+		rLoc = 5430;
+		rType = 0;
+		vrLen = 895;
+		vrLoc = 5089;
+	};
+	E28CF7790DBBEBC900D61ACF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */;
+		name = "DrawStuff.cpp: 330";
+		rLen = 0;
+		rLoc = 5430;
+		rType = 0;
+		vrLen = 895;
+		vrLoc = 5089;
+	};
 	E2E7CE980DAEDEFA00672DF2 /* Project object */ = {
 		activeArchitecture = i386;
 		activeBuildConfigurationName = Debug;
@@ -4282,6 +4302,8 @@
 			E28CF7690DBBE96500D61ACF /* PBXTextBookmark */ = E28CF7690DBBE96500D61ACF /* PBXTextBookmark */;
 			E28CF76E0DBBEA0600D61ACF /* PBXTextBookmark */ = E28CF76E0DBBEA0600D61ACF /* PBXTextBookmark */;
 			E28CF7710DBBEA3A00D61ACF /* PBXTextBookmark */ = E28CF7710DBBEA3A00D61ACF /* PBXTextBookmark */;
+			E28CF7760DBBEAEC00D61ACF /* PBXTextBookmark */ = E28CF7760DBBEAEC00D61ACF /* PBXTextBookmark */;
+			E28CF7790DBBEBC900D61ACF /* PBXTextBookmark */ = E28CF7790DBBEBC900D61ACF /* PBXTextBookmark */;
 		};
 		sourceControlManager = E2E7CE9C0DAEDEFA00672DF2 /* Source Control */;
 		userBuildSettings = {
