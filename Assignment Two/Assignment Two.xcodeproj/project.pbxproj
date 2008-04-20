@@ -51,22 +51,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E28CF7780DBBEB4E00D61ACF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E230207A0DAEEC73005E0D0C /* fillTest.cpp */,
+				E230207C0DAEEC73005E0D0C /* clipTest.cpp */,
+				E23021F30DAFB3EF005E0D0C /* ClipTest.h */,
+				E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */,
+				E23020DA0DAEFDE0005E0D0C /* DrawStuff.h */,
+				E23021900DAF0FB5005E0D0C /* FillTest.h */,
+				E2E7CEB70DAEDF9300672DF2 /* main.cpp */,
+				E230207D0DAEEC73005E0D0C /* lineTest.cpp */,
+				E23021C80DAFB239005E0D0C /* LineTest.h */,
+				E23020D80DAEFD30005E0D0C /* paint.cpp */,
+				E23022060DAFB4F3005E0D0C /* Paint.h */,
+				E23020780DAEEC73005E0D0C /* setPixel.cpp */,
+				E23022110DAFB602005E0D0C /* SetPixel.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		E2E7CE960DAEDEFA00672DF2 = {
 			isa = PBXGroup;
 			children = (
-				E23022060DAFB4F3005E0D0C /* Paint.h */,
-				E23020780DAEEC73005E0D0C /* setPixel.cpp */,
-				E230207A0DAEEC73005E0D0C /* fillTest.cpp */,
-				E230207B0DAEEC73005E0D0C /* DrawStuff.cpp */,
-				E23022110DAFB602005E0D0C /* SetPixel.h */,
-				E23020DA0DAEFDE0005E0D0C /* DrawStuff.h */,
-				E230207C0DAEEC73005E0D0C /* clipTest.cpp */,
-				E23021F30DAFB3EF005E0D0C /* ClipTest.h */,
-				E23021900DAF0FB5005E0D0C /* FillTest.h */,
-				E23020D80DAEFD30005E0D0C /* paint.cpp */,
-				E230207D0DAEEC73005E0D0C /* lineTest.cpp */,
-				E23021C80DAFB239005E0D0C /* LineTest.h */,
-				E2E7CEB70DAEDF9300672DF2 /* main.cpp */,
+				E28CF7780DBBEB4E00D61ACF /* Source */,
 				E2E7CEAF0DAEDF8000672DF2 /* GLUT.framework */,
 				E2E7CEB00DAEDF8000672DF2 /* OpenGL.framework */,
 				E2E7CEA90DAEDF1400672DF2 /* Products */,
