@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E222B8560E733E3600D47B0F /* Lambertian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E222B8550E733E3600D47B0F /* Lambertian.cpp */; };
+		E222B8640E733EC800D47B0F /* BRDF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E222B8620E733EC800D47B0F /* BRDF.cpp */; };
+		E2524EA10E70AC8300301597 /* BuildShadedObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EA00E70AC8300301597 /* BuildShadedObjects.cpp */; };
+		E2524EA90E70ACF200301597 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EA50E70ACF200301597 /* Camera.cpp */; };
+		E2524EAA0E70ACF200301597 /* Pinhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EA70E70ACF200301597 /* Pinhole.cpp */; };
+		E2524EB30E70AD2600301597 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EAD0E70AD2500301597 /* GeometricObject.cpp */; };
+		E2524EB40E70AD2600301597 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EAF0E70AD2500301597 /* Plane.cpp */; };
+		E2524EB50E70AD2600301597 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EB10E70AD2500301597 /* Sphere.cpp */; };
+		E2524EEC0E70AD3000301597 /* Ambient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EB70E70AD3000301597 /* Ambient.cpp */; };
+		E2524EED0E70AD3000301597 /* Directional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EB90E70AD3000301597 /* Directional.cpp */; };
+		E2524EEE0E70AD3000301597 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EBB0E70AD3000301597 /* Light.cpp */; };
+		E2524EEF0E70AD3000301597 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EBF0E70AD3000301597 /* Material.cpp */; };
+		E2524EF00E70AD3000301597 /* Matte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EC10E70AD3000301597 /* Matte.cpp */; };
+		E2524EF10E70AD3000301597 /* MultipleObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EC70E70AD3000301597 /* MultipleObjects.cpp */; };
+		E2524EF20E70AD3000301597 /* RayCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EC90E70AD3000301597 /* RayCast.cpp */; };
+		E2524EF30E70AD3000301597 /* SingleSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524ECB0E70AD3000301597 /* SingleSphere.cpp */; };
+		E2524EF40E70AD3000301597 /* Tracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524ECD0E70AD3000301597 /* Tracer.cpp */; };
+		E2524EF50E70AD3000301597 /* bg.xpm in Resources */ = {isa = PBXBuildFile; fileRef = E2524ED00E70AD3000301597 /* bg.xpm */; };
+		E2524EF60E70AD3000301597 /* main.xpm in Resources */ = {isa = PBXBuildFile; fileRef = E2524ED10E70AD3000301597 /* main.xpm */; };
+		E2524EF70E70AD3000301597 /* wxraytracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524ED20E70AD3000301597 /* wxraytracer.cpp */; };
+		E2524EF80E70AD3000301597 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524ED70E70AD3000301597 /* Matrix.cpp */; };
+		E2524EF90E70AD3000301597 /* Normal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524ED90E70AD3000301597 /* Normal.cpp */; };
+		E2524EFA0E70AD3000301597 /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EDB0E70AD3000301597 /* Point2D.cpp */; };
+		E2524EFB0E70AD3000301597 /* Point3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EDD0E70AD3000301597 /* Point3D.cpp */; };
+		E2524EFC0E70AD3000301597 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EDF0E70AD3000301597 /* Ray.cpp */; };
+		E2524EFD0E70AD3000301597 /* MyRGBColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EE10E70AD3000301597 /* MyRGBColor.cpp */; };
+		E2524EFE0E70AD3000301597 /* ShadeRec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EE30E70AD3000301597 /* ShadeRec.cpp */; };
+		E2524EFF0E70AD3000301597 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EE50E70AD3000301597 /* Vector3D.cpp */; };
+		E2524F000E70AD3000301597 /* ViewPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EE80E70AD3000301597 /* ViewPlane.cpp */; };
+		E2524F010E70AD3000301597 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2524EEA0E70AD3000301597 /* World.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E222B8550E733E3600D47B0F /* Lambertian.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Lambertian.cpp; sourceTree = "<group>"; };
+		E222B8620E733EC800D47B0F /* BRDF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BRDF.cpp; sourceTree = "<group>"; };
+		E222B8630E733EC800D47B0F /* BRDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDF.h; sourceTree = "<group>"; };
+		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
+		E2524E9C0E70AC2500301597 /* Lambertian.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = Lambertian.h; sourceTree = "<group>"; };
+		E2524EA00E70AC8300301597 /* BuildShadedObjects.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = BuildShadedObjects.cpp; path = ../BuildShadedObjects.cpp; sourceTree = "<group>"; };
+		E2524EA50E70ACF200301597 /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Camera.cpp; path = BTDFs/Cameras/Camera.cpp; sourceTree = "<group>"; };
+		E2524EA60E70ACF200301597 /* Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Camera.h; path = BTDFs/Cameras/Camera.h; sourceTree = "<group>"; };
+		E2524EA70E70ACF200301597 /* Pinhole.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Pinhole.cpp; path = BTDFs/Cameras/Pinhole.cpp; sourceTree = "<group>"; };
+		E2524EA80E70ACF200301597 /* Pinhole.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Pinhole.h; path = BTDFs/Cameras/Pinhole.h; sourceTree = "<group>"; };
+		E2524EAD0E70AD2500301597 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
+		E2524EAE0E70AD2500301597 /* GeometricObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = GeometricObject.h; sourceTree = "<group>"; };
+		E2524EAF0E70AD2500301597 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
+		E2524EB00E70AD2500301597 /* Plane.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Plane.h; sourceTree = "<group>"; };
+		E2524EB10E70AD2500301597 /* Sphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Sphere.cpp; sourceTree = "<group>"; };
+		E2524EB20E70AD2500301597 /* Sphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Sphere.h; sourceTree = "<group>"; };
+		E2524EB70E70AD3000301597 /* Ambient.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Ambient.cpp; sourceTree = "<group>"; };
+		E2524EB80E70AD3000301597 /* Ambient.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Ambient.h; sourceTree = "<group>"; };
+		E2524EB90E70AD3000301597 /* Directional.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Directional.cpp; sourceTree = "<group>"; };
+		E2524EBA0E70AD3000301597 /* Directional.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Directional.h; sourceTree = "<group>"; };
+		E2524EBB0E70AD3000301597 /* Light.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Light.cpp; sourceTree = "<group>"; };
+		E2524EBC0E70AD3000301597 /* Light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Light.h; sourceTree = "<group>"; };
+		E2524EBF0E70AD3000301597 /* Material.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Material.cpp; sourceTree = "<group>"; };
+		E2524EC00E70AD3000301597 /* Material.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Material.h; sourceTree = "<group>"; };
+		E2524EC10E70AD3000301597 /* Matte.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Matte.cpp; sourceTree = "<group>"; };
+		E2524EC20E70AD3000301597 /* Matte.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Matte.h; sourceTree = "<group>"; };
+		E2524EC70E70AD3000301597 /* MultipleObjects.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MultipleObjects.cpp; sourceTree = "<group>"; };
+		E2524EC80E70AD3000301597 /* MultipleObjects.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = MultipleObjects.h; sourceTree = "<group>"; };
+		E2524EC90E70AD3000301597 /* RayCast.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RayCast.cpp; sourceTree = "<group>"; };
+		E2524ECA0E70AD3000301597 /* RayCast.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = RayCast.h; sourceTree = "<group>"; };
+		E2524ECB0E70AD3000301597 /* SingleSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SingleSphere.cpp; sourceTree = "<group>"; };
+		E2524ECC0E70AD3000301597 /* SingleSphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = SingleSphere.h; sourceTree = "<group>"; };
+		E2524ECD0E70AD3000301597 /* Tracer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Tracer.cpp; sourceTree = "<group>"; };
+		E2524ECE0E70AD3000301597 /* Tracer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Tracer.h; sourceTree = "<group>"; };
+		E2524ED00E70AD3000301597 /* bg.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bg.xpm; sourceTree = "<group>"; };
+		E2524ED10E70AD3000301597 /* main.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.xpm; sourceTree = "<group>"; };
+		E2524ED20E70AD3000301597 /* wxraytracer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = wxraytracer.cpp; sourceTree = "<group>"; };
+		E2524ED30E70AD3000301597 /* wxraytracer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = wxraytracer.h; sourceTree = "<group>"; };
+		E2524ED50E70AD3000301597 /* Constants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Constants.h; sourceTree = "<group>"; };
+		E2524ED60E70AD3000301597 /* Maths.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Maths.h; sourceTree = "<group>"; };
+		E2524ED70E70AD3000301597 /* Matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Matrix.cpp; sourceTree = "<group>"; };
+		E2524ED80E70AD3000301597 /* Matrix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Matrix.h; sourceTree = "<group>"; };
+		E2524ED90E70AD3000301597 /* Normal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Normal.cpp; sourceTree = "<group>"; };
+		E2524EDA0E70AD3000301597 /* Normal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Normal.h; sourceTree = "<group>"; };
+		E2524EDB0E70AD3000301597 /* Point2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Point2D.cpp; sourceTree = "<group>"; };
+		E2524EDC0E70AD3000301597 /* Point2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Point2D.h; sourceTree = "<group>"; };
+		E2524EDD0E70AD3000301597 /* Point3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Point3D.cpp; sourceTree = "<group>"; };
+		E2524EDE0E70AD3000301597 /* Point3D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Point3D.h; sourceTree = "<group>"; };
+		E2524EDF0E70AD3000301597 /* Ray.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Ray.cpp; sourceTree = "<group>"; };
+		E2524EE00E70AD3000301597 /* Ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Ray.h; sourceTree = "<group>"; };
+		E2524EE10E70AD3000301597 /* MyRGBColor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MyRGBColor.cpp; sourceTree = "<group>"; };
+		E2524EE20E70AD3000301597 /* MyRGBColor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = MyRGBColor.h; sourceTree = "<group>"; };
+		E2524EE30E70AD3000301597 /* ShadeRec.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ShadeRec.cpp; sourceTree = "<group>"; };
+		E2524EE40E70AD3000301597 /* ShadeRec.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = ShadeRec.h; sourceTree = "<group>"; };
+		E2524EE50E70AD3000301597 /* Vector3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Vector3D.cpp; sourceTree = "<group>"; };
+		E2524EE60E70AD3000301597 /* Vector3D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Vector3D.h; sourceTree = "<group>"; };
+		E2524EE80E70AD3000301597 /* ViewPlane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ViewPlane.cpp; sourceTree = "<group>"; };
+		E2524EE90E70AD3000301597 /* ViewPlane.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = ViewPlane.h; sourceTree = "<group>"; };
+		E2524EEA0E70AD3000301597 /* World.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = World.cpp; sourceTree = "<group>"; };
+		E2524EEB0E70AD3000301597 /* World.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = World.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2524E8D0E70ABFC00301597 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2524E740E70AB9A00301597 = {
+			isa = PBXGroup;
+			children = (
+				E2524E980E70AC2500301597 /* BRDFs */,
+				E2524E9D0E70AC2500301597 /* BTDFs */,
+				E2524E900E70ABFC00301597 /* Products */,
+				E2524EA30E70AC8D00301597 /* build */,
+				E2524EAB0E70AD0200301597 /* Cameras */,
+				E2524EAC0E70AD2500301597 /* GeometricObjects */,
+				E2524EB60E70AD3000301597 /* Lights */,
+				E2524EBD0E70AD3000301597 /* Mappings */,
+				E2524EBE0E70AD3000301597 /* Materials */,
+				E2524EC30E70AD3000301597 /* Noises */,
+				E2524EC40E70AD3000301597 /* Samplers */,
+				E2524EC50E70AD3000301597 /* Textures */,
+				E2524EC60E70AD3000301597 /* Tracers */,
+				E2524ECF0E70AD3000301597 /* UserInterface */,
+				E2524ED40E70AD3000301597 /* Utilities */,
+				E2524EE70E70AD3000301597 /* World */,
+				E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		E2524E900E70ABFC00301597 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2524E8F0E70ABFC00301597 /* Ray Tracer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2524E980E70AC2500301597 /* BRDFs */ = {
+			isa = PBXGroup;
+			children = (
+				E222B8620E733EC800D47B0F /* BRDF.cpp */,
+				E222B8630E733EC800D47B0F /* BRDF.h */,
+				E222B8550E733E3600D47B0F /* Lambertian.cpp */,
+				E2524E9C0E70AC2500301597 /* Lambertian.h */,
+			);
+			path = BRDFs;
+			sourceTree = "<group>";
+		};
+		E2524E9D0E70AC2500301597 /* BTDFs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BTDFs;
+			sourceTree = "<group>";
+		};
+		E2524EA30E70AC8D00301597 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EA00E70AC8300301597 /* BuildShadedObjects.cpp */,
+			);
+			name = build;
+			path = BTDFs;
+			sourceTree = "<group>";
+		};
+		E2524EAB0E70AD0200301597 /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EA50E70ACF200301597 /* Camera.cpp */,
+				E2524EA60E70ACF200301597 /* Camera.h */,
+				E2524EA70E70ACF200301597 /* Pinhole.cpp */,
+				E2524EA80E70ACF200301597 /* Pinhole.h */,
+			);
+			name = Cameras;
+			sourceTree = "<group>";
+		};
+		E2524EAC0E70AD2500301597 /* GeometricObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EAD0E70AD2500301597 /* GeometricObject.cpp */,
+				E2524EAE0E70AD2500301597 /* GeometricObject.h */,
+				E2524EAF0E70AD2500301597 /* Plane.cpp */,
+				E2524EB00E70AD2500301597 /* Plane.h */,
+				E2524EB10E70AD2500301597 /* Sphere.cpp */,
+				E2524EB20E70AD2500301597 /* Sphere.h */,
+			);
+			path = GeometricObjects;
+			sourceTree = "<group>";
+		};
+		E2524EB60E70AD3000301597 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EB70E70AD3000301597 /* Ambient.cpp */,
+				E2524EB80E70AD3000301597 /* Ambient.h */,
+				E2524EB90E70AD3000301597 /* Directional.cpp */,
+				E2524EBA0E70AD3000301597 /* Directional.h */,
+				E2524EBB0E70AD3000301597 /* Light.cpp */,
+				E2524EBC0E70AD3000301597 /* Light.h */,
+			);
+			path = Lights;
+			sourceTree = "<group>";
+		};
+		E2524EBD0E70AD3000301597 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		E2524EBE0E70AD3000301597 /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EBF0E70AD3000301597 /* Material.cpp */,
+				E2524EC00E70AD3000301597 /* Material.h */,
+				E2524EC10E70AD3000301597 /* Matte.cpp */,
+				E2524EC20E70AD3000301597 /* Matte.h */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		E2524EC30E70AD3000301597 /* Noises */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Noises;
+			sourceTree = "<group>";
+		};
+		E2524EC40E70AD3000301597 /* Samplers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Samplers;
+			sourceTree = "<group>";
+		};
+		E2524EC50E70AD3000301597 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		E2524EC60E70AD3000301597 /* Tracers */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EC70E70AD3000301597 /* MultipleObjects.cpp */,
+				E2524EC80E70AD3000301597 /* MultipleObjects.h */,
+				E2524EC90E70AD3000301597 /* RayCast.cpp */,
+				E2524ECA0E70AD3000301597 /* RayCast.h */,
+				E2524ECB0E70AD3000301597 /* SingleSphere.cpp */,
+				E2524ECC0E70AD3000301597 /* SingleSphere.h */,
+				E2524ECD0E70AD3000301597 /* Tracer.cpp */,
+				E2524ECE0E70AD3000301597 /* Tracer.h */,
+			);
+			path = Tracers;
+			sourceTree = "<group>";
+		};
+		E2524ECF0E70AD3000301597 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				E2524ED00E70AD3000301597 /* bg.xpm */,
+				E2524ED10E70AD3000301597 /* main.xpm */,
+				E2524ED20E70AD3000301597 /* wxraytracer.cpp */,
+				E2524ED30E70AD3000301597 /* wxraytracer.h */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		E2524ED40E70AD3000301597 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E2524ED50E70AD3000301597 /* Constants.h */,
+				E2524ED60E70AD3000301597 /* Maths.h */,
+				E2524ED70E70AD3000301597 /* Matrix.cpp */,
+				E2524ED80E70AD3000301597 /* Matrix.h */,
+				E2524ED90E70AD3000301597 /* Normal.cpp */,
+				E2524EDA0E70AD3000301597 /* Normal.h */,
+				E2524EDB0E70AD3000301597 /* Point2D.cpp */,
+				E2524EDC0E70AD3000301597 /* Point2D.h */,
+				E2524EDD0E70AD3000301597 /* Point3D.cpp */,
+				E2524EDE0E70AD3000301597 /* Point3D.h */,
+				E2524EDF0E70AD3000301597 /* Ray.cpp */,
+				E2524EE00E70AD3000301597 /* Ray.h */,
+				E2524EE10E70AD3000301597 /* MyRGBColor.cpp */,
+				E2524EE20E70AD3000301597 /* MyRGBColor.h */,
+				E2524EE30E70AD3000301597 /* ShadeRec.cpp */,
+				E2524EE40E70AD3000301597 /* ShadeRec.h */,
+				E2524EE50E70AD3000301597 /* Vector3D.cpp */,
+				E2524EE60E70AD3000301597 /* Vector3D.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E2524EE70E70AD3000301597 /* World */ = {
+			isa = PBXGroup;
+			children = (
+				E2524EE80E70AD3000301597 /* ViewPlane.cpp */,
+				E2524EE90E70AD3000301597 /* ViewPlane.h */,
+				E2524EEA0E70AD3000301597 /* World.cpp */,
+				E2524EEB0E70AD3000301597 /* World.h */,
+			);
+			path = World;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2524E8E0E70ABFC00301597 /* Ray Tracer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2524E950E70ABFD00301597 /* Build configuration list for PBXNativeTarget "Ray Tracer" */;
+			buildPhases = (
+				E2524E8B0E70ABFC00301597 /* Resources */,
+				E2524E8C0E70ABFC00301597 /* Sources */,
+				E2524E8D0E70ABFC00301597 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ray Tracer";
+			productName = "Ray Tracer";
+			productReference = E2524E8F0E70ABFC00301597 /* Ray Tracer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2524E760E70AB9A00301597 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E2524E790E70AB9A00301597 /* Build configuration list for PBXProject "Ray Tracer" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = E2524E740E70AB9A00301597;
+			productRefGroup = E2524E900E70ABFC00301597 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2524E8E0E70ABFC00301597 /* Ray Tracer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2524E8B0E70ABFC00301597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2524EF50E70AD3000301597 /* bg.xpm in Resources */,
+				E2524EF60E70AD3000301597 /* main.xpm in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2524E8C0E70ABFC00301597 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2524EA10E70AC8300301597 /* BuildShadedObjects.cpp in Sources */,
+				E2524EA90E70ACF200301597 /* Camera.cpp in Sources */,
+				E2524EAA0E70ACF200301597 /* Pinhole.cpp in Sources */,
+				E2524EB30E70AD2600301597 /* GeometricObject.cpp in Sources */,
+				E2524EB40E70AD2600301597 /* Plane.cpp in Sources */,
+				E2524EB50E70AD2600301597 /* Sphere.cpp in Sources */,
+				E2524EEC0E70AD3000301597 /* Ambient.cpp in Sources */,
+				E2524EED0E70AD3000301597 /* Directional.cpp in Sources */,
+				E2524EEE0E70AD3000301597 /* Light.cpp in Sources */,
+				E2524EEF0E70AD3000301597 /* Material.cpp in Sources */,
+				E2524EF00E70AD3000301597 /* Matte.cpp in Sources */,
+				E2524EF10E70AD3000301597 /* MultipleObjects.cpp in Sources */,
+				E2524EF20E70AD3000301597 /* RayCast.cpp in Sources */,
+				E2524EF30E70AD3000301597 /* SingleSphere.cpp in Sources */,
+				E2524EF40E70AD3000301597 /* Tracer.cpp in Sources */,
+				E2524EF70E70AD3000301597 /* wxraytracer.cpp in Sources */,
+				E2524EF80E70AD3000301597 /* Matrix.cpp in Sources */,
+				E2524EF90E70AD3000301597 /* Normal.cpp in Sources */,
+				E2524EFA0E70AD3000301597 /* Point2D.cpp in Sources */,
+				E2524EFB0E70AD3000301597 /* Point3D.cpp in Sources */,
+				E2524EFC0E70AD3000301597 /* Ray.cpp in Sources */,
+				E2524EFD0E70AD3000301597 /* MyRGBColor.cpp in Sources */,
+				E2524EFE0E70AD3000301597 /* ShadeRec.cpp in Sources */,
+				E2524EFF0E70AD3000301597 /* Vector3D.cpp in Sources */,
+				E2524F000E70AD3000301597 /* ViewPlane.cpp in Sources */,
+				E2524F010E70AD3000301597 /* World.cpp in Sources */,
+				E222B8560E733E3600D47B0F /* Lambertian.cpp in Sources */,
+				E222B8640E733EC800D47B0F /* BRDF.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2524E770E70AB9A00301597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				OTHER_CFLAGS = (
+					"-I/usr/lib/wx/include/mac-unicode-debug-2.8",
+					"-I/usr/include/wx-2.8",
+					"-D_FILE_OFFSET_BITS=64",
+					"-D_LARGE_FILES",
+					"-D__WXDEBUG__",
+					"-D__WXMAC__",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					QuickTime,
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					System,
+					"-lwx_macud-2.8",
+				);
+			};
+			name = Debug;
+		};
+		E2524E780E70AB9A00301597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				OTHER_CFLAGS = (
+					"-I/usr/lib/wx/include/mac-unicode-debug-2.8",
+					"-I/usr/include/wx-2.8",
+					"-D_FILE_OFFSET_BITS=64",
+					"-D_LARGE_FILES",
+					"-D__WXDEBUG__",
+					"-D__WXMAC__",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					QuickTime,
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					System,
+					"-lwx_macud-2.8",
+				);
+			};
+			name = Release;
+		};
+		E2524E930E70ABFD00301597 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Ray Tracer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					System,
+					"-lwx_macud-2.8",
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuickTime,
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Ray Tracer";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E2524E940E70ABFD00301597 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Ray Tracer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					System,
+					"-lwx_macud-2.8",
+					"-framework",
+					IOKit,
+					"-framework",
+					Carbon,
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuickTime,
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Ray Tracer";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2524E790E70AB9A00301597 /* Build configuration list for PBXProject "Ray Tracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2524E770E70AB9A00301597 /* Debug */,
+				E2524E780E70AB9A00301597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2524E950E70ABFD00301597 /* Build configuration list for PBXNativeTarget "Ray Tracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2524E930E70ABFD00301597 /* Debug */,
+				E2524E940E70ABFD00301597 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2524E760E70AB9A00301597 /* Project object */;
+}
