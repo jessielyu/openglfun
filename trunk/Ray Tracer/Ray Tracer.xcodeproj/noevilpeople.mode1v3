@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BuildShadedObjects</string>
+								<string>BuildShadedObjects.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,21 +330,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BuildShadedObjects</string>
+										<string>BuildShadedObjects.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E29DA5930E7358D4007429C2</string>
+										<string>E29DA5A20E735984007429C2</string>
 										<key>history</key>
 										<array>
 											<string>E29DA58F0E7358D4007429C2</string>
-											<string>E29DA5900E7358D4007429C2</string>
+											<string>E29DA5A10E735984007429C2</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>E29DA5820E7358B7007429C2</string>
 											<string>E29DA5910E7358D4007429C2</string>
-											<string>E29DA5920E7358D4007429C2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -402,9 +401,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E29DA5840E7358B7007429C2</string>
+				<string>E29DA5A30E735984007429C2</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E29DA5850E7358B7007429C2</string>
+				<string>E29DA5A40E735984007429C2</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -540,10 +539,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/noevilpeople/Documents/RIT/Capstone/Ray Tracer/Ray Tracer.xcodeproj</string>
-		<string>E2524F080E70AE9900301597</string>
 	</array>
 	<key>WindowString</key>
 	<string>550 480 690 397 0 0 1440 878 </string>
