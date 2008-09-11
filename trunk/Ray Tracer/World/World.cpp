@@ -51,7 +51,7 @@
 World::World(void)
 	:  	background_color(black),
 		tracer_ptr(NULL),
-		ambient_ptr(new Ambient),
+		ambient_ptr(new Ambient),	// ***This is created and then reset to another pointer by wxtracer.cpp, probably leaking memory
 		camera_ptr(NULL)
 {}
 
