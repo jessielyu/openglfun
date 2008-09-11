@@ -389,7 +389,7 @@ void RenderCanvas::renderStart(void)
    wxBitmap bitmap(w->vp.hres, w->vp.vres, -1);
    wxMemoryDC dc;
    dc.SelectObject(bitmap);
-   dc.SetBackground(*wxGREY_BRUSH);
+	dc.SetBackground(*wxGREY_BRUSH);
    dc.Clear();
    
    wxBitmap tile(bg_xpm);
@@ -482,8 +482,8 @@ void *RenderThread::Entry()
    lastUpdateTime = 0;
    timer = new wxStopWatch();
    
-   //world->render_scene(); //for bare bones ray tracer only
-   world->camera_ptr->render_scene(*world);
+   world->render_scene(); //for bare bones ray tracer only
+   //world->camera_ptr->render_scene(*world);
 
    return NULL;
 }
