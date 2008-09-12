@@ -12,6 +12,7 @@ class ViewPlane {
 		float			gamma;						// gamma correction factor
 		float			inv_gamma;					// the inverse of the gamma correction factor
 		bool			show_out_of_gamut;			// display red if RGBColor out of gamut
+		int				num_samples;				// number of samples per pixel
 		
 									
 	
@@ -38,7 +39,10 @@ class ViewPlane {
 		set_gamma(const float g);
 		
 		void
-		set_gamut_display(const bool show);				
+		set_gamut_display(const bool show);			
+	
+		void
+		set_samples(const int n);
 };
 
 
@@ -82,6 +86,13 @@ ViewPlane::set_gamma(const float g) {
 inline void
 ViewPlane::set_gamut_display(const bool show) {
 	show_out_of_gamut = show;
+}
+
+// ------------------------------------------------------------------------------ set_samples
+
+inline void
+ViewPlane::set_samples(const int n) {
+	num_samples = n;
 }
 
 
