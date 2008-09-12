@@ -76,12 +76,12 @@ World::render_scene(void) const {
 		for (int c = 0; c <= hres; c++) {	// across 					
 			pixel_color = black;
 			
-			for(int p = 0; p < n; p++)
+			for(int p = 0; p < n; p++)			// going up the pixel
 			{
-				for (int q = 0; q < n; q++)
+				for (int q = 0; q < n; q++)		// going across the pixel
 				{
-					pp.x = vp.s * (c - 0.5 * vp.hres + (q + 0.5) / n);
-					pp.y = vp.s * (r - 0.5 * vp.vres + (p + 0.5) / n);
+					pp.x = vp.s * (c - 0.5 * vp.hres + (q + rand_float()) / n);
+					pp.y = vp.s * (r - 0.5 * vp.vres + (p + rand_float()) / n);
 					
 					ray.o = Point3D(pp.x, pp.y, zw);
 					pixel_color += tracer_ptr->trace_ray(ray);
