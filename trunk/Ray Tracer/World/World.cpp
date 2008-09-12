@@ -66,7 +66,7 @@ World::render_scene(void) const {
 	int 		vres 	= vp.vres;
 	float		s		= vp.s;
 	float		zw		= 100.0;			// hardwired in
-	int			n		= (int)sqrt((float)vp.num_samples);
+	int			n		= (int)sqrt((float)vp.num_samples);	// Samples
 	Point2D		pp;
 	
 
@@ -83,7 +83,7 @@ World::render_scene(void) const {
 					pp.x = vp.s * (c - 0.5 * vp.hres + (q + 0.5) / n);
 					pp.y = vp.s * (r - 0.5 * vp.vres + (p + 0.5) / n);
 					
-					ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
+					ray.o = Point3D(pp.x, pp.y, zw);
 					pixel_color += tracer_ptr->trace_ray(ray);
 				}
 			}
