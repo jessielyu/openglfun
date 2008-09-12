@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E2AA9A720E78A05900C6D560 /* BuildBBCoverPic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */; };
 		E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */; };
 		E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E21358320E7AE87E00943FEA /* Point2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Point2D.cpp; sourceTree = "<group>"; };
+		E21358330E7AE87E00943FEA /* Point2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point2D.h; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
 		E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildBBCoverPic.cpp; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 		E2D069110E789ADE00E34880 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E21358320E7AE87E00943FEA /* Point2D.cpp */,
+				E21358330E7AE87E00943FEA /* Point2D.h */,
 				E2D069120E789ADE00E34880 /* Constants.h */,
 				E2D069130E789ADE00E34880 /* Maths.h */,
 				E2D069140E789ADE00E34880 /* Matrix.cpp */,
@@ -334,6 +339,7 @@
 				E2AA9A720E78A05900C6D560 /* BuildBBCoverPic.cpp in Sources */,
 				E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */,
 				E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */,
+				E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

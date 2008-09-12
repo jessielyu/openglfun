@@ -18,6 +18,7 @@
 // utilities
 
 #include "Vector3D.h"
+#include "Point2D.h"
 #include "Point3D.h"
 #include "Normal.h"
 #include "ShadeRec.h"
@@ -65,13 +66,29 @@ World::render_scene(void) const {
 	int 		vres 	= vp.vres;
 	float		s		= vp.s;
 	float		zw		= 100.0;			// hardwired in
+	int			n		= (int)sqrt((float)vp.num_samples);
+	Point2D		pp;
+	
 
 	ray.d = Vector3D(0, 0, -1);
 	
 	for (int r = 0; r < vres; r++)			// up
 		for (int c = 0; c <= hres; c++) {	// across 					
-			ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
-			pixel_color = tracer_ptr->trace_ray(ray);
+			pixel_color = black;
+			
+			for(int p = 0; p < n; p++)
+			{
+				for (int q = 0; q < n; q++)
+				{
+					pp.x = vp.s * (c - 0.5 * vp.hres + (q + 0.5) / n);
+					pp.y = vp.s * (r - 0.5 * vp.vres + (p + 0.5) / n);
+					
+					ray.o = Point3D(s * (c - hres / 2.0 + 0.5), s * (r - vres / 2.0 + 0.5), zw);
+					pixel_color += tracer_ptr->trace_ray(ray);
+				}
+			}
+			
+			pixel_color /= vp.num_samples;	// Average colors
 			display_pixel(r, c, pixel_color);
 		}	
 }  
