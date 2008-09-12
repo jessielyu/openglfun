@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>E21358390E7AE89A00943FEA</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>BuildMultipleObjects.cpp</string>
+				<string>World.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,16 +212,16 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>E21358510E7AE9AA00943FEA</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>BuildMultipleObjects.cpp</string>
+						<string>World.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E213586F0E7AEA4000943FEA</string>
+						<string>E21358820E7B0AA800943FEA</string>
 						<key>history</key>
 						<array>
-							<string>E21358520E7AE9AA00943FEA</string>
+							<string>E213587A0E7B0A7E00943FEA</string>
+							<string>E213587B0E7B0A7E00943FEA</string>
 							<string>E21358620E7AE9FF00943FEA</string>
-							<string>E21358530E7AE9AA00943FEA</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -229,6 +229,8 @@
 							<string>E21358550E7AE9AA00943FEA</string>
 							<string>E21358560E7AE9AA00943FEA</string>
 							<string>E21358630E7AE9FF00943FEA</string>
+							<string>E213587C0E7B0A7E00943FEA</string>
+							<string>E213587D0E7B0A7E00943FEA</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -382,7 +384,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E213586E0E7AEA4000943FEA</string>
+										<string>E21358810E7B0AA800943FEA</string>
 										<key>history</key>
 										<array>
 											<string>E29DA58F0E7358D4007429C2</string>
