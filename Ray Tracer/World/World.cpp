@@ -24,6 +24,8 @@
 #include "ShadeRec.h"
 #include "Maths.h"
 
+
+
 // build functions
 
 //#include "BuildSingleSphere.cpp"
@@ -67,7 +69,8 @@ World::render_scene(void) const {
 	float		s		= vp.s;
 	float		zw		= 100.0;			// hardwired in
 	int			n		= (int)sqrt((float)vp.num_samples);	// Samples
-	Point2D		pp;
+	Point2D		sp;		// sample point in [0,1] x [0,1]
+	Point2D		pp;		// sample point on a pixel
 	
 
 	ray.d = Vector3D(0, 0, -1);
@@ -80,9 +83,9 @@ World::render_scene(void) const {
 			{
 				for (int q = 0; q < n; q++)		// going across the pixel
 				{
-					pp.x = vp.s * (c - 0.5 * vp.hres + (q + rand_float()) / n);
-					pp.y = vp.s * (r - 0.5 * vp.vres + (p + rand_float()) / n);
-					
+					sp = vp.sampler_ptr->sample_unit_square();
+					pp.x = vp.s * (c - 0.5 * vp.hres + sp.x);
+					pp.y = vp.s * (r - 0.5 * vp.vres + sp.y);
 					ray.o = Point3D(pp.x, pp.y, zw);
 					pixel_color += tracer_ptr->trace_ray(ray);
 				}

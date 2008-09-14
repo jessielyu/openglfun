@@ -11,6 +11,11 @@
 		E2AA9A720E78A05900C6D560 /* BuildBBCoverPic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */; };
 		E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */; };
 		E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */; };
+		E2B3B4160E7C623800406AA3 /* Sampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */; };
+		E2B3B45F0E7C6DEE00406AA3 /* Jittered.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B45E0E7C6DEE00406AA3 /* Jittered.cpp */; };
+		E2B3B53C0E7C946200406AA3 /* NRooks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B53B0E7C946200406AA3 /* NRooks.cpp */; };
+		E2B3B5AC0E7C9C7400406AA3 /* MultiJittered.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B5AA0E7C9C7400406AA3 /* MultiJittered.cpp */; };
+		E2B3B5B30E7CA13700406AA3 /* Regular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B5B10E7CA13700406AA3 /* Regular.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -39,6 +44,16 @@
 		E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildBBCoverPic.cpp; sourceTree = "<group>"; };
 		E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildMultipleObjects.cpp; sourceTree = "<group>"; };
 		E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildSingleSphere.cpp; sourceTree = "<group>"; };
+		E2B3B4140E7C623800406AA3 /* Sampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sampler.h; sourceTree = "<group>"; };
+		E2B3B4150E7C623800406AA3 /* Sampler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Sampler.cpp; sourceTree = "<group>"; };
+		E2B3B45D0E7C6DEE00406AA3 /* Jittered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jittered.h; sourceTree = "<group>"; };
+		E2B3B45E0E7C6DEE00406AA3 /* Jittered.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Jittered.cpp; sourceTree = "<group>"; };
+		E2B3B53A0E7C946200406AA3 /* NRooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRooks.h; sourceTree = "<group>"; };
+		E2B3B53B0E7C946200406AA3 /* NRooks.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = NRooks.cpp; sourceTree = "<group>"; };
+		E2B3B5AA0E7C9C7400406AA3 /* MultiJittered.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MultiJittered.cpp; sourceTree = "<group>"; };
+		E2B3B5AB0E7C9C7400406AA3 /* MultiJittered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiJittered.h; sourceTree = "<group>"; };
+		E2B3B5B10E7CA13700406AA3 /* Regular.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Regular.cpp; sourceTree = "<group>"; };
+		E2B3B5B20E7CA13700406AA3 /* Regular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regular.h; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -184,6 +199,16 @@
 		E2D068FF0E789ADE00E34880 /* Samplers */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3B5B10E7CA13700406AA3 /* Regular.cpp */,
+				E2B3B5B20E7CA13700406AA3 /* Regular.h */,
+				E2B3B5AA0E7C9C7400406AA3 /* MultiJittered.cpp */,
+				E2B3B5AB0E7C9C7400406AA3 /* MultiJittered.h */,
+				E2B3B4140E7C623800406AA3 /* Sampler.h */,
+				E2B3B4150E7C623800406AA3 /* Sampler.cpp */,
+				E2B3B45D0E7C6DEE00406AA3 /* Jittered.h */,
+				E2B3B45E0E7C6DEE00406AA3 /* Jittered.cpp */,
+				E2B3B53A0E7C946200406AA3 /* NRooks.h */,
+				E2B3B53B0E7C946200406AA3 /* NRooks.cpp */,
 			);
 			path = Samplers;
 			sourceTree = "<group>";
@@ -340,6 +365,11 @@
 				E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */,
 				E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */,
 				E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */,
+				E2B3B4160E7C623800406AA3 /* Sampler.cpp in Sources */,
+				E2B3B45F0E7C6DEE00406AA3 /* Jittered.cpp in Sources */,
+				E2B3B53C0E7C946200406AA3 /* NRooks.cpp in Sources */,
+				E2B3B5AC0E7C9C7400406AA3 /* MultiJittered.cpp in Sources */,
+				E2B3B5B30E7CA13700406AA3 /* Regular.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
