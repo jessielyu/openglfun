@@ -826,9 +826,9 @@
 	};
 	E2B3B4150E7C623800406AA3 /* Sampler.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {823, 1862}}";
-			sepNavSelRange = "{2642, 0}";
-			sepNavVisRange = "{1645, 1006}";
+			sepNavIntBoundsRect = "{{0, 0}, {823, 2044}}";
+			sepNavSelRange = "{2881, 0}";
+			sepNavVisRange = "{1882, 1000}";
 		};
 	};
 	E2B3B41D0E7C65E800406AA3 /* NSObjCRuntime.h */ = {
@@ -3735,7 +3735,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 95";
 		rLen = 0;
-		rLoc = 2884;
+		rLoc = 2886;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 763;
@@ -3775,7 +3775,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 93";
 		rLen = 0;
-		rLoc = 2884;
+		rLoc = 2886;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 741;
@@ -3795,7 +3795,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 95";
 		rLen = 0;
-		rLoc = 2884;
+		rLoc = 2886;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 763;
@@ -3835,7 +3835,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 130";
 		rLen = 0;
-		rLoc = 2879;
+		rLoc = 2881;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 1593;
@@ -3855,7 +3855,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 131";
 		rLen = 0;
-		rLoc = 2879;
+		rLoc = 2881;
 		rType = 0;
 		vrLen = 1058;
 		vrLoc = 1593;
