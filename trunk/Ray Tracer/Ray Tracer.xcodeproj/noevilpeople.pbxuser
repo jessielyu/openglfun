@@ -514,6 +514,35 @@
 			E2B3B5E20E7CBCAE00406AA3 /* PBXTextBookmark */ = E2B3B5E20E7CBCAE00406AA3 /* PBXTextBookmark */;
 			E2B3B5E40E7CBD8600406AA3 /* PBXTextBookmark */ = E2B3B5E40E7CBD8600406AA3 /* PBXTextBookmark */;
 			E2B3B5E50E7CBD8600406AA3 /* PBXTextBookmark */ = E2B3B5E50E7CBD8600406AA3 /* PBXTextBookmark */;
+			E2B3B6010E7CC33F00406AA3 /* PBXTextBookmark */ = E2B3B6010E7CC33F00406AA3 /* PBXTextBookmark */;
+			E2B3B6050E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6050E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6060E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6060E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6070E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6070E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6080E7CD7D000406AA3 /* PBXBookmark */ = E2B3B6080E7CD7D000406AA3 /* PBXBookmark */;
+			E2B3B6090E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6090E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60A0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60A0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60B0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60B0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60C0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60C0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60D0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60D0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60E0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60E0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B60F0E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B60F0E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6100E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6100E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6110E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6110E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6120E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6120E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6130E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6130E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6140E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6140E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6150E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6150E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6160E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6160E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6170E7CD7D000406AA3 /* PBXTextBookmark */ = E2B3B6170E7CD7D000406AA3 /* PBXTextBookmark */;
+			E2B3B6190E7CD7E100406AA3 /* PBXTextBookmark */ = E2B3B6190E7CD7E100406AA3 /* PBXTextBookmark */;
+			E2B3B61A0E7CD7E100406AA3 /* PBXTextBookmark */ = E2B3B61A0E7CD7E100406AA3 /* PBXTextBookmark */;
+			E2B3B61F0E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B61F0E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6200E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6200E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6210E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6210E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6220E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6220E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6230E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6230E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6240E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6240E7CD85400406AA3 /* PBXTextBookmark */;
+			E2B3B6250E7CD85400406AA3 /* PBXTextBookmark */ = E2B3B6250E7CD85400406AA3 /* PBXTextBookmark */;
 			E2C60C8A0E7B19FD007BC7BB = E2C60C8A0E7B19FD007BC7BB /* PBXTextBookmark */;
 			E2D069950E789D0F00E34880 = E2D069950E789D0F00E34880 /* PBXTextBookmark */;
 			E2D069980E789D0F00E34880 = E2D069980E789D0F00E34880 /* PBXTextBookmark */;
@@ -819,16 +848,16 @@
 	};
 	E2B3B4140E7C623800406AA3 /* Sampler.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {823, 1008}}";
-			sepNavSelRange = "{1284, 0}";
-			sepNavVisRange = "{307, 1213}";
+			sepNavIntBoundsRect = "{{0, 0}, {823, 1148}}";
+			sepNavSelRange = "{1070, 0}";
+			sepNavVisRange = "{469, 1320}";
 		};
 	};
 	E2B3B4150E7C623800406AA3 /* Sampler.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {823, 2044}}";
-			sepNavSelRange = "{2881, 0}";
-			sepNavVisRange = "{1882, 1000}";
+			sepNavIntBoundsRect = "{{0, 0}, {823, 2576}}";
+			sepNavSelRange = "{1750, 0}";
+			sepNavVisRange = "{1145, 1164}";
 		};
 	};
 	E2B3B41D0E7C65E800406AA3 /* NSObjCRuntime.h */ = {
@@ -946,7 +975,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 19";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 0;
@@ -976,7 +1005,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 19";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 0;
@@ -1008,7 +1037,7 @@
 		comments = "error: using-declaration for non-member at class scope";
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		rLen = 1;
-		rLoc = 59;
+		rLoc = 68;
 		rType = 1;
 	};
 	E2B3B4450E7C6C9400406AA3 /* PBXTextBookmark */ = {
@@ -1158,7 +1187,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 42";
 		rLen = 0;
-		rLoc = 1518;
+		rLoc = 1781;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -1188,7 +1217,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 28";
 		rLen = 0;
-		rLoc = 738;
+		rLoc = 849;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 0;
@@ -1222,7 +1251,7 @@
 		comments = "error: using-declaration for non-member at class scope";
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		rLen = 1;
-		rLoc = 59;
+		rLoc = 68;
 		rType = 1;
 	};
 	E2B3B4680E7C6EF600406AA3 /* PBXTextBookmark */ = {
@@ -1240,7 +1269,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 43";
 		rLen = 0;
-		rLoc = 1158;
+		rLoc = 1341;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 505;
@@ -1400,7 +1429,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 19";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 288;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 0;
@@ -1420,7 +1449,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 0;
@@ -1440,7 +1469,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 0;
@@ -1460,7 +1489,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 0;
@@ -1680,7 +1709,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 0;
@@ -1700,7 +1729,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 0;
@@ -1730,7 +1759,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -1750,7 +1779,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -1760,7 +1789,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 12";
 		rLen = 0;
-		rLoc = 1096;
+		rLoc = 1115;
 		rType = 0;
 		vrLen = 184;
 		vrLoc = 0;
@@ -1780,7 +1809,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -1790,7 +1819,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 14";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 0;
@@ -1800,7 +1829,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 14";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 0;
@@ -1810,7 +1839,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 0;
@@ -1820,7 +1849,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 24";
 		rLen = 0;
-		rLoc = 1093;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -1840,7 +1869,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 26";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 505;
 		vrLoc = 0;
@@ -1860,7 +1889,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 25";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 509;
 		vrLoc = 0;
@@ -1890,7 +1919,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 40;
@@ -1910,7 +1939,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 23";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 0;
@@ -1920,7 +1949,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 40;
@@ -1940,7 +1969,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 23";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 206;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 0;
@@ -1950,7 +1979,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 20;
@@ -1970,7 +1999,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 40;
@@ -2100,7 +2129,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 41;
@@ -2110,7 +2139,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 19";
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2170,7 +2199,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 25";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 370;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 41;
@@ -2180,7 +2209,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 19";
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2330,7 +2359,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 19";
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2370,7 +2399,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 19";
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2400,7 +2429,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 58";
 		rLen = 0;
-		rLoc = 1518;
+		rLoc = 1781;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 173;
@@ -2410,7 +2439,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 28";
 		rLen = 0;
-		rLoc = 464;
+		rLoc = 485;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2440,7 +2469,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 58";
 		rLen = 0;
-		rLoc = 1518;
+		rLoc = 1781;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 173;
@@ -2450,7 +2479,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 28";
 		rLen = 0;
-		rLoc = 464;
+		rLoc = 485;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -2646,9 +2675,9 @@
 		path = "/Users/noevilpeople/Documents/RIT/Capstone/Ray Tracer/TheBuild/BuildMultipleObjects.cpp";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {823, 681}}";
-			sepNavSelRange = "{444, 0}";
-			sepNavVisRange = "{0, 916}";
+			sepNavIntBoundsRect = "{{0, 0}, {384, 560}}";
+			sepNavSelRange = "{205, 46}";
+			sepNavVisRange = "{186, 164}";
 		};
 	};
 	E2B3B5260E7C840B00406AA3 /* PBXTextBookmark */ = {
@@ -2663,7 +2692,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 44";
 		rLen = 0;
-		rLoc = 1158;
+		rLoc = 1341;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 524;
@@ -2681,7 +2710,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 44";
 		rLen = 0;
-		rLoc = 1158;
+		rLoc = 1341;
 		rType = 0;
 		vrLen = 520;
 		vrLoc = 524;
@@ -2748,9 +2777,9 @@
 	};
 	E2B3B53A0E7C946200406AA3 /* NRooks.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {348, 462}}";
-			sepNavSelRange = "{342, 0}";
-			sepNavVisRange = "{258, 113}";
+			sepNavIntBoundsRect = "{{0, 0}, {419, 476}}";
+			sepNavSelRange = "{306, 0}";
+			sepNavVisRange = "{290, 20}";
 		};
 	};
 	E2B3B53B0E7C946200406AA3 /* NRooks.cpp */ = {
@@ -2873,7 +2902,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 21";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 364;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -3053,7 +3082,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 29";
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 486;
 		rType = 0;
 		vrLen = 628;
 		vrLoc = 0;
@@ -3083,7 +3112,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 21";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 364;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -3233,7 +3262,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 27";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 173;
@@ -3243,7 +3272,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 21";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 364;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -3263,7 +3292,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 21";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 364;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 0;
@@ -3273,7 +3302,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 27";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 173;
@@ -3283,7 +3312,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 37";
 		rLen = 0;
-		rLoc = 592;
+		rLoc = 613;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 77;
@@ -3303,7 +3332,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 30";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 199;
@@ -3313,7 +3342,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 58";
 		rLen = 0;
-		rLoc = 1093;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 415;
@@ -3323,7 +3352,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 58";
 		rLen = 0;
-		rLoc = 1093;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 415;
@@ -3333,7 +3362,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 30";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 199;
@@ -3343,7 +3372,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 71";
 		rLen = 0;
-		rLoc = 1587;
+		rLoc = 1846;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 415;
@@ -3363,7 +3392,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 30";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 0;
@@ -3373,7 +3402,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 73";
 		rLen = 0;
-		rLoc = 1593;
+		rLoc = 1852;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 0;
@@ -3383,7 +3412,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 73";
 		rLen = 0;
-		rLoc = 1593;
+		rLoc = 1852;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 0;
@@ -3393,7 +3422,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 30";
 		rLen = 0;
-		rLoc = 445;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 0;
@@ -3403,7 +3432,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 83";
 		rLen = 0;
-		rLoc = 1828;
+		rLoc = 2087;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 689;
@@ -3453,7 +3482,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 38";
 		rLen = 0;
-		rLoc = 632;
+		rLoc = 653;
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 137;
@@ -3615,7 +3644,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 55";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1066;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 664;
@@ -3645,7 +3674,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 35";
 		rLen = 0;
-		rLoc = 562;
+		rLoc = 583;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 137;
@@ -3665,7 +3694,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 55";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1066;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 664;
@@ -3725,7 +3754,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 61";
 		rLen = 0;
-		rLoc = 1284;
+		rLoc = 1547;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 307;
@@ -3735,7 +3764,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 95";
 		rLen = 0;
-		rLoc = 2886;
+		rLoc = 3754;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 763;
@@ -3755,7 +3784,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 55";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1066;
 		rType = 0;
 		vrLen = 1079;
 		vrLoc = 664;
@@ -3765,7 +3794,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 48";
 		rLen = 0;
-		rLoc = 949;
+		rLoc = 1132;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 176;
@@ -3775,7 +3804,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 93";
 		rLen = 0;
-		rLoc = 2886;
+		rLoc = 3754;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 741;
@@ -3785,7 +3814,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 50";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 1035;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 176;
@@ -3795,7 +3824,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 95";
 		rLen = 0;
-		rLoc = 2886;
+		rLoc = 3754;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 763;
@@ -3805,7 +3834,7 @@
 		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
 		name = "Sampler.h: 61";
 		rLen = 0;
-		rLoc = 1284;
+		rLoc = 1547;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 307;
@@ -3815,7 +3844,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 52";
 		rLen = 0;
-		rLoc = 898;
+		rLoc = 919;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 1094;
@@ -3835,7 +3864,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 130";
 		rLen = 0;
-		rLoc = 2881;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 1593;
@@ -3855,7 +3884,7 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 131";
 		rLen = 0;
-		rLoc = 2881;
+		rLoc = 3749;
 		rType = 0;
 		vrLen = 1058;
 		vrLoc = 1593;
@@ -3875,10 +3904,292 @@
 		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
 		name = "Sampler.cpp: 130";
 		rLen = 0;
-		rLoc = 2874;
+		rLoc = 3164;
 		rType = 0;
 		vrLen = 1006;
 		vrLoc = 1645;
+	};
+	E2B3B6010E7CC33F00406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'Point3D' was not declared in this scope";
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		rLen = 1;
+		rLoc = 70;
+		rType = 1;
+	};
+	E2B3B6050E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */;
+		name = "GeometricObject.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 128;
+		vrLoc = 0;
+	};
+	E2B3B6060E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B53A0E7C946200406AA3 /* NRooks.h */;
+		name = "NRooks.h: 24";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 113;
+		vrLoc = 258;
+	};
+	E2B3B6070E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B5250E7C840B00406AA3 /* BuildMultipleObjects.cpp */;
+		name = "BuildMultipleObjects.cpp: 14";
+		rLen = 46;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 164;
+		vrLoc = 186;
+	};
+	E2B3B6080E7CD7D000406AA3 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = E2D069200E789ADE00E34880 /* Vector3D.cpp */;
+	};
+	E2B3B6090E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */;
+		name = "GeometricObject.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 128;
+		vrLoc = 0;
+	};
+	E2B3B60A0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B53A0E7C946200406AA3 /* NRooks.h */;
+		name = "NRooks.h: 24";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 113;
+		vrLoc = 258;
+	};
+	E2B3B60B0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B5250E7C840B00406AA3 /* BuildMultipleObjects.cpp */;
+		name = "BuildMultipleObjects.cpp: 14";
+		rLen = 46;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 164;
+		vrLoc = 186;
+	};
+	E2B3B60C0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D069200E789ADE00E34880 /* Vector3D.cpp */;
+		name = "Vector3D.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 127;
+		vrLoc = 0;
+	};
+	E2B3B60D0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 161";
+		rLen = 0;
+		rLoc = 3727;
+		rType = 0;
+		vrLen = 1050;
+		vrLoc = 2562;
+	};
+	E2B3B60E0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 144";
+		rLen = 0;
+		rLoc = 3749;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 1882;
+	};
+	E2B3B60F0E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 41";
+		rLen = 463;
+		rLoc = 669;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 323;
+	};
+	E2B3B6100E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 146";
+		rLen = 0;
+		rLoc = 3749;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 2050;
+	};
+	E2B3B6110E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 68";
+		rLen = 0;
+		rLoc = 1542;
+		rType = 0;
+		vrLen = 1339;
+		vrLoc = 411;
+	};
+	E2B3B6120E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 147";
+		rLen = 13;
+		rLoc = 3248;
+		rType = 0;
+		vrLen = 965;
+		vrLoc = 2626;
+	};
+	E2B3B6130E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 56";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 1361;
+		vrLoc = 399;
+	};
+	E2B3B6140E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 155";
+		rLen = 0;
+		rLoc = 3572;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 0;
+	};
+	E2B3B6150E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 56";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 1008;
+		vrLoc = 76;
+	};
+	E2B3B6160E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 161";
+		rLen = 0;
+		rLoc = 3727;
+		rType = 0;
+		vrLen = 1050;
+		vrLoc = 2562;
+	};
+	E2B3B6170E7CD7D000406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 18";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 40;
+	};
+	E2B3B6190E7CD7E100406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D069200E789ADE00E34880 /* Vector3D.cpp */;
+		name = "Vector3D.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 127;
+		vrLoc = 0;
+	};
+	E2B3B61A0E7CD7E100406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 19";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 40;
+	};
+	E2B3B61F0E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2D069200E789ADE00E34880 /* Vector3D.cpp */;
+		name = "Vector3D.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 127;
+		vrLoc = 0;
+	};
+	E2B3B6200E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 59";
+		rLen = 0;
+		rLoc = 1070;
+		rType = 0;
+		vrLen = 1320;
+		vrLoc = 469;
+	};
+	E2B3B6210E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 93";
+		rLen = 0;
+		rLoc = 1780;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 1093;
+	};
+	E2B3B6220E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 19";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 40;
+	};
+	E2B3B6230E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 93";
+		rLen = 0;
+		rLoc = 1780;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 1093;
+	};
+	E2B3B6240E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4140E7C623800406AA3 /* Sampler.h */;
+		name = "Sampler.h: 59";
+		rLen = 0;
+		rLoc = 1070;
+		rType = 0;
+		vrLen = 1320;
+		vrLoc = 469;
+	};
+	E2B3B6250E7CD85400406AA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E2B3B4150E7C623800406AA3 /* Sampler.cpp */;
+		name = "Sampler.cpp: 90";
+		rLen = 0;
+		rLoc = 1750;
+		rType = 0;
+		vrLen = 1164;
+		vrLoc = 1145;
 	};
 	E2C60C8A0E7B19FD007BC7BB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -4007,6 +4318,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {588, 392}}";
 			sepNavSelRange = "{251, 25}";
 			sepNavVisRange = "{0, 309}";
+		};
+	};
+	E2D069200E789ADE00E34880 /* Vector3D.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {498, 1820}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 127}";
 		};
 	};
 	E2D069230E789ADE00E34880 /* ViewPlane.cpp */ = {
