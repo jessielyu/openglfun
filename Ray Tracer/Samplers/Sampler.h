@@ -12,7 +12,10 @@
 #include <vector>
 
 #include "Point2D.h"
+
 #include "Maths.h"
+
+#include "Point3D.h"
 
 class Sampler {
 
@@ -38,6 +41,9 @@ public:
 	void			// mapping samples to a disk/circle
 	map_samples_to_unit_disk(void);
 	
+	void			// mapping samples to a hemisphere
+	map_samples_to_hemisphere(const float e);
+	
 	void			// set up the randomly shuffled indices
 	setup_shuffled_indices(void);
 	
@@ -50,6 +56,9 @@ public:
 	Point2D			// get next sample on unit disk
 	sample_unit_disk(void);
 	
+	Point3D			// get next sample on hemisphere
+	sample_hemisphere(void);
+	
 	int				// get the number of samples
 	get_num_samples(void);
 	
@@ -59,6 +68,7 @@ protected:
 	int num_sets;	// the number of sample sets (patterns) stored
 	std::vector <Point2D> samples; //sample points on a unit square
 	std::vector <Point2D> disk_samples; //sample points on a unit disk
+	std::vector <Point3D> hemisphere_samples; //sample points on a hemisphere disk
 	std::vector <int> shuffled_indices;	// shuffled samples array indices
 	unsigned long count;	//current number of sample points used
 	int jump;	//random index jump
