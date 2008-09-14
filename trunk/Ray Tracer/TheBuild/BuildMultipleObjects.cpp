@@ -2,12 +2,16 @@
 #include "MultipleObjects.h"
 #include "Plane.h"
 
+// samplers
+#include "Jittered.h"
+
 void 												
 World::build(void) {
 	int num_samples = 25;
 	
 	vp.set_hres(400);
 	vp.set_vres(400);
+	//vp.set_sampler(new Jittered(num_samples));
 	vp.set_pixel_size(0.5);
 	vp.set_samples(num_samples);
 	

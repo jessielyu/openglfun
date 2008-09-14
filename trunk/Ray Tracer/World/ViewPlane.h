@@ -3,6 +3,8 @@
 
 //-------------------------------------------------------------------------------------- class ViewPlane
 
+#include "Sampler.h"
+
 class ViewPlane {
 	public:
 		int 			hres;   					// horizontal image resolution 
@@ -13,6 +15,7 @@ class ViewPlane {
 		float			inv_gamma;					// the inverse of the gamma correction factor
 		bool			show_out_of_gamut;			// display red if RGBColor out of gamut
 		int				num_samples;				// number of samples per pixel
+		Sampler*		sampler_ptr;				// pointer to the sampler we're using
 		
 									
 	
@@ -39,10 +42,13 @@ class ViewPlane {
 		set_gamma(const float g);
 		
 		void
-		set_gamut_display(const bool show);			
+		set_gamut_display(const bool show);		
 	
 		void
 		set_samples(const int n);
+	
+		void
+		set_sampler(Sampler* sp);
 };
 
 
@@ -89,11 +95,6 @@ ViewPlane::set_gamut_display(const bool show) {
 }
 
 // ------------------------------------------------------------------------------ set_samples
-
-inline void
-ViewPlane::set_samples(const int n) {
-	num_samples = n;
-}
 
 
 #endif
