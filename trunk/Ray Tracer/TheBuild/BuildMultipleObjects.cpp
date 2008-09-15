@@ -4,6 +4,7 @@
 
 // samplers
 #include "Jittered.h"
+#include "Pinhole.h"
 
 void 												
 World::build(void) {
@@ -14,6 +15,14 @@ World::build(void) {
 	//vp.set_sampler(new Jittered(num_samples));
 	vp.set_pixel_size(0.5);
 	vp.set_samples(num_samples);
+	
+	//Camera
+	//Pinhole* pinhole_ptr = new Pinhole(Point3D(300, 400, 500), Point3D(0, 0, -50), Vector3D(0, 1, 0), 400, 1.0);
+	//Pinhole* pinhole_ptr = new Pinhole(Point3D(-1000, 2000, -500), Point3D(0, -100, 0), Vector3D(0, 1, 0), 250, 1.0);
+	//Pinhole* pinhole_ptr = new Pinhole(Point3D(0, 0, 500), Point3D(0, 0, 0), Vector3D(0, 1, 0), 500, 1.0);
+	Pinhole* pinhole_ptr = new Pinhole(Point3D(0, 1000, 0), Point3D(0, 0, 0), Vector3D(0, 1, 0), 500, 1.0);
+	pinhole_ptr->compute_uvw();
+	set_camera(pinhole_ptr);
 	
 	tracer_ptr = new MultipleObjects(this); 
 	

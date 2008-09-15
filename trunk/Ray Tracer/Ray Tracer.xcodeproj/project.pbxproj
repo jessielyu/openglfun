@@ -16,6 +16,8 @@
 		E2B3B53C0E7C946200406AA3 /* NRooks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B53B0E7C946200406AA3 /* NRooks.cpp */; };
 		E2B3B5AC0E7C9C7400406AA3 /* MultiJittered.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B5AA0E7C9C7400406AA3 /* MultiJittered.cpp */; };
 		E2B3B5B30E7CA13700406AA3 /* Regular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B5B10E7CA13700406AA3 /* Regular.cpp */; };
+		E2B3B68C0E7DC02200406AA3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B68B0E7DC02200406AA3 /* Camera.cpp */; };
+		E2B3B6A00E7DC6FF00406AA3 /* Pinhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -54,6 +56,10 @@
 		E2B3B5AB0E7C9C7400406AA3 /* MultiJittered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiJittered.h; sourceTree = "<group>"; };
 		E2B3B5B10E7CA13700406AA3 /* Regular.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Regular.cpp; sourceTree = "<group>"; };
 		E2B3B5B20E7CA13700406AA3 /* Regular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regular.h; sourceTree = "<group>"; };
+		E2B3B68A0E7DC02200406AA3 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E2B3B68B0E7DC02200406AA3 /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Camera.cpp; sourceTree = "<group>"; };
+		E2B3B69E0E7DC6FF00406AA3 /* Pinhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pinhole.h; path = ../Pinhole.h; sourceTree = "<group>"; };
+		E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Pinhole.cpp; path = ../Pinhole.cpp; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -151,6 +157,10 @@
 		E2D068F30E789ADE00E34880 /* Cameras */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */,
+				E2B3B69E0E7DC6FF00406AA3 /* Pinhole.h */,
+				E2B3B68A0E7DC02200406AA3 /* Camera.h */,
+				E2B3B68B0E7DC02200406AA3 /* Camera.cpp */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -370,6 +380,8 @@
 				E2B3B53C0E7C946200406AA3 /* NRooks.cpp in Sources */,
 				E2B3B5AC0E7C9C7400406AA3 /* MultiJittered.cpp in Sources */,
 				E2B3B5B30E7CA13700406AA3 /* Regular.cpp in Sources */,
+				E2B3B68C0E7DC02200406AA3 /* Camera.cpp in Sources */,
+				E2B3B6A00E7DC6FF00406AA3 /* Pinhole.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,8 @@
 #include "Sphere.h"
 #include "Ray.h"
 
+#include "Camera.h"
+
 using namespace std;
 
 class RenderThread; 	//part of skeleton - wxRaytracer.h
@@ -34,8 +36,8 @@ class World {
 		Tracer*						tracer_ptr;
 		Sphere 						sphere;		// for Chapter 3 only
 		vector<GeometricObject*>	objects;		
-		
 		RenderThread* 				paintArea; 	//connection to skeleton - wxRaytracer.h
+		Camera*						camera_ptr;	// the camera to use
 			
 
 	public:
@@ -52,6 +54,9 @@ class World {
 
 		void 												
 		render_scene(void) const;
+	
+		void
+		set_camera(Camera* camera);
 						
 		MyRGBColor
 		max_to_one(const MyRGBColor& c) const;
@@ -78,6 +83,11 @@ class World {
 inline void 
 World::add_object(GeometricObject* object_ptr) {  
 	objects.push_back(object_ptr);	
+}
+
+inline void
+World::set_camera(Camera* camera) {
+	camera_ptr = camera;
 }
 
 #endif
