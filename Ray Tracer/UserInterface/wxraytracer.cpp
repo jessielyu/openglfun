@@ -482,7 +482,8 @@ void *RenderThread::Entry()
    lastUpdateTime = 0;
    timer = new wxStopWatch();
    
-   world->render_scene();
+	world->camera_ptr->render_scene(*world);
+   //world->render_scene();
 
    return NULL;
 }

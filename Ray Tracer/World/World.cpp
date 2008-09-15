@@ -26,6 +26,7 @@
 
 
 
+
 // build functions
 
 //#include "BuildSingleSphere.cpp"
@@ -37,7 +38,8 @@
 
 World::World(void)
 	:  	background_color(black),
-		tracer_ptr(NULL)
+		tracer_ptr(NULL),
+		camera_ptr(NULL)
 {}
 
 
@@ -50,6 +52,11 @@ World::~World(void) {
 		delete tracer_ptr;
 		tracer_ptr = NULL;
 	}	
+	
+	if (camera_ptr) {
+		delete camera_ptr;
+		camera_ptr = NULL;
+	}
 	
 	delete_objects();	
 }

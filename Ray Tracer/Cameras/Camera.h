@@ -1,0 +1,68 @@
+#ifndef __CAMERA__
+#define __CAMERA__
+
+/*
+ *  Camera.h
+ *  Ray Tracer
+ *
+ *  Created by NoEvilPeople on 9/14/08.
+ *  Copyright 2008 jmc2385@rit.edu. All rights reserved.
+ *
+ */
+
+#include "Point3D.h"
+#include "Vector3D.h"
+
+class World;
+
+class Camera {
+public:
+	
+	// constructors
+	Camera(void);
+	
+	Camera(const Point3D e, const Point3D l, const Vector3D u);
+	
+	~Camera(void);
+	
+	// access functions
+	void
+	set_eye(const Point3D e);
+	
+	void 
+	set_lookat(const Point3D l);
+	
+	void
+	set_up(const Vector3D u);
+	
+	void
+	compute_uvw(void);
+	
+	virtual void
+	render_scene(World& w) = 0;		// could we make this world reference const?
+	
+protected:
+	
+	Point3D eye;
+	Point3D lookat;
+	Vector3D up;
+	Vector3D u, v, w;
+	float exposure_time;
+};
+
+inline void
+Camera::set_eye(const Point3D e) {
+	eye = e;
+}
+
+inline void 
+Camera::set_lookat(const Point3D l) {
+	lookat = l;
+}
+
+inline void
+Camera::set_up(const Vector3D u) {
+	up = u;
+}
+
+#endif
