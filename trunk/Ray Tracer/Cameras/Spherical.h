@@ -35,6 +35,9 @@ public:
 	void
 	render_scene(World& wr);
 	
+	virtual void
+	render_stereo(World& w, float x, int offset);
+	
 private:
 	
 	float lambda_max;		// Max angle on the u, w plane measured counterclockwise from the view direction

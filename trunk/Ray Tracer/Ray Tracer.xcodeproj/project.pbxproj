@@ -10,6 +10,7 @@
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */; };
 		E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC260E814FA200F18A54 /* Spherical.cpp */; };
+		E2A7CC8A0E815B4000F18A54 /* StereoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */; };
 		E2AA9A720E78A05900C6D560 /* BuildBBCoverPic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */; };
 		E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */; };
 		E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */; };
@@ -50,6 +51,8 @@
 		E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FishEye.cpp; sourceTree = "<group>"; };
 		E2A7CC250E814FA200F18A54 /* Spherical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spherical.h; sourceTree = "<group>"; };
 		E2A7CC260E814FA200F18A54 /* Spherical.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Spherical.cpp; sourceTree = "<group>"; };
+		E2A7CC880E815B4000F18A54 /* StereoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereoCamera.h; sourceTree = "<group>"; };
+		E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = StereoCamera.cpp; sourceTree = "<group>"; };
 		E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildBBCoverPic.cpp; sourceTree = "<group>"; };
 		E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildMultipleObjects.cpp; sourceTree = "<group>"; };
 		E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildSingleSphere.cpp; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */,
 				E2A7CC250E814FA200F18A54 /* Spherical.h */,
 				E2A7CC260E814FA200F18A54 /* Spherical.cpp */,
+				E2A7CC880E815B4000F18A54 /* StereoCamera.h */,
+				E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				E2B3B8D60E7EC58C00406AA3 /* ThinLens.cpp in Sources */,
 				E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */,
 				E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */,
+				E2A7CC8A0E815B4000F18A54 /* StereoCamera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

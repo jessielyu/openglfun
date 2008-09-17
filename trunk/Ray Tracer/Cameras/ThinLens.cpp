@@ -99,3 +99,6 @@ ThinLens::render_scene(World& w) {
 	
 			
 }
+
+void
+ThinLens::render_stereo(World& w, float x, int offset) {}

@@ -8,6 +8,7 @@
 #include "ThinLens.h"
 #include "FishEye.h"
 #include "Spherical.h"
+#include "StereoCamera.h"
 
 void 												
 World::build(void) {
@@ -33,9 +34,39 @@ World::build(void) {
 	
 	// FishEye camera
 	//FishEye* camera_ptr = new FishEye(Point3D(0, 6, -150), Point3D(0, 0, -50), Vector3D(0, 1, 0), 120.0);
+	//FishEye* camera_ptr = new FishEye(Point3D(0, 1000, 0), Point3D(0, 0, 0), Vector3D(0, 1, 0), 120.0);
 	
 	// Spherical camera
-	Spherical* camera_ptr = new Spherical(Point3D(0, 6, 150), Point3D(0, 0, -50), Vector3D(0, 1, 0), 120.0, 160.0);
+	//Spherical* camera_ptr = new Spherical(Point3D(0, 6, 150), Point3D(0, 0, -50), Vector3D(0, 1, 0), 120.0, 160.0);
+	
+	// Stereo 
+	float vpd = 50;
+	
+	int pixel_gap = 5;
+	vp.set_image_hres((vp.hres * 2) + pixel_gap);
+	vp.set_image_vres(vp.vres);
+	
+	int x = vp.hres;
+	int y = vp.vres;
+	
+	int z = vp.image_hres;
+	int w = vp.image_vres; 
+	
+	Pinhole* left_camera_ptr = new Pinhole;
+	left_camera_ptr->set_d(vpd);
+	
+	Pinhole* right_camera_ptr = new Pinhole;
+	right_camera_ptr->set_d(vpd);
+	
+
+	
+
+	
+	//	StereoCamera(const Point3D e, const Point3D l, const Vector3D u, ViewingType view, const int gap, const float beta,
+	//Camera* left, Camera* right);
+		StereoCamera* camera_ptr = new StereoCamera(Point3D(5,0,-100), Point3D(0), Vector3D(0,1,0), pixel_gap, 
+												0.75f, left_camera_ptr, right_camera_ptr);
+	camera_ptr->setup_cameras();
 	
 	camera_ptr->compute_uvw();
 	set_camera(camera_ptr);
@@ -61,6 +92,12 @@ World::build(void) {
 	Plane* plane_ptr = new Plane(Point3D(0), Normal(0, 1, 1));
 	plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
 	add_object(plane_ptr);
+	
+
+	
+	Plane* plane_ptr2 = new Plane(Point3D(0), Normal(0, 1, 0));
+	plane_ptr2->set_color(0.0, 0.3, 0.0);	// dark green
+	add_object(plane_ptr2);
 	
 	MyRGBColor yellow(1, 1, 0);										// yellow
 	MyRGBColor brown(0.71, 0.40, 0.16);								// brown
