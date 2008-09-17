@@ -305,8 +305,13 @@ void RenderCanvas::OnNewPixel( wxCommandEvent& event )
       RenderPixel* pixel = *itr;
       
       wxPen pen(wxColour(pixel->red, pixel->green, pixel->blue));
+	   pen.SetStyle(wxSOLID);
       bufferedDC.SetPen(pen);
       bufferedDC.DrawPoint(pixel->x, pixel->y);
+	
+	// Hack related to bleeding through of background image / bitmap not instantiated correctly
+	bufferedDC.DrawPoint(pixel->x, pixel->y);
+	bufferedDC.DrawPoint(pixel->x, pixel->y);
      
       pixelsRendered++;
       delete pixel;
@@ -384,20 +389,27 @@ void RenderCanvas::renderStart(void)
    
    pixelsRendered = 0;
    pixelsToRender = w->vp.hres * w->vp.vres;
+
    
    //set the background
    wxBitmap bitmap(w->vp.hres, w->vp.vres, -1);
    wxMemoryDC dc;
    dc.SelectObject(bitmap);
+	
+//	dc.SetBackground(*wxWHITE_BRUSH);
+//	dc.Clear();
+	
    dc.SetBackground(*wxGREY_BRUSH);
    dc.Clear();
+	
+//	dc.SetBackgroundMode(wxTRANSPARENT);
    
-//   wxBitmap tile(bg_xpm);
+//   wxBitmap tile(bg_xpm); 	
 //   
 //   for(int x = 0; x < w->vp.hres; x += 16)
 //   {
 //      for(int y = 0; y < w->vp.vres; y += 16)
-//         dc.DrawBitmap(tile, x, y, FALSE);
+//         dc.DrawBitmap(tile, x, y, TRUE);
 //   }
    
    dc.SelectObject(wxNullBitmap);
