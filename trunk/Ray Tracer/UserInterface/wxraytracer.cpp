@@ -102,13 +102,13 @@ void wxraytracerFrame::OnSaveFile( wxCommandEvent& WXUNUSED( event ) )
 {
    wxString caption = wxT("Save File");
    
-   wxString wildcard = wxT("BMP files (*.bmp)|*.bmp|"
-                           "PNG files (*.png)|*.png|"
+   wxString wildcard = wxT("PNG files (*.png)|*.png|"
+						   "BMP files (*.bmp)|*.bmp|"
                            "JPEG files (*.jpg)|*.jpg|"
                            "TIFF files (*.tif)|*.tif");
    
    wxString defaultDir = wxEmptyString;
-   wxString defaultFilename = wxT("render.bmp");
+   wxString defaultFilename = wxT("render.png");
    
    wxFileDialog dialog(this, caption, defaultDir, defaultFilename, wildcard,
                         wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
@@ -127,8 +127,8 @@ void wxraytracerFrame::OnOpenFile( wxCommandEvent& WXUNUSED( event ) )
 {
    wxString caption = wxT("Choose a file");
    
-   wxString wildcard = wxT("BMP files (*.bmp)|*.bmp|"
-                           "PNG files (*.png)|*.png|"
+   wxString wildcard = wxT("PNG files (*.png)|*.png|"
+						   "BMP files (*.bmp)|*.bmp|"
                            "JPEG files (*.jpg)|*.jpg|"
                            "TIFF files (*.tif)|*.tif");
    
