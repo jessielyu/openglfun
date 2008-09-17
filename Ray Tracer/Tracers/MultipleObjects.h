@@ -15,6 +15,9 @@ class MultipleObjects: public Tracer {
 						
 		virtual MyRGBColor	
 		trace_ray(const Ray& ray) const;
+	
+		virtual MyRGBColor	
+		trace_ray(const Ray ray, const int depth) const;
 };
 
 #endif

@@ -45,7 +45,7 @@ Pinhole::render_scene(World& w) {
 				ray.d = ray_direction(pp);
 				
 				// Should be trace_ray(ray, depth), but that function is not there yet
-				L += w.tracer_ptr->trace_ray(ray);
+				L += w.tracer_ptr->trace_ray(ray, depth);
 				
 			}
 			
