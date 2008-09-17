@@ -9,6 +9,8 @@
 ViewPlane::ViewPlane(void)							
 	: 	hres(400), 
 		vres(400),
+		image_hres(400),
+		image_vres(400),
 		s(1.0),
 		gamma(1.0),
 		inv_gamma(1.0),
@@ -22,6 +24,8 @@ ViewPlane::ViewPlane(void)
 ViewPlane::ViewPlane(const ViewPlane& vp)   
 	:  	hres(vp.hres),  
 		vres(vp.vres), 
+		image_hres(vp.hres),  
+		image_vres(vp.vres), 
 		s(vp.s),
 		gamma(vp.gamma),
 		inv_gamma(vp.inv_gamma),
@@ -40,6 +44,8 @@ ViewPlane::operator= (const ViewPlane& rhs) {
 		
 	hres 				= rhs.hres;
 	vres 				= rhs.vres;
+	image_hres			= rhs.hres;
+	image_vres			= rhs.vres;
 	s					= rhs.s;
 	gamma				= rhs.gamma;
 	inv_gamma			= rhs.inv_gamma;

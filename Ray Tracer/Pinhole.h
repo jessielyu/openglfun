@@ -37,6 +37,9 @@ public:
 	virtual void
 	render_scene(World& w);
 	
+	virtual void
+	render_stereo(World& w, float x, int offset);
+	
 private:
 	
 	float d;		// View plane distance

@@ -388,11 +388,13 @@ void RenderCanvas::renderStart(void)
    wxGetApp().SetStatusText( wxT( "Rendering..." ) );
    
    pixelsRendered = 0;
-   pixelsToRender = w->vp.hres * w->vp.vres;
+   pixelsToRender = w->vp.image_hres * w->vp.image_vres;
 
    
    //set the background
-   wxBitmap bitmap(w->vp.hres, w->vp.vres, -1);
+	int x = w->vp.image_hres;
+	int y = w->vp.image_vres;
+   wxBitmap bitmap(w->vp.image_hres, w->vp.image_vres, -1);
    wxMemoryDC dc;
    dc.SelectObject(bitmap);
 	

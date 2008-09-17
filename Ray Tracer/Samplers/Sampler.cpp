@@ -26,7 +26,7 @@ Sampler::Sampler(const int num)
 	num_sets(83),
 	count(0),
 	jump(0)	{
-	
+	samples.reserve(num_samples * num_sets);
 	setup_shuffled_indices();		
 
 }

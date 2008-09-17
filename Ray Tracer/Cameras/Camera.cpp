@@ -33,16 +33,19 @@ Camera::~Camera(void) {}
 void
 Camera::compute_uvw(void) {
 	// avoid parallel up and look vectors (not working
-//	if (eye.x = lookat.x && eye.z == lookat.z) {
-//		u = Vector3D(0,0,1);
-//		v = Vector3D(1,0,0);
-//		w = Vector3D(0,1,0);
-//	}
-//	else {
+	if (eye.x == lookat.x && eye.z == lookat.z) {
+		u = Vector3D(0,0,1);
+		v = Vector3D(1,0,0);
+		w = Vector3D(0,1,0);
+	}
+	else {
 		w = eye - lookat;
 		w.normalize();
 		u = up ^ w;
 		u.normalize();
 		v = w ^ u;
-//	}
+	}
 }
+
+//void
+//Camera::render_stereo(World& wr, float x, int offset) {}

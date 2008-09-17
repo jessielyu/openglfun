@@ -82,4 +82,7 @@ FishEye::render_scene(World& wr) {
 			wr.display_pixel(r, c, L);
 		}
 }
+
+void
+FishEye::render_stereo(World& w, float x, int offset) {}
 	

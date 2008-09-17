@@ -10,6 +10,9 @@ class ViewPlane {
 		int 			hres;   					// horizontal image resolution 
 		int 			vres;   					// vertical image resolution
 		float			s;							// pixel size
+	
+		int				image_hres;					// how big actual image should be
+		int				image_vres;					// how big actual image should be
 		
 		float			gamma;						// gamma correction factor
 		float			inv_gamma;					// the inverse of the gamma correction factor
@@ -34,6 +37,12 @@ class ViewPlane {
 		
 		void 													
 		set_vres(const int v_res);
+	
+		void 													
+		set_image_hres(const int h_res);
+		
+		void 													
+		set_image_vres(const int v_res);
 				
 		void
 		set_pixel_size(const float size);
@@ -59,6 +68,8 @@ class ViewPlane {
 inline void 													
 ViewPlane::set_hres(const int h_res) {
 	hres = h_res;
+	// kind of a hack for stereoscopy, don't want to break anything else though
+	image_hres = h_res;
 }
 
 
@@ -67,6 +78,22 @@ ViewPlane::set_hres(const int h_res) {
 inline void 													
 ViewPlane::set_vres(const int v_res) {
 	vres = v_res;
+	image_vres = v_res;
+}
+
+// ---
+
+inline void 													
+ViewPlane::set_image_hres(const int h_res) {
+	image_hres = h_res;
+}
+
+
+// ------------------------------------------------------------------------------ set_vres
+
+inline void 													
+ViewPlane::set_image_vres(const int v_res) {
+	image_vres = v_res;
 }
 
 

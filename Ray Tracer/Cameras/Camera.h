@@ -35,11 +35,23 @@ public:
 	void
 	set_up(const Vector3D u);
 	
+	Point3D
+	get_eye(void);
+	
+	Point3D
+	get_lookat(void);
+	
+	Vector3D
+	get_up(void);
+	
 	void
 	compute_uvw(void);
 	
 	virtual void
 	render_scene(World& w) = 0;		// could we make this world reference const?
+	
+	virtual void
+	render_stereo(World& w, float x, int offset) = 0;
 	
 protected:
 	
@@ -63,6 +75,21 @@ Camera::set_lookat(const Point3D l) {
 inline void
 Camera::set_up(const Vector3D u) {
 	up = u;
+}
+
+inline Point3D
+Camera::get_eye(void) {
+	return eye;
+}
+
+inline Point3D
+Camera::get_lookat(void) {
+	return lookat;
+}
+
+inline Vector3D
+Camera::get_up(void) {
+	return up;
 }
 
 #endif
