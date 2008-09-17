@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
+		E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */; };
+		E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC260E814FA200F18A54 /* Spherical.cpp */; };
 		E2AA9A720E78A05900C6D560 /* BuildBBCoverPic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */; };
 		E2AA9A730E78A05900C6D560 /* BuildMultipleObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */; };
 		E2AA9A740E78A05900C6D560 /* BuildSingleSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */; };
@@ -44,6 +46,10 @@
 		E21358330E7AE87E00943FEA /* Point2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point2D.h; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
+		E2A7CAEA0E80A0E100F18A54 /* FishEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEye.h; sourceTree = "<group>"; };
+		E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FishEye.cpp; sourceTree = "<group>"; };
+		E2A7CC250E814FA200F18A54 /* Spherical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spherical.h; sourceTree = "<group>"; };
+		E2A7CC260E814FA200F18A54 /* Spherical.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Spherical.cpp; sourceTree = "<group>"; };
 		E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildBBCoverPic.cpp; sourceTree = "<group>"; };
 		E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildMultipleObjects.cpp; sourceTree = "<group>"; };
 		E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildSingleSphere.cpp; sourceTree = "<group>"; };
@@ -166,6 +172,10 @@
 				E2B3B68B0E7DC02200406AA3 /* Camera.cpp */,
 				E2B3B8D40E7EC58C00406AA3 /* ThinLens.h */,
 				E2B3B8D50E7EC58C00406AA3 /* ThinLens.cpp */,
+				E2A7CAEA0E80A0E100F18A54 /* FishEye.h */,
+				E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */,
+				E2A7CC250E814FA200F18A54 /* Spherical.h */,
+				E2A7CC260E814FA200F18A54 /* Spherical.cpp */,
 			);
 			path = Cameras;
 			sourceTree = "<group>";
@@ -388,6 +398,8 @@
 				E2B3B68C0E7DC02200406AA3 /* Camera.cpp in Sources */,
 				E2B3B6A00E7DC6FF00406AA3 /* Pinhole.cpp in Sources */,
 				E2B3B8D60E7EC58C00406AA3 /* ThinLens.cpp in Sources */,
+				E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */,
+				E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

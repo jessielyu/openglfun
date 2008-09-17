@@ -9,6 +9,7 @@
 
 #include "Camera.h"
 
+
 Camera::Camera(void) 
 	:	eye(Point3D(0,0,0)),
 		lookat(Point3D(0,10,10)),
