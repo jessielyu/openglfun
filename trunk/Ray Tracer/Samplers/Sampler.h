@@ -35,6 +35,9 @@ public:
 	virtual
 	~Sampler(void);
 	
+	virtual Sampler*
+	clone(void) const = 0;
+	
 	virtual void	// generate sample patterns in a unit square
 	generate_samples(void) = 0;
 	
