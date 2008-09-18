@@ -17,7 +17,18 @@ class Jittered: public Sampler {
 public:
 	
 	Jittered(void);
+	
 	Jittered(const int num_samples);
+	
+	Jittered(const Jittered& js);
+	
+	Jittered&
+	operator= (const Jittered& rhs);
+	
+	Jittered*
+	clone(void) const;
+	
+	~Jittered(void);
 	
 private:
 	

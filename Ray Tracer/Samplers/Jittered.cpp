@@ -18,6 +18,36 @@ Jittered::Jittered(const int num_samples)
 	generate_samples();
 }
 
+// ---------------------------------------------------------------- copy constructor
+
+Jittered::Jittered(const Jittered& js)			
+: Sampler(js) {
+	generate_samples();
+}
+
+// ---------------------------------------------------------------- assignment operator
+
+Jittered& 
+Jittered::operator= (const Jittered& rhs) {
+	if (this == &rhs)
+		return (*this);
+	
+	Sampler::operator= (rhs);
+	
+	return (*this);
+}
+
+// ---------------------------------------------------------------- clone
+
+Jittered*										
+Jittered::clone(void) const {
+	return (new Jittered(*this));
+}
+
+// ---------------------------------------------------------------- destructor			
+
+Jittered::~Jittered(void) {}
+
 void Jittered::generate_samples(void) {
 	int n = (int) sqrt(num_samples);
 	

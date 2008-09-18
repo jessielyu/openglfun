@@ -18,9 +18,35 @@ NRooks::NRooks(const int num_samples)
 	generate_samples();
 }
 
-NRooks::~NRooks()
-{
+// ---------------------------------------------------------------- copy constructor
+
+NRooks::NRooks(const NRooks& nr)			
+: Sampler(nr) {
+	generate_samples();
 }
+
+// ---------------------------------------------------------------- assignment operator
+
+NRooks& 
+NRooks::operator= (const NRooks& rhs) {
+	if (this == &rhs)
+		return (*this);
+	
+	Sampler::operator=(rhs);
+	
+	return (*this);
+}
+
+// ---------------------------------------------------------------- clone
+
+NRooks*										
+NRooks::clone(void) const {
+	return (new NRooks(*this));
+}
+
+// ---------------------------------------------------------------- destructor			
+
+NRooks::~NRooks(void) {}
 
 void
 NRooks::generate_samples(void) {

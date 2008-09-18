@@ -21,6 +21,14 @@ public:
 	
 	~NRooks(void);
 	
+	NRooks(const NRooks& nr);					
+	
+	NRooks& 
+	operator= (const NRooks& rhs);				
+	
+	virtual NRooks*								
+	clone(void) const;	
+	
 	virtual void		// Gen the samples
 	generate_samples(void);
 	
