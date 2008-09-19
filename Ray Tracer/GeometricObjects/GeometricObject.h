@@ -10,6 +10,7 @@
 #include "ShadeRec.h"
 
 #include "Constants.h"
+#include "Material.h"
 					
 
 class GeometricObject {	
@@ -40,6 +41,12 @@ class GeometricObject {
 		
 		MyRGBColor
 		get_color(void);
+	
+		void
+		set_material(Material* material);
+	
+		Material*
+		get_material(void);
 
 	
 	protected:
@@ -48,6 +55,8 @@ class GeometricObject {
 	
 		GeometricObject&						// assignment operator
 		operator= (const GeometricObject& rhs);
+	
+		Material* material_ptr;
 };
 
 
@@ -72,6 +81,16 @@ GeometricObject::set_color(const float r, const float g, const float b) {
 inline MyRGBColor 
 GeometricObject::get_color(void) {
 	return (color);
+}
+
+inline void
+GeometricObject::set_material(Material* material) {
+	material_ptr = material;
+}
+
+inline Material*
+GeometricObject::get_material(void) {
+	return material_ptr;
 }
 
 #endif

@@ -34,6 +34,13 @@ Lambertian::operator= (const Lambertian& rhs) {
 	return (*this);
 }
 
+Lambertian::~Lambertian(void) {}
+
+BRDF*
+Lambertian::clone(void) const {
+	return (new Lambertian(*this));
+}
+
 
 MyRGBColor
 Lambertian::f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const {
@@ -42,6 +49,7 @@ Lambertian::f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const 
 
 MyRGBColor
 Lambertian::sample_f(const ShadeRec& sr, const Vector3D& wi, Vector3D& wo) const{
+	return (black);
 }
 
 MyRGBColor
