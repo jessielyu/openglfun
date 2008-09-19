@@ -7,14 +7,17 @@
 // ---------------------------------------------------------------------- default constructor
 
 GeometricObject::GeometricObject(void)
-	: 	color(black)
+	: 	color(black),
+		material_ptr(NULL)
+	
 {}
 
 
 // ---------------------------------------------------------------------- copy constructor
 
 GeometricObject::GeometricObject (const GeometricObject& object)
-	: 	color(object.color)
+	: 	color(object.color),
+		material_ptr(NULL)
 {}	
 
 
@@ -25,6 +28,10 @@ GeometricObject::operator= (const GeometricObject& rhs) {
 	
 	if (this == &rhs)
 		return (*this);
+	
+	if(rhs.material_ptr) {
+		material_ptr = rhs.material_ptr->clone();
+	}
 		
 	color = rhs.color;
 

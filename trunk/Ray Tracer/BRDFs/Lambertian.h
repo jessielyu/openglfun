@@ -21,6 +21,11 @@ public:
 	Lambertian&
 	operator= (const Lambertian& rhs);
 	
+	~Lambertian(void);
+	
+	virtual BRDF*
+	clone(void) const;
+	
 	void
 	set_kd(const float the_kd);
 	
