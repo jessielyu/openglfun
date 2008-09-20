@@ -17,7 +17,7 @@
 
 void 												
 World::build(void) {
-	int num_samples = 25;
+	int num_samples = 5;
 	
 	vp.set_hres(400);
 	vp.set_vres(400);
@@ -31,13 +31,14 @@ World::build(void) {
 	//Pinhole* camera_ptr = new Pinhole(Point3D(-1000, 2000, -500), Point3D(0, -100, 0), Vector3D(0, 1, 0), 250, 1.0);
 	//Pinhole* camera_ptr = new Pinhole(Point3D(0, 0, 500), Point3D(0, 0, 0), Vector3D(0, 1, 0), 500, 1.0);
 	//Pinhole* camera_ptr = new Pinhole(Point3D(0, 1000, 0), Point3D(0, 0, 0), Vector3D(0, 1, 0), 500, 1.0);
+	//Pinhole* camera_ptr = new Pinhole(Point3D(0, 50, 600), Point3D(0, 6, -50), Vector3D(0, 1, 0), 500, 1.0);
 	
 	Pinhole* camera_ptr = new Pinhole;
 	camera_ptr->set_eye(Point3D(0, 0, 500)); 
 	camera_ptr->set_lookat(Point3D(0.0));
 	camera_ptr->set_d(600.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(1.0);
+	camera_ptr->set_zoom(0.9);
 	set_camera(camera_ptr);
 	
 	// ThinLens camera
@@ -89,52 +90,58 @@ World::build(void) {
 	background_color = MyRGBColor(black);
 	
 	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->scale_radiance(1.0);
+	ambient_ptr->scale_radiance(0.5);
 	set_ambient_light(ambient_ptr);
 	
 	Directional* light_ptr1 = new Directional;
 	light_ptr1->set_direction(100, 100, 200);
-	light_ptr1->scale_radiance(1.0); 	
+	light_ptr1->scale_radiance(0.5); 	
 	add_light(light_ptr1);
 	
 	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(100, 50, 5000);
-	light_ptr2->scale_radiance(3.0);
+	light_ptr2->set_location(5.0, 20.0, 1000.0);
+	light_ptr2->scale_radiance(2.0);
 	add_light(light_ptr2);
 	
 	
 	
-//	Matte* matte_ptr1 = new Matte;
-//	matte_ptr1->set_ka(0.25);
-//	matte_ptr1->set_kd(0.65);
-//	matte_ptr1->set_cd(MyRGBColor(1, 1, 0));
+	Matte* the_matte1 = new Matte;
+	the_matte1->set_ka(0.25);
+	the_matte1->set_kd(0.75);
+	the_matte1->set_cd(MyRGBColor(1, 0, 0));
 	
 	// use access functions to set centre and radius
 	
-//	Sphere* sphere_ptr = new Sphere;
-//	sphere_ptr->set_center(0, -25, 0);
-//	sphere_ptr->set_radius(80);
-//	sphere_ptr->set_color(1, 0, 0);  // red
-//	sphere_ptr->set_material(matte_ptr1);
-//	add_object(sphere_ptr);
+	Sphere* the_sphere = new Sphere;
+	the_sphere->set_center(0, -25, 0);
+	the_sphere->set_radius(80);
+	//the_sphere->set_color(1, 0, 0);  // red
+	the_sphere->set_material(the_matte1);
+	add_object(the_sphere);
 
 	// use constructor to set centre and radius 
 	
-//	Matte* matte_ptr2 = new Matte;
-//	matte_ptr2->set_ka(0.25);
-//	matte_ptr2->set_kd(0.65);
-//	matte_ptr2->set_cd(MyRGBColor(0, 1, 0));
+	Matte* the_matte2 = new Matte;
+	the_matte2->set_ka(0.25);
+	the_matte2->set_kd(0.75);
+	the_matte2->set_cd(MyRGBColor(1, 1, 0));
 	
-//	sphere_ptr = new Sphere(Point3D(0, 30, 0), 60);
-//	//sphere_ptr->set_color(0, 1, 0);	// yellow
-//	sphere_ptr->set_material(matte_ptr2);
+	Sphere* the_other_sphere = new Sphere(Point3D(0, 30, 0), 60);
+	//sphere_ptr->set_color(0, 1, 0);	// yellow
+	the_other_sphere->set_material(the_matte2);
 	
-	//add_object(sphere_ptr);
+	add_object(the_other_sphere);
 	
-//	Plane* plane_ptr = new Plane(Point3D(0), Normal(0, 1, 1));
-//	plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
-//	plane_ptr->set_material(matte_ptr1);
-//	add_object(plane_ptr);
+	
+	Matte* the_matte3 = new Matte;
+	the_matte3->set_ka(0.25);
+	the_matte3->set_kd(0.75);
+	the_matte3->set_cd(MyRGBColor(0, 0.3, 0));
+	
+	Plane* the_plane = new Plane(Point3D(0), Normal(0, 1, 1));
+	//plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
+	the_plane->set_material(the_matte3);
+	add_object(the_plane);
 	
 
 	
