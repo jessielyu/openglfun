@@ -44,6 +44,9 @@ PointLight::clone(void) const {
 
 Vector3D
 PointLight::get_direction(ShadeRec& sr) {
+	Vector3D temp = location;
+	Vector3D temp2 = location - sr.hit_point;
+	Vector3D temp3 = temp2.hat();
 	return ((location - sr.hit_point).hat());
 }
 

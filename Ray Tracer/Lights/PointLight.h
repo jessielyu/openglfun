@@ -87,7 +87,6 @@ PointLight::set_color(const float r, const float g, const float b) {
 inline void
 PointLight::set_location(const float x, const float y, const float z) {
 	location.x = x; location.y = y; location.z = z;
-	location.normalize();
 }
 
 #endif
