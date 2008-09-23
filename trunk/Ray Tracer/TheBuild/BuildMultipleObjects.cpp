@@ -14,10 +14,12 @@
 #include "Matte.h"
 #include "RayCast.h"
 #include "Directional.h"
+//#include "GlossySpecular.h"
+#include "Phong.h"
 
 void 												
 World::build(void) {
-	int num_samples = 5;
+	int num_samples = 25;
 	
 	vp.set_hres(400);
 	vp.set_vres(400);
@@ -38,7 +40,7 @@ World::build(void) {
 	camera_ptr->set_lookat(Point3D(0.0));
 	camera_ptr->set_d(600.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(0.9);
+	camera_ptr->set_zoom(1.2);
 	set_camera(camera_ptr);
 	
 	// ThinLens camera
@@ -90,58 +92,69 @@ World::build(void) {
 	background_color = MyRGBColor(black);
 	
 	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->scale_radiance(0.5);
+	ambient_ptr->scale_radiance(1.5);
 	set_ambient_light(ambient_ptr);
 	
 	Directional* light_ptr1 = new Directional;
 	light_ptr1->set_direction(100, 100, 200);
-	light_ptr1->scale_radiance(0.5); 	
+	light_ptr1->scale_radiance(.5); 	
 	add_light(light_ptr1);
 	
 	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(5.0, 20.0, 1000.0);
+	light_ptr2->set_location(0.0, 0.0, 0.0);
 	light_ptr2->scale_radiance(2.0);
 	add_light(light_ptr2);
 	
 	
 	
-	Matte* the_matte1 = new Matte;
-	the_matte1->set_ka(0.25);
-	the_matte1->set_kd(0.75);
-	the_matte1->set_cd(MyRGBColor(1, 0, 0));
+//	Matte* the_matte1 = new Matte;
+//	the_matte1->set_ka(0.25);
+//	the_matte1->set_kd(0.75);
+//	the_matte1->set_cd(MyRGBColor(1, 0, 0));
 	
-	// use access functions to set centre and radius
-	
-	Sphere* the_sphere = new Sphere;
-	the_sphere->set_center(0, -25, 0);
-	the_sphere->set_radius(80);
-	//the_sphere->set_color(1, 0, 0);  // red
-	the_sphere->set_material(the_matte1);
-	add_object(the_sphere);
+//	Phong* spec1 = new Phong();
+//	spec1->set_ka(0.25);
+//	spec1->set_kd(0.75);
+//	spec1->set_c(1.0,0, 0);
+//	spec1->set_exp_s(5);
+//	
+//	// use access functions to set centre and radius
+//	
+//	Sphere* the_sphere = new Sphere;
+//	the_sphere->set_center(0, -25, 0);
+//	the_sphere->set_radius(80);
+//	//the_sphere->set_color(1, 0, 0);  // red
+//	the_sphere->set_material(spec1);
+//	add_object(the_sphere);
 
 	// use constructor to set centre and radius 
 	
-	Matte* the_matte2 = new Matte;
-	the_matte2->set_ka(0.25);
-	the_matte2->set_kd(0.75);
-	the_matte2->set_cd(MyRGBColor(1, 1, 0));
+//	Matte* the_matte2 = new Matte;
+//	the_matte2->set_ka(0.25);
+//	the_matte2->set_kd(0.75);
+//	the_matte2->set_cd(MyRGBColor(1, 1, 0));
 	
-	Sphere* the_other_sphere = new Sphere(Point3D(0, 30, 0), 60);
-	//sphere_ptr->set_color(0, 1, 0);	// yellow
-	the_other_sphere->set_material(the_matte2);
-	
-	add_object(the_other_sphere);
-	
-	
-	Matte* the_matte3 = new Matte;
-	the_matte3->set_ka(0.25);
-	the_matte3->set_kd(0.75);
-	the_matte3->set_cd(MyRGBColor(0, 0.3, 0));
-	
-	Plane* the_plane = new Plane(Point3D(0), Normal(0, 1, 1));
-	//plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
-	the_plane->set_material(the_matte3);
-	add_object(the_plane);
+//	Phong* spec2 = new Phong();
+//	spec2->set_ka(0.25);
+//	spec2->set_kd(0.75);
+//	spec2->set_c(1.0, 1.0, 0.0);
+//	spec2->set_exp_s(5);
+//	
+//	Sphere* the_other_sphere = new Sphere(Point3D(0, 30, 0), 60);
+//	//sphere_ptr->set_color(0, 1, 0);	// yellow
+//	the_other_sphere->set_material(spec2);
+//	add_object(the_other_sphere);
+//	
+//	
+//	Matte* the_matte3 = new Matte;
+//	the_matte3->set_ka(0.25);
+//	the_matte3->set_kd(0.75);
+//	the_matte3->set_cd(MyRGBColor(0, 0.3, 0));
+//	
+//	Plane* the_plane = new Plane(Point3D(0), Normal(0, 1, 1));
+//	//plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
+//	the_plane->set_material(the_matte3);
+//	add_object(the_plane);
 	
 
 	
@@ -165,296 +178,332 @@ World::build(void) {
 	
 	float ka = 0.25;
 	float kd = 0.75;
+	float exp = 0.25;
 	
-	Matte* matte_ptr1 = new Matte;   
-	matte_ptr1->set_ka(ka);	
-	matte_ptr1->set_kd(kd);
-	matte_ptr1->set_cd(yellow);				
+	Phong* phong_ptr1 = new Phong;   
+	phong_ptr1->set_ka(ka);	
+	phong_ptr1->set_kd(kd);
+	phong_ptr1->set_c(yellow);				
+	phong_ptr1->set_exp_s(exp);
 	Sphere*	sphere_ptr1 = new Sphere(Point3D(5, 3, 0), 30); 
-	sphere_ptr1->set_material(matte_ptr1);	   							// yellow
+	sphere_ptr1->set_material(phong_ptr1);	   							// yellow
 	add_object(sphere_ptr1);
 	
-	Matte* matte_ptr2 = new Matte;
-	matte_ptr2->set_ka(ka);	
-	matte_ptr2->set_kd(kd);
-	matte_ptr2->set_cd(brown);
+	Phong* phong_ptr2 = new Phong;
+	phong_ptr2->set_ka(ka);	
+	phong_ptr2->set_kd(kd);
+	phong_ptr2->set_c(brown);
+	phong_ptr2->set_exp_s(exp);
 	Sphere*	sphere_ptr2 = new Sphere(Point3D(45, -7, -60), 20); 
-	sphere_ptr2->set_material(matte_ptr2);								// brown
+	sphere_ptr2->set_material(phong_ptr2);								// brown
 	add_object(sphere_ptr2);
 	
 	
-	Matte* matte_ptr3 = new Matte;
-	matte_ptr3->set_ka(ka);	
-	matte_ptr3->set_kd(kd);
-	matte_ptr3->set_cd(darkGreen);	
+	Phong* phong_ptr3 = new Phong;
+	phong_ptr3->set_ka(ka);	
+	phong_ptr3->set_kd(kd);
+	phong_ptr3->set_c(darkGreen);
+	phong_ptr3->set_exp_s(exp);
 	Sphere*	sphere_ptr3 = new Sphere(Point3D(40, 43, -100), 17); 
-	sphere_ptr3->set_material(matte_ptr3);								// dark green
+	sphere_ptr3->set_material(phong_ptr3);								// dark green
 	add_object(sphere_ptr3);
 	
-	Matte* matte_ptr4 = new Matte;
-	matte_ptr4->set_ka(ka);	
-	matte_ptr4->set_kd(kd);
-	matte_ptr4->set_cd(orange);
+	Phong* phong_ptr4 = new Phong;
+	phong_ptr4->set_ka(ka);	
+	phong_ptr4->set_kd(kd);
+	phong_ptr4->set_c(orange);
+	phong_ptr4->set_exp_s(exp);
 	Sphere*	sphere_ptr4 = new Sphere(Point3D(-20, 28, -15), 20); 
-	sphere_ptr4->set_material(matte_ptr4);								// orange
+	sphere_ptr4->set_material(phong_ptr4);								// orange
 	add_object(sphere_ptr4);
 	
-	Matte* matte_ptr5 = new Matte;
-	matte_ptr5->set_ka(ka);	
-	matte_ptr5->set_kd(kd);
-	matte_ptr5->set_cd(green);
+	Phong* phong_ptr5 = new Phong;
+	phong_ptr5->set_ka(ka);	
+	phong_ptr5->set_kd(kd);
+	phong_ptr5->set_c(green);
+	phong_ptr5->set_exp_s(exp);
 	Sphere*	sphere_ptr5 = new Sphere(Point3D(-25, -7, -35), 27); 			
-	sphere_ptr5->set_material(matte_ptr5);								// green
+	sphere_ptr5->set_material(phong_ptr5);								// green
 	add_object(sphere_ptr5);
 	
-	Matte* matte_ptr6 = new Matte;
-	matte_ptr6->set_ka(ka);	
-	matte_ptr6->set_kd(kd);
-	matte_ptr6->set_cd(lightGreen);
+	Phong* phong_ptr6 = new Phong;
+	phong_ptr6->set_ka(ka);	
+	phong_ptr6->set_kd(kd);
+	phong_ptr6->set_c(lightGreen);
+	phong_ptr6->set_exp_s(exp);
 	Sphere*	sphere_ptr6 = new Sphere(Point3D(20, -27, -35), 25); 
-	sphere_ptr6->set_material(matte_ptr6);								// light green
+	sphere_ptr6->set_material(phong_ptr6);								// light green
 	add_object(sphere_ptr6);
 	
-	Matte* matte_ptr7 = new Matte;
-	matte_ptr7->set_ka(ka);	
-	matte_ptr7->set_kd(kd);
-	matte_ptr7->set_cd(green);
+	Phong* phong_ptr7 = new Phong;
+	phong_ptr7->set_ka(ka);	
+	phong_ptr7->set_kd(kd);
+	phong_ptr7->set_c(green);
+	phong_ptr7->set_exp_s(exp);
 	Sphere*	sphere_ptr7 = new Sphere(Point3D(35, 18, -35), 22); 
-	sphere_ptr7->set_material(matte_ptr7);   							// green
+	sphere_ptr7->set_material(phong_ptr7);   							// green
 	add_object(sphere_ptr7);
 	
-	Matte* matte_ptr8 = new Matte;
-	matte_ptr8->set_ka(ka);	
-	matte_ptr8->set_kd(kd);
-	matte_ptr8->set_cd(brown);
+	Phong* phong_ptr8 = new Phong;
+	phong_ptr8->set_ka(ka);	
+	phong_ptr8->set_kd(kd);
+	phong_ptr8->set_c(brown);
+	phong_ptr8->set_exp_s(exp);
 	Sphere*	sphere_ptr8 = new Sphere(Point3D(-57, -17, -50), 15);  
-	sphere_ptr8->set_material(matte_ptr8);								// brown
+	sphere_ptr8->set_material(phong_ptr8);								// brown
 	add_object(sphere_ptr8);
 	
-	Matte* matte_ptr9 = new Matte;
-	matte_ptr9->set_ka(ka);	
-	matte_ptr9->set_kd(kd);
-	matte_ptr9->set_cd(lightGreen);
+	Phong* phong_ptr9 = new Phong;
+	phong_ptr9->set_ka(ka);	
+	phong_ptr9->set_kd(kd);
+	phong_ptr9->set_c(lightGreen);
+	phong_ptr9->set_exp_s(exp);
 	Sphere*	sphere_ptr9 = new Sphere(Point3D(-47, 16, -80), 23); 
-	sphere_ptr9->set_material(matte_ptr9);								// light green
+	sphere_ptr9->set_material(phong_ptr9);								// light green
 	add_object(sphere_ptr9);
 	
-	Matte* matte_ptr10 = new Matte;
-	matte_ptr10->set_ka(ka);	
-	matte_ptr10->set_kd(kd);
-	matte_ptr10->set_cd(darkGreen);	
+	Phong* phong_ptr10 = new Phong;
+	phong_ptr10->set_ka(ka);	
+	phong_ptr10->set_kd(kd);
+	phong_ptr10->set_c(darkGreen);	
+	phong_ptr10->set_exp_s(exp);
 	Sphere*	sphere_ptr10 = new Sphere(Point3D(-15, -32, -60), 22); 
-	sphere_ptr10->set_material(matte_ptr10);     						// dark green
+	sphere_ptr10->set_material(phong_ptr10);     						// dark green
 	add_object(sphere_ptr10);
 	
-	Matte* matte_ptr11 = new Matte;
-	matte_ptr11->set_ka(ka);	
-	matte_ptr11->set_kd(kd);
-	matte_ptr11->set_cd(darkYellow);
+	Phong* phong_ptr11 = new Phong;
+	phong_ptr11->set_ka(ka);	
+	phong_ptr11->set_kd(kd);
+	phong_ptr11->set_c(darkYellow);
+	phong_ptr11->set_exp_s(exp);
 	Sphere*	sphere_ptr11 = new Sphere(Point3D(-35, -37, -80), 22); 
-	sphere_ptr11->set_material(matte_ptr11);							// dark yellow
+	sphere_ptr11->set_material(phong_ptr11);							// dark yellow
 	add_object(sphere_ptr11);
 	
-	Matte* matte_ptr12 = new Matte;
-	matte_ptr12->set_ka(ka);	
-	matte_ptr12->set_kd(kd);
-	matte_ptr12->set_cd(darkYellow);
+	Phong* phong_ptr12 = new Phong;
+	phong_ptr12->set_ka(ka);	
+	phong_ptr12->set_kd(kd);
+	phong_ptr12->set_c(darkYellow);
+	phong_ptr12->set_exp_s(exp);
 	Sphere*	sphere_ptr12 = new Sphere(Point3D(10, 43, -80), 22); 
-	sphere_ptr12->set_material(matte_ptr12);							// dark yellow
+	sphere_ptr12->set_material(phong_ptr12);							// dark yellow
 	add_object(sphere_ptr12);
 	
-	Matte* matte_ptr13 = new Matte;
-	matte_ptr13->set_ka(ka);	
-	matte_ptr13->set_kd(kd);
-	matte_ptr13->set_cd(darkYellow);		
+	Phong* phong_ptr13 = new Phong;
+	phong_ptr13->set_ka(ka);	
+	phong_ptr13->set_kd(kd);
+	phong_ptr13->set_c(darkYellow);		
+	phong_ptr13->set_exp_s(exp);
 	Sphere*	sphere_ptr13 = new Sphere(Point3D(30, -7, -80), 10); 
-	sphere_ptr13->set_material(matte_ptr13);
+	sphere_ptr13->set_material(phong_ptr13);
 	add_object(sphere_ptr13);											// dark yellow (hidden)
 	
-	Matte* matte_ptr14 = new Matte;
-	matte_ptr14->set_ka(ka);	
-	matte_ptr14->set_kd(kd);
-	matte_ptr14->set_cd(darkGreen);	
+	Phong* phong_ptr14 = new Phong;
+	phong_ptr14->set_ka(ka);	
+	phong_ptr14->set_kd(kd);
+	phong_ptr14->set_c(darkGreen);	
+	phong_ptr14->set_exp_s(exp);
 	Sphere*	sphere_ptr14 = new Sphere(Point3D(-40, 48, -110), 18); 
-	sphere_ptr14->set_material(matte_ptr14); 							// dark green
+	sphere_ptr14->set_material(phong_ptr14); 							// dark green
 	add_object(sphere_ptr14);
 	
-	Matte* matte_ptr15 = new Matte;
-	matte_ptr15->set_ka(ka);	
-	matte_ptr15->set_kd(kd);
-	matte_ptr15->set_cd(brown);	
+	Phong* phong_ptr15 = new Phong;
+	phong_ptr15->set_ka(ka);	
+	phong_ptr15->set_kd(kd);
+	phong_ptr15->set_c(brown);	
+	phong_ptr15->set_exp_s(exp);
 	Sphere*	sphere_ptr15 = new Sphere(Point3D(-10, 53, -120), 18); 
-	sphere_ptr15->set_material(matte_ptr15); 							// brown
+	sphere_ptr15->set_material(phong_ptr15); 							// brown
 	add_object(sphere_ptr15);
 	
-	Matte* matte_ptr16 = new Matte;
-	matte_ptr16->set_ka(ka);	
-	matte_ptr16->set_kd(kd);
-	matte_ptr16->set_cd(lightPurple);
+	Phong* phong_ptr16 = new Phong;
+	phong_ptr16->set_ka(ka);	
+	phong_ptr16->set_kd(kd);
+	phong_ptr16->set_c(lightPurple);
+	phong_ptr16->set_exp_s(exp);
 	Sphere*	sphere_ptr16 = new Sphere(Point3D(-55, -52, -100), 10); 
-	sphere_ptr16->set_material(matte_ptr16);							// light purple
+	sphere_ptr16->set_material(phong_ptr16);							// light purple
 	add_object(sphere_ptr16);
 	
-	Matte* matte_ptr17 = new Matte;
-	matte_ptr17->set_ka(ka);	
-	matte_ptr17->set_kd(kd);
-	matte_ptr17->set_cd(brown);
+	Phong* phong_ptr17 = new Phong;
+	phong_ptr17->set_ka(ka);	
+	phong_ptr17->set_kd(kd);
+	phong_ptr17->set_c(brown);
+	phong_ptr17->set_exp_s(exp);
 	Sphere*	sphere_ptr17 = new Sphere(Point3D(5, -52, -100), 15); 		
-	sphere_ptr17->set_material(matte_ptr17);							// browm
+	sphere_ptr17->set_material(phong_ptr17);							// browm
 	add_object(sphere_ptr17);
 	
-	Matte* matte_ptr18 = new Matte;
-	matte_ptr18->set_ka(ka);	
-	matte_ptr18->set_kd(kd);
-	matte_ptr18->set_cd(darkPurple);
+	Phong* phong_ptr18 = new Phong;
+	phong_ptr18->set_ka(ka);	
+	phong_ptr18->set_kd(kd);
+	phong_ptr18->set_c(darkPurple);
+	phong_ptr18->set_exp_s(exp);
 	Sphere*	sphere_ptr18 = new Sphere(Point3D(-20, -57, -120), 15); 
-	sphere_ptr18->set_material(matte_ptr18);							// dark purple
+	sphere_ptr18->set_material(phong_ptr18);							// dark purple
 	add_object(sphere_ptr18);
 	
-	Matte* matte_ptr19 = new Matte;
-	matte_ptr19->set_ka(ka);	
-	matte_ptr19->set_kd(kd);
-	matte_ptr19->set_cd(darkGreen);
+	Phong* phong_ptr19 = new Phong;
+	phong_ptr19->set_ka(ka);	
+	phong_ptr19->set_kd(kd);
+	phong_ptr19->set_c(darkGreen);
+	phong_ptr19->set_exp_s(exp);
 	Sphere*	sphere_ptr19 = new Sphere(Point3D(55, -27, -100), 17); 
-	sphere_ptr19->set_material(matte_ptr19);							// dark green
+	sphere_ptr19->set_material(phong_ptr19);							// dark green
 	add_object(sphere_ptr19);
 	
-	Matte* matte_ptr20 = new Matte;
-	matte_ptr20->set_ka(ka);	
-	matte_ptr20->set_kd(kd);
-	matte_ptr20->set_cd(brown);
+	Phong* phong_ptr20 = new Phong;
+	phong_ptr20->set_ka(ka);	
+	phong_ptr20->set_kd(kd);
+	phong_ptr20->set_c(brown);
+	phong_ptr20->set_exp_s(exp);
 	Sphere*	sphere_ptr20 = new Sphere(Point3D(50, -47, -120), 15); 
-	sphere_ptr20->set_material(matte_ptr20);							// browm
+	sphere_ptr20->set_material(phong_ptr20);							// browm
 	add_object(sphere_ptr20);
 	
-	Matte* matte_ptr21 = new Matte;
-	matte_ptr21->set_ka(ka);	
-	matte_ptr21->set_kd(kd);
-	matte_ptr21->set_cd(lightPurple); 	
+	Phong* phong_ptr21 = new Phong;
+	phong_ptr21->set_ka(ka);	
+	phong_ptr21->set_kd(kd);
+	phong_ptr21->set_c(lightPurple); 	
+	phong_ptr21->set_exp_s(exp);
 	Sphere*	sphere_ptr21 = new Sphere(Point3D(70, -42, -150), 10); 
-	sphere_ptr21->set_material(matte_ptr21);							// light purple
+	sphere_ptr21->set_material(phong_ptr21);							// light purple
 	add_object(sphere_ptr21);
 	
-	Matte* matte_ptr22 = new Matte;
-	matte_ptr22->set_ka(ka);	
-	matte_ptr22->set_kd(kd);
-	matte_ptr22->set_cd(lightPurple);
+	Phong* phong_ptr22 = new Phong;
+	phong_ptr22->set_ka(ka);	
+	phong_ptr22->set_kd(kd);
+	phong_ptr22->set_c(lightPurple);
+	phong_ptr22->set_exp_s(exp);
 	Sphere*	sphere_ptr22 = new Sphere(Point3D(5, 73, -130), 12); 
-	sphere_ptr22->set_material(matte_ptr22);							// light purple
+	sphere_ptr22->set_material(phong_ptr22);							// light purple
 	add_object(sphere_ptr22);
 	
-	Matte* matte_ptr23 = new Matte;
-	matte_ptr23->set_ka(ka);	
-	matte_ptr23->set_kd(kd);
-	matte_ptr23->set_cd(darkPurple);
+	Phong* phong_ptr23 = new Phong;
+	phong_ptr23->set_ka(ka);	
+	phong_ptr23->set_kd(kd);
+	phong_ptr23->set_c(darkPurple);
+	phong_ptr23->set_exp_s(exp);
 	Sphere*	sphere_ptr23 = new Sphere(Point3D(66, 21, -130), 13); 			
-	sphere_ptr23->set_material(matte_ptr23);							// dark purple
+	sphere_ptr23->set_material(phong_ptr23);							// dark purple
 	add_object(sphere_ptr23);	
 	
-	Matte* matte_ptr24 = new Matte;
-	matte_ptr24->set_ka(ka);	
-	matte_ptr24->set_kd(kd);
-	matte_ptr24->set_cd(lightPurple);  
+	Phong* phong_ptr24 = new Phong;
+	phong_ptr24->set_ka(ka);	
+	phong_ptr24->set_kd(kd);
+	phong_ptr24->set_c(lightPurple);  
+	phong_ptr24->set_exp_s(exp);
 	Sphere*	sphere_ptr24 = new Sphere(Point3D(72, -12, -140), 12); 
-	sphere_ptr24->set_material(matte_ptr24);							// light purple
+	sphere_ptr24->set_material(phong_ptr24);							// light purple
 	add_object(sphere_ptr24);
 	
-	Matte* matte_ptr25 = new Matte;
-	matte_ptr25->set_ka(ka);	
-	matte_ptr25->set_kd(kd);
-	matte_ptr25->set_cd(green);
+	Phong* phong_ptr25 = new Phong;
+	phong_ptr25->set_ka(ka);	
+	phong_ptr25->set_kd(kd);
+	phong_ptr25->set_c(green);
+	phong_ptr25->set_exp_s(exp);
 	Sphere*	sphere_ptr25 = new Sphere(Point3D(64, 5, -160), 11); 			
-	sphere_ptr25->set_material(matte_ptr25);					 		// green
+	sphere_ptr25->set_material(phong_ptr25);					 		// green
 	add_object(sphere_ptr25);
 	
-	Matte* matte_ptr26 = new Matte;
-	matte_ptr26->set_ka(ka);	
-	matte_ptr26->set_kd(kd);
-	matte_ptr26->set_cd(lightPurple);
+	Phong* phong_ptr26 = new Phong;
+	phong_ptr26->set_ka(ka);	
+	phong_ptr26->set_kd(kd);
+	phong_ptr26->set_c(lightPurple);
+	phong_ptr26->set_exp_s(exp);
 	Sphere*	sphere_ptr26 = new Sphere(Point3D(55, 38, -160), 12); 		
-	sphere_ptr26->set_material(matte_ptr26);							// light purple
+	sphere_ptr26->set_material(phong_ptr26);							// light purple
 	add_object(sphere_ptr26);
 	
-	Matte* matte_ptr27 = new Matte;
-	matte_ptr27->set_ka(ka);	
-	matte_ptr27->set_kd(kd);
-	matte_ptr27->set_cd(lightPurple);
+	Phong* phong_ptr27 = new Phong;
+	phong_ptr27->set_ka(ka);	
+	phong_ptr27->set_kd(kd);
+	phong_ptr27->set_c(lightPurple);
+	phong_ptr27->set_exp_s(exp);
 	Sphere*	sphere_ptr27 = new Sphere(Point3D(-73, -2, -160), 12); 		
-	sphere_ptr27->set_material(matte_ptr27);							// light purple
+	sphere_ptr27->set_material(phong_ptr27);							// light purple
 	add_object(sphere_ptr27);
 	
-	Matte* matte_ptr28 = new Matte;
-	matte_ptr28->set_ka(ka);	
-	matte_ptr28->set_kd(kd);
-	matte_ptr28->set_cd(darkPurple);
+	Phong* phong_ptr28 = new Phong;
+	phong_ptr28->set_ka(ka);	
+	phong_ptr28->set_kd(kd);
+	phong_ptr28->set_c(darkPurple);
+	phong_ptr28->set_exp_s(exp);
 	Sphere*	sphere_ptr28 = new Sphere(Point3D(30, -62, -140), 15); 
-	sphere_ptr28->set_material(matte_ptr28); 							// dark purple
+	sphere_ptr28->set_material(phong_ptr28); 							// dark purple
 	add_object(sphere_ptr28);
 	
-	Matte* matte_ptr29 = new Matte;
-	matte_ptr29->set_ka(ka);	
-	matte_ptr29->set_kd(kd);
-	matte_ptr29->set_cd(darkPurple);
+	Phong* phong_ptr29 = new Phong;
+	phong_ptr29->set_ka(ka);	
+	phong_ptr29->set_kd(kd);
+	phong_ptr29->set_c(darkPurple);
+	phong_ptr29->set_exp_s(exp);
 	Sphere*	sphere_ptr29 = new Sphere(Point3D(25, 63, -140), 15); 
-	sphere_ptr29->set_material(matte_ptr29);							// dark purple
+	sphere_ptr29->set_material(phong_ptr29);							// dark purple
 	add_object(sphere_ptr29);
 	
-	Matte* matte_ptr30 = new Matte;
-	matte_ptr30->set_ka(ka);	
-	matte_ptr30->set_kd(kd);
-	matte_ptr30->set_cd(darkPurple);
+	Phong* phong_ptr30 = new Phong;
+	phong_ptr30->set_ka(ka);	
+	phong_ptr30->set_kd(kd);
+	phong_ptr30->set_c(darkPurple);
+	phong_ptr30->set_exp_s(exp);
 	Sphere*	sphere_ptr30 = new Sphere(Point3D(-60, 46, -140), 15);  
-	sphere_ptr30->set_material(matte_ptr30); 							// dark purple
+	sphere_ptr30->set_material(phong_ptr30); 							// dark purple
 	add_object(sphere_ptr30);
 	
-	Matte* matte_ptr31 = new Matte;
-	matte_ptr31->set_ka(ka);	
-	matte_ptr31->set_kd(kd);
-	matte_ptr31->set_cd(lightPurple);
+	Phong* phong_ptr31 = new Phong;
+	phong_ptr31->set_ka(ka);	
+	phong_ptr31->set_kd(kd);
+	phong_ptr31->set_c(lightPurple);
+	phong_ptr31->set_exp_s(exp);
 	Sphere*	sphere_ptr31 = new Sphere(Point3D(-30, 68, -130), 12); 
-	sphere_ptr31->set_material(matte_ptr31); 							// light purple
+	sphere_ptr31->set_material(phong_ptr31); 							// light purple
 	add_object(sphere_ptr31);
 	
-	Matte* matte_ptr32 = new Matte;
-	matte_ptr32->set_ka(ka);	
-	matte_ptr32->set_kd(kd);
-	matte_ptr32->set_cd(green);
+	Phong* phong_ptr32 = new Phong;
+	phong_ptr32->set_ka(ka);	
+	phong_ptr32->set_kd(kd);
+	phong_ptr32->set_c(green);
+	phong_ptr32->set_exp_s(exp);
 	Sphere*	sphere_ptr32 = new Sphere(Point3D(58, 56, -180), 11);   
-	sphere_ptr32->set_material(matte_ptr32);							//  green
+	sphere_ptr32->set_material(phong_ptr32);							//  green
 	add_object(sphere_ptr32);
 	
-	Matte* matte_ptr33 = new Matte;
-	matte_ptr33->set_ka(ka);	
-	matte_ptr33->set_kd(kd);
-	matte_ptr33->set_cd(green);
+	Phong* phong_ptr33 = new Phong;
+	phong_ptr33->set_ka(ka);	
+	phong_ptr33->set_kd(kd);
+	phong_ptr33->set_c(green);
+	phong_ptr33->set_exp_s(exp);
 	Sphere*	sphere_ptr33 = new Sphere(Point3D(-63, -39, -180), 11); 
-	sphere_ptr33->set_material(matte_ptr33);							// green 
+	sphere_ptr33->set_material(phong_ptr33);							// green 
 	add_object(sphere_ptr33);
 	
-	Matte* matte_ptr34 = new Matte;
-	matte_ptr34->set_ka(ka);	
-	matte_ptr34->set_kd(kd);
-	matte_ptr34->set_cd(lightPurple);
+	Phong* phong_ptr34 = new Phong;
+	phong_ptr34->set_ka(ka);	
+	phong_ptr34->set_kd(kd);
+	phong_ptr34->set_c(lightPurple);
+	phong_ptr34->set_exp_s(exp);
 	Sphere*	sphere_ptr34 = new Sphere(Point3D(46, 68, -200), 10); 	
-	sphere_ptr34->set_material(matte_ptr34);							// light purple
+	sphere_ptr34->set_material(phong_ptr34);							// light purple
 	add_object(sphere_ptr34);
 	
-	Matte* matte_ptr35 = new Matte;
-	matte_ptr35->set_ka(ka);	
-	matte_ptr35->set_kd(kd);
-	matte_ptr35->set_cd(lightPurple);
+	Phong* phong_ptr35 = new Phong;
+	phong_ptr35->set_ka(ka);	
+	phong_ptr35->set_kd(kd);
+	phong_ptr35->set_c(lightPurple);
+	phong_ptr35->set_exp_s(exp);
 	Sphere*	sphere_ptr35 = new Sphere(Point3D(-3, -72, -130), 12); 
-	sphere_ptr35->set_material(matte_ptr35);							// light purple
+	sphere_ptr35->set_material(phong_ptr35);							// light purple
 	add_object(sphere_ptr35);
 	
 	
 	// vertical plane
 	
-	Matte* matte_ptr36 = new Matte;
-	matte_ptr36->set_ka(ka);	
-	matte_ptr36->set_kd(kd);
-	matte_ptr36->set_cd(grey);
+	Matte* phong_ptr36 = new Matte;
+	phong_ptr36->set_ka(ka);	
+	phong_ptr36->set_kd(kd);
+	phong_ptr36->set_cd(grey);
 	Plane* plane_ptr = new Plane(Point3D(0, 0, -150), Normal(0, 0, 1));
-	plane_ptr->set_material(matte_ptr36);
+	plane_ptr->set_material(phong_ptr36);
 	add_object (plane_ptr);
 }
