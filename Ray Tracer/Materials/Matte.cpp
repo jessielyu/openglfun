@@ -18,12 +18,12 @@ Matte::Matte(void)
  
 Matte::Matte(const Matte& m) 
 :	Material(m) {
-	if (ambient_ptr)
+	if (m.ambient_ptr)
 		ambient_ptr = (Lambertian*)m.ambient_ptr->clone();
 	else
 		ambient_ptr = NULL;
 	
-	if (diffuse_ptr)
+	if (m.diffuse_ptr)
 		diffuse_ptr = (Lambertian*)m.diffuse_ptr->clone();
 	else
 		ambient_ptr = NULL;

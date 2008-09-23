@@ -32,6 +32,9 @@ public:
 	void
 	set_cd(const MyRGBColor cd);
 	
+	void
+	set_cd(const float r, const float g, const float b);
+	
 	virtual MyRGBColor
 	f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const;
 	
@@ -55,6 +58,11 @@ Lambertian::set_kd(const float the_kd) {
 inline void
 Lambertian::set_cd(const MyRGBColor the_cd) {
 	cd = the_cd;
+}
+
+inline void
+Lambertian::set_cd(const float r, const float g, const float b) {
+	cd.r = r; cd.g = g; cd.b = b;
 }
 
 #endif
