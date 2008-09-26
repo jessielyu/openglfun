@@ -37,10 +37,21 @@ public:
 	virtual MyRGBColor
 	L(ShadeRec& sr);
 	
+	bool
+	casts_shadows();
+	
+	virtual bool
+	in_shadow(const Ray& ray, const ShadeRec& sr) const = 0;
+	
 protected:
 	
 	bool shadows;
 	
 };
+
+inline bool
+Light::casts_shadows() {
+	return shadows;
+}
 
 #endif

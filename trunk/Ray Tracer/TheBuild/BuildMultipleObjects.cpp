@@ -100,10 +100,10 @@ World::build(void) {
 	light_ptr1->scale_radiance(.5); 	
 	add_light(light_ptr1);
 	
-	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(0.0, 0.0, 0.0);
-	light_ptr2->scale_radiance(2.0);
-	add_light(light_ptr2);
+//	PointLight* light_ptr2 = new PointLight;
+//	light_ptr2->set_location(100.0, 1.0, 1.0);
+//	light_ptr2->scale_radiance(2.0);
+//	add_light(light_ptr2);
 	
 	
 	
@@ -150,7 +150,7 @@ World::build(void) {
 //	the_matte3->set_ka(0.25);
 //	the_matte3->set_kd(0.75);
 //	the_matte3->set_cd(MyRGBColor(0, 0.3, 0));
-//	
+////	
 //	Plane* the_plane = new Plane(Point3D(0), Normal(0, 1, 1));
 //	//plane_ptr->set_color(0.0, 0.3, 0.0);	// dark green
 //	the_plane->set_material(the_matte3);

@@ -45,6 +45,9 @@ public:
 	virtual MyRGBColor
 	L(ShadeRec& sr);
 	
+	virtual bool
+	in_shadow(const Ray& ray, const ShadeRec& sr) const;
+	
 private:
 	
 	float ls;
@@ -80,6 +83,11 @@ Ambient::set_color(const MyRGBColor& c) {
 inline void
 Ambient::set_color(const float r, const float g, const float b) {
 	color.r = r; color.g = g; color.b = b;
+}
+
+inline bool
+Ambient::in_shadow(const Ray& ray, const ShadeRec& sr) const {
+	return false;
 }
 
 #endif

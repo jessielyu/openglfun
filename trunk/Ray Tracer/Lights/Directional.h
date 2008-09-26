@@ -47,6 +47,9 @@ public:
 	virtual MyRGBColor
 	L(ShadeRec& sr);
 	
+	virtual bool
+	in_shadow(const Ray& ray, const ShadeRec& sr) const;
+	
 private:
 	
 	float ls;
