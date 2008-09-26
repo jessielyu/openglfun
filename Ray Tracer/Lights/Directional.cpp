@@ -8,6 +8,7 @@
  */
 
 #include "Directional.h"
+#include "World.h"
 
 Directional::Directional(void)
 :	Light(),
@@ -50,4 +51,18 @@ Directional::get_direction(ShadeRec& sr) {
 MyRGBColor
 Directional::L(ShadeRec& sr) {
 	return (ls * color);
+}
+
+// Modified from point light, infinite distance away
+bool
+Directional::in_shadow(const Ray& ray, const ShadeRec& sr) const {
+	float t;
+	int num_objects = sr.w.objects.size();
+	//float d = location.distance(ray.o);
+	
+	for (int j = 0; j < num_objects; j++)
+		if (sr.w.objects[j]->shadow_hit(ray, t))// && t < d)
+			return (true);
+	
+	return (false);
 }

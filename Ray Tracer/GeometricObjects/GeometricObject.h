@@ -15,48 +15,59 @@
 
 class GeometricObject {	
 	
-	public:	
+public:	
 
-		GeometricObject(void);									// default constructor
-		
-		GeometricObject(const GeometricObject& object);			// copy constructor
+	GeometricObject(void);									// default constructor
 	
-		virtual GeometricObject*								// virtual copy constructor
-		clone(void) const = 0;
+	GeometricObject(const GeometricObject& object);			// copy constructor
 
-		virtual 												// destructor
-		~GeometricObject (void);	
+	virtual GeometricObject*								// virtual copy constructor
+	clone(void) const = 0;
+
+	virtual 												// destructor
+	~GeometricObject (void);	
+		
+	virtual bool 												 
+	hit(const Ray& ray, double& t, ShadeRec& s) const = 0;
+	
+
+	// the following three functions are only required for Chapter 3
+	
+	void
+	set_color(const MyRGBColor& c);
 			
-		virtual bool 												 
-		hit(const Ray& ray, double& t, ShadeRec& s) const = 0;
-		
+	void
+	set_color(const float r, const float g, const float b);
+	
+	MyRGBColor
+	get_color(void);
 
-		// the following three functions are only required for Chapter 3
-		
-		void
-		set_color(const MyRGBColor& c);
-				
-		void
-		set_color(const float r, const float g, const float b);
-		
-		MyRGBColor
-		get_color(void);
-	
-		void
-		set_material(Material* material);
-	
-		Material*
-		get_material(void);
+	void
+	set_material(Material* material);
 
+	Material*
+	get_material(void);
+
+	virtual bool
+	shadow_hit(const Ray& ray, float& tmin) const = 0;
 	
-	protected:
+	void
+	set_shadows(const bool shadow);
 	
-		MyRGBColor   color;						// only used for Bare Bones ray tracing
+	bool
+	get_shadows(void);
+
+
+protected:
+
+	MyRGBColor   color;						// only used for Bare Bones ray tracing
+
+	GeometricObject&						// assignment operator
+	operator= (const GeometricObject& rhs);
+
+	Material* material_ptr;
 	
-		GeometricObject&						// assignment operator
-		operator= (const GeometricObject& rhs);
-	
-		Material* material_ptr;
+	bool shadows;							// whether or not the object casts shadows
 };
 
 
@@ -77,6 +88,16 @@ GeometricObject::set_color(const float r, const float g, const float b) {
 }
 
 // --------------------------------------------------------------------  get_colour
+
+inline void
+GeometricObject::set_shadows(const bool shaodow) {
+	shadows = shadow;
+}
+
+inline bool
+GeometricObject::get_shadows(void) {
+	return shadows;
+}
 
 inline MyRGBColor 
 GeometricObject::get_color(void) {

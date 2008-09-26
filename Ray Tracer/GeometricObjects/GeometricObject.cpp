@@ -8,7 +8,8 @@
 
 GeometricObject::GeometricObject(void)
 	: 	color(black),
-		material_ptr(NULL)
+		material_ptr(NULL),
+		shadows(true)
 	
 {}
 
@@ -17,7 +18,8 @@ GeometricObject::GeometricObject(void)
 
 GeometricObject::GeometricObject (const GeometricObject& object)
 	: 	color(object.color),
-		material_ptr(NULL)
+		material_ptr(NULL),
+		shadows(object.shadows)
 {}	
 
 
@@ -34,6 +36,7 @@ GeometricObject::operator= (const GeometricObject& rhs) {
 	}
 		
 	color = rhs.color;
+	shadows = rhs.shadows;
 
 	return (*this);
 }

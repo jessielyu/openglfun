@@ -1,6 +1,6 @@
 #include "Plane.h"
 
-const double Plane::kEpsilon = 0.001;
+const double Plane::kEpsilon = 0.000001;
 
 // ----------------------------------------------------------------------  default constructor
 
@@ -79,3 +79,18 @@ Plane::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 	return(false);
 }
 
+bool
+Plane::shadow_hit(const Ray& ray, float& tmin) const {
+	
+	if(!shadows)
+		return false;
+	
+	float t = (a - ray.o) * n / (ray.d * n); 
+	
+	if (t > kEpsilon) {
+		tmin = t;
+		return (true);	
+	}
+	
+	return(false);
+}
