@@ -40,6 +40,9 @@ public:
 	virtual MyRGBColor
 	shade(ShadeRec& sr);
 	
+	virtual MyRGBColor
+	area_light_shade(ShadeRec& sr);
+	
 private:
 	
 	Lambertian*	ambient_ptr;

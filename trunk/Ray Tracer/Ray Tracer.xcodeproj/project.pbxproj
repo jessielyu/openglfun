@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E23A65050E87F2170041864C /* Phong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23A65040E87F2170041864C /* Phong.cpp */; };
+		E26B4E9A0E8D56F7009FC7B8 /* AmbientOccluder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */; };
+		E26B4F660E8DBA29009FC7B8 /* AreaLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F650E8DBA29009FC7B8 /* AreaLighting.cpp */; };
+		E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */; };
+		E26B50330E8EBEDB009FC7B8 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */; };
+		E26B50550E8EC0A6009FC7B8 /* AreaLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */; };
 		E26E6C7E0E832F8B00808BE1 /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */; };
 		E26E6CCF0E8336B200808BE1 /* Directional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6CCE0E8336B200808BE1 /* Directional.cpp */; };
 		E26E6D620E83539C00808BE1 /* RayCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6D610E83539C00808BE1 /* RayCast.cpp */; };
@@ -60,6 +65,16 @@
 		E23A65040E87F2170041864C /* Phong.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Phong.cpp; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
+		E26B4E980E8D56F7009FC7B8 /* AmbientOccluder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbientOccluder.h; sourceTree = "<group>"; };
+		E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AmbientOccluder.cpp; sourceTree = "<group>"; };
+		E26B4F640E8DBA29009FC7B8 /* AreaLighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLighting.h; sourceTree = "<group>"; };
+		E26B4F650E8DBA29009FC7B8 /* AreaLighting.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AreaLighting.cpp; sourceTree = "<group>"; };
+		E26B4F8E0E8DFCF9009FC7B8 /* Emissive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emissive.h; sourceTree = "<group>"; };
+		E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Emissive.cpp; sourceTree = "<group>"; };
+		E26B50310E8EBEDB009FC7B8 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Rectangle.cpp; sourceTree = "<group>"; };
+		E26B50530E8EC0A6009FC7B8 /* AreaLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLight.h; sourceTree = "<group>"; };
+		E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AreaLight.cpp; sourceTree = "<group>"; };
 		E26E6C7C0E832F8B00808BE1 /* PointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLight.h; sourceTree = "<group>"; };
 		E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PointLight.cpp; sourceTree = "<group>"; };
 		E26E6CCD0E8336B200808BE1 /* Directional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directional.h; sourceTree = "<group>"; };
@@ -233,6 +248,8 @@
 				E2D068F80E789ADE00E34880 /* Plane.h */,
 				E2D068F90E789ADE00E34880 /* Sphere.cpp */,
 				E2D068FA0E789ADE00E34880 /* Sphere.h */,
+				E26B50310E8EBEDB009FC7B8 /* Rectangle.h */,
+				E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -248,6 +265,10 @@
 				E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */,
 				E26E6CCD0E8336B200808BE1 /* Directional.h */,
 				E26E6CCE0E8336B200808BE1 /* Directional.cpp */,
+				E26B4E980E8D56F7009FC7B8 /* AmbientOccluder.h */,
+				E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */,
+				E26B50530E8EC0A6009FC7B8 /* AreaLight.h */,
+				E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -268,6 +289,8 @@
 				E26E6E680E83689200808BE1 /* Matte.cpp */,
 				E23A65030E87F2170041864C /* Phong.h */,
 				E23A65040E87F2170041864C /* Phong.cpp */,
+				E26B4F8E0E8DFCF9009FC7B8 /* Emissive.h */,
+				E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -324,6 +347,8 @@
 				E2D0690B0E789ADE00E34880 /* Tracer.h */,
 				E26E6D600E83539C00808BE1 /* RayCast.h */,
 				E26E6D610E83539C00808BE1 /* RayCast.cpp */,
+				E26B4F640E8DBA29009FC7B8 /* AreaLighting.h */,
+				E26B4F650E8DBA29009FC7B8 /* AreaLighting.cpp */,
 			);
 			path = Tracers;
 			sourceTree = "<group>";
@@ -472,6 +497,11 @@
 				E26E6E690E83689200808BE1 /* Matte.cpp in Sources */,
 				E26E70EE0E87EE9D00808BE1 /* GlossySpecular.cpp in Sources */,
 				E23A65050E87F2170041864C /* Phong.cpp in Sources */,
+				E26B4E9A0E8D56F7009FC7B8 /* AmbientOccluder.cpp in Sources */,
+				E26B4F660E8DBA29009FC7B8 /* AreaLighting.cpp in Sources */,
+				E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */,
+				E26B50330E8EBEDB009FC7B8 /* Rectangle.cpp in Sources */,
+				E26B50550E8EC0A6009FC7B8 /* AreaLight.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

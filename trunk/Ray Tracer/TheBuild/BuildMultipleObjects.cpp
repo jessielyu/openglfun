@@ -21,10 +21,10 @@
 
 void 												
 World::build(void) {
-	int num_samples = 256;
+	int num_samples = 25;
 	
-	vp.set_hres(800);//1680
-	vp.set_vres(800);//1050
+	vp.set_hres(600);//1680
+	vp.set_vres(600);//1050
 	//vp.set_sampler(new Jittered(num_samples));
 	vp.set_pixel_size(0.5);
 	vp.set_samples(num_samples);
@@ -42,7 +42,7 @@ World::build(void) {
 	camera_ptr->set_lookat(Point3D(0.0));
 	camera_ptr->set_d(600.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(2.2);//3
+	camera_ptr->set_zoom(3.0);//3
 	set_camera(camera_ptr);
 	
 	// ThinLens camera

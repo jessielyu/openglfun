@@ -34,6 +34,12 @@ public:
 	virtual Vector3D
 	get_direction(ShadeRec& sr) = 0;
 	
+	virtual float
+	G(const ShadeRec& sr) const;
+	
+	virtual float
+	pdf(const ShadeRec& sr) const;
+	
 	virtual MyRGBColor
 	L(ShadeRec& sr);
 	
@@ -52,6 +58,16 @@ protected:
 inline bool
 Light::casts_shadows() {
 	return shadows;
+}
+
+inline float
+Light::G(const ShadeRec& sr) const {
+	return 1.0;
+}
+
+inline float
+Light::pdf(const ShadeRec& sr) const{
+	return 1.0;
 }
 
 #endif

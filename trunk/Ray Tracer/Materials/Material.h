@@ -36,6 +36,9 @@ public:
 	
 	virtual MyRGBColor
 	path_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
+	get_Le(ShadeRec& sr) const;
 };
 
 #endif
