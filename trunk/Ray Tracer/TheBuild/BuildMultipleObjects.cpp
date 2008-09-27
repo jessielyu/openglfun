@@ -16,13 +16,15 @@
 #include "Directional.h"
 //#include "GlossySpecular.h"
 #include "Phong.h"
+#include "AmbientOccluder.h"
+#include "MultiJittered.h"
 
 void 												
 World::build(void) {
-	int num_samples = 25;
+	int num_samples = 256;
 	
-	vp.set_hres(400);
-	vp.set_vres(400);
+	vp.set_hres(800);//1680
+	vp.set_vres(800);//1050
 	//vp.set_sampler(new Jittered(num_samples));
 	vp.set_pixel_size(0.5);
 	vp.set_samples(num_samples);
@@ -40,7 +42,7 @@ World::build(void) {
 	camera_ptr->set_lookat(Point3D(0.0));
 	camera_ptr->set_d(600.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(1.2);
+	camera_ptr->set_zoom(2.2);//3
 	set_camera(camera_ptr);
 	
 	// ThinLens camera
@@ -91,8 +93,19 @@ World::build(void) {
 	
 	background_color = MyRGBColor(black);
 	
-	Ambient* ambient_ptr = new Ambient;
+//	Ambient* ambient_ptr = new Ambient;
+//	ambient_ptr->scale_radiance(1.5);
+//	set_ambient_light(ambient_ptr);
+	
+	MultiJittered* occluder_sampler_ptr = new MultiJittered(num_samples);
+	
+	
+	
+	AmbientOccluder* ambient_ptr = new AmbientOccluder;
 	ambient_ptr->scale_radiance(1.5);
+	ambient_ptr->set_color(white);
+	ambient_ptr->set_min_amount(0.0);
+	ambient_ptr->set_sampler(occluder_sampler_ptr);
 	set_ambient_light(ambient_ptr);
 	
 	Directional* light_ptr1 = new Directional;
