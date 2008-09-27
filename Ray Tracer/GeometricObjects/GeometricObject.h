@@ -56,6 +56,15 @@ public:
 	
 	bool
 	get_shadows(void);
+	
+	virtual Point3D 											
+	sample(void);
+	
+	virtual Normal 																
+	get_normal(const Point3D& p) const;		
+	
+	virtual float												
+	pdf(const ShadeRec& sr) const;
 
 
 protected:
@@ -112,6 +121,21 @@ GeometricObject::set_material(Material* material) {
 inline Material*
 GeometricObject::get_material(void) {
 	return material_ptr;
+}
+
+inline Point3D 											
+GeometricObject::sample(void) {
+	return Point3D(1.0);
+}
+
+inline Normal 																
+GeometricObject::get_normal(const Point3D& p) const {
+	return Normal(1.0);
+}
+
+inline float												
+GeometricObject::pdf(const ShadeRec& sr) const {
+	return (1.0);
 }
 
 #endif
