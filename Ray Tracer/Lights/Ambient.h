@@ -48,7 +48,7 @@ public:
 	virtual bool
 	in_shadow(const Ray& ray, const ShadeRec& sr) const;
 	
-private:
+protected:
 	
 	float ls;
 	MyRGBColor color;
