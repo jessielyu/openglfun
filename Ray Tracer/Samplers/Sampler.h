@@ -17,6 +17,7 @@
 
 #include "Point3D.h"
 
+
 class Sampler {
 
 public:
@@ -65,6 +66,12 @@ public:
 	int				// get the number of samples
 	get_num_samples(void);
 	
+	void
+	map_samples_to_sphere(void);	
+	
+	Point3D											// get next sample on unit sphere
+	sample_sphere(void);
+	
 protected:
 	
 	int num_samples;	// the number of sample points in a pattern
@@ -72,6 +79,7 @@ protected:
 	std::vector <Point2D> samples; //sample points on a unit square
 	std::vector <Point2D> disk_samples; //sample points on a unit disk
 	std::vector <Point3D> hemisphere_samples; //sample points on a hemisphere disk
+	std::vector<Point3D> 		sphere_samples;			// sample points on a unit sphere
 	std::vector <int> shuffled_indices;	// shuffled samples array indices
 	unsigned long count;	//current number of sample points used
 	int jump;	//random index jump

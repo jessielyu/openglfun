@@ -4,6 +4,7 @@
 // This file contains the declaration of the class Sphere
 
 #include "GeometricObject.h"
+#include "Sampler.h"
 
 //-------------------------------------------------------------------------------- class Sphere
 
@@ -41,12 +42,25 @@ public:
 	virtual bool
 	shadow_hit(const Ray& ray, float& tmin) const;
 	
-private:
+	void 								
+	set_sampler(Sampler* sampler);
+	
+	Point3D 											
+	sample(void);
+	
+	float
+	pdf(ShadeRec& sr) const;	
+	
+	virtual Normal 																
+	get_normal(const Point3D& p) const;	
+	
+protected:
 
 	Point3D 	center;   			// center coordinates as a point  
 	double 		radius;				// the radius 
-	
+	Sampler*	sampler_ptr;		// sampler for being a light object
 	static const double kEpsilon;   // for shadows and secondary rays
+	float		inv_area;
 };
 
 

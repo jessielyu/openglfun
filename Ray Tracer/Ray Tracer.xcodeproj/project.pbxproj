@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E23A65050E87F2170041864C /* Phong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23A65040E87F2170041864C /* Phong.cpp */; };
+		E257E6620E8F405200C01712 /* EnvironmentLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E6610E8F405200C01712 /* EnvironmentLight.cpp */; };
+		E257E7190E8F537100C01712 /* ConcaveSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E7180E8F537100C01712 /* ConcaveSphere.cpp */; };
 		E26B4E9A0E8D56F7009FC7B8 /* AmbientOccluder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */; };
 		E26B4F660E8DBA29009FC7B8 /* AreaLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F650E8DBA29009FC7B8 /* AreaLighting.cpp */; };
 		E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */; };
@@ -56,6 +58,7 @@
 		E2D069390E789ADE00E34880 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D069200E789ADE00E34880 /* Vector3D.cpp */; };
 		E2D0693A0E789ADE00E34880 /* ViewPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D069230E789ADE00E34880 /* ViewPlane.cpp */; };
 		E2D0693B0E789ADE00E34880 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D069250E789ADE00E34880 /* World.cpp */; };
+		E2D9CF070E9008C40043E276 /* BBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D9CF060E9008C40043E276 /* BBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,10 @@
 		E23A65040E87F2170041864C /* Phong.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Phong.cpp; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
+		E257E6600E8F405200C01712 /* EnvironmentLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentLight.h; sourceTree = "<group>"; };
+		E257E6610E8F405200C01712 /* EnvironmentLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = EnvironmentLight.cpp; sourceTree = "<group>"; };
+		E257E7170E8F537100C01712 /* ConcaveSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcaveSphere.h; sourceTree = "<group>"; };
+		E257E7180E8F537100C01712 /* ConcaveSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConcaveSphere.cpp; sourceTree = "<group>"; };
 		E26B4E980E8D56F7009FC7B8 /* AmbientOccluder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbientOccluder.h; sourceTree = "<group>"; };
 		E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AmbientOccluder.cpp; sourceTree = "<group>"; };
 		E26B4F640E8DBA29009FC7B8 /* AreaLighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLighting.h; sourceTree = "<group>"; };
@@ -156,6 +163,8 @@
 		E2D069240E789ADE00E34880 /* ViewPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlane.h; sourceTree = "<group>"; };
 		E2D069250E789ADE00E34880 /* World.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = World.cpp; sourceTree = "<group>"; };
 		E2D069260E789ADE00E34880 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		E2D9CF050E9008C40043E276 /* BBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBox.h; sourceTree = "<group>"; };
+		E2D9CF060E9008C40043E276 /* BBox.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BBox.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +259,8 @@
 				E2D068FA0E789ADE00E34880 /* Sphere.h */,
 				E26B50310E8EBEDB009FC7B8 /* Rectangle.h */,
 				E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */,
+				E257E7170E8F537100C01712 /* ConcaveSphere.h */,
+				E257E7180E8F537100C01712 /* ConcaveSphere.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -269,6 +280,8 @@
 				E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */,
 				E26B50530E8EC0A6009FC7B8 /* AreaLight.h */,
 				E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */,
+				E257E6600E8F405200C01712 /* EnvironmentLight.h */,
+				E257E6610E8F405200C01712 /* EnvironmentLight.cpp */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -385,6 +398,8 @@
 				E2D0691F0E789ADE00E34880 /* ShadeRec.h */,
 				E2D069200E789ADE00E34880 /* Vector3D.cpp */,
 				E2D069210E789ADE00E34880 /* Vector3D.h */,
+				E2D9CF050E9008C40043E276 /* BBox.h */,
+				E2D9CF060E9008C40043E276 /* BBox.cpp */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -502,6 +517,9 @@
 				E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */,
 				E26B50330E8EBEDB009FC7B8 /* Rectangle.cpp in Sources */,
 				E26B50550E8EC0A6009FC7B8 /* AreaLight.cpp in Sources */,
+				E257E6620E8F405200C01712 /* EnvironmentLight.cpp in Sources */,
+				E257E7190E8F537100C01712 /* ConcaveSphere.cpp in Sources */,
+				E2D9CF070E9008C40043E276 /* BBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

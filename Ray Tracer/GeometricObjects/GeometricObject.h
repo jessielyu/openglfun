@@ -99,8 +99,8 @@ GeometricObject::set_color(const float r, const float g, const float b) {
 // --------------------------------------------------------------------  get_colour
 
 inline void
-GeometricObject::set_shadows(const bool shaodow) {
-	shadows = shadow;
+GeometricObject::set_shadows(const bool do_shadow) {
+	shadows = do_shadow;
 }
 
 inline bool

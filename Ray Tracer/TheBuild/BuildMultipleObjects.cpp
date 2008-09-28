@@ -22,10 +22,12 @@
 #include "Rectangle.h"
 #include "AreaLight.h"
 #include "AreaLighting.h"
+#include "EnvironmentLight.h"
+#include "ConcaveSphere.h"
 
 void 												
 World::build(void) {
-	int num_samples = 256;
+	int num_samples = 5;
 	
 	vp.set_hres(400);//1680
 	vp.set_vres(400);//1050
@@ -106,7 +108,7 @@ World::build(void) {
 	MultiJittered* emissive_sampler_ptr = new MultiJittered(num_samples);
 	
 	Emissive* emissive_ptr = new Emissive;
-	emissive_ptr->scale_radiance(1.0);
+	emissive_ptr->scale_radiance(0.6);
 	emissive_ptr->set_ce(white);
 	
 //	p0(-1, 0, -1), 
@@ -115,15 +117,21 @@ World::build(void) {
 //	b_len_squared(4.0),
 //	normal(0, 1, 0),
 	
-	Rectangle* rectangle_ptr = new Rectangle(Point3D(100.0,200,100.0), Vector3D(0,0,200),
-											Vector3D(200,0,0), Normal(-1.0, -1.0, 0.0));
-	rectangle_ptr->set_material(emissive_ptr);
-	rectangle_ptr->set_sampler(emissive_sampler_ptr);
-	rectangle_ptr->set_shadows(false);
-	add_object(rectangle_ptr);
+//	Rectangle* rectangle_ptr = new Rectangle(Point3D(100.0,150,150.0), Vector3D(0,0,200),
+//											Vector3D(200,0,0), Normal(-1.0, -1.0, -1.0));
+//	rectangle_ptr->set_material(emissive_ptr);
+//	rectangle_ptr->set_sampler(emissive_sampler_ptr);
+//	rectangle_ptr->set_shadows(false);
+//	add_object(rectangle_ptr);
+	
+	Sphere* light_sphere_ptr = new Sphere(Point3D(150, 0, 150), 100);
+	light_sphere_ptr->set_material(emissive_ptr);
+	light_sphere_ptr->set_sampler(emissive_sampler_ptr);
+	light_sphere_ptr->set_shadows(false);
+	add_object(light_sphere_ptr);
 	
 	AreaLight* area_light_ptr = new AreaLight;
-	area_light_ptr->set_object(rectangle_ptr);
+	area_light_ptr->set_object(light_sphere_ptr);
 	area_light_ptr->set_shadows(true);
 	add_light(area_light_ptr);
 	
@@ -139,6 +147,23 @@ World::build(void) {
 	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
 	set_ambient_light(ambient_occluder_ptr);
 	
+	
+	Emissive* emissive_ptr2 = new Emissive;
+	emissive_ptr2->set_ce(1.0, 1.0, 0.5);
+	emissive_ptr2->scale_radiance(0.8);
+	
+	ConcaveSphere* sky_box = new ConcaveSphere;
+	sky_box->set_radius(1000000.0);
+	sky_box->set_material(emissive_ptr2);
+	sky_box->set_shadows(false);
+	add_object(sky_box);
+	
+	EnvironmentLight* env_light = new EnvironmentLight;
+	env_light->set_material(emissive_ptr2);
+	env_light->set_sampler(new MultiJittered(num_samples));
+	env_light->set_shadows(true);
+	add_light(env_light);
+	
 	// Sample ball on plane scene
 	
 //	Pinhole* camera_ptr = new Pinhole;
@@ -149,32 +174,32 @@ World::build(void) {
 //	camera_ptr->compute_uvw();
 //	set_camera(camera_ptr);
 //	
-//	float ka = 0.25;
-//	float kd = 0.75;
-//	float exp = 0.25;
+	float ka1 = 0.25;
+	float kd1 = 0.75;
+	float exp1 = 0.25;
 //	
 //	MyRGBColor yellow(1, 1, 0);										// yellow
 //	
 //	Phong* phong_ptr1 = new Phong;   
-//	phong_ptr1->set_ka(ka);	
-//	phong_ptr1->set_kd(kd);
+//	phong_ptr1->set_ka(ka1);	
+//	phong_ptr1->set_kd(kd1);
 //	phong_ptr1->set_c(yellow);				
-//	phong_ptr1->set_exp_s(exp);
+//	phong_ptr1->set_exp_s(exp1);
 //	
 //	Sphere* sphere_ptr001 = new Sphere(Point3D(0,1,0), 1);
 //	sphere_ptr001->set_material(phong_ptr1);
 //	add_object(sphere_ptr001);
 //	
-//	Phong* phong_ptr2 = new Phong;   
-//	phong_ptr2->set_ka(ka);	
-//	phong_ptr2->set_kd(kd);
-//	phong_ptr2->set_c(white);				
-//	phong_ptr2->set_exp_s(exp);
-//	
-//	Plane* plane_ptr001 = new Plane(Point3D(0), Normal(0,1,0));
-//	plane_ptr001->set_material(phong_ptr2);
-//	plane_ptr001->set_shadows(true);
-//	add_object(plane_ptr001);
+	Phong* phong_ptr002 = new Phong;   
+	phong_ptr002->set_ka(ka1);	
+	phong_ptr002->set_kd(kd1);
+	phong_ptr002->set_c(white);				
+	phong_ptr002->set_exp_s(exp1);
+	
+	Plane* plane_ptr001 = new Plane(Point3D(0,-100,0), Normal(0,1,0));
+	plane_ptr001->set_material(phong_ptr002);
+	plane_ptr001->set_shadows(true);
+	add_object(plane_ptr001);
 	
 //	Directional* light_ptr1 = new Directional;
 //	light_ptr1->set_direction(100, 100, 200);
@@ -268,6 +293,7 @@ World::build(void) {
 	phong_ptr1->set_exp_s(exp);
 	Sphere*	sphere_ptr1 = new Sphere(Point3D(5, 3, 0), 30); 
 	sphere_ptr1->set_material(phong_ptr1);	   							// yellow
+	//sphere_ptr1->set_shadows(false);
 	add_object(sphere_ptr1);
 	
 	Phong* phong_ptr2 = new Phong;
@@ -580,11 +606,11 @@ World::build(void) {
 	
 	// vertical plane
 	
-	Matte* phong_ptr36 = new Matte;
-	phong_ptr36->set_ka(ka);	
-	phong_ptr36->set_kd(kd);
-	phong_ptr36->set_cd(grey);
-	Plane* plane_ptr = new Plane(Point3D(0, 0, -150), Normal(0, 0, 1));
-	plane_ptr->set_material(phong_ptr36);
-	add_object (plane_ptr);
+//	Matte* phong_ptr36 = new Matte;
+//	phong_ptr36->set_ka(ka);	
+//	phong_ptr36->set_kd(kd);
+//	phong_ptr36->set_cd(grey);
+//	Plane* plane_ptr = new Plane(Point3D(0, 0, -150), Normal(0, 0, 1));
+//	plane_ptr->set_material(phong_ptr36);
+//	add_object (plane_ptr);
 }
