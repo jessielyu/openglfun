@@ -62,6 +62,9 @@ public:
 	void
 	set_c(const MyRGBColor& c);
 	
+	virtual MyRGBColor
+	area_light_shade(ShadeRec& sr);
+	
 private:
 	Lambertian* ambient_brdf;
 	Lambertian* diffuse_brdf;

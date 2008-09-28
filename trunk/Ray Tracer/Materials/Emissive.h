@@ -30,11 +30,17 @@ public:
 	
 	~Emissive(void);
 	
+	virtual Material*
+	clone(void) const;
+	
 	void
 	scale_radiance(const float b);
 	
 	void
 	set_ce(const float r, const float g, const float b);
+	
+	void
+	set_ce(const MyRGBColor& c);
 	
 	virtual MyRGBColor
 	get_Le(ShadeRec& sr) const;
@@ -54,6 +60,11 @@ Emissive::scale_radiance(const float b) {
 inline void
 Emissive::set_ce(const float r, const float g, const float b) {
 	ce.r = r; ce.g = g; ce.b = b;
+}
+
+inline void
+Emissive::set_ce(const MyRGBColor& c) {
+	ce.r = c.r; ce.g = c.g; ce.b = c.b;
 }
 
 #endif

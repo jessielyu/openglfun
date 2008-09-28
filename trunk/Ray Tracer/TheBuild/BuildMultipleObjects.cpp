@@ -18,13 +18,17 @@
 #include "Phong.h"
 #include "AmbientOccluder.h"
 #include "MultiJittered.h"
+#include "Emissive.h"
+#include "Rectangle.h"
+#include "AreaLight.h"
+#include "AreaLighting.h"
 
 void 												
 World::build(void) {
-	int num_samples = 25;
+	int num_samples = 256;
 	
-	vp.set_hres(600);//1680
-	vp.set_vres(600);//1050
+	vp.set_hres(400);//1680
+	vp.set_vres(400);//1050
 	//vp.set_sampler(new Jittered(num_samples));
 	vp.set_pixel_size(0.5);
 	vp.set_samples(num_samples);
@@ -42,7 +46,9 @@ World::build(void) {
 	camera_ptr->set_lookat(Point3D(0.0));
 	camera_ptr->set_d(600.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(3.0);//3
+	camera_ptr->set_zoom(1.2);//3
+	set_camera(camera_ptr);
+	camera_ptr->compute_uvw();
 	set_camera(camera_ptr);
 	
 	// ThinLens camera
@@ -86,32 +92,94 @@ World::build(void) {
 //												0.75f, left_camera_ptr, right_camera_ptr);
 //	camera_ptr->setup_cameras();
 	
-	camera_ptr->compute_uvw();
-	set_camera(camera_ptr);
+
 	
-	tracer_ptr = new RayCast(this); 
+	tracer_ptr = new AreaLighting(this); 
 	
 	background_color = MyRGBColor(black);
 	
-//	Ambient* ambient_ptr = new Ambient;
-//	ambient_ptr->scale_radiance(1.5);
-//	set_ambient_light(ambient_ptr);
+	Ambient* ambient_ptr = new Ambient;
+	ambient_ptr->scale_radiance(0.0);
+	set_ambient_light(ambient_ptr);
+	
+	
+	MultiJittered* emissive_sampler_ptr = new MultiJittered(num_samples);
+	
+	Emissive* emissive_ptr = new Emissive;
+	emissive_ptr->scale_radiance(1.0);
+	emissive_ptr->set_ce(white);
+	
+//	p0(-1, 0, -1), 
+//	a(0, 0, 2), b(2, 0, 0), 
+//	a_len_squared(4.0), 
+//	b_len_squared(4.0),
+//	normal(0, 1, 0),
+	
+	Rectangle* rectangle_ptr = new Rectangle(Point3D(100.0,200,100.0), Vector3D(0,0,200),
+											Vector3D(200,0,0), Normal(-1.0, -1.0, 0.0));
+	rectangle_ptr->set_material(emissive_ptr);
+	rectangle_ptr->set_sampler(emissive_sampler_ptr);
+	rectangle_ptr->set_shadows(false);
+	add_object(rectangle_ptr);
+	
+	AreaLight* area_light_ptr = new AreaLight;
+	area_light_ptr->set_object(rectangle_ptr);
+	area_light_ptr->set_shadows(true);
+	add_light(area_light_ptr);
+	
+	
+	
 	
 	MultiJittered* occluder_sampler_ptr = new MultiJittered(num_samples);
 	
+	AmbientOccluder* ambient_occluder_ptr = new AmbientOccluder;
+	ambient_occluder_ptr->scale_radiance(1.5);
+	ambient_occluder_ptr->set_color(white);
+	ambient_occluder_ptr->set_min_amount(0.0);
+	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
+	set_ambient_light(ambient_occluder_ptr);
 	
+	// Sample ball on plane scene
 	
-	AmbientOccluder* ambient_ptr = new AmbientOccluder;
-	ambient_ptr->scale_radiance(1.5);
-	ambient_ptr->set_color(white);
-	ambient_ptr->set_min_amount(0.0);
-	ambient_ptr->set_sampler(occluder_sampler_ptr);
-	set_ambient_light(ambient_ptr);
+//	Pinhole* camera_ptr = new Pinhole;
+//	camera_ptr->set_eye(Point3D(0,5,45));
+//	camera_ptr->set_lookat(Point3D(0,1,0));
+//	camera_ptr->set_d(5000);
+//	camera_ptr->set_zoom(.3);
+//	camera_ptr->compute_uvw();
+//	set_camera(camera_ptr);
+//	
+//	float ka = 0.25;
+//	float kd = 0.75;
+//	float exp = 0.25;
+//	
+//	MyRGBColor yellow(1, 1, 0);										// yellow
+//	
+//	Phong* phong_ptr1 = new Phong;   
+//	phong_ptr1->set_ka(ka);	
+//	phong_ptr1->set_kd(kd);
+//	phong_ptr1->set_c(yellow);				
+//	phong_ptr1->set_exp_s(exp);
+//	
+//	Sphere* sphere_ptr001 = new Sphere(Point3D(0,1,0), 1);
+//	sphere_ptr001->set_material(phong_ptr1);
+//	add_object(sphere_ptr001);
+//	
+//	Phong* phong_ptr2 = new Phong;   
+//	phong_ptr2->set_ka(ka);	
+//	phong_ptr2->set_kd(kd);
+//	phong_ptr2->set_c(white);				
+//	phong_ptr2->set_exp_s(exp);
+//	
+//	Plane* plane_ptr001 = new Plane(Point3D(0), Normal(0,1,0));
+//	plane_ptr001->set_material(phong_ptr2);
+//	plane_ptr001->set_shadows(true);
+//	add_object(plane_ptr001);
 	
-	Directional* light_ptr1 = new Directional;
-	light_ptr1->set_direction(100, 100, 200);
-	light_ptr1->scale_radiance(.5); 	
-	add_light(light_ptr1);
+//	Directional* light_ptr1 = new Directional;
+//	light_ptr1->set_direction(100, 100, 200);
+//	light_ptr1->scale_radiance(.5); 	
+//	add_light(light_ptr1);
 	
 //	PointLight* light_ptr2 = new PointLight;
 //	light_ptr2->set_location(100.0, 1.0, 1.0);

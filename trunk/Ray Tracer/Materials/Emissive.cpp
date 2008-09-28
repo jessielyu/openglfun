@@ -34,13 +34,25 @@ Emissive::operator=(const Emissive& em) {
 	return (*this);
 }
 
+Material*
+Emissive::clone(void) const {
+	return (new Emissive(*this));
+}
+
 Emissive::~Emissive(void) {}
 
 MyRGBColor
-Emissive::get_Le(ShadeRec& sr) const {}
+Emissive::get_Le(ShadeRec& sr) const {
+	return (ls*ce);
+}
 
 MyRGBColor
-Emissive::shade(ShadeRec& sr) {}
+Emissive::shade(ShadeRec& sr) {
+	if (-sr.normal * sr.ray.d > 0.0)
+		return (ls* ce);
+	else
+		return (black);
+}
 
 MyRGBColor
 Emissive::area_light_shade(ShadeRec& sr) {
