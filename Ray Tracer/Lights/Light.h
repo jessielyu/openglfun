@@ -44,10 +44,13 @@ public:
 	L(ShadeRec& sr);
 	
 	bool
-	casts_shadows();
+	casts_shadows() const;
 	
 	virtual bool
 	in_shadow(const Ray& ray, const ShadeRec& sr) const = 0;
+	
+	void
+	set_shadows(const bool shadow);
 	
 protected:
 	
@@ -55,8 +58,14 @@ protected:
 	
 };
 
+inline void
+Light::set_shadows(const bool shadow){
+	shadows = shadow;
+}
+
+
 inline bool
-Light::casts_shadows() {
+Light::casts_shadows() const {
 	return shadows;
 }
 
