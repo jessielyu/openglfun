@@ -171,4 +171,34 @@ Sampler::map_samples_to_hemisphere(const float e) {
 		hemisphere_samples.push_back(Point3D(pu, pv, pw));
 	}
 }
-				
+
+void
+Sampler::map_samples_to_sphere(void) {
+	float r1, r2;
+	float x, y, z;
+	float r, phi;
+	
+	sphere_samples.reserve(num_samples * num_sets);   
+	
+	for (int j = 0; j < num_samples * num_sets; j++) {
+		r1 	= samples[j].x;
+    	r2 	= samples[j].y;
+    	z 	= 1.0 - 2.0 * r1;
+    	r 	= sqrt(1.0 - z * z);
+    	phi = TWO_PI * r2;
+    	x 	= r * cos(phi);
+    	y 	= r * sin(phi);
+		sphere_samples.push_back(Point3D(x, y, z)); 
+	}
+}
+
+Point3D
+Sampler::sample_sphere(void) {
+	if (count % num_samples == 0)  									// start of a new pixel
+		jump = (rand_int() % num_sets) * num_samples;
+	
+	return (sphere_samples[jump + shuffled_indices[jump + count++ % num_samples]]);		
+}
+
+
+

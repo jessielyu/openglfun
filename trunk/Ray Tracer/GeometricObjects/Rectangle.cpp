@@ -177,6 +177,10 @@ Rectangle::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 
 bool
 Rectangle::shadow_hit(const Ray& ray, float& tmin) const {
+	
+	if(!shadows)
+		return false;
+	
 	double t = (p0 - ray.o) * normal / (ray.d * normal); 
 	
 	if (t <= kEpsilon)
@@ -207,6 +211,11 @@ Rectangle::shadow_hit(const Ray& ray, float& tmin) const {
 
 void 								
 Rectangle::set_sampler(Sampler* sampler) {
+	if (sampler_ptr) {
+		delete sampler_ptr;
+		sampler_ptr = NULL;
+	}
+	
 	sampler_ptr = sampler;
 }
 

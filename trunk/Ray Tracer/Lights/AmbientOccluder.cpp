@@ -18,7 +18,10 @@ AmbientOccluder::AmbientOccluder(void)
 AmbientOccluder::AmbientOccluder(const AmbientOccluder& amb)
 :	Ambient(amb),
 	sampler_ptr(amb.sampler_ptr->clone()),
-	min_amount(MyRGBColor(0.001))
+	min_amount(MyRGBColor(0.001)),
+	u(amb.u),
+	v(amb.v),
+	w(amb.w)
 {}
 
 AmbientOccluder&
@@ -36,6 +39,11 @@ AmbientOccluder::operator= (const AmbientOccluder& amb)	{
 		
 		sampler_ptr = amb.sampler_ptr->clone();
 	}
+	
+	u = amb.u;
+	v = amb.v;
+	w = amb.w;
+	min_amount = amb.min_amount;
 	
 	return (*this);
 }
