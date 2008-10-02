@@ -8,7 +8,7 @@
 #include "Normal.h"
 #include "Ray.h"
 #include "ShadeRec.h"
-
+#include "BBox.h"
 #include "Constants.h"
 #include "Material.h"
 					
@@ -46,7 +46,7 @@ public:
 	set_material(Material* material);
 
 	Material*
-	get_material(void);
+	get_material(void) const;
 
 	virtual bool
 	shadow_hit(const Ray& ray, float& tmin) const = 0;
@@ -65,6 +65,9 @@ public:
 	
 	virtual float												
 	pdf(const ShadeRec& sr) const;
+	
+	virtual BBox
+	get_bounding_box(void) const;
 
 
 protected:
@@ -74,7 +77,7 @@ protected:
 	GeometricObject&						// assignment operator
 	operator= (const GeometricObject& rhs);
 
-	Material* material_ptr;
+	mutable Material* material_ptr;
 	
 	bool shadows;							// whether or not the object casts shadows
 };
@@ -119,7 +122,7 @@ GeometricObject::set_material(Material* material) {
 }
 
 inline Material*
-GeometricObject::get_material(void) {
+GeometricObject::get_material(void) const {
 	return material_ptr;
 }
 
@@ -136,6 +139,13 @@ GeometricObject::get_normal(const Point3D& p) const {
 inline float												
 GeometricObject::pdf(const ShadeRec& sr) const {
 	return (1.0);
+}
+
+inline BBox
+GeometricObject::get_bounding_box(void) const {
+	//double delta = 0.0001; 
+	
+	return(BBox(-1, 1, -1, 1, -1, 1));
 }
 
 #endif

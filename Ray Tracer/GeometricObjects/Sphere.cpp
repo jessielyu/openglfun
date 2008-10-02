@@ -63,7 +63,7 @@ Sphere::operator= (const Sphere& rhs)
 
 	center 	= rhs.center;
 	radius	= rhs.radius;
-				 inv_area = rhs.inv_area;
+	inv_area = rhs.inv_area;
 	
 	if (sampler_ptr) {
 		delete sampler_ptr;
@@ -91,6 +91,7 @@ Sphere::~Sphere(void) {
 
 bool
 Sphere::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
+	
 	double 		t;
 	Vector3D	temp 	= ray.o - center;
 	double 		a 		= ray.d * ray.d;
@@ -202,5 +203,16 @@ Sphere::get_normal(const Point3D& p) const {
 	return v;						// Use gradient operator instead? p.347-348
 }
 
+BBox
+Sphere::get_bounding_box(void) const {
+		double delta = 0.0001; 
+	//	
+	//	return(BBox(min(p0.x, p0.x + a.x + b.x) - delta, max(p0.x, p0.x + a.x + b.x) + delta,
+	//				min(p0.y, p0.y + a.y + b.y) - delta, max(p0.y, p0.y + a.y + b.y) + delta, 
+	//				min(p0.z, p0.z + a.z + b.z) - delta, max(p0.z, p0.z + a.z + b.z) + delta));
+	
+	return (BBox(Point3D(center.x - radius - delta, center.y - radius - delta, center.z - radius - delta),
+		 Point3D(center.x + radius + delta, center.y + radius + delta, center.z + radius + delta)));
+}
 
 
