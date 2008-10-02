@@ -54,6 +54,9 @@ public:
 	virtual Normal 																
 	get_normal(const Point3D& p) const;	
 	
+	virtual BBox
+	get_bounding_box(void) const;
+	
 protected:
 
 	Point3D 	center;   			// center coordinates as a point  

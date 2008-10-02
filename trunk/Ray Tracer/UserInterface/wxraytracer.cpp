@@ -461,7 +461,7 @@ void RenderThread::setPixel(int x, int y, int red, int green, int blue)
    
    pixels.push_back(new RenderPixel(x, y, red, green, blue));
    
-   if(timer->Time() - lastUpdateTime > 40)
+   if(timer->Time() - lastUpdateTime > 500)
       NotifyCanvas();
     
    TestDestroy();
