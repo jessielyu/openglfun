@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E23A65050E87F2170041864C /* Phong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23A65040E87F2170041864C /* Phong.cpp */; };
+		E25555A30E9D8B2400EF6FC1 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E25555A20E9D8B2400EF6FC1 /* Triangle.cpp */; };
 		E257E6620E8F405200C01712 /* EnvironmentLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E6610E8F405200C01712 /* EnvironmentLight.cpp */; };
 		E257E7190E8F537100C01712 /* ConcaveSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E7180E8F537100C01712 /* ConcaveSphere.cpp */; };
 		E26B4E9A0E8D56F7009FC7B8 /* AmbientOccluder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4E990E8D56F7009FC7B8 /* AmbientOccluder.cpp */; };
@@ -40,6 +41,7 @@
 		E2B3B68C0E7DC02200406AA3 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B68B0E7DC02200406AA3 /* Camera.cpp */; };
 		E2B3B6A00E7DC6FF00406AA3 /* Pinhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */; };
 		E2B3B8D60E7EC58C00406AA3 /* ThinLens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B8D50E7EC58C00406AA3 /* ThinLens.cpp */; };
+		E2BE3EF90EA25AF200118229 /* Disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE3EF80EA25AF200118229 /* Disk.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -59,6 +61,8 @@
 		E2D0693A0E789ADE00E34880 /* ViewPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D069230E789ADE00E34880 /* ViewPlane.cpp */; };
 		E2D0693B0E789ADE00E34880 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D069250E789ADE00E34880 /* World.cpp */; };
 		E2D9CF070E9008C40043E276 /* BBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D9CF060E9008C40043E276 /* BBox.cpp */; };
+		E2D9CFDC0E9024E70043E276 /* Compound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D9CFDB0E9024E70043E276 /* Compound.cpp */; };
+		E2D9D0150E9045F70043E276 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D9D0140E9045F70043E276 /* Grid.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,8 @@
 		E23A65040E87F2170041864C /* Phong.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Phong.cpp; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
+		E25555A10E9D8B2300EF6FC1 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		E25555A20E9D8B2400EF6FC1 /* Triangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Triangle.cpp; sourceTree = "<group>"; };
 		E257E6600E8F405200C01712 /* EnvironmentLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentLight.h; sourceTree = "<group>"; };
 		E257E6610E8F405200C01712 /* EnvironmentLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = EnvironmentLight.cpp; sourceTree = "<group>"; };
 		E257E7170E8F537100C01712 /* ConcaveSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcaveSphere.h; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Pinhole.cpp; path = ../Pinhole.cpp; sourceTree = "<group>"; };
 		E2B3B8D40E7EC58C00406AA3 /* ThinLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinLens.h; sourceTree = "<group>"; };
 		E2B3B8D50E7EC58C00406AA3 /* ThinLens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ThinLens.cpp; sourceTree = "<group>"; };
+		E2BE3EF70EA25AF200118229 /* Disk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disk.h; sourceTree = "<group>"; };
+		E2BE3EF80EA25AF200118229 /* Disk.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Disk.cpp; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -165,6 +173,10 @@
 		E2D069260E789ADE00E34880 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		E2D9CF050E9008C40043E276 /* BBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBox.h; sourceTree = "<group>"; };
 		E2D9CF060E9008C40043E276 /* BBox.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BBox.cpp; sourceTree = "<group>"; };
+		E2D9CFDA0E9024E70043E276 /* Compound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compound.h; sourceTree = "<group>"; };
+		E2D9CFDB0E9024E70043E276 /* Compound.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Compound.cpp; sourceTree = "<group>"; };
+		E2D9D0130E9045F70043E276 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		E2D9D0140E9045F70043E276 /* Grid.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Grid.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +273,14 @@
 				E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */,
 				E257E7170E8F537100C01712 /* ConcaveSphere.h */,
 				E257E7180E8F537100C01712 /* ConcaveSphere.cpp */,
+				E2D9CFDA0E9024E70043E276 /* Compound.h */,
+				E2D9CFDB0E9024E70043E276 /* Compound.cpp */,
+				E2D9D0130E9045F70043E276 /* Grid.h */,
+				E2D9D0140E9045F70043E276 /* Grid.cpp */,
+				E25555A10E9D8B2300EF6FC1 /* Triangle.h */,
+				E25555A20E9D8B2400EF6FC1 /* Triangle.cpp */,
+				E2BE3EF70EA25AF200118229 /* Disk.h */,
+				E2BE3EF80EA25AF200118229 /* Disk.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -520,6 +540,10 @@
 				E257E6620E8F405200C01712 /* EnvironmentLight.cpp in Sources */,
 				E257E7190E8F537100C01712 /* ConcaveSphere.cpp in Sources */,
 				E2D9CF070E9008C40043E276 /* BBox.cpp in Sources */,
+				E2D9CFDC0E9024E70043E276 /* Compound.cpp in Sources */,
+				E2D9D0150E9045F70043E276 /* Grid.cpp in Sources */,
+				E25555A30E9D8B2400EF6FC1 /* Triangle.cpp in Sources */,
+				E2BE3EF90EA25AF200118229 /* Disk.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
