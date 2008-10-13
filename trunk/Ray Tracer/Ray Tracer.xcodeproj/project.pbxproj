@@ -42,6 +42,11 @@
 		E2B3B6A00E7DC6FF00406AA3 /* Pinhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B69F0E7DC6FF00406AA3 /* Pinhole.cpp */; };
 		E2B3B8D60E7EC58C00406AA3 /* ThinLens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2B3B8D50E7EC58C00406AA3 /* ThinLens.cpp */; };
 		E2BE3EF90EA25AF200118229 /* Disk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE3EF80EA25AF200118229 /* Disk.cpp */; };
+		E2BE3F770EA26C5F00118229 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE3F760EA26C5F00118229 /* Box.cpp */; };
+		E2BE40330EA27FC300118229 /* OpenCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE40320EA27FC300118229 /* OpenCylinder.cpp */; };
+		E2BE41070EA2A48A00118229 /* Maths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41060EA2A48A00118229 /* Maths.cpp */; };
+		E2BE41280EA2A65A00118229 /* Torus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41270EA2A65A00118229 /* Torus.cpp */; };
+		E2BE41750EA2B79400118229 /* FakeSphericalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41740EA2B79400118229 /* FakeSphericalLight.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -135,6 +140,15 @@
 		E2B3B8D50E7EC58C00406AA3 /* ThinLens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ThinLens.cpp; sourceTree = "<group>"; };
 		E2BE3EF70EA25AF200118229 /* Disk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disk.h; sourceTree = "<group>"; };
 		E2BE3EF80EA25AF200118229 /* Disk.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Disk.cpp; sourceTree = "<group>"; };
+		E2BE3F750EA26C5F00118229 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		E2BE3F760EA26C5F00118229 /* Box.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Box.cpp; sourceTree = "<group>"; };
+		E2BE40310EA27FC300118229 /* OpenCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCylinder.h; sourceTree = "<group>"; };
+		E2BE40320EA27FC300118229 /* OpenCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = OpenCylinder.cpp; sourceTree = "<group>"; };
+		E2BE41060EA2A48A00118229 /* Maths.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Maths.cpp; sourceTree = "<group>"; };
+		E2BE41260EA2A65A00118229 /* Torus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Torus.h; sourceTree = "<group>"; };
+		E2BE41270EA2A65A00118229 /* Torus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Torus.cpp; sourceTree = "<group>"; };
+		E2BE41730EA2B79400118229 /* FakeSphericalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSphericalLight.h; sourceTree = "<group>"; };
+		E2BE41740EA2B79400118229 /* FakeSphericalLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FakeSphericalLight.cpp; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -281,6 +295,12 @@
 				E25555A20E9D8B2400EF6FC1 /* Triangle.cpp */,
 				E2BE3EF70EA25AF200118229 /* Disk.h */,
 				E2BE3EF80EA25AF200118229 /* Disk.cpp */,
+				E2BE3F750EA26C5F00118229 /* Box.h */,
+				E2BE3F760EA26C5F00118229 /* Box.cpp */,
+				E2BE40310EA27FC300118229 /* OpenCylinder.h */,
+				E2BE40320EA27FC300118229 /* OpenCylinder.cpp */,
+				E2BE41260EA2A65A00118229 /* Torus.h */,
+				E2BE41270EA2A65A00118229 /* Torus.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -302,6 +322,8 @@
 				E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */,
 				E257E6600E8F405200C01712 /* EnvironmentLight.h */,
 				E257E6610E8F405200C01712 /* EnvironmentLight.cpp */,
+				E2BE41730EA2B79400118229 /* FakeSphericalLight.h */,
+				E2BE41740EA2B79400118229 /* FakeSphericalLight.cpp */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -420,6 +442,7 @@
 				E2D069210E789ADE00E34880 /* Vector3D.h */,
 				E2D9CF050E9008C40043E276 /* BBox.h */,
 				E2D9CF060E9008C40043E276 /* BBox.cpp */,
+				E2BE41060EA2A48A00118229 /* Maths.cpp */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -544,6 +567,11 @@
 				E2D9D0150E9045F70043E276 /* Grid.cpp in Sources */,
 				E25555A30E9D8B2400EF6FC1 /* Triangle.cpp in Sources */,
 				E2BE3EF90EA25AF200118229 /* Disk.cpp in Sources */,
+				E2BE3F770EA26C5F00118229 /* Box.cpp in Sources */,
+				E2BE40330EA27FC300118229 /* OpenCylinder.cpp in Sources */,
+				E2BE41070EA2A48A00118229 /* Maths.cpp in Sources */,
+				E2BE41280EA2A65A00118229 /* Torus.cpp in Sources */,
+				E2BE41750EA2B79400118229 /* FakeSphericalLight.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

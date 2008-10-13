@@ -38,6 +38,8 @@ Disk::operator=(const Disk& d) {
 	if (this == &d)
 		return (*this);
 	
+	GeometricObject::operator= (d);
+	
 	center = d.center;
 	r_squared = d.r_squared;
 	normal = d.normal;
