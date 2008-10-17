@@ -36,7 +36,7 @@ public:
 	shadow_hit(const Ray& ray, float& tmin) const;
 	
 	virtual BBox
-	get_bounding_box(void);
+	get_bounding_box(void) const;
 };
 
 #endif

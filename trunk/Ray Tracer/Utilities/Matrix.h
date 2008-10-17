@@ -25,6 +25,9 @@ class Matrix {
 			
 		Matrix 											// multiplication of two matrices
 		operator* (const Matrix& mat) const;
+	
+		Matrix
+		scalar_mult(const double m);
 
 		Matrix 											// divsion by a double
 		operator/ (const double d);

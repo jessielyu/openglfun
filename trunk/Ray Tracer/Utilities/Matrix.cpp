@@ -80,6 +80,15 @@ Matrix::operator/ (const double d) {
 	return (*this);
 }
 
+Matrix
+Matrix::scalar_mult(const double d) {
+	for (int x = 0; x < 4; x++)				
+		for (int y = 0; y < 4; y++)			
+			m[x][y] = m[x][y] * d;	
+	
+	return (*this);	
+}
+
 
 
 // ----------------------------------------------------------------------- set_identity
