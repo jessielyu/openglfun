@@ -47,6 +47,9 @@
 		E2BE41070EA2A48A00118229 /* Maths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41060EA2A48A00118229 /* Maths.cpp */; };
 		E2BE41280EA2A65A00118229 /* Torus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41270EA2A65A00118229 /* Torus.cpp */; };
 		E2BE41750EA2B79400118229 /* FakeSphericalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41740EA2B79400118229 /* FakeSphericalLight.cpp */; };
+		E2BE41F60EA3A5F500118229 /* ConvexPartSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41F50EA3A5F500118229 /* ConvexPartSphere.cpp */; };
+		E2BE42B00EA3C40700118229 /* SolidCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */; };
+		E2BE448F0EA6528600118229 /* Instance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE448E0EA6528600118229 /* Instance.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -149,6 +152,12 @@
 		E2BE41270EA2A65A00118229 /* Torus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Torus.cpp; sourceTree = "<group>"; };
 		E2BE41730EA2B79400118229 /* FakeSphericalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSphericalLight.h; sourceTree = "<group>"; };
 		E2BE41740EA2B79400118229 /* FakeSphericalLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FakeSphericalLight.cpp; sourceTree = "<group>"; };
+		E2BE41F40EA3A5F500118229 /* ConvexPartSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartSphere.h; sourceTree = "<group>"; };
+		E2BE41F50EA3A5F500118229 /* ConvexPartSphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartSphere.cpp; sourceTree = "<group>"; };
+		E2BE42AE0EA3C40700118229 /* SolidCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolidCylinder.h; sourceTree = "<group>"; };
+		E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SolidCylinder.cpp; sourceTree = "<group>"; };
+		E2BE448D0EA6528600118229 /* Instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instance.h; sourceTree = "<group>"; };
+		E2BE448E0EA6528600118229 /* Instance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Instance.cpp; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -301,6 +310,12 @@
 				E2BE40320EA27FC300118229 /* OpenCylinder.cpp */,
 				E2BE41260EA2A65A00118229 /* Torus.h */,
 				E2BE41270EA2A65A00118229 /* Torus.cpp */,
+				E2BE41F40EA3A5F500118229 /* ConvexPartSphere.h */,
+				E2BE41F50EA3A5F500118229 /* ConvexPartSphere.cpp */,
+				E2BE42AE0EA3C40700118229 /* SolidCylinder.h */,
+				E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */,
+				E2BE448D0EA6528600118229 /* Instance.h */,
+				E2BE448E0EA6528600118229 /* Instance.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -572,6 +587,9 @@
 				E2BE41070EA2A48A00118229 /* Maths.cpp in Sources */,
 				E2BE41280EA2A65A00118229 /* Torus.cpp in Sources */,
 				E2BE41750EA2B79400118229 /* FakeSphericalLight.cpp in Sources */,
+				E2BE41F60EA3A5F500118229 /* ConvexPartSphere.cpp in Sources */,
+				E2BE42B00EA3C40700118229 /* SolidCylinder.cpp in Sources */,
+				E2BE448F0EA6528600118229 /* Instance.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

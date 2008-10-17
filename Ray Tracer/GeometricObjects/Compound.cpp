@@ -44,7 +44,7 @@ Compound::set_material(Material* mat_ptr) {
 	int num_objects = objects.size();
 	
 	for (int j = 0; j < num_objects; j++)
-		objects[j]->set_material(material_ptr);
+		objects[j]->set_material(mat_ptr);
 }
 
 void

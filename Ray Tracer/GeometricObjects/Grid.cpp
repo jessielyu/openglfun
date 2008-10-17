@@ -46,7 +46,7 @@ Grid::clone(void) const {
 }
 
 BBox
-Grid::get_bounding_box(void) {
+Grid::get_bounding_box(void) const {
 	return bbox;
 }
 

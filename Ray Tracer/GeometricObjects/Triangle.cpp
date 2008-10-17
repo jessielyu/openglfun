@@ -54,7 +54,7 @@ Triangle::clone(void) const {
 }
 
 BBox
-Triangle::get_bounding_box(void) {
+Triangle::get_bounding_box(void) const {
 	double delta = 0.000001;
 	
 	return (BBox(min(min(v0.x, v1.x), v2.x) - delta, max(max(v0.x, v1.x), v2.x) + delta,

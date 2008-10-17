@@ -31,10 +31,13 @@
 #include "OpenCylinder.h"
 #include "Torus.h"
 #include "FakeSphericalLight.h"
+#include "ConvexPartSphere.h"
+#include "SolidCylinder.h"
+#include "Instance.h"
 
 void 												
 World::build(void) {
-	int num_samples = 100;
+	int num_samples = 5;
 	
 	vp.set_hres(400);//1680
 	vp.set_vres(400);//1050
@@ -51,30 +54,30 @@ World::build(void) {
 	//Pinhole* camera_ptr = new Pinhole(Point3D(0, 50, 600), Point3D(0, 6, -50), Vector3D(0, 1, 0), 500, 1.0);
 	
 	// spheres camera?
-	Pinhole* camera_ptr = new Pinhole;
-	camera_ptr->set_eye(Point3D(0, 0, 500)); 
-	camera_ptr->set_lookat(Point3D(1.0,0.0, 0));
-	camera_ptr->set_d(600.0);
-	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(1.2);//3 or 3.2
-	camera_ptr->compute_uvw();
-	set_camera(camera_ptr);
-	
 //	Pinhole* camera_ptr = new Pinhole;
-//	camera_ptr->set_eye(Point3D(25, 25, 100)); 
+//	camera_ptr->set_eye(Point3D(0, 0, 500)); 
 //	camera_ptr->set_lookat(Point3D(1.0,0.0, 0));
-//	camera_ptr->set_d(3000.0);
+//	camera_ptr->set_d(600.0);
 //	//camera_ptr->compute_uvw();   
 //	camera_ptr->set_zoom(1.2);//3 or 3.2
 //	camera_ptr->compute_uvw();
 //	set_camera(camera_ptr);
+	
+	Pinhole* camera_ptr = new Pinhole;
+	camera_ptr->set_eye(Point3D(25, 25, 100)); 
+	camera_ptr->set_lookat(Point3D(1.0,0.0, 0));
+	camera_ptr->set_d(3000.0);
+	//camera_ptr->compute_uvw();   
+	camera_ptr->set_zoom(1.2);//3 or 3.2
+	camera_ptr->compute_uvw();
+	set_camera(camera_ptr);
 	
 	// triangle camera
 //	Pinhole* pinhole_ptr = new Pinhole;
 //	pinhole_ptr->set_eye(Point3D(25, 200, 100));  
 //	pinhole_ptr->set_lookat(Point3D(-0.5, 0, 0));  
 //	pinhole_ptr->set_d(4000);	
-//	pinhole_ptr->compute_uvw();
+//	pinhole_ptr->compute_uvw();	
 //	set_camera(pinhole_ptr);
 	
 	// light for triangles
@@ -320,14 +323,15 @@ World::build(void) {
 		set_rand_seed(15);
 	}
 	
-//	// yellow triangle
-//	
+	// yellow triangle
+	
 //	Matte* matte_ptr1 = new Matte;			
 //	matte_ptr1->set_ka(0.25); 
 //	matte_ptr1->set_kd(0.75);
 //	matte_ptr1->set_cd(MyRGBColor(1, 1, 0));
 //	
-//	Triangle* triangle_ptr1 = new Triangle(Point3D(-2, -0.5, -5), Point3D(2, 1.5, -5), Point3D(-1, 0, -4)); 
+//	Triangle* triangle_ptr1 = new Triangle(Point3D(2, 0.5, 5), Point3D(2, 1.5, -5), Point3D(-1, 0, -4)); 
+	
 //	triangle_ptr1->set_material(matte_ptr1);
 //	if (use_grid)
 //		grid_ptr->add_object(triangle_ptr1);
@@ -342,9 +346,12 @@ World::build(void) {
 //	matte_ptr2->set_kd(0.75);
 //	matte_ptr2->set_cd(MyRGBColor(0.0, 0.5, 0.41));
 //	
-//	Triangle* triangle_ptr2 = new Triangle(Point3D(2, 1, 5), Point3D(2, 0.5, -5), Point3D(-1, -1, -4)); 
-//	//triangle_ptr2->rotate_y(120);
+//	Instance* triangle_ptr2 = new Instance(new Triangle(Point3D(2, 1, 5), Point3D(2, 0.5, -5), Point3D(-1, -1, -4))); 
+//	//triangle_ptr2->translate(-1,0,0);
+//	triangle_ptr2->rotate_y(120);
+	
 //	triangle_ptr2->set_material(matte_ptr2);
+//	triangle_ptr2->compute_bounding_box();
 //	if (use_grid)
 //		grid_ptr->add_object(triangle_ptr2);
 //	else
@@ -353,14 +360,16 @@ World::build(void) {
 //	
 //	// brown triangle (transformed)
 //	
-//	Matte* matte_ptr3 = new Matte;			
-//	matte_ptr3->set_ka(0.25); 
-//	matte_ptr3->set_kd(0.75);
-//	matte_ptr3->set_cd(MyRGBColor(0.71, 0.40, 0.16));
+	Matte* matte_ptr3 = new Matte;			
+	matte_ptr3->set_ka(0.25); 
+	matte_ptr3->set_kd(0.75);
+	matte_ptr3->set_cd(MyRGBColor(0.71, 0.40, 0.16));
 //	
-//	Triangle* triangle_ptr3 = new Triangle(Point3D(2, 0, 5), Point3D(2, 1, -5), Point3D(-1, 0, -4)); 
-//	//triangle_ptr3->rotate_y(240);
+//	Instance* triangle_ptr3 = new Instance(new Triangle(Point3D(2, 0, 5), Point3D(2, 1, -5), Point3D(-1, 0, -4))); 
+//	triangle_ptr3->rotate_y(240);
+	//triangle_ptr3->translate(1, 0, 0);
 //	triangle_ptr3->set_material(matte_ptr3);
+//	triangle_ptr3->compute_bounding_box();
 //	if (use_grid)
 //		grid_ptr->add_object(triangle_ptr3);
 //	else
@@ -373,12 +382,19 @@ World::build(void) {
 //	else
 //		add_object(disk_ptr);
 //	
-//	Box* box_ptr = new Box();
-//	box_ptr->set_material(matte_ptr1);
-//	if (use_grid)
-//		grid_ptr->add_object(box_ptr);
-//	else
-//		add_object(box_ptr);
+	Instance* box_ptr = new Instance(new Box());
+	box_ptr->set_material(matte_ptr3);
+	// shear(<#const float xy#>, <#const float xz#>, <#const float yx#>, <#const float yz#>, <#const float zx#>, <#const float zy#>)
+	box_ptr->shear(0.0, 0.0, 0.0, 1.0, 0.0, 0.0);
+	box_ptr->reflect_across_x_axis();
+	box_ptr->scale(1, 2, 1);
+	//box_ptr->reflect_across_y_axis();
+	box_ptr->reflect_across_z_axis();
+	box_ptr->compute_bounding_box();
+	if (use_grid)
+		grid_ptr->add_object(box_ptr);
+	else
+		add_object(box_ptr);
 	
 	
 //	OpenCylinder* cylinder_ptr = new OpenCylinder();
@@ -394,6 +410,25 @@ World::build(void) {
 //		grid_ptr->add_object(torus_ptr);
 //	else
 //		add_object(torus_ptr);
+	
+//	ConvexPartSphere* part_sphere_ptr = new ConvexPartSphere(Point3D(0,0,0), 1.0, 0.0, 240, 40.0, 140);
+//	part_sphere_ptr->set_material(matte_ptr3);
+//	if (use_grid)
+//		grid_ptr->add_object(part_sphere_ptr);
+//	else
+//		add_object(part_sphere_ptr);
+	
+//	// Material pointer null error
+//	SolidCylinder* solid_cylinder_ptr = new SolidCylinder();
+//	solid_cylinder_ptr->set_material(matte_ptr3);
+//	if (use_grid)
+//		grid_ptr->add_object(solid_cylinder_ptr);
+//	else
+//		add_object(solid_cylinder_ptr);
+//	
+//	Instance* solid_cylinder_instance_ptr = new Instance(solid_cylinder_ptr);
+//	solid_cylinder_instance_ptr->translate(-2, 2, 10);
+//	add_object(solid_cylinder_instance_ptr);
 	
 
 	MyRGBColor yellow(1, 1, 0);										// yellow
@@ -413,438 +448,438 @@ World::build(void) {
 	float kd = 0.75;
 	float exp = 0.25;
 	
-	Phong* phong_ptr1 = new Phong;   
-	phong_ptr1->set_ka(ka);	
-	phong_ptr1->set_kd(kd);
-	phong_ptr1->set_c(yellow);				
-	phong_ptr1->set_exp_s(exp);
-	Sphere*	sphere_ptr1 = new Sphere(Point3D(5, 3, 0), 30); 
-	sphere_ptr1->set_material(phong_ptr1);	   							// yellow
-	//sphere_ptr1->set_shadows(false);
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr1);
-	else
-		add_object(sphere_ptr1);
+//	Phong* phong_ptr1 = new Phong;   
+//	phong_ptr1->set_ka(ka);	
+//	phong_ptr1->set_kd(kd);
+//	phong_ptr1->set_c(yellow);				
+//	phong_ptr1->set_exp_s(exp);
+//	Sphere*	sphere_ptr1 = new Sphere(Point3D(5, 3, 0), 30); 
+//	sphere_ptr1->set_material(phong_ptr1);	   							// yellow
+//	//sphere_ptr1->set_shadows(false);
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr1);
+//	else
+//		add_object(sphere_ptr1);
 	
-	Phong* phong_ptr2 = new Phong;
-	phong_ptr2->set_ka(ka);	
-	phong_ptr2->set_kd(kd);
-	phong_ptr2->set_c(brown);
-	phong_ptr2->set_exp_s(exp);
-	Sphere*	sphere_ptr2 = new Sphere(Point3D(45, -7, -60), 20); 
-	sphere_ptr2->set_material(phong_ptr2);								// brown
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr2);
-	else
-		add_object(sphere_ptr2);
-	
-	
-	Phong* phong_ptr3 = new Phong;
-	phong_ptr3->set_ka(ka);	
-	phong_ptr3->set_kd(kd);
-	phong_ptr3->set_c(darkGreen);
-	phong_ptr3->set_exp_s(exp);
-	Sphere*	sphere_ptr3 = new Sphere(Point3D(40, 43, -100), 17); 
-	sphere_ptr3->set_material(phong_ptr3);								// dark green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr3);
-	else
-		add_object(sphere_ptr3);
-	
-	Phong* phong_ptr4 = new Phong;
-	phong_ptr4->set_ka(ka);	
-	phong_ptr4->set_kd(kd);
-	phong_ptr4->set_c(orange);
-	phong_ptr4->set_exp_s(exp);
-	Sphere*	sphere_ptr4 = new Sphere(Point3D(-20, 28, -15), 20); 
-	sphere_ptr4->set_material(phong_ptr4);								// orange
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr4);
-	else
-		add_object(sphere_ptr4);
-	
-	Phong* phong_ptr5 = new Phong;
-	phong_ptr5->set_ka(ka);	
-	phong_ptr5->set_kd(kd);
-	phong_ptr5->set_c(green);
-	phong_ptr5->set_exp_s(exp);
-	Sphere*	sphere_ptr5 = new Sphere(Point3D(-25, -7, -35), 27); 			
-	sphere_ptr5->set_material(phong_ptr5);								// green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr5);
-	else
-		add_object(sphere_ptr5);
-	
-	Phong* phong_ptr6 = new Phong;
-	phong_ptr6->set_ka(ka);	
-	phong_ptr6->set_kd(kd);
-	phong_ptr6->set_c(lightGreen);
-	phong_ptr6->set_exp_s(exp);
-	Sphere*	sphere_ptr6 = new Sphere(Point3D(20, -27, -35), 25); 
-	sphere_ptr6->set_material(phong_ptr6);								// light green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr6);
-	else
-		add_object(sphere_ptr6);
-	
-	Phong* phong_ptr7 = new Phong;
-	phong_ptr7->set_ka(ka);	
-	phong_ptr7->set_kd(kd);
-	phong_ptr7->set_c(green);
-	phong_ptr7->set_exp_s(exp);
-	Sphere*	sphere_ptr7 = new Sphere(Point3D(35, 18, -35), 22); 
-	sphere_ptr7->set_material(phong_ptr7);   							// green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr7);
-	else
-		add_object(sphere_ptr7);
-	
-	Phong* phong_ptr8 = new Phong;
-	phong_ptr8->set_ka(ka);	
-	phong_ptr8->set_kd(kd);
-	phong_ptr8->set_c(brown);
-	phong_ptr8->set_exp_s(exp);
-	Sphere*	sphere_ptr8 = new Sphere(Point3D(-57, -17, -50), 15);  
-	sphere_ptr8->set_material(phong_ptr8);								// brown
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr8);
-	else
-		add_object(sphere_ptr8);
-	
-	Phong* phong_ptr9 = new Phong;
-	phong_ptr9->set_ka(ka);	
-	phong_ptr9->set_kd(kd);
-	phong_ptr9->set_c(lightGreen);
-	phong_ptr9->set_exp_s(exp);
-	Sphere*	sphere_ptr9 = new Sphere(Point3D(-47, 16, -80), 23); 
-	sphere_ptr9->set_material(phong_ptr9);								// light green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr9);
-	else
-		add_object(sphere_ptr9);
-	
-	Phong* phong_ptr10 = new Phong;
-	phong_ptr10->set_ka(ka);	
-	phong_ptr10->set_kd(kd);
-	phong_ptr10->set_c(darkGreen);	
-	phong_ptr10->set_exp_s(exp);
-	Sphere*	sphere_ptr10 = new Sphere(Point3D(-15, -32, -60), 22); 
-	sphere_ptr10->set_material(phong_ptr10);     						// dark green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr10);
-	else
-		add_object(sphere_ptr10);
-	
-	Phong* phong_ptr11 = new Phong;
-	phong_ptr11->set_ka(ka);	
-	phong_ptr11->set_kd(kd);
-	phong_ptr11->set_c(darkYellow);
-	phong_ptr11->set_exp_s(exp);
-	Sphere*	sphere_ptr11 = new Sphere(Point3D(-35, -37, -80), 22); 
-	sphere_ptr11->set_material(phong_ptr11);							// dark yellow
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr11);
-	else
-		add_object(sphere_ptr11);
-	
-	Phong* phong_ptr12 = new Phong;
-	phong_ptr12->set_ka(ka);	
-	phong_ptr12->set_kd(kd);
-	phong_ptr12->set_c(darkYellow);
-	phong_ptr12->set_exp_s(exp);
-	Sphere*	sphere_ptr12 = new Sphere(Point3D(10, 43, -80), 22); 
-	sphere_ptr12->set_material(phong_ptr12);							// dark yellow
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr12);
-	else
-		add_object(sphere_ptr12);
-	
-	Phong* phong_ptr13 = new Phong;
-	phong_ptr13->set_ka(ka);	
-	phong_ptr13->set_kd(kd);
-	phong_ptr13->set_c(darkYellow);		
-	phong_ptr13->set_exp_s(exp);
-	Sphere*	sphere_ptr13 = new Sphere(Point3D(30, -7, -80), 10); 
-	sphere_ptr13->set_material(phong_ptr13);
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr13);	
-	else
-		add_object(sphere_ptr13);										// dark yellow (hidden)
-	
-	Phong* phong_ptr14 = new Phong;
-	phong_ptr14->set_ka(ka);	
-	phong_ptr14->set_kd(kd);
-	phong_ptr14->set_c(darkGreen);	
-	phong_ptr14->set_exp_s(exp);
-	Sphere*	sphere_ptr14 = new Sphere(Point3D(-40, 48, -110), 18); 
-	sphere_ptr14->set_material(phong_ptr14); 							// dark green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr14);
-	else
-		add_object(sphere_ptr14);
-	
-	Phong* phong_ptr15 = new Phong;
-	phong_ptr15->set_ka(ka);	
-	phong_ptr15->set_kd(kd);
-	phong_ptr15->set_c(brown);	
-	phong_ptr15->set_exp_s(exp);
-	Sphere*	sphere_ptr15 = new Sphere(Point3D(-10, 53, -120), 18); 
-	sphere_ptr15->set_material(phong_ptr15); 							// brown
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr15);
-	else
-		add_object(sphere_ptr15);
-	
-	Phong* phong_ptr16 = new Phong;
-	phong_ptr16->set_ka(ka);	
-	phong_ptr16->set_kd(kd);
-	phong_ptr16->set_c(lightPurple);
-	phong_ptr16->set_exp_s(exp);
-	Sphere*	sphere_ptr16 = new Sphere(Point3D(-55, -52, -100), 10); 
-	sphere_ptr16->set_material(phong_ptr16);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr16);
-	else
-		add_object(sphere_ptr16);
-	
-	Phong* phong_ptr17 = new Phong;
-	phong_ptr17->set_ka(ka);	
-	phong_ptr17->set_kd(kd);
-	phong_ptr17->set_c(brown);
-	phong_ptr17->set_exp_s(exp);
-	Sphere*	sphere_ptr17 = new Sphere(Point3D(5, -52, -100), 15); 		
-	sphere_ptr17->set_material(phong_ptr17);							// browm
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr17);
-	else
-		add_object(sphere_ptr17);
-	
-	Phong* phong_ptr18 = new Phong;
-	phong_ptr18->set_ka(ka);	
-	phong_ptr18->set_kd(kd);
-	phong_ptr18->set_c(darkPurple);
-	phong_ptr18->set_exp_s(exp);
-	Sphere*	sphere_ptr18 = new Sphere(Point3D(-20, -57, -120), 15); 
-	sphere_ptr18->set_material(phong_ptr18);							// dark purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr18);
-	else
-		add_object(sphere_ptr18);
-	
-	Phong* phong_ptr19 = new Phong;
-	phong_ptr19->set_ka(ka);	
-	phong_ptr19->set_kd(kd);
-	phong_ptr19->set_c(darkGreen);
-	phong_ptr19->set_exp_s(exp);
-	Sphere*	sphere_ptr19 = new Sphere(Point3D(55, -27, -100), 17); 
-	sphere_ptr19->set_material(phong_ptr19);							// dark green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr19);
-	else
-		add_object(sphere_ptr19);
-	
-	Phong* phong_ptr20 = new Phong;
-	phong_ptr20->set_ka(ka);	
-	phong_ptr20->set_kd(kd);
-	phong_ptr20->set_c(brown);
-	phong_ptr20->set_exp_s(exp);
-	Sphere*	sphere_ptr20 = new Sphere(Point3D(50, -47, -120), 15); 
-	sphere_ptr20->set_material(phong_ptr20);							// browm
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr20);
-	else
-		add_object(sphere_ptr20);
-	
-	Phong* phong_ptr21 = new Phong;
-	phong_ptr21->set_ka(ka);	
-	phong_ptr21->set_kd(kd);
-	phong_ptr21->set_c(lightPurple); 	
-	phong_ptr21->set_exp_s(exp);
-	Sphere*	sphere_ptr21 = new Sphere(Point3D(70, -42, -150), 10); 
-	sphere_ptr21->set_material(phong_ptr21);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr21);
-	else
-		add_object(sphere_ptr21);
-	
-	Phong* phong_ptr22 = new Phong;
-	phong_ptr22->set_ka(ka);	
-	phong_ptr22->set_kd(kd);
-	phong_ptr22->set_c(lightPurple);
-	phong_ptr22->set_exp_s(exp);
-	Sphere*	sphere_ptr22 = new Sphere(Point3D(5, 73, -130), 12); 
-	sphere_ptr22->set_material(phong_ptr22);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr22);
-	else
-		add_object(sphere_ptr22);
-	
-	Phong* phong_ptr23 = new Phong;
-	phong_ptr23->set_ka(ka);	
-	phong_ptr23->set_kd(kd);
-	phong_ptr23->set_c(darkPurple);
-	phong_ptr23->set_exp_s(exp);
-	Sphere*	sphere_ptr23 = new Sphere(Point3D(66, 21, -130), 13); 			
-	sphere_ptr23->set_material(phong_ptr23);							// dark purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr23);
-	else
-		add_object(sphere_ptr23);	
-	
-	Phong* phong_ptr24 = new Phong;
-	phong_ptr24->set_ka(ka);	
-	phong_ptr24->set_kd(kd);
-	phong_ptr24->set_c(lightPurple);  
-	phong_ptr24->set_exp_s(exp);
-	Sphere*	sphere_ptr24 = new Sphere(Point3D(72, -12, -140), 12); 
-	sphere_ptr24->set_material(phong_ptr24);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr24);
-	else
-		add_object(sphere_ptr24);
-	
-	Phong* phong_ptr25 = new Phong;
-	phong_ptr25->set_ka(ka);	
-	phong_ptr25->set_kd(kd);
-	phong_ptr25->set_c(green);
-	phong_ptr25->set_exp_s(exp);
-	Sphere*	sphere_ptr25 = new Sphere(Point3D(64, 5, -160), 11); 			
-	sphere_ptr25->set_material(phong_ptr25);					 		// green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr25);
-	else
-		add_object(sphere_ptr24);
-	
-	Phong* phong_ptr26 = new Phong;
-	phong_ptr26->set_ka(ka);	
-	phong_ptr26->set_kd(kd);
-	phong_ptr26->set_c(lightPurple);
-	phong_ptr26->set_exp_s(exp);
-	Sphere*	sphere_ptr26 = new Sphere(Point3D(55, 38, -160), 12); 		
-	sphere_ptr26->set_material(phong_ptr26);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr26);
-	else
-		add_object(sphere_ptr25);
-	
-	Phong* phong_ptr27 = new Phong;
-	phong_ptr27->set_ka(ka);	
-	phong_ptr27->set_kd(kd);
-	phong_ptr27->set_c(lightPurple);
-	phong_ptr27->set_exp_s(exp);
-	Sphere*	sphere_ptr27 = new Sphere(Point3D(-73, -2, -160), 12); 		
-	sphere_ptr27->set_material(phong_ptr27);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr27);
-	else
-		add_object(sphere_ptr26);
-	
-	Phong* phong_ptr28 = new Phong;
-	phong_ptr28->set_ka(ka);	
-	phong_ptr28->set_kd(kd);
-	phong_ptr28->set_c(darkPurple);
-	phong_ptr28->set_exp_s(exp);
-	Sphere*	sphere_ptr28 = new Sphere(Point3D(30, -62, -140), 15); 
-	sphere_ptr28->set_material(phong_ptr28); 							// dark purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr28);
-	else
-		add_object(sphere_ptr27);
-	
-	Phong* phong_ptr29 = new Phong;
-	phong_ptr29->set_ka(ka);	
-	phong_ptr29->set_kd(kd);
-	phong_ptr29->set_c(darkPurple);
-	phong_ptr29->set_exp_s(exp);
-	Sphere*	sphere_ptr29 = new Sphere(Point3D(25, 63, -140), 15); 
-	sphere_ptr29->set_material(phong_ptr29);							// dark purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr29);
-	else
-		add_object(sphere_ptr29);
-	
-	Phong* phong_ptr30 = new Phong;
-	phong_ptr30->set_ka(ka);	
-	phong_ptr30->set_kd(kd);
-	phong_ptr30->set_c(darkPurple);
-	phong_ptr30->set_exp_s(exp);
-	Sphere*	sphere_ptr30 = new Sphere(Point3D(-60, 46, -140), 15);  
-	sphere_ptr30->set_material(phong_ptr30); 							// dark purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr30);
-	else
-		add_object(sphere_ptr30);
-	
-	Phong* phong_ptr31 = new Phong;
-	phong_ptr31->set_ka(ka);	
-	phong_ptr31->set_kd(kd);
-	phong_ptr31->set_c(lightPurple);
-	phong_ptr31->set_exp_s(exp);
-	Sphere*	sphere_ptr31 = new Sphere(Point3D(-30, 68, -130), 12); 
-	sphere_ptr31->set_material(phong_ptr31); 							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr31);
-	else
-		add_object(sphere_ptr31);
-	
-	Phong* phong_ptr32 = new Phong;
-	phong_ptr32->set_ka(ka);	
-	phong_ptr32->set_kd(kd);
-	phong_ptr32->set_c(green);
-	phong_ptr32->set_exp_s(exp);
-	Sphere*	sphere_ptr32 = new Sphere(Point3D(58, 56, -180), 11);   
-	sphere_ptr32->set_material(phong_ptr32);							//  green
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr32);
-	else
-		add_object(sphere_ptr32);
-	
-	Phong* phong_ptr33 = new Phong;
-	phong_ptr33->set_ka(ka);	
-	phong_ptr33->set_kd(kd);
-	phong_ptr33->set_c(green);
-	phong_ptr33->set_exp_s(exp);
-	Sphere*	sphere_ptr33 = new Sphere(Point3D(-63, -39, -180), 11); 
-	sphere_ptr33->set_material(phong_ptr33);							// green 
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr33);
-	else
-		add_object(sphere_ptr33);
-	
-	Phong* phong_ptr34 = new Phong;
-	phong_ptr34->set_ka(ka);	
-	phong_ptr34->set_kd(kd);
-	phong_ptr34->set_c(lightPurple);
-	phong_ptr34->set_exp_s(exp);
-	Sphere*	sphere_ptr34 = new Sphere(Point3D(46, 68, -200), 10); 	
-	sphere_ptr34->set_material(phong_ptr34);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr34);
-	else
-		add_object(sphere_ptr34);
-	
-	Phong* phong_ptr35 = new Phong;
-	phong_ptr35->set_ka(ka);	
-	phong_ptr35->set_kd(kd);
-	phong_ptr35->set_c(lightPurple);
-	phong_ptr35->set_exp_s(exp);
-	Sphere*	sphere_ptr35 = new Sphere(Point3D(-3, -72, -130), 12); 
-	sphere_ptr35->set_material(phong_ptr35);							// light purple
-	if (use_grid)
-		grid_ptr->add_object(sphere_ptr35);
-	else
-		add_object(sphere_ptr35);
-	
-	
-	// vertical plane
-	
-	Matte* phong_ptr36 = new Matte;
-	phong_ptr36->set_ka(ka);	
-	phong_ptr36->set_kd(kd);
-	phong_ptr36->set_cd(grey);
-	Plane* plane_ptr = new Plane(Point3D(0, 0, -150), Normal(0, 0, 1));
-	plane_ptr->set_material(phong_ptr36);
-	add_object (plane_ptr);
+//	Phong* phong_ptr2 = new Phong;
+//	phong_ptr2->set_ka(ka);	
+//	phong_ptr2->set_kd(kd);
+//	phong_ptr2->set_c(brown);
+//	phong_ptr2->set_exp_s(exp);
+//	Sphere*	sphere_ptr2 = new Sphere(Point3D(45, -7, -60), 20); 
+//	sphere_ptr2->set_material(phong_ptr2);								// brown
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr2);
+//	else
+//		add_object(sphere_ptr2);
+//	
+//	
+//	Phong* phong_ptr3 = new Phong;
+//	phong_ptr3->set_ka(ka);	
+//	phong_ptr3->set_kd(kd);
+//	phong_ptr3->set_c(darkGreen);
+//	phong_ptr3->set_exp_s(exp);
+//	Sphere*	sphere_ptr3 = new Sphere(Point3D(40, 43, -100), 17); 
+//	sphere_ptr3->set_material(phong_ptr3);								// dark green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr3);
+//	else
+//		add_object(sphere_ptr3);
+//	
+//	Phong* phong_ptr4 = new Phong;
+//	phong_ptr4->set_ka(ka);	
+//	phong_ptr4->set_kd(kd);
+//	phong_ptr4->set_c(orange);
+//	phong_ptr4->set_exp_s(exp);
+//	Sphere*	sphere_ptr4 = new Sphere(Point3D(-20, 28, -15), 20); 
+//	sphere_ptr4->set_material(phong_ptr4);								// orange
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr4);
+//	else
+//		add_object(sphere_ptr4);
+//	
+//	Phong* phong_ptr5 = new Phong;
+//	phong_ptr5->set_ka(ka);	
+//	phong_ptr5->set_kd(kd);
+//	phong_ptr5->set_c(green);
+//	phong_ptr5->set_exp_s(exp);
+//	Sphere*	sphere_ptr5 = new Sphere(Point3D(-25, -7, -35), 27); 			
+//	sphere_ptr5->set_material(phong_ptr5);								// green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr5);
+//	else
+//		add_object(sphere_ptr5);
+//	
+//	Phong* phong_ptr6 = new Phong;
+//	phong_ptr6->set_ka(ka);	
+//	phong_ptr6->set_kd(kd);
+//	phong_ptr6->set_c(lightGreen);
+//	phong_ptr6->set_exp_s(exp);
+//	Sphere*	sphere_ptr6 = new Sphere(Point3D(20, -27, -35), 25); 
+//	sphere_ptr6->set_material(phong_ptr6);								// light green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr6);
+//	else
+//		add_object(sphere_ptr6);
+//	
+//	Phong* phong_ptr7 = new Phong;
+//	phong_ptr7->set_ka(ka);	
+//	phong_ptr7->set_kd(kd);
+//	phong_ptr7->set_c(green);
+//	phong_ptr7->set_exp_s(exp);
+//	Sphere*	sphere_ptr7 = new Sphere(Point3D(35, 18, -35), 22); 
+//	sphere_ptr7->set_material(phong_ptr7);   							// green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr7);
+//	else
+//		add_object(sphere_ptr7);
+//	
+//	Phong* phong_ptr8 = new Phong;
+//	phong_ptr8->set_ka(ka);	
+//	phong_ptr8->set_kd(kd);
+//	phong_ptr8->set_c(brown);
+//	phong_ptr8->set_exp_s(exp);
+//	Sphere*	sphere_ptr8 = new Sphere(Point3D(-57, -17, -50), 15);  
+//	sphere_ptr8->set_material(phong_ptr8);								// brown
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr8);
+//	else
+//		add_object(sphere_ptr8);
+//	
+//	Phong* phong_ptr9 = new Phong;
+//	phong_ptr9->set_ka(ka);	
+//	phong_ptr9->set_kd(kd);
+//	phong_ptr9->set_c(lightGreen);
+//	phong_ptr9->set_exp_s(exp);
+//	Sphere*	sphere_ptr9 = new Sphere(Point3D(-47, 16, -80), 23); 
+//	sphere_ptr9->set_material(phong_ptr9);								// light green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr9);
+//	else
+//		add_object(sphere_ptr9);
+//	
+//	Phong* phong_ptr10 = new Phong;
+//	phong_ptr10->set_ka(ka);	
+//	phong_ptr10->set_kd(kd);
+//	phong_ptr10->set_c(darkGreen);	
+//	phong_ptr10->set_exp_s(exp);
+//	Sphere*	sphere_ptr10 = new Sphere(Point3D(-15, -32, -60), 22); 
+//	sphere_ptr10->set_material(phong_ptr10);     						// dark green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr10);
+//	else
+//		add_object(sphere_ptr10);
+//	
+//	Phong* phong_ptr11 = new Phong;
+//	phong_ptr11->set_ka(ka);	
+//	phong_ptr11->set_kd(kd);
+//	phong_ptr11->set_c(darkYellow);
+//	phong_ptr11->set_exp_s(exp);
+//	Sphere*	sphere_ptr11 = new Sphere(Point3D(-35, -37, -80), 22); 
+//	sphere_ptr11->set_material(phong_ptr11);							// dark yellow
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr11);
+//	else
+//		add_object(sphere_ptr11);
+//	
+//	Phong* phong_ptr12 = new Phong;
+//	phong_ptr12->set_ka(ka);	
+//	phong_ptr12->set_kd(kd);
+//	phong_ptr12->set_c(darkYellow);
+//	phong_ptr12->set_exp_s(exp);
+//	Sphere*	sphere_ptr12 = new Sphere(Point3D(10, 43, -80), 22); 
+//	sphere_ptr12->set_material(phong_ptr12);							// dark yellow
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr12);
+//	else
+//		add_object(sphere_ptr12);
+//	
+//	Phong* phong_ptr13 = new Phong;
+//	phong_ptr13->set_ka(ka);	
+//	phong_ptr13->set_kd(kd);
+//	phong_ptr13->set_c(darkYellow);		
+//	phong_ptr13->set_exp_s(exp);
+//	Sphere*	sphere_ptr13 = new Sphere(Point3D(30, -7, -80), 10); 
+//	sphere_ptr13->set_material(phong_ptr13);
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr13);	
+//	else
+//		add_object(sphere_ptr13);										// dark yellow (hidden)
+//	
+//	Phong* phong_ptr14 = new Phong;
+//	phong_ptr14->set_ka(ka);	
+//	phong_ptr14->set_kd(kd);
+//	phong_ptr14->set_c(darkGreen);	
+//	phong_ptr14->set_exp_s(exp);
+//	Sphere*	sphere_ptr14 = new Sphere(Point3D(-40, 48, -110), 18); 
+//	sphere_ptr14->set_material(phong_ptr14); 							// dark green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr14);
+//	else
+//		add_object(sphere_ptr14);
+//	
+//	Phong* phong_ptr15 = new Phong;
+//	phong_ptr15->set_ka(ka);	
+//	phong_ptr15->set_kd(kd);
+//	phong_ptr15->set_c(brown);	
+//	phong_ptr15->set_exp_s(exp);
+//	Sphere*	sphere_ptr15 = new Sphere(Point3D(-10, 53, -120), 18); 
+//	sphere_ptr15->set_material(phong_ptr15); 							// brown
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr15);
+//	else
+//		add_object(sphere_ptr15);
+//	
+//	Phong* phong_ptr16 = new Phong;
+//	phong_ptr16->set_ka(ka);	
+//	phong_ptr16->set_kd(kd);
+//	phong_ptr16->set_c(lightPurple);
+//	phong_ptr16->set_exp_s(exp);
+//	Sphere*	sphere_ptr16 = new Sphere(Point3D(-55, -52, -100), 10); 
+//	sphere_ptr16->set_material(phong_ptr16);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr16);
+//	else
+//		add_object(sphere_ptr16);
+//	
+//	Phong* phong_ptr17 = new Phong;
+//	phong_ptr17->set_ka(ka);	
+//	phong_ptr17->set_kd(kd);
+//	phong_ptr17->set_c(brown);
+//	phong_ptr17->set_exp_s(exp);
+//	Sphere*	sphere_ptr17 = new Sphere(Point3D(5, -52, -100), 15); 		
+//	sphere_ptr17->set_material(phong_ptr17);							// browm
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr17);
+//	else
+//		add_object(sphere_ptr17);
+//	
+//	Phong* phong_ptr18 = new Phong;
+//	phong_ptr18->set_ka(ka);	
+//	phong_ptr18->set_kd(kd);
+//	phong_ptr18->set_c(darkPurple);
+//	phong_ptr18->set_exp_s(exp);
+//	Sphere*	sphere_ptr18 = new Sphere(Point3D(-20, -57, -120), 15); 
+//	sphere_ptr18->set_material(phong_ptr18);							// dark purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr18);
+//	else
+//		add_object(sphere_ptr18);
+//	
+//	Phong* phong_ptr19 = new Phong;
+//	phong_ptr19->set_ka(ka);	
+//	phong_ptr19->set_kd(kd);
+//	phong_ptr19->set_c(darkGreen);
+//	phong_ptr19->set_exp_s(exp);
+//	Sphere*	sphere_ptr19 = new Sphere(Point3D(55, -27, -100), 17); 
+//	sphere_ptr19->set_material(phong_ptr19);							// dark green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr19);
+//	else
+//		add_object(sphere_ptr19);
+//	
+//	Phong* phong_ptr20 = new Phong;
+//	phong_ptr20->set_ka(ka);	
+//	phong_ptr20->set_kd(kd);
+//	phong_ptr20->set_c(brown);
+//	phong_ptr20->set_exp_s(exp);
+//	Sphere*	sphere_ptr20 = new Sphere(Point3D(50, -47, -120), 15); 
+//	sphere_ptr20->set_material(phong_ptr20);							// browm
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr20);
+//	else
+//		add_object(sphere_ptr20);
+//	
+//	Phong* phong_ptr21 = new Phong;
+//	phong_ptr21->set_ka(ka);	
+//	phong_ptr21->set_kd(kd);
+//	phong_ptr21->set_c(lightPurple); 	
+//	phong_ptr21->set_exp_s(exp);
+//	Sphere*	sphere_ptr21 = new Sphere(Point3D(70, -42, -150), 10); 
+//	sphere_ptr21->set_material(phong_ptr21);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr21);
+//	else
+//		add_object(sphere_ptr21);
+//	
+//	Phong* phong_ptr22 = new Phong;
+//	phong_ptr22->set_ka(ka);	
+//	phong_ptr22->set_kd(kd);
+//	phong_ptr22->set_c(lightPurple);
+//	phong_ptr22->set_exp_s(exp);
+//	Sphere*	sphere_ptr22 = new Sphere(Point3D(5, 73, -130), 12); 
+//	sphere_ptr22->set_material(phong_ptr22);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr22);
+//	else
+//		add_object(sphere_ptr22);
+//	
+//	Phong* phong_ptr23 = new Phong;
+//	phong_ptr23->set_ka(ka);	
+//	phong_ptr23->set_kd(kd);
+//	phong_ptr23->set_c(darkPurple);
+//	phong_ptr23->set_exp_s(exp);
+//	Sphere*	sphere_ptr23 = new Sphere(Point3D(66, 21, -130), 13); 			
+//	sphere_ptr23->set_material(phong_ptr23);							// dark purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr23);
+//	else
+//		add_object(sphere_ptr23);	
+//	
+//	Phong* phong_ptr24 = new Phong;
+//	phong_ptr24->set_ka(ka);	
+//	phong_ptr24->set_kd(kd);
+//	phong_ptr24->set_c(lightPurple);  
+//	phong_ptr24->set_exp_s(exp);
+//	Sphere*	sphere_ptr24 = new Sphere(Point3D(72, -12, -140), 12); 
+//	sphere_ptr24->set_material(phong_ptr24);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr24);
+//	else
+//		add_object(sphere_ptr24);
+//	
+//	Phong* phong_ptr25 = new Phong;
+//	phong_ptr25->set_ka(ka);	
+//	phong_ptr25->set_kd(kd);
+//	phong_ptr25->set_c(green);
+//	phong_ptr25->set_exp_s(exp);
+//	Sphere*	sphere_ptr25 = new Sphere(Point3D(64, 5, -160), 11); 			
+//	sphere_ptr25->set_material(phong_ptr25);					 		// green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr25);
+//	else
+//		add_object(sphere_ptr24);
+//	
+//	Phong* phong_ptr26 = new Phong;
+//	phong_ptr26->set_ka(ka);	
+//	phong_ptr26->set_kd(kd);
+//	phong_ptr26->set_c(lightPurple);
+//	phong_ptr26->set_exp_s(exp);
+//	Sphere*	sphere_ptr26 = new Sphere(Point3D(55, 38, -160), 12); 		
+//	sphere_ptr26->set_material(phong_ptr26);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr26);
+//	else
+//		add_object(sphere_ptr25);
+//	
+//	Phong* phong_ptr27 = new Phong;
+//	phong_ptr27->set_ka(ka);	
+//	phong_ptr27->set_kd(kd);
+//	phong_ptr27->set_c(lightPurple);
+//	phong_ptr27->set_exp_s(exp);
+//	Sphere*	sphere_ptr27 = new Sphere(Point3D(-73, -2, -160), 12); 		
+//	sphere_ptr27->set_material(phong_ptr27);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr27);
+//	else
+//		add_object(sphere_ptr26);
+//	
+//	Phong* phong_ptr28 = new Phong;
+//	phong_ptr28->set_ka(ka);	
+//	phong_ptr28->set_kd(kd);
+//	phong_ptr28->set_c(darkPurple);
+//	phong_ptr28->set_exp_s(exp);
+//	Sphere*	sphere_ptr28 = new Sphere(Point3D(30, -62, -140), 15); 
+//	sphere_ptr28->set_material(phong_ptr28); 							// dark purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr28);
+//	else
+//		add_object(sphere_ptr27);
+//	
+//	Phong* phong_ptr29 = new Phong;
+//	phong_ptr29->set_ka(ka);	
+//	phong_ptr29->set_kd(kd);
+//	phong_ptr29->set_c(darkPurple);
+//	phong_ptr29->set_exp_s(exp);
+//	Sphere*	sphere_ptr29 = new Sphere(Point3D(25, 63, -140), 15); 
+//	sphere_ptr29->set_material(phong_ptr29);							// dark purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr29);
+//	else
+//		add_object(sphere_ptr29);
+//	
+//	Phong* phong_ptr30 = new Phong;
+//	phong_ptr30->set_ka(ka);	
+//	phong_ptr30->set_kd(kd);
+//	phong_ptr30->set_c(darkPurple);
+//	phong_ptr30->set_exp_s(exp);
+//	Sphere*	sphere_ptr30 = new Sphere(Point3D(-60, 46, -140), 15);  
+//	sphere_ptr30->set_material(phong_ptr30); 							// dark purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr30);
+//	else
+//		add_object(sphere_ptr30);
+//	
+//	Phong* phong_ptr31 = new Phong;
+//	phong_ptr31->set_ka(ka);	
+//	phong_ptr31->set_kd(kd);
+//	phong_ptr31->set_c(lightPurple);
+//	phong_ptr31->set_exp_s(exp);
+//	Sphere*	sphere_ptr31 = new Sphere(Point3D(-30, 68, -130), 12); 
+//	sphere_ptr31->set_material(phong_ptr31); 							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr31);
+//	else
+//		add_object(sphere_ptr31);
+//	
+//	Phong* phong_ptr32 = new Phong;
+//	phong_ptr32->set_ka(ka);	
+//	phong_ptr32->set_kd(kd);
+//	phong_ptr32->set_c(green);
+//	phong_ptr32->set_exp_s(exp);
+//	Sphere*	sphere_ptr32 = new Sphere(Point3D(58, 56, -180), 11);   
+//	sphere_ptr32->set_material(phong_ptr32);							//  green
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr32);
+//	else
+//		add_object(sphere_ptr32);
+//	
+//	Phong* phong_ptr33 = new Phong;
+//	phong_ptr33->set_ka(ka);	
+//	phong_ptr33->set_kd(kd);
+//	phong_ptr33->set_c(green);
+//	phong_ptr33->set_exp_s(exp);
+//	Sphere*	sphere_ptr33 = new Sphere(Point3D(-63, -39, -180), 11); 
+//	sphere_ptr33->set_material(phong_ptr33);							// green 
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr33);
+//	else
+//		add_object(sphere_ptr33);
+//	
+//	Phong* phong_ptr34 = new Phong;
+//	phong_ptr34->set_ka(ka);	
+//	phong_ptr34->set_kd(kd);
+//	phong_ptr34->set_c(lightPurple);
+//	phong_ptr34->set_exp_s(exp);
+//	Sphere*	sphere_ptr34 = new Sphere(Point3D(46, 68, -200), 10); 	
+//	sphere_ptr34->set_material(phong_ptr34);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr34);
+//	else
+//		add_object(sphere_ptr34);
+//	
+//	Phong* phong_ptr35 = new Phong;
+//	phong_ptr35->set_ka(ka);	
+//	phong_ptr35->set_kd(kd);
+//	phong_ptr35->set_c(lightPurple);
+//	phong_ptr35->set_exp_s(exp);
+//	Sphere*	sphere_ptr35 = new Sphere(Point3D(-3, -72, -130), 12); 
+//	sphere_ptr35->set_material(phong_ptr35);							// light purple
+//	if (use_grid)
+//		grid_ptr->add_object(sphere_ptr35);
+//	else
+//		add_object(sphere_ptr35);
+//	
+//	
+//	// vertical plane
+//	
+//	Matte* phong_ptr36 = new Matte;
+//	phong_ptr36->set_ka(ka);	
+//	phong_ptr36->set_kd(kd);
+//	phong_ptr36->set_cd(grey);
+//	Plane* plane_ptr = new Plane(Point3D(0, 0, -150), Normal(0, 0, 1));
+//	plane_ptr->set_material(phong_ptr36);
+//	add_object (plane_ptr);
 	
 	// HAS TO BE LAST
 	if (use_grid) {

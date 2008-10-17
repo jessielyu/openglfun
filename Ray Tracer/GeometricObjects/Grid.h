@@ -29,7 +29,7 @@ public:
 	clone(void) const;
 	
 	virtual BBox
-	get_bounding_box(void);
+	get_bounding_box(void) const;
 	
 	void
 	setup_cells(void);
