@@ -14,14 +14,16 @@ FakeSphericalLight::FakeSphericalLight(void)
 :	Light(),
 ls(1.0),
 color(1.0),
-location(0)
+location(0),
+r(1.0)
 {}
 
 FakeSphericalLight::FakeSphericalLight(const FakeSphericalLight& pl)
 :	Light(pl),
 ls(pl.ls),
 color(pl.color),
-location(pl.location)
+location(pl.location),
+r(pl.r)
 {}
 
 FakeSphericalLight&
@@ -34,6 +36,7 @@ FakeSphericalLight::operator= (const FakeSphericalLight& pl) {
 	ls = pl.ls;
 	color = pl.color;
 	location = pl.location;
+	r = pl.r;
 	
 	return (*this);
 }
@@ -46,7 +49,6 @@ FakeSphericalLight::clone(void) const {
 Vector3D
 FakeSphericalLight::get_direction(ShadeRec& sr) {
 	
-	float r = 3.0;
 	Point3D new_location;
 	new_location.x = location.x + r * (2.0 * rand_float() - 1.0);
 	new_location.y = location.y + r * (2.0 * rand_float() - 1.0); 

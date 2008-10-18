@@ -34,10 +34,12 @@
 #include "ConvexPartSphere.h"
 #include "SolidCylinder.h"
 #include "Instance.h"
+#include "ConvexPartCylinder.h"
+#include "ConvexPartTorus.h"
 
 void 												
 World::build(void) {
-	int num_samples = 5;
+	int num_samples = 25;
 	
 	vp.set_hres(400);//1680
 	vp.set_vres(400);//1050
@@ -64,8 +66,8 @@ World::build(void) {
 //	set_camera(camera_ptr);
 	
 	Pinhole* camera_ptr = new Pinhole;
-	camera_ptr->set_eye(Point3D(25, 25, 100)); 
-	camera_ptr->set_lookat(Point3D(1.0,0.0, 0));
+	camera_ptr->set_eye(Point3D(0, 25, 200)); 
+	camera_ptr->set_lookat(Point3D(0.0,0.0, 1));
 	camera_ptr->set_d(3000.0);
 	//camera_ptr->compute_uvw();   
 	camera_ptr->set_zoom(1.2);//3 or 3.2
@@ -76,7 +78,7 @@ World::build(void) {
 //	Pinhole* pinhole_ptr = new Pinhole;
 //	pinhole_ptr->set_eye(Point3D(25, 200, 100));  
 //	pinhole_ptr->set_lookat(Point3D(-0.5, 0, 0));  
-//	pinhole_ptr->set_d(4000);	
+//	pinhole_ptr->set_d(4500);	
 //	pinhole_ptr->compute_uvw();	
 //	set_camera(pinhole_ptr);
 	
@@ -139,7 +141,7 @@ World::build(void) {
 	background_color = MyRGBColor(black);
 	
 	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->scale_radiance(0.0);
+	ambient_ptr->scale_radiance(1.0);
 	set_ambient_light(ambient_ptr);
 	
 
@@ -147,8 +149,8 @@ World::build(void) {
 //	MultiJittered* emissive_sampler_ptr = new MultiJittered(num_samples);
 //	
 //	Emissive* emissive_ptr = new Emissive;
-//	emissive_ptr->scale_radiance(0.1);
-//	emissive_ptr->set_ce(1.0, 0.5, 0.0);
+//	emissive_ptr->scale_radiance(1.0);
+//	emissive_ptr->set_ce(1.0, 1.0, 1.0);
 //	
 ////	p0(-1, 0, -1), 
 ////	a(0, 0, 2), b(2, 0, 0), 
@@ -162,36 +164,37 @@ World::build(void) {
 //	rectangle_ptr->set_sampler(emissive_sampler_ptr);
 //	rectangle_ptr->set_shadows(false);
 //	add_object(rectangle_ptr);
-//	
-//	//	Sphere* light_sphere_ptr = new Sphere(Point3D(150, 0, 150), 100);
-//	//	light_sphere_ptr->set_material(emissive_ptr);
-//	//	light_sphere_ptr->set_sampler(emissive_sampler_ptr);
-//	//	light_sphere_ptr->set_shadows(false);
-//	//	add_object(light_sphere_ptr);
+	
+//	Sphere* light_sphere_ptr = new Sphere(Point3D(1000, 1000, 2000), 1000);
+//	light_sphere_ptr->set_material(emissive_ptr);
+//	light_sphere_ptr->set_sampler(emissive_sampler_ptr);
+//	light_sphere_ptr->set_shadows(false);
+//	add_object(light_sphere_ptr);
 //	
 //	AreaLight* area_light_ptr = new AreaLight;
-//	area_light_ptr->set_object(rectangle_ptr);
+//	area_light_ptr->set_object(light_sphere_ptr);
 //	area_light_ptr->set_shadows(true);
 //	add_light(area_light_ptr);
 
 	
 	// FakeSphericalLight
-	FakeSphericalLight* light_ptr2 = new FakeSphericalLight;
-	light_ptr2->set_location(100.0, 100.0, 200.0);
-	light_ptr2->scale_radiance(1.0);
-	add_light(light_ptr2);
+//	FakeSphericalLight* light_ptr2 = new FakeSphericalLight;
+//	light_ptr2->set_location(100.0, 100.0, 200.0);
+//	light_ptr2->scale_radiance(1.0);
+//	light_ptr2->set_radius(100.0);
+//	add_light(light_ptr2);
 	
 	
 	
 	// if I push this to 512, get weird artifacts
 	MultiJittered* occluder_sampler_ptr = new MultiJittered(MIN(num_samples, 256));
 	
-	AmbientOccluder* ambient_occluder_ptr = new AmbientOccluder;
-	ambient_occluder_ptr->scale_radiance(3.0);
-	ambient_occluder_ptr->set_color(white);
-	ambient_occluder_ptr->set_min_amount(0.25);
-	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
-	set_ambient_light(ambient_occluder_ptr);
+//	AmbientOccluder* ambient_occluder_ptr = new AmbientOccluder;
+//	ambient_occluder_ptr->scale_radiance(3.0);
+//	ambient_occluder_ptr->set_color(white);
+//	ambient_occluder_ptr->set_min_amount(0.25);
+//	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
+//	set_ambient_light(ambient_occluder_ptr);
 	
 	
 //	Emissive* emissive_ptr2 = new Emissive;
@@ -236,26 +239,26 @@ World::build(void) {
 //	sphere_ptr001->set_material(phong_ptr1);
 //	add_object(sphere_ptr001);
 //	
-	Phong* phong_ptr002 = new Phong;   
-	phong_ptr002->set_ka(ka1);	
-	phong_ptr002->set_kd(kd1);
-	phong_ptr002->set_c(white);				
-	phong_ptr002->set_exp_s(exp1);
-	
-	Plane* plane_ptr001 = new Plane(Point3D(0,-100,0), Normal(0,1,0));
-	plane_ptr001->set_material(phong_ptr002);
-	plane_ptr001->set_shadows(true);
-	add_object(plane_ptr001);
+//	Phong* phong_ptr002 = new Phong;   
+//	phong_ptr002->set_ka(ka1);	
+//	phong_ptr002->set_kd(kd1);
+//	phong_ptr002->set_c(white);				
+//	phong_ptr002->set_exp_s(exp1);
+//	
+//	Plane* plane_ptr001 = new Plane(Point3D(0,-100,0), Normal(0,1,0));
+//	plane_ptr001->set_material(phong_ptr002);
+//	plane_ptr001->set_shadows(true);
+//	add_object(plane_ptr001);
 	
 //	Directional* light_ptr1 = new Directional;
 //	light_ptr1->set_direction(100, 100, 200);
 //	light_ptr1->scale_radiance(.5); 	
 //	add_light(light_ptr1);
 	
-//	PointLight* light_ptr2 = new PointLight;
-//	light_ptr2->set_location(100.0, 1.0, 1.0);
-//	light_ptr2->scale_radiance(2.0);
-//	add_light(light_ptr2);
+	PointLight* light_ptr2 = new PointLight;
+	light_ptr2->set_location(2, 10, 10.0);
+	light_ptr2->scale_radiance(2.0);
+	add_light(light_ptr2);
 	
 	
 	
@@ -325,13 +328,13 @@ World::build(void) {
 	
 	// yellow triangle
 	
-//	Matte* matte_ptr1 = new Matte;			
-//	matte_ptr1->set_ka(0.25); 
-//	matte_ptr1->set_kd(0.75);
-//	matte_ptr1->set_cd(MyRGBColor(1, 1, 0));
+	Matte* matte_ptr1 = new Matte;			
+	matte_ptr1->set_ka(0.25); 
+	matte_ptr1->set_kd(0.75);
+	matte_ptr1->set_cd(MyRGBColor(1, 1, 0));
 //	
 //	Triangle* triangle_ptr1 = new Triangle(Point3D(2, 0.5, 5), Point3D(2, 1.5, -5), Point3D(-1, 0, -4)); 
-	
+//	
 //	triangle_ptr1->set_material(matte_ptr1);
 //	if (use_grid)
 //		grid_ptr->add_object(triangle_ptr1);
@@ -341,15 +344,15 @@ World::build(void) {
 //	
 //	// dark green triangle (transformed)
 //	
-//	Matte* matte_ptr2 = new Matte;			
-//	matte_ptr2->set_ka(0.25); 
-//	matte_ptr2->set_kd(0.75);
-//	matte_ptr2->set_cd(MyRGBColor(0.0, 0.5, 0.41));
+	Matte* matte_ptr2 = new Matte;			
+	matte_ptr2->set_ka(0.25); 
+	matte_ptr2->set_kd(0.75);
+	matte_ptr2->set_cd(MyRGBColor(0.0, 0.5, 0.41));
 //	
 //	Instance* triangle_ptr2 = new Instance(new Triangle(Point3D(2, 1, 5), Point3D(2, 0.5, -5), Point3D(-1, -1, -4))); 
 //	//triangle_ptr2->translate(-1,0,0);
 //	triangle_ptr2->rotate_y(120);
-	
+//	
 //	triangle_ptr2->set_material(matte_ptr2);
 //	triangle_ptr2->compute_bounding_box();
 //	if (use_grid)
@@ -367,7 +370,7 @@ World::build(void) {
 //	
 //	Instance* triangle_ptr3 = new Instance(new Triangle(Point3D(2, 0, 5), Point3D(2, 1, -5), Point3D(-1, 0, -4))); 
 //	triangle_ptr3->rotate_y(240);
-	//triangle_ptr3->translate(1, 0, 0);
+//	//triangle_ptr3->translate(1, 0, 0);
 //	triangle_ptr3->set_material(matte_ptr3);
 //	triangle_ptr3->compute_bounding_box();
 //	if (use_grid)
@@ -375,26 +378,69 @@ World::build(void) {
 //	else
 //		add_object(triangle_ptr3);
 	
-//	Disk* disk_ptr = new Disk(Point3D(1,1,1), 2, Normal(0,1,1));
-//	disk_ptr->set_material(matte_ptr3);
-//	if (use_grid)
-//		grid_ptr->add_object(disk_ptr);
-//	else
-//		add_object(disk_ptr);
-//	
-	Instance* box_ptr = new Instance(new Box());
-	box_ptr->set_material(matte_ptr3);
-	// shear(<#const float xy#>, <#const float xz#>, <#const float yx#>, <#const float yz#>, <#const float zx#>, <#const float zy#>)
-	box_ptr->shear(0.0, 0.0, 0.0, 1.0, 0.0, 0.0);
-	box_ptr->reflect_across_x_axis();
-	box_ptr->scale(1, 2, 1);
-	//box_ptr->reflect_across_y_axis();
-	box_ptr->reflect_across_z_axis();
-	box_ptr->compute_bounding_box();
+	//Disk* blank_disk_ptr = new Disk(Point3D(1,1,1), 2, Normal(0,0,1));
+	
+	//Rectangle(const Point3D& _p0, const Vector3D& _a, const Vector3D& _b, const Normal& n)
+	//Rectangle* blank_disk_ptr = new Rectangle(Point3D(-1,3,0), Vector3D(4,0,0), Vector3D(0,-4,0), Normal(0,0,1));
+	
+	//	OpenCylinder(const double bottom, const double top, const double radius);
+	//OpenCylinder* blank_disk_ptr = new OpenCylinder(-1.5, 1.5, 1.5);
+	
+	//SolidCylinder* blank_disk_ptr = new SolidCylinder(-1.5, 1.5, 1.5);
+	
+	//Torus(const double a, const double b);
+	//Torus* blank_disk_ptr = new Torus(2, 1);
+	
+	//ConvexPartSphere* blank_disk_ptr = new ConvexPartSphere(Point3D(0,0,0), 2.0, 40.0, 320, 40.0, 140);
+	
+	//ConvexPartCylinder* blank_disk_ptr = new ConvexPartCylinder(-1.5, 1.5, 1.5, 40.0, 320.0);
+	
+	//Box* blank_disk_ptr = new Box(Point3D(-1.5,-1.5,-1.5), Point3D(1.5,1.5,1.5));
+	
+	ConvexPartTorus* blank_disk_ptr = new ConvexPartTorus(2, 1, 40.0, 320, PI/2, TWO_PI);
+	
+	Instance* disk_ptr = new Instance(blank_disk_ptr);
+	disk_ptr->set_material(matte_ptr3);
+	disk_ptr->translate(0, -.75, 0);
+	disk_ptr->compute_bounding_box();
 	if (use_grid)
-		grid_ptr->add_object(box_ptr);
+		grid_ptr->add_object(disk_ptr);
 	else
-		add_object(box_ptr);
+		add_object(disk_ptr);
+	
+	Instance* disk_ptr2 = new Instance(blank_disk_ptr);
+	disk_ptr2->set_material(matte_ptr2);
+	disk_ptr2->translate(-3,-3.75,-1);
+	//disk_ptr2->shear(0.0,0.0,-0.25,0.0,0.0,0.0);
+	disk_ptr2->compute_bounding_box();
+	if (use_grid)
+		grid_ptr->add_object(disk_ptr2);
+	else
+		add_object(disk_ptr2);	
+	
+	Instance* disk_ptr3 = new Instance(blank_disk_ptr);
+	disk_ptr3->set_material(matte_ptr1);
+	disk_ptr3->translate(3,2.25,1);
+	//disk_ptr3->shear(0.25,0.0,0.0,0.0,0.0,0.0);
+	disk_ptr3->compute_bounding_box();
+	if (use_grid)
+		grid_ptr->add_object(disk_ptr3);
+	else
+		add_object(disk_ptr3);	
+//	
+//	Instance* box_ptr = new Instance(new Box());
+//	box_ptr->set_material(matte_ptr3);
+//	// shear(<#const float xy#>, <#const float xz#>, <#const float yx#>, <#const float yz#>, <#const float zx#>, <#const float zy#>)
+//	box_ptr->shear(0.0, 0.0, 0.0, 1.0, 0.0, 0.0);
+//	box_ptr->reflect_across_x_axis();
+//	box_ptr->scale(1, 2, 1);
+//	//box_ptr->reflect_across_y_axis();
+//	box_ptr->reflect_across_z_axis();
+//	box_ptr->compute_bounding_box();
+//	if (use_grid)
+//		grid_ptr->add_object(box_ptr);
+//	else
+//		add_object(box_ptr);
 	
 	
 //	OpenCylinder* cylinder_ptr = new OpenCylinder();
@@ -460,7 +506,7 @@ World::build(void) {
 //		grid_ptr->add_object(sphere_ptr1);
 //	else
 //		add_object(sphere_ptr1);
-	
+//	
 //	Phong* phong_ptr2 = new Phong;
 //	phong_ptr2->set_ka(ka);	
 //	phong_ptr2->set_kd(kd);
@@ -748,7 +794,7 @@ World::build(void) {
 //	if (use_grid)
 //		grid_ptr->add_object(sphere_ptr25);
 //	else
-//		add_object(sphere_ptr24);
+//		add_object(sphere_ptr25);
 //	
 //	Phong* phong_ptr26 = new Phong;
 //	phong_ptr26->set_ka(ka);	
@@ -760,7 +806,7 @@ World::build(void) {
 //	if (use_grid)
 //		grid_ptr->add_object(sphere_ptr26);
 //	else
-//		add_object(sphere_ptr25);
+//		add_object(sphere_ptr26);
 //	
 //	Phong* phong_ptr27 = new Phong;
 //	phong_ptr27->set_ka(ka);	
@@ -772,7 +818,7 @@ World::build(void) {
 //	if (use_grid)
 //		grid_ptr->add_object(sphere_ptr27);
 //	else
-//		add_object(sphere_ptr26);
+//		add_object(sphere_ptr27);
 //	
 //	Phong* phong_ptr28 = new Phong;
 //	phong_ptr28->set_ka(ka);	
@@ -784,7 +830,7 @@ World::build(void) {
 //	if (use_grid)
 //		grid_ptr->add_object(sphere_ptr28);
 //	else
-//		add_object(sphere_ptr27);
+//		add_object(sphere_ptr28);
 //	
 //	Phong* phong_ptr29 = new Phong;
 //	phong_ptr29->set_ka(ka);	
