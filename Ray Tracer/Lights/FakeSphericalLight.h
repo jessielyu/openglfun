@@ -50,8 +50,12 @@ public:
 	virtual bool
 	in_shadow(const Ray& ray, const ShadeRec& sr) const;
 	
+	void
+	set_radius(const float r);
+	
 private:
 	
+	float r;		// radius
 	float ls;
 	MyRGBColor color;
 	Point3D location;
@@ -90,6 +94,11 @@ FakeSphericalLight::set_color(const float r, const float g, const float b) {
 inline void
 FakeSphericalLight::set_location(const float x, const float y, const float z) {
 	location.x = x; location.y = y; location.z = z;
+}
+
+inline void
+FakeSphericalLight::set_radius(const float radius) {
+	r = radius;
 }
 
 #endif

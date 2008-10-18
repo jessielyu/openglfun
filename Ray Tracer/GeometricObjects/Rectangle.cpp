@@ -135,14 +135,14 @@ Rectangle::~Rectangle (void) {
 
 //------------------------------------------------------------------ get_bounding_box 
 
-//BBox
-//Rectangle::get_bounding_box(void) {
-//	double delta = 0.0001; 
-//	
-//	return(BBox(min(p0.x, p0.x + a.x + b.x) - delta, max(p0.x, p0.x + a.x + b.x) + delta,
-//				min(p0.y, p0.y + a.y + b.y) - delta, max(p0.y, p0.y + a.y + b.y) + delta, 
-//				min(p0.z, p0.z + a.z + b.z) - delta, max(p0.z, p0.z + a.z + b.z) + delta));
-//}
+BBox
+Rectangle::get_bounding_box(void) const{
+	double delta = 0.0001; 
+	
+	return(BBox(min(p0.x, p0.x + a.x + b.x) - delta, max(p0.x, p0.x + a.x + b.x) + delta,
+				min(p0.y, p0.y + a.y + b.y) - delta, max(p0.y, p0.y + a.y + b.y) + delta, 
+				min(p0.z, p0.z + a.z + b.z) - delta, max(p0.z, p0.z + a.z + b.z) + delta));
+}
 
 
 //------------------------------------------------------------------ hit 

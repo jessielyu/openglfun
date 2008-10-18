@@ -17,6 +17,8 @@
 		E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */; };
 		E26B50330E8EBEDB009FC7B8 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */; };
 		E26B50550E8EC0A6009FC7B8 /* AreaLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */; };
+		E26CE7F00EAA3FA70039B7AC /* ConvexPartCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */; };
+		E26CE84F0EAA49FF0039B7AC /* ConvexPartTorus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */; };
 		E26E6C7E0E832F8B00808BE1 /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */; };
 		E26E6CCF0E8336B200808BE1 /* Directional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6CCE0E8336B200808BE1 /* Directional.cpp */; };
 		E26E6D620E83539C00808BE1 /* RayCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6D610E83539C00808BE1 /* RayCast.cpp */; };
@@ -96,6 +98,10 @@
 		E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Rectangle.cpp; sourceTree = "<group>"; };
 		E26B50530E8EC0A6009FC7B8 /* AreaLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLight.h; sourceTree = "<group>"; };
 		E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AreaLight.cpp; sourceTree = "<group>"; };
+		E26CE7EE0EAA3FA70039B7AC /* ConvexPartCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartCylinder.h; sourceTree = "<group>"; };
+		E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartCylinder.cpp; sourceTree = "<group>"; };
+		E26CE84D0EAA49FF0039B7AC /* ConvexPartTorus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartTorus.h; sourceTree = "<group>"; };
+		E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartTorus.cpp; sourceTree = "<group>"; };
 		E26E6C7C0E832F8B00808BE1 /* PointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLight.h; sourceTree = "<group>"; };
 		E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PointLight.cpp; sourceTree = "<group>"; };
 		E26E6CCD0E8336B200808BE1 /* Directional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directional.h; sourceTree = "<group>"; };
@@ -316,6 +322,10 @@
 				E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */,
 				E2BE448D0EA6528600118229 /* Instance.h */,
 				E2BE448E0EA6528600118229 /* Instance.cpp */,
+				E26CE7EE0EAA3FA70039B7AC /* ConvexPartCylinder.h */,
+				E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */,
+				E26CE84D0EAA49FF0039B7AC /* ConvexPartTorus.h */,
+				E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -590,6 +600,8 @@
 				E2BE41F60EA3A5F500118229 /* ConvexPartSphere.cpp in Sources */,
 				E2BE42B00EA3C40700118229 /* SolidCylinder.cpp in Sources */,
 				E2BE448F0EA6528600118229 /* Instance.cpp in Sources */,
+				E26CE7F00EAA3FA70039B7AC /* ConvexPartCylinder.cpp in Sources */,
+				E26CE84F0EAA49FF0039B7AC /* ConvexPartTorus.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
