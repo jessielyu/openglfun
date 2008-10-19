@@ -36,6 +36,10 @@
 #include "Instance.h"
 #include "ConvexPartCylinder.h"
 #include "ConvexPartTorus.h"
+#include "BeveledCylinder.h"
+#include "BeveledBox.h"
+#include "PartAnnulus.h"
+#include "BeveledWedge.h"
 
 void 												
 World::build(void) {
@@ -66,11 +70,11 @@ World::build(void) {
 //	set_camera(camera_ptr);
 	
 	Pinhole* camera_ptr = new Pinhole;
-	camera_ptr->set_eye(Point3D(0, 25, 200)); 
-	camera_ptr->set_lookat(Point3D(0.0,0.0, 1));
+	camera_ptr->set_eye(Point3D(50, 200, 200)); 
+	camera_ptr->set_lookat(Point3D(0.5,0.0, 0));
 	camera_ptr->set_d(3000.0);
 	//camera_ptr->compute_uvw();   
-	camera_ptr->set_zoom(1.2);//3 or 3.2
+	camera_ptr->set_zoom(2.25);//3 or 3.2
 	camera_ptr->compute_uvw();
 	set_camera(camera_ptr);
 	
@@ -256,7 +260,7 @@ World::build(void) {
 //	add_light(light_ptr1);
 	
 	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(2, 10, 10.0);
+	light_ptr2->set_location(10, 10, 10.0);
 	light_ptr2->scale_radiance(2.0);
 	add_light(light_ptr2);
 	
@@ -328,6 +332,12 @@ World::build(void) {
 	
 	// yellow triangle
 	
+	Phong* phong1 = new Phong();
+	phong1->set_ka(0.25);
+	phong1->set_kd(0.75);
+	phong1->set_c(1.0,1.00, 0);
+	phong1->set_exp_s(5);
+	
 	Matte* matte_ptr1 = new Matte;			
 	matte_ptr1->set_ka(0.25); 
 	matte_ptr1->set_kd(0.75);
@@ -343,7 +353,13 @@ World::build(void) {
 //	
 //	
 //	// dark green triangle (transformed)
-//	
+	
+	Phong* phong2 = new Phong();
+	phong2->set_ka(0.25);
+	phong2->set_kd(0.75);
+	phong2->set_c(0.0,0.5, 0.41);
+	phong2->set_exp_s(5);
+	
 	Matte* matte_ptr2 = new Matte;			
 	matte_ptr2->set_ka(0.25); 
 	matte_ptr2->set_kd(0.75);
@@ -362,7 +378,13 @@ World::build(void) {
 //	
 //	
 //	// brown triangle (transformed)
-//	
+	
+	Phong* phong3 = new Phong();
+	phong3->set_ka(0.25);
+	phong3->set_kd(0.75);
+	phong3->set_c(0.71,0.40, 0.16);
+	phong3->set_exp_s(5);
+	
 	Matte* matte_ptr3 = new Matte;			
 	matte_ptr3->set_ka(0.25); 
 	matte_ptr3->set_kd(0.75);
@@ -399,34 +421,94 @@ World::build(void) {
 	
 	ConvexPartTorus* blank_disk_ptr = new ConvexPartTorus(2, 1, 40.0, 320, PI/2, TWO_PI);
 	
-	Instance* disk_ptr = new Instance(blank_disk_ptr);
-	disk_ptr->set_material(matte_ptr3);
-	disk_ptr->translate(0, -.75, 0);
-	disk_ptr->compute_bounding_box();
-	if (use_grid)
-		grid_ptr->add_object(disk_ptr);
-	else
-		add_object(disk_ptr);
+	//BeveledCylinder* blank_disk_ptr = new BeveledCylinder(-1.5,1.5,1.5,.375);
 	
-	Instance* disk_ptr2 = new Instance(blank_disk_ptr);
-	disk_ptr2->set_material(matte_ptr2);
-	disk_ptr2->translate(-3,-3.75,-1);
-	//disk_ptr2->shear(0.0,0.0,-0.25,0.0,0.0,0.0);
-	disk_ptr2->compute_bounding_box();
-	if (use_grid)
-		grid_ptr->add_object(disk_ptr2);
-	else
-		add_object(disk_ptr2);	
+	//BeveledBox* blank_disk_ptr = new BeveledBox(Point3D(-1.5,-1.5,-1.5), Point3D(1.5,1.5,1.5), .375, true);
 	
-	Instance* disk_ptr3 = new Instance(blank_disk_ptr);
-	disk_ptr3->set_material(matte_ptr1);
-	disk_ptr3->translate(3,2.25,1);
-	//disk_ptr3->shear(0.25,0.0,0.0,0.0,0.0,0.0);
-	disk_ptr3->compute_bounding_box();
+//	PartAnnulus* blank_disk_ptr = new PartAnnulus(Point3D(0,0,0), Normal(0,1,0), 1, 3, 40, 320);
+//	
+//	Instance* disk_ptr = new Instance(blank_disk_ptr);
+//	disk_ptr->set_material(phong3);
+//	disk_ptr->translate(0, -.75, 0);
+//	disk_ptr->compute_bounding_box();
+//	if (use_grid)
+//		grid_ptr->add_object(disk_ptr);
+//	else
+//		add_object(disk_ptr);
+//	
+//	Instance* disk_ptr2 = new Instance(blank_disk_ptr);
+//	disk_ptr2->set_material(phong2);
+//	disk_ptr2->translate(-3,-3.75,-1);
+//	//disk_ptr2->shear(0.0,0.0,-0.25,0.0,0.0,0.0);
+//	disk_ptr2->compute_bounding_box();
+//	if (use_grid)
+//		grid_ptr->add_object(disk_ptr2);
+//	else
+//		add_object(disk_ptr2);	
+//	
+//	Instance* disk_ptr3 = new Instance(blank_disk_ptr);
+//	disk_ptr3->set_material(phong1);
+//	disk_ptr3->translate(3,2.25,1);
+//	//disk_ptr3->shear(0.25,0.0,0.0,0.0,0.0,0.0);
+//	disk_ptr3->compute_bounding_box();
+//	if (use_grid)
+//		grid_ptr->add_object(disk_ptr3);
+//	else
+//		add_object(disk_ptr3);	
+	
+	// wedge1 parameters
+	
+	float y0 = -1.0;		// minimum y value
+	float y1 = 2;			// maximum y value
+	float r0 = 1.5;			// inner radius
+	float r1 = 3;			// outer radius
+	float rb = 0.25;		// bevel radius
+	float phi0 = 140;		// minimum azimuth angle in degrees
+	float phi1 = 350;		// maximum azimuth angle in degrees
+	
+	BeveledWedge* wedge_ptr1 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+	wedge_ptr1->set_material(phong1);
 	if (use_grid)
-		grid_ptr->add_object(disk_ptr3);
+		grid_ptr->add_object(wedge_ptr1);
 	else
-		add_object(disk_ptr3);	
+		add_object(wedge_ptr1);
+	
+	
+	// wedge2 parameters
+	
+	y0 = -1.5;		// minimum y value
+	y1 = 1.25;		// minimum y value
+	r0 = 0.5;		// inner radius
+	r1 = 4.0;		// outer radius
+	rb = 0.075;		// bevel radius
+	phi0 = 110;		// minimum azimuth angle in degrees
+	phi1 = 130;		// maximum azimuth angle in degrees
+	
+	BeveledWedge* wedge_ptr2 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+	wedge_ptr2->set_material(phong2);
+	if (use_grid)
+		grid_ptr->add_object(wedge_ptr2);
+	else
+		add_object(wedge_ptr2);	
+	
+	
+	// wedge3 parameters
+	
+	y0 = -0.75;		// minimum y value
+	y1 = 0.5;		// minimum y value
+	r0 = 1.25;		// inner radius
+	r1 = 3.75;		// outer radius
+	rb = 0.1;		// bevel radius
+	phi0 = 0;		// minimum azimuth angle in degrees
+	phi1 = 90;		// maximum azimuth angle in degrees
+	
+	BeveledWedge* wedge_ptr3 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+	wedge_ptr3->set_material(phong3);
+	if (use_grid)
+		grid_ptr->add_object(wedge_ptr3);		
+	else
+		add_object(wedge_ptr3);		
+//	
 //	
 //	Instance* box_ptr = new Instance(new Box());
 //	box_ptr->set_material(matte_ptr3);

@@ -96,6 +96,7 @@ Instance::compute_bounding_box(void) {
 	
 //	box = new Box(Point3D(minX, minY, minZ), Point3D(maxX, maxY, maxZ));
 //	box->set_material(new Phong());
+//	Box* bot_ptr = box;
 	
 	// reset forward_matrix for next instance to use
 	forward_matrix.set_identity();
@@ -130,6 +131,8 @@ Instance::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 	inv_ray.o = inv_matrix * inv_ray.o;
 	inv_ray.d = inv_matrix * inv_ray.d;
 	
+//	Box* box_ptr = box;
+//	
 //	if (box->hit(ray, tmin, sr)) {
 //		//sr.normal = sr.normal;
 //		sr.normal.normalize();

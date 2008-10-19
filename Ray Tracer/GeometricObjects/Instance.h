@@ -67,6 +67,9 @@ public:
 	void
 	reflect_across_z_axis();
 	
+	void
+	transform_texture(const bool trans);
+	
 private:
 	
 	const GeometricObject* object_ptr;	// object we're transforming
@@ -81,6 +84,11 @@ private:
 inline BBox
 Instance::get_bounding_box(void) const {
 	return bbox;
+}
+
+inline void
+Instance::transform_texture(const bool trans) {
+	transform_the_texture = trans;
 }
 
 #endif
