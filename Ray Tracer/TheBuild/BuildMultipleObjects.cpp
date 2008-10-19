@@ -40,10 +40,11 @@
 #include "BeveledBox.h"
 #include "PartAnnulus.h"
 #include "BeveledWedge.h"
+#include "Archway.h"
 
 void 												
 World::build(void) {
-	int num_samples = 25;
+	int num_samples = 100;
 	
 	vp.set_hres(400);//1680
 	vp.set_vres(400);//1050
@@ -70,8 +71,8 @@ World::build(void) {
 //	set_camera(camera_ptr);
 	
 	Pinhole* camera_ptr = new Pinhole;
-	camera_ptr->set_eye(Point3D(50, 200, 200)); 
-	camera_ptr->set_lookat(Point3D(0.5,0.0, 0));
+	camera_ptr->set_eye(Point3D(25, 0, -200)); 
+	camera_ptr->set_lookat(Point3D(0.5,-0.5, 0));
 	camera_ptr->set_d(3000.0);
 	//camera_ptr->compute_uvw();   
 	camera_ptr->set_zoom(2.25);//3 or 3.2
@@ -142,7 +143,8 @@ World::build(void) {
 	
 	tracer_ptr = new AreaLighting(this); 
 	
-	background_color = MyRGBColor(black);
+	//background_color = MyRGBColor(black);
+	background_color = MyRGBColor(0.4,0.4,0.8);
 	
 	Ambient* ambient_ptr = new Ambient;
 	ambient_ptr->scale_radiance(1.0);
@@ -193,12 +195,12 @@ World::build(void) {
 	// if I push this to 512, get weird artifacts
 	MultiJittered* occluder_sampler_ptr = new MultiJittered(MIN(num_samples, 256));
 	
-//	AmbientOccluder* ambient_occluder_ptr = new AmbientOccluder;
-//	ambient_occluder_ptr->scale_radiance(3.0);
-//	ambient_occluder_ptr->set_color(white);
-//	ambient_occluder_ptr->set_min_amount(0.25);
-//	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
-//	set_ambient_light(ambient_occluder_ptr);
+	AmbientOccluder* ambient_occluder_ptr = new AmbientOccluder;
+	ambient_occluder_ptr->scale_radiance(1.0);
+	ambient_occluder_ptr->set_color(white);
+	ambient_occluder_ptr->set_min_amount(0.25);
+	ambient_occluder_ptr->set_sampler(occluder_sampler_ptr);
+	set_ambient_light(ambient_occluder_ptr);
 	
 	
 //	Emissive* emissive_ptr2 = new Emissive;
@@ -254,15 +256,15 @@ World::build(void) {
 //	plane_ptr001->set_shadows(true);
 //	add_object(plane_ptr001);
 	
-//	Directional* light_ptr1 = new Directional;
-//	light_ptr1->set_direction(100, 100, 200);
-//	light_ptr1->scale_radiance(.5); 	
-//	add_light(light_ptr1);
+	Directional* light_ptr1 = new Directional;
+	light_ptr1->set_direction(15, 25, -200);
+	light_ptr1->scale_radiance(1.5); 	
+	add_light(light_ptr1);
 	
-	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(10, 10, 10.0);
-	light_ptr2->scale_radiance(2.0);
-	add_light(light_ptr2);
+//	PointLight* light_ptr2 = new PointLight;
+//	light_ptr2->set_location(2, 2, -10.0);
+//	light_ptr2->scale_radiance(2.0);
+//	add_light(light_ptr2);
 	
 	
 	
@@ -322,7 +324,7 @@ World::build(void) {
 //	plane_ptr2->
 //	add_object(plane_ptr2);
 	
-	bool use_grid = true;
+	bool use_grid = false;
 	Grid* grid_ptr = NULL;
 	
 	if (use_grid) {
@@ -419,7 +421,7 @@ World::build(void) {
 	
 	//Box* blank_disk_ptr = new Box(Point3D(-1.5,-1.5,-1.5), Point3D(1.5,1.5,1.5));
 	
-	ConvexPartTorus* blank_disk_ptr = new ConvexPartTorus(2, 1, 40.0, 320, PI/2, TWO_PI);
+	//ConvexPartTorus* blank_disk_ptr = new ConvexPartTorus(2, 1, 40.0, 320, PI/2, TWO_PI);
 	
 	//BeveledCylinder* blank_disk_ptr = new BeveledCylinder(-1.5,1.5,1.5,.375);
 	
@@ -456,58 +458,76 @@ World::build(void) {
 //	else
 //		add_object(disk_ptr3);	
 	
-	// wedge1 parameters
 	
-	float y0 = -1.0;		// minimum y value
-	float y1 = 2;			// maximum y value
-	float r0 = 1.5;			// inner radius
-	float r1 = 3;			// outer radius
-	float rb = 0.25;		// bevel radius
-	float phi0 = 140;		// minimum azimuth angle in degrees
-	float phi1 = 350;		// maximum azimuth angle in degrees
-	
-	BeveledWedge* wedge_ptr1 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
-	wedge_ptr1->set_material(phong1);
+	// Archway(width, height, depth, column_width, double num_blocks, double num_wedges, double rb) {
+	Instance* archway_ptr = new Instance(new Archway(2.0, 2.5, 2.5, .4, 6, 10, .05, matte_ptr3));
+	archway_ptr->rotate_z(90);
+	archway_ptr->rotate_y(90);
+	archway_ptr->scale(2, 2, 2);
+	archway_ptr->compute_bounding_box();
+	//archway_ptr->set_material(phong3);
 	if (use_grid)
-		grid_ptr->add_object(wedge_ptr1);
+		grid_ptr->add_object(archway_ptr);
 	else
-		add_object(wedge_ptr1);
+		add_object(archway_ptr);
+	
+	Plane* ground = new Plane(Point3D(0,-3.0,0),Normal(0,1,0));
+	ground->set_material(matte_ptr2);
+	add_object(ground);
 	
 	
-	// wedge2 parameters
-	
-	y0 = -1.5;		// minimum y value
-	y1 = 1.25;		// minimum y value
-	r0 = 0.5;		// inner radius
-	r1 = 4.0;		// outer radius
-	rb = 0.075;		// bevel radius
-	phi0 = 110;		// minimum azimuth angle in degrees
-	phi1 = 130;		// maximum azimuth angle in degrees
-	
-	BeveledWedge* wedge_ptr2 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
-	wedge_ptr2->set_material(phong2);
-	if (use_grid)
-		grid_ptr->add_object(wedge_ptr2);
-	else
-		add_object(wedge_ptr2);	
-	
-	
-	// wedge3 parameters
-	
-	y0 = -0.75;		// minimum y value
-	y1 = 0.5;		// minimum y value
-	r0 = 1.25;		// inner radius
-	r1 = 3.75;		// outer radius
-	rb = 0.1;		// bevel radius
-	phi0 = 0;		// minimum azimuth angle in degrees
-	phi1 = 90;		// maximum azimuth angle in degrees
-	
-	BeveledWedge* wedge_ptr3 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
-	wedge_ptr3->set_material(phong3);
-	if (use_grid)
-		grid_ptr->add_object(wedge_ptr3);		
-	else
-		add_object(wedge_ptr3);		
+//	// wedge1 parameters
+//	
+//	float y0 = -1.0;		// minimum y value
+//	float y1 = 2;			// maximum y value
+//	float r0 = 1.5;			// inner radius
+//	float r1 = 3;			// outer radius
+//	float rb = 0.25;		// bevel radius
+//	float phi0 = 140;		// minimum azimuth angle in degrees
+//	float phi1 = 350;		// maximum azimuth angle in degrees
+//	
+//	BeveledWedge* wedge_ptr1 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+//	wedge_ptr1->set_material(phong1);
+//	if (use_grid)
+//		grid_ptr->add_object(wedge_ptr1);
+//	else
+//		add_object(wedge_ptr1);
+//	
+//	
+//	// wedge2 parameters
+//	
+//	y0 = -1.5;		// minimum y value
+//	y1 = 1.25;		// minimum y value
+//	r0 = 0.5;		// inner radius
+//	r1 = 4.0;		// outer radius
+//	rb = 0.075;		// bevel radius
+//	phi0 = 110;		// minimum azimuth angle in degrees
+//	phi1 = 130;		// maximum azimuth angle in degrees
+//	
+//	BeveledWedge* wedge_ptr2 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+//	wedge_ptr2->set_material(phong2);
+//	if (use_grid)
+//		grid_ptr->add_object(wedge_ptr2);
+//	else
+//		add_object(wedge_ptr2);	
+//	
+//	
+//	// wedge3 parameters
+//	
+//	y0 = -0.75;		// minimum y value
+//	y1 = 0.5;		// minimum y value
+//	r0 = 1.25;		// inner radius
+//	r1 = 3.75;		// outer radius
+//	rb = 0.1;		// bevel radius
+//	phi0 = 0;		// minimum azimuth angle in degrees
+//	phi1 = 90;		// maximum azimuth angle in degrees
+//	
+//	BeveledWedge* wedge_ptr3 = new BeveledWedge(y0, y1, r0, r1, rb, phi0, phi1, true);
+//	wedge_ptr3->set_material(phong3);
+//	if (use_grid)
+//		grid_ptr->add_object(wedge_ptr3);		
+//	else
+//		add_object(wedge_ptr3);		
 //	
 //	
 //	Instance* box_ptr = new Instance(new Box());

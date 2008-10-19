@@ -27,7 +27,7 @@ BeveledBox::BeveledBox(void)
 	top_front_edge->rotate_z(90);
 	top_front_edge->translate((p0.x + p1.x) / 2, p1.y - rb, p1.z - rb);
 	top_front_edge->transform_texture(false);
-	top_front_edge->compute_bounding_box();
+	//top_front_edge->compute_bounding_box();
 	objects.push_back(top_front_edge);
 	
 	// Top Front Edge
@@ -35,7 +35,7 @@ BeveledBox::BeveledBox(void)
 	top_back_edge->rotate_z(90);
 	top_back_edge->translate((p0.x + p1.x) / 2, p1.y - rb, p0.z + rb);
 	top_back_edge->transform_texture(false);
-	top_back_edge->compute_bounding_box();
+	//top_back_edge->compute_bounding_box();
 	objects.push_back(top_back_edge);
 	
 	// Top Right Edge
@@ -43,7 +43,7 @@ BeveledBox::BeveledBox(void)
 	top_right_edge->rotate_x(90);
 	top_right_edge->translate(p1.x - rb, p1.y - rb, (p0.z + p1.z) / rb);
 	top_right_edge->transform_texture(false);
-	top_right_edge->compute_bounding_box();
+	//top_right_edge->compute_bounding_box();
 	objects.push_back(top_right_edge);
 	
 	// Top Right Edge
@@ -51,7 +51,7 @@ BeveledBox::BeveledBox(void)
 	top_left_edge->rotate_x(90);
 	top_left_edge->translate(p0.x + rb, p1.y - rb, (p0.z + p1.z) / rb);
 	top_left_edge->transform_texture(false);
-	top_left_edge->compute_bounding_box();
+	//top_left_edge->compute_bounding_box();
 	objects.push_back(top_left_edge);
 	
 	// Bottom Front Edge
@@ -59,7 +59,7 @@ BeveledBox::BeveledBox(void)
 	bottom_front_edge->rotate_z(90);
 	bottom_front_edge->translate((p0.x + p1.x) / 2, p0.y + rb, p1.z - rb);
 	bottom_front_edge->transform_texture(false);
-	bottom_front_edge->compute_bounding_box();
+	//bottom_front_edge->compute_bounding_box();
 	objects.push_back(bottom_front_edge);
 	
 	// Bottom Front Edge
@@ -67,7 +67,7 @@ BeveledBox::BeveledBox(void)
 	bottom_back_edge->rotate_z(90);
 	bottom_back_edge->translate((p0.x + p1.x) / 2, p0.y + rb, p0.z + rb);
 	bottom_back_edge->transform_texture(false);
-	bottom_back_edge->compute_bounding_box();
+	//bottom_back_edge->compute_bounding_box();
 	objects.push_back(bottom_back_edge);
 	
 	// Bottom Right Edge
@@ -75,7 +75,7 @@ BeveledBox::BeveledBox(void)
 	bottom_right_edge->rotate_x(90);
 	bottom_right_edge->translate(p1.x - rb, p0.y + rb, (p0.z + p1.z) / rb);
 	bottom_right_edge->transform_texture(false);
-	bottom_right_edge->compute_bounding_box();
+	//bottom_right_edge->compute_bounding_box();
 	objects.push_back(bottom_right_edge);
 	
 	// Bottom Right Edge
@@ -83,7 +83,7 @@ BeveledBox::BeveledBox(void)
 	bottom_left_edge->rotate_x(90);
 	bottom_left_edge->translate(p0.x + rb, p0.y + rb, (p0.z + p1.z) / rb);
 	bottom_left_edge->transform_texture(false);
-	bottom_left_edge->compute_bounding_box();
+	//bottom_left_edge->compute_bounding_box();
 	objects.push_back(bottom_left_edge);
 	
 	// Vertical Edges
@@ -92,24 +92,28 @@ BeveledBox::BeveledBox(void)
 	Instance* vertical_right_front_edge = new Instance(new OpenCylinder(p0.y + rb, p1.y - rb, rb));
 	vertical_right_front_edge->translate(p1.x - rb, 0, p1.z - rb);
 	vertical_right_front_edge->transform_texture(false);
+	vertical_right_front_edge->compute_bounding_box();
 	objects.push_back(vertical_right_front_edge);
 	
 	// Vertical left front
 	Instance* vertical_left_front_edge = new Instance(new OpenCylinder(p0.y + rb, p1.y - rb, rb));
 	vertical_left_front_edge->translate(p0.x + rb, 0, p1.z - rb);
 	vertical_left_front_edge->transform_texture(false);
+	vertical_left_front_edge->compute_bounding_box();
 	objects.push_back(vertical_left_front_edge);
 	
 	// Vertical right rear
 	Instance* vertical_right_rear_edge = new Instance(new OpenCylinder(p0.y + rb, p1.y - rb, rb));
 	vertical_right_rear_edge->translate(p1.x - rb, 0, p0.z + rb);
 	vertical_right_rear_edge->transform_texture(false);
+	vertical_right_rear_edge->compute_bounding_box();
 	objects.push_back(vertical_right_rear_edge);
 	
 	// Vertical left rear
 	Instance* vertical_left_rear_edge = new Instance(new OpenCylinder(p0.y + rb, p1.y - rb, rb));
 	vertical_left_rear_edge->translate(p0.x + rb, 0, p0.z + rb);
 	vertical_left_rear_edge->transform_texture(false);
+	vertical_left_rear_edge->compute_bounding_box();
 	objects.push_back(vertical_left_rear_edge);
 	
 	// Corner Spheres
@@ -205,7 +209,7 @@ BeveledBox::BeveledBox(const Point3D p0, const Point3D p1, const float rb, const
 	top_front_edge->compute_bounding_box();
 	objects.push_back(top_front_edge);
 	
-	// Top Front Edge
+	// Top Back Edge
 	Instance* top_back_edge = new Instance(new OpenCylinder(-(p1.x - p0.x - 2 * rb) / 2, (p1.x - p0.x - 2 * rb) / 2, rb));
 	top_back_edge->rotate_z(90);
 	top_back_edge->translate((p0.x + p1.x) / 2, p1.y - rb, p0.z + rb);
@@ -214,19 +218,19 @@ BeveledBox::BeveledBox(const Point3D p0, const Point3D p1, const float rb, const
 	objects.push_back(top_back_edge);
 		
 	// Top Right Edge
-	Instance* top_right_edge = new Instance(new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb));
+	Instance* top_right_edge = new Instance (new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb)); // top right edge
 	top_right_edge->rotate_x(90);
-	top_right_edge->translate(p1.x - rb, p1.y - rb, (p0.z + p1.z) / rb);
+	top_right_edge->translate(p1.x - rb, p1.y - rb, (p0.z + p1.z) / 2);
 	top_right_edge->transform_texture(false);
-	top_right_edge->compute_bounding_box();
 	objects.push_back(top_right_edge);
-		
-	// Top Right Edge
-	Instance* top_left_edge = new Instance(new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb));
+	
+	
+	// Top Left Edge
+	Instance* top_left_edge = new Instance (new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb)); // top left edge
 	top_left_edge->rotate_x(90);
-	top_left_edge->translate(p0.x + rb, p1.y - rb, (p0.z + p1.z) / rb);
+	top_left_edge->translate(p0.x + rb, p1.y - rb, (p0.z + p1.z) / 2);
 	top_left_edge->transform_texture(false);
-	top_left_edge->compute_bounding_box();
+	
 	objects.push_back(top_left_edge);
 		
 	// Bottom Front Edge
@@ -237,7 +241,7 @@ BeveledBox::BeveledBox(const Point3D p0, const Point3D p1, const float rb, const
 	bottom_front_edge->compute_bounding_box();
 	objects.push_back(bottom_front_edge);
 	
-	// Bottom Front Edge
+	// Bottom Back Edge
 	Instance* bottom_back_edge = new Instance(new OpenCylinder(-(p1.x - p0.x - 2 * rb) / 2, (p1.x - p0.x - 2 * rb) / 2, rb));
 	bottom_back_edge->rotate_z(90);
 	bottom_back_edge->translate((p0.x + p1.x) / 2, p0.y + rb, p0.z + rb);
@@ -246,19 +250,18 @@ BeveledBox::BeveledBox(const Point3D p0, const Point3D p1, const float rb, const
 	objects.push_back(bottom_back_edge);
 	
 	// Bottom Right Edge
-	Instance* bottom_right_edge = new Instance(new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb));
+	Instance* bottom_right_edge = new Instance (new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb)); // bottom right edge
 	bottom_right_edge->rotate_x(90);
-	bottom_right_edge->translate(p1.x - rb, p0.y + rb, (p0.z + p1.z) / rb);
+	bottom_right_edge->translate(p1.x - rb, p0.y + rb, (p0.z + p1.z) / 2);
 	bottom_right_edge->transform_texture(false);
-	bottom_right_edge->compute_bounding_box();
 	objects.push_back(bottom_right_edge);
 	
-	// Bottom Right Edge
-	Instance* bottom_left_edge = new Instance(new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb));
+	// Bottom Left Edge
+	Instance* bottom_left_edge = new Instance (new OpenCylinder(-(p1.z - p0.z - 2 * rb) / 2, (p1.z - p0.z - 2 * rb) / 2, rb)); // bottom left edge
 	bottom_left_edge->rotate_x(90);
-	bottom_left_edge->translate(p0.x + rb, p0.y + rb, (p0.z + p1.z) / rb);
+	bottom_left_edge->translate(p0.x + rb, p0.y + rb, (p0.z + p1.z) / 2);
 	bottom_left_edge->transform_texture(false);
-	bottom_left_edge->compute_bounding_box();
+	
 	objects.push_back(bottom_left_edge);
 		
 	// Vertical Edges
@@ -391,18 +394,18 @@ BeveledBox::clone(void) const {
 
 bool
 BeveledBox::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
-	if (bbox.hit(ray))
+	//if (bbox.hit(ray))
 		return (Compound::hit(ray, tmin, sr));
-	else
-		return (false);
+	//else
+		//return (false);
 }
 
 bool
 BeveledBox::shadow_hit(const Ray& ray, float& tmin) const {
-	if (bbox.hit(ray))
+	//if (bbox.hit(ray))
 		return (Compound::shadow_hit(ray, tmin));
-	else
-		return (false);
+	//else
+		//return (false);
 }
 
 BBox
