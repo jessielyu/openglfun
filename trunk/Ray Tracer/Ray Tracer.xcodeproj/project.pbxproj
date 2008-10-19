@@ -17,8 +17,13 @@
 		E26B4F900E8DFCF9009FC7B8 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */; };
 		E26B50330E8EBEDB009FC7B8 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */; };
 		E26B50550E8EC0A6009FC7B8 /* AreaLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */; };
+		E26B71770EAA9D240044FC0D /* PartAnnulus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B71760EAA9D240044FC0D /* PartAnnulus.cpp */; };
+		E26B721A0EAAABD10044FC0D /* BeveledWedge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B72190EAAABD10044FC0D /* BeveledWedge.cpp */; };
+		E26B723B0EAAAE060044FC0D /* ConcavePartCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */; };
 		E26CE7F00EAA3FA70039B7AC /* ConvexPartCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */; };
 		E26CE84F0EAA49FF0039B7AC /* ConvexPartTorus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */; };
+		E26CE93E0EAA63B40039B7AC /* BeveledCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE93D0EAA63B40039B7AC /* BeveledCylinder.cpp */; };
+		E26CE9BB0EAA6EAA0039B7AC /* BeveledBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE9BA0EAA6EAA0039B7AC /* BeveledBox.cpp */; };
 		E26E6C7E0E832F8B00808BE1 /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */; };
 		E26E6CCF0E8336B200808BE1 /* Directional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6CCE0E8336B200808BE1 /* Directional.cpp */; };
 		E26E6D620E83539C00808BE1 /* RayCast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26E6D610E83539C00808BE1 /* RayCast.cpp */; };
@@ -98,10 +103,20 @@
 		E26B50320E8EBEDB009FC7B8 /* Rectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Rectangle.cpp; sourceTree = "<group>"; };
 		E26B50530E8EC0A6009FC7B8 /* AreaLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLight.h; sourceTree = "<group>"; };
 		E26B50540E8EC0A6009FC7B8 /* AreaLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AreaLight.cpp; sourceTree = "<group>"; };
+		E26B71750EAA9D240044FC0D /* PartAnnulus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartAnnulus.h; sourceTree = "<group>"; };
+		E26B71760EAA9D240044FC0D /* PartAnnulus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PartAnnulus.cpp; sourceTree = "<group>"; };
+		E26B72180EAAABD10044FC0D /* BeveledWedge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeveledWedge.h; sourceTree = "<group>"; };
+		E26B72190EAAABD10044FC0D /* BeveledWedge.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BeveledWedge.cpp; sourceTree = "<group>"; };
+		E26B72390EAAAE060044FC0D /* ConcavePartCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcavePartCylinder.h; sourceTree = "<group>"; };
+		E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConcavePartCylinder.cpp; sourceTree = "<group>"; };
 		E26CE7EE0EAA3FA70039B7AC /* ConvexPartCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartCylinder.h; sourceTree = "<group>"; };
 		E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartCylinder.cpp; sourceTree = "<group>"; };
 		E26CE84D0EAA49FF0039B7AC /* ConvexPartTorus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartTorus.h; sourceTree = "<group>"; };
 		E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartTorus.cpp; sourceTree = "<group>"; };
+		E26CE93C0EAA63B40039B7AC /* BeveledCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeveledCylinder.h; sourceTree = "<group>"; };
+		E26CE93D0EAA63B40039B7AC /* BeveledCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BeveledCylinder.cpp; sourceTree = "<group>"; };
+		E26CE9B90EAA6EAA0039B7AC /* BeveledBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeveledBox.h; sourceTree = "<group>"; };
+		E26CE9BA0EAA6EAA0039B7AC /* BeveledBox.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BeveledBox.cpp; sourceTree = "<group>"; };
 		E26E6C7C0E832F8B00808BE1 /* PointLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointLight.h; sourceTree = "<group>"; };
 		E26E6C7D0E832F8B00808BE1 /* PointLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PointLight.cpp; sourceTree = "<group>"; };
 		E26E6CCD0E8336B200808BE1 /* Directional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directional.h; sourceTree = "<group>"; };
@@ -326,6 +341,16 @@
 				E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */,
 				E26CE84D0EAA49FF0039B7AC /* ConvexPartTorus.h */,
 				E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */,
+				E26CE93C0EAA63B40039B7AC /* BeveledCylinder.h */,
+				E26CE93D0EAA63B40039B7AC /* BeveledCylinder.cpp */,
+				E26CE9B90EAA6EAA0039B7AC /* BeveledBox.h */,
+				E26CE9BA0EAA6EAA0039B7AC /* BeveledBox.cpp */,
+				E26B71750EAA9D240044FC0D /* PartAnnulus.h */,
+				E26B71760EAA9D240044FC0D /* PartAnnulus.cpp */,
+				E26B72180EAAABD10044FC0D /* BeveledWedge.h */,
+				E26B72190EAAABD10044FC0D /* BeveledWedge.cpp */,
+				E26B72390EAAAE060044FC0D /* ConcavePartCylinder.h */,
+				E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -602,6 +627,11 @@
 				E2BE448F0EA6528600118229 /* Instance.cpp in Sources */,
 				E26CE7F00EAA3FA70039B7AC /* ConvexPartCylinder.cpp in Sources */,
 				E26CE84F0EAA49FF0039B7AC /* ConvexPartTorus.cpp in Sources */,
+				E26CE93E0EAA63B40039B7AC /* BeveledCylinder.cpp in Sources */,
+				E26CE9BB0EAA6EAA0039B7AC /* BeveledBox.cpp in Sources */,
+				E26B71770EAA9D240044FC0D /* PartAnnulus.cpp in Sources */,
+				E26B721A0EAAABD10044FC0D /* BeveledWedge.cpp in Sources */,
+				E26B723B0EAAAE060044FC0D /* ConcavePartCylinder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
