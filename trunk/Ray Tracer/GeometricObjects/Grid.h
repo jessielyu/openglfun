@@ -40,6 +40,9 @@ public:
 	virtual bool
 	shadow_hit(const Ray& ray, float& tmin) const;
 	
+//	virtual void
+//	set_material(Material* mat_ptr);
+	
 private:
 	
 	std::vector<GeometricObject*> cells;		// 1D array

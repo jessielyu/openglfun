@@ -667,3 +667,15 @@ Grid::copy_cells(const std::vector<GeometricObject*>& rhs_cells) {
 		cells.push_back(rhs_cells[j]->clone());
 	
 }
+
+
+// null pointer
+//void
+//Grid::set_material(Material* mat_ptr) {
+//	int num_cells = cells.size();
+//	for (int j = 0; num_cells; j++) {
+//		if (cells[j])
+//			cells[j]->set_material(mat_ptr);
+//	}
+//}
+
