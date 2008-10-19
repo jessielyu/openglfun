@@ -21,6 +21,7 @@
 		E26B721A0EAAABD10044FC0D /* BeveledWedge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B72190EAAABD10044FC0D /* BeveledWedge.cpp */; };
 		E26B723B0EAAAE060044FC0D /* ConcavePartCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */; };
 		E26B734F0EAAEB3A0044FC0D /* Archway.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B734E0EAAEB3A0044FC0D /* Archway.cpp */; };
+		E26B75AB0EAB9CB80044FC0D /* Rosette.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26B75AA0EAB9CB80044FC0D /* Rosette.cpp */; };
 		E26CE7F00EAA3FA70039B7AC /* ConvexPartCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */; };
 		E26CE84F0EAA49FF0039B7AC /* ConvexPartTorus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE84E0EAA49FF0039B7AC /* ConvexPartTorus.cpp */; };
 		E26CE93E0EAA63B40039B7AC /* BeveledCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26CE93D0EAA63B40039B7AC /* BeveledCylinder.cpp */; };
@@ -112,6 +113,8 @@
 		E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConcavePartCylinder.cpp; sourceTree = "<group>"; };
 		E26B734D0EAAEB3A0044FC0D /* Archway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Archway.h; sourceTree = "<group>"; };
 		E26B734E0EAAEB3A0044FC0D /* Archway.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Archway.cpp; sourceTree = "<group>"; };
+		E26B75A90EAB9CB80044FC0D /* Rosette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rosette.h; sourceTree = "<group>"; };
+		E26B75AA0EAB9CB80044FC0D /* Rosette.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Rosette.cpp; sourceTree = "<group>"; };
 		E26CE7EE0EAA3FA70039B7AC /* ConvexPartCylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartCylinder.h; sourceTree = "<group>"; };
 		E26CE7EF0EAA3FA70039B7AC /* ConvexPartCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConvexPartCylinder.cpp; sourceTree = "<group>"; };
 		E26CE84D0EAA49FF0039B7AC /* ConvexPartTorus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvexPartTorus.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				E26B723A0EAAAE060044FC0D /* ConcavePartCylinder.cpp */,
 				E26B734D0EAAEB3A0044FC0D /* Archway.h */,
 				E26B734E0EAAEB3A0044FC0D /* Archway.cpp */,
+				E26B75A90EAB9CB80044FC0D /* Rosette.h */,
+				E26B75AA0EAB9CB80044FC0D /* Rosette.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				E26B721A0EAAABD10044FC0D /* BeveledWedge.cpp in Sources */,
 				E26B723B0EAAAE060044FC0D /* ConcavePartCylinder.cpp in Sources */,
 				E26B734F0EAAEB3A0044FC0D /* Archway.cpp in Sources */,
+				E26B75AB0EAB9CB80044FC0D /* Rosette.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

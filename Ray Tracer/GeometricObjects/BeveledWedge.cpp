@@ -423,6 +423,8 @@ BeveledWedge::BeveledWedge(const double y0,		// minimum y value
 		bbox.x1 = max(xc1, xc3);
 		bbox.z1 = zc4 + rb;
 	}	
+	
+	bbox = BBox(Point3D(bbox.x0 - rb, bbox.y0 - rb, bbox.z0 - rb), Point3D(bbox.x1 + rb, bbox.y1 + rb, bbox.z1 + rb));
 }
 
 

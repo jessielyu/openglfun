@@ -41,6 +41,7 @@
 #include "PartAnnulus.h"
 #include "BeveledWedge.h"
 #include "Archway.h"
+#include "Rosette.h"
 
 void 												
 World::build(void) {
@@ -460,10 +461,14 @@ World::build(void) {
 	
 	
 	// Archway(width, height, depth, column_width, double num_blocks, double num_wedges, double rb) {
-	Instance* archway_ptr = new Instance(new Archway(2.0, 2.5, 2.5, .4, 6, 10, .05, matte_ptr3));
+	//Instance* archway_ptr = new Instance(new Archway(2.0, 2.5, 2.5, .4, 6, 10, .05, matte_ptr3));
+	
+	//Rosette(num_rings, hole_radius, ring_width, rb, y0,y1,mat_ptr);
+	Instance* archway_ptr = new Instance(new Rosette(3, .375, .75, .075, 0, .75, matte_ptr3));
 	archway_ptr->rotate_z(90);
-	archway_ptr->rotate_y(90);
-	archway_ptr->scale(2, 2, 2);
+	archway_ptr->rotate_y(60);
+	archway_ptr->translate(0.75, -.375, 0);
+//	archway_ptr->scale(2, 2, 2);
 	archway_ptr->compute_bounding_box();
 	//archway_ptr->set_material(phong3);
 	if (use_grid)
