@@ -42,7 +42,7 @@ public:
 	f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const;
 	
 	virtual MyRGBColor
-	sample_f(const ShadeRec& sr, const Vector3D& wi, Vector3D& wo) const;
+	sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo) const;
 	
 	virtual MyRGBColor
 	rho(const ShadeRec& sr, const Vector3D& wo) const;

@@ -19,6 +19,7 @@ class ViewPlane {
 		bool			show_out_of_gamut;			// display red if RGBColor out of gamut
 		int				num_samples;				// number of samples per pixel
 		Sampler*		sampler_ptr;				// pointer to the sampler we're using
+		int				max_depth;					// How many recursive levels for reflection
 		
 									
 	
@@ -58,6 +59,9 @@ class ViewPlane {
 	
 		void
 		set_sampler(Sampler* sp);
+	
+		void
+		set_max_depth(int depth);
 };
 
 
@@ -121,7 +125,12 @@ ViewPlane::set_gamut_display(const bool show) {
 	show_out_of_gamut = show;
 }
 
-// ------------------------------------------------------------------------------ set_samples
+
+
+inline void
+ViewPlane::set_max_depth(int depth) {
+	max_depth = depth;
+}
 
 
 #endif

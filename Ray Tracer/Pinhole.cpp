@@ -27,7 +27,7 @@ Pinhole::render_scene(World& w) {
 	MyRGBColor L;
 	ViewPlane vp(w.vp);
 	Ray ray;
-	int depth = 0;			// recursion depth
+	int depth = 0;//vp.max_depth;			// recursion depth
 	Point2D sp;				// sample point in [0, 1] x [0, 1]
 	Point2D pp;				// sample point on a pixel
 	

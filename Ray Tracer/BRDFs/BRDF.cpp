@@ -63,7 +63,7 @@ BRDF::f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const {
 // ------------------------------------------------------------------------ sample_f
 
 MyRGBColor
-BRDF::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi) const {
+BRDF::sample_f(const ShadeRec& sr,  Vector3D& wo, const Vector3D& wi) const {
 	return (black);
 }
 
