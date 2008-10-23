@@ -48,7 +48,7 @@ Lambertian::f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const 
 }
 
 MyRGBColor
-Lambertian::sample_f(const ShadeRec& sr, const Vector3D& wi, Vector3D& wo) const{
+Lambertian::sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo) const{
 	return (black);
 }
 

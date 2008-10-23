@@ -130,30 +130,34 @@ ConvexPartTorus::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 				phi+= TWO_PI;
 			
 			if(phi >= phi_min && phi <= phi_max) {
-				//Point3D pointA(0,0,a);
-//				
-//				Matrix theta_matrix;
-//				
-//				theta_matrix.m[0][0] = cos(phi);
-//				theta_matrix.m[0][2] = -sin(phi);
-//				theta_matrix.m[2][0] = sin(phi);
-//				theta_matrix.m[2][2] = cos(phi);
-//				
-//				// rotate to our hitpoint
-//				pointA = theta_matrix * pointA;
-//				
-//				Vector3D theta_hit = ray.o + roots[j] * ray.d - pointA;
-//				
-//				float theta = atan2(theta_hit.x, theta_hit.y);
-//				
-//				if (theta < 0.0)
-//					theta += TWO_PI;
-//				
-//				if(theta >= theta_min && theta <= theta_max) {
+				Point3D pointA(0,0,a);
+				
+				Matrix theta_matrix;
+				
+				theta_matrix.m[0][0] = cos(phi);
+				theta_matrix.m[0][2] = -sin(phi);
+				theta_matrix.m[2][0] = sin(phi);
+				theta_matrix.m[2][2] = cos(phi);
+				
+				// rotate to our hitpoint
+				pointA = theta_matrix * pointA;
+				
+				Vector3D theta_hit = ray.o + roots[j] * ray.d - pointA;
+				
+				float theta = atan2(theta_hit.y, theta_hit.z);
+				
+				if (theta < 0.0)
+					theta += TWO_PI;
+				
+				
+				float theta_min = this->theta_min;
+				float theta_max = this->theta_max;
+				
+				if(theta >= theta_min && theta <= theta_max) {
 					intersected = true;
 					if (roots[j] < t)
 						t = roots[j];
-				//}
+				}
 			}
 		}
 	
@@ -214,30 +218,33 @@ ConvexPartTorus::shadow_hit(const Ray& ray, float& tmin) const {
 				phi+= TWO_PI;
 			
 			if(phi >= phi_min && phi <= phi_max) {
-				//Point3D pointA(0,0,a);
-				//				
-				//				Matrix theta_matrix;
-				//				
-				//				theta_matrix.m[0][0] = cos(phi);
-				//				theta_matrix.m[0][2] = -sin(phi);
-				//				theta_matrix.m[2][0] = sin(phi);
-				//				theta_matrix.m[2][2] = cos(phi);
-				//				
-				//				// rotate to our hitpoint
-				//				pointA = theta_matrix * pointA;
-				//				
-				//				Vector3D theta_hit = ray.o + roots[j] * ray.d - pointA;
-				//				
-				//				float theta = atan2(theta_hit.x, theta_hit.y);
-				//				
-				//				if (theta < 0.0)
-				//					theta += TWO_PI;
-				//				
-				//				if(theta >= theta_min && theta <= theta_max) {
-				intersected = true;
-				if (roots[j] < t)
-					t = roots[j];
-				//}
+				Point3D pointA(0,0,a);
+				
+				Matrix theta_matrix;
+				
+				theta_matrix.m[0][0] = cos(phi);
+				theta_matrix.m[0][2] = -sin(phi);
+				theta_matrix.m[2][0] = sin(phi);
+				theta_matrix.m[2][2] = cos(phi);
+				
+				// rotate to our hitpoint
+				pointA = theta_matrix * pointA;
+				
+				Vector3D theta_hit = ray.o + roots[j] * ray.d - pointA;
+				
+				float theta = atan2(theta_hit.x, theta_hit.y);
+				
+				if (theta < 0.0)
+					theta += TWO_PI;
+				
+				float theta_min = this->theta_min;
+				float theta_max = this->theta_max;
+				
+				if(theta >= theta_min && theta <= theta_max) {
+					intersected = true;
+					if (roots[j] < t)
+						t = roots[j];
+				}
 			}
 		}
 	

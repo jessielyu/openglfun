@@ -15,7 +15,8 @@ ViewPlane::ViewPlane(void)
 		gamma(1.0),
 		inv_gamma(1.0),
 		show_out_of_gamut(false),
-		sampler_ptr(NULL)
+		sampler_ptr(NULL),
+		max_depth(0)
 {}
 
 
@@ -31,7 +32,8 @@ ViewPlane::ViewPlane(const ViewPlane& vp)
 		inv_gamma(vp.inv_gamma),
 		show_out_of_gamut(vp.show_out_of_gamut),
 		sampler_ptr(vp.sampler_ptr),
-		num_samples(vp.num_samples)
+		num_samples(vp.num_samples),
+		max_depth(vp.max_depth)
 {}
 
 
@@ -52,6 +54,7 @@ ViewPlane::operator= (const ViewPlane& rhs) {
 	show_out_of_gamut	= rhs.show_out_of_gamut;
 	num_samples			= rhs.num_samples;
 	sampler_ptr			= rhs.sampler_ptr;
+	max_depth			= rhs.max_depth;
 	
 	return (*this);
 }
