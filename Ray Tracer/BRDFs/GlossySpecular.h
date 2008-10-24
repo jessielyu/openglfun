@@ -41,18 +41,28 @@ public:
 	virtual MyRGBColor
 	f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) const;
 	
+	// Not used, but abstract without
 	virtual MyRGBColor
-	sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo) const;
+	sample_f(const ShadeRec& sr, Vector3D& wi, const Vector3D& wo) const;
+	
+	virtual MyRGBColor
+	sample_f(const ShadeRec& sr, Vector3D& wi, const Vector3D& wo, float& pdf) const;
 	
 	virtual MyRGBColor
 	rho(const ShadeRec& sr, const Vector3D& wo) const;
+	
+	void
+	set_samples(const int num_samples, const float exp);
+	
+	void
+	set_normal(const Normal& n);
 	
 private:
 	
 	float ks;
 	MyRGBColor cs;		// specular color
 	float exp;			// specular exponent
-//	Sampler* sampler_ptr;
+	Sampler* sampler_ptr;
 };
 
 inline void
