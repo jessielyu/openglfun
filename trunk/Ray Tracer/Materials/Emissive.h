@@ -50,6 +50,9 @@ public:
 	
 	virtual MyRGBColor
 	area_light_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
+	global_shade(ShadeRec& sr);
 };
 
 inline void
