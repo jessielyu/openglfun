@@ -11,6 +11,7 @@
  */
 
 #include "BRDF.h"
+#include "Sampler.h"
 
 class Lambertian: public BRDF {
 public:
@@ -42,7 +43,11 @@ public:
 	sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo) const;
 	
 	virtual MyRGBColor
+	sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo, float& pdf) const;
+	
+	virtual MyRGBColor
 	rho(const ShadeRec& sr, const Vector3D& wo) const;
+	
 	
 private:
 	

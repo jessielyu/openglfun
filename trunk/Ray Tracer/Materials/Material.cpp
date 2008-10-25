@@ -41,6 +41,11 @@ Material::path_shade(ShadeRec& sr){
 }
 
 MyRGBColor
+Material::global_shade(ShadeRec& sr){
+	return (black);
+}
+
+MyRGBColor
 Material::get_Le(ShadeRec& sr) const {
 	return (black);
 }

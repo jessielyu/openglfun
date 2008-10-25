@@ -68,6 +68,11 @@ Reflective::~Reflective(void) {
 	}
 }
 
+void
+Reflective::set_sampler(Sampler* sampl_ptr) {
+	reflective_brdf->set_sampler(sampl_ptr);
+}
+
 MyRGBColor
 Reflective::shade(ShadeRec& sr) {
 	MyRGBColor L(Phong::shade(sr));	// direct illumination
@@ -80,4 +85,29 @@ Reflective::shade(ShadeRec& sr) {
 	L += fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * (sr.normal * wi);
 	
 	return (L);
+}
+
+MyRGBColor										
+Reflective::path_shade(ShadeRec& sr) {
+	Vector3D wo = -sr.ray.d;
+	Vector3D wi;
+	float pdf;
+	MyRGBColor fr = reflective_brdf->sample_f(sr, wi, wo, pdf);
+	Ray reflected_ray(sr.hit_point, wi);
+	
+	return (fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * (sr.normal * wi) / pdf);
+}
+
+MyRGBColor
+Reflective::global_shade(ShadeRec& sr) {
+	Vector3D wo = -sr.ray.d;
+	Vector3D wi;
+	float pdf;
+	MyRGBColor fr = reflective_brdf->sample_f(sr, wi, wo, pdf);
+	Ray reflected_ray(sr.hit_point, wi);
+	
+	if (sr.depth == 0)
+		return (fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 2) * (sr.normal * wi) / pdf);
+	else
+		return (fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * (sr.normal * wi) / pdf);
 }

@@ -29,6 +29,9 @@ public:
 	set_d(float distance);
 	
 	void
+	set_view_distance(float distance);
+	
+	void
 	set_zoom(float z);
 	
 	Vector3D
@@ -50,6 +53,11 @@ private:
 inline void
 Pinhole::set_d(float distance) {
 	d = distance;
+}
+
+inline void
+Pinhole::set_view_distance(float distance) {
+	set_d(distance);
 }
 
 inline void

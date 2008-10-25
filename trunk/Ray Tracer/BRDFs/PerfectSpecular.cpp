@@ -56,6 +56,16 @@ PerfectSpecular::sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo)
 	return (kr * cr / (sr.normal * wi));
 }
 
+// for global lighting
+MyRGBColor
+PerfectSpecular::sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo, float& pdf) const {
+	float ndotwo = sr.normal * wo;
+	wi = -wo + 2.0 * sr.normal * ndotwo;
+	pdf = sr.normal * wi;
+	
+	return (kr * cr);
+}
+
 MyRGBColor
 PerfectSpecular::rho(const ShadeRec& sr, const Vector3D& wo) const{
 	//return (kr * cr);

@@ -29,8 +29,14 @@ public:
 	void
 	set_eye(const Point3D e);
 	
+	void
+	set_eye(const float x, const float y, const float z);
+	
 	void 
 	set_lookat(const Point3D l);
+	
+	void
+	set_lookat(const float x, const float y, const float z);
 	
 	void
 	set_up(const Vector3D u);
@@ -67,9 +73,19 @@ Camera::set_eye(const Point3D e) {
 	eye = e;
 }
 
+inline void
+Camera::set_eye(const float x, const float y, const float z) {
+	eye = Point3D(x, y, z);
+}
+
 inline void 
 Camera::set_lookat(const Point3D l) {
 	lookat = l;
+}
+
+inline void
+Camera::set_lookat(const float x, const float y, const float z) {
+	lookat = Point3D(x, y, z);
 }
 
 inline void

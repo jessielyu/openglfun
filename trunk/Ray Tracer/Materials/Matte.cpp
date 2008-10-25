@@ -72,6 +72,13 @@ Matte::clone(void) const {
 }
 
 void
+Matte::set_sampler(Sampler* sampl_ptr) {
+	
+	ambient_ptr->set_sampler(sampl_ptr);
+	diffuse_ptr->set_sampler(sampl_ptr->clone());
+}
+
+void
 Matte::set_ka(const float ka) {
 	ambient_ptr->set_kd(ka);
 }
@@ -85,6 +92,12 @@ void
 Matte::set_cd(const MyRGBColor& c) {
 	ambient_ptr->set_cd(c);
 	diffuse_ptr->set_cd(c);
+}
+
+void
+Matte::set_cd(const float r, const float g, const float b) {
+	ambient_ptr->set_cd(MyRGBColor(r,g,b));
+	diffuse_ptr->set_cd(MyRGBColor(r,g,b));
 }
 
 MyRGBColor
@@ -127,5 +140,35 @@ Matte::area_light_shade(ShadeRec& sr) {
 				sr.w.lights[j]->pdf(sr);
 		}
 	}
+	return (L);
+}
+
+MyRGBColor
+Matte::path_shade(ShadeRec& sr) {
+	Vector3D wi;
+	Vector3D wo = -sr.ray.d;
+	float pdf;
+	MyRGBColor f = diffuse_ptr->sample_f(sr, wi, wo, pdf);
+	float ndotwi = sr.normal * wi;
+	Ray reflected_ray(sr.hit_point, wi);
+	
+	return (f * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * ndotwi / pdf);
+}
+
+MyRGBColor
+Matte::global_shade(ShadeRec& sr) {
+	MyRGBColor L;
+	
+	if (sr.depth == 0)
+		L = area_light_shade(sr);
+	
+	Vector3D wi;
+	Vector3D wo = -sr.ray.d;
+	float pdf;
+	MyRGBColor f = diffuse_ptr->sample_f(sr, wi, wo, pdf);
+	float ndotwi = sr.normal * wi;
+	Ray reflected_ray(sr.hit_point, wi);
+	L += f * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * ndotwi / pdf;
+	
 	return (L);
 }

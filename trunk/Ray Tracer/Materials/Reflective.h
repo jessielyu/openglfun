@@ -43,6 +43,15 @@ public:
 	virtual MyRGBColor										
 	shade(ShadeRec& s);
 	
+	virtual MyRGBColor										
+	path_shade(ShadeRec& s);
+	
+	void
+	set_sampler(Sampler* sampl_ptr);
+	
+	virtual MyRGBColor
+	global_shade(ShadeRec& sr);
+	
 private:
 	
 	PerfectSpecular* reflective_brdf;		

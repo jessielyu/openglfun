@@ -22,9 +22,13 @@ GlossySpecular::GlossySpecular(const GlossySpecular& lamb)
 :	BRDF(lamb),
 ks(lamb.ks),
 cs(lamb.cs),
-exp(1.0),
-sampler_ptr(lamb.sampler_ptr)
-{}
+exp(1.0)
+{
+	if (lamb.sampler_ptr)
+		sampler_ptr = lamb.sampler_ptr->clone();
+	else
+		sampler_ptr = NULL;
+}
 
 GlossySpecular&
 GlossySpecular::operator= (const GlossySpecular& rhs) {

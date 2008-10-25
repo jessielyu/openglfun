@@ -53,6 +53,9 @@ public:
 	
 	virtual MyRGBColor
 	global_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
+	path_shade(ShadeRec& sr);
 };
 
 inline void
