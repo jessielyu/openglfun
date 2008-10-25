@@ -10,6 +10,10 @@
 		E21358340E7AE87E00943FEA /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21358320E7AE87E00943FEA /* Point2D.cpp */; };
 		E2138ADE0EACBBD300276340 /* BuildMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2138ADD0EACBBD300276340 /* BuildMesh.cpp */; };
 		E23A65050E87F2170041864C /* Phong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E23A65040E87F2170041864C /* Phong.cpp */; };
+		E24A5AF00EB1404D006C8E40 /* GlossyReflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24A5AEF0EB1404D006C8E40 /* GlossyReflector.cpp */; };
+		E24A5B8D0EB17544006C8E40 /* PathTrace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24A5B8C0EB17544006C8E40 /* PathTrace.cpp */; };
+		E24A5C080EB23CE6006C8E40 /* BuildCornellBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24A5C070EB23CE6006C8E40 /* BuildCornellBox.cpp */; };
+		E24A5D5B0EB25B93006C8E40 /* GlobalTrace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E24A5D5A0EB25B93006C8E40 /* GlobalTrace.cpp */; };
 		E25555A30E9D8B2400EF6FC1 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E25555A20E9D8B2400EF6FC1 /* Triangle.cpp */; };
 		E257E6620E8F405200C01712 /* EnvironmentLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E6610E8F405200C01712 /* EnvironmentLight.cpp */; };
 		E257E7190E8F537100C01712 /* ConcaveSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E257E7180E8F537100C01712 /* ConcaveSphere.cpp */; };
@@ -120,6 +124,13 @@
 		E2138ADD0EACBBD300276340 /* BuildMesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildMesh.cpp; sourceTree = "<group>"; };
 		E23A65030E87F2170041864C /* Phong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phong.h; sourceTree = "<group>"; };
 		E23A65040E87F2170041864C /* Phong.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Phong.cpp; sourceTree = "<group>"; };
+		E24A5AEE0EB1404D006C8E40 /* GlossyReflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlossyReflector.h; sourceTree = "<group>"; };
+		E24A5AEF0EB1404D006C8E40 /* GlossyReflector.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GlossyReflector.cpp; sourceTree = "<group>"; };
+		E24A5B8B0EB17544006C8E40 /* PathTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathTrace.h; sourceTree = "<group>"; };
+		E24A5B8C0EB17544006C8E40 /* PathTrace.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PathTrace.cpp; sourceTree = "<group>"; };
+		E24A5C070EB23CE6006C8E40 /* BuildCornellBox.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildCornellBox.cpp; sourceTree = "<group>"; };
+		E24A5D590EB25B93006C8E40 /* GlobalTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalTrace.h; sourceTree = "<group>"; };
+		E24A5D5A0EB25B93006C8E40 /* GlobalTrace.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GlobalTrace.cpp; sourceTree = "<group>"; };
 		E2524E8F0E70ABFC00301597 /* Ray Tracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ray Tracer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2524E920E70ABFC00301597 /* Ray Tracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ray Tracer-Info.plist"; sourceTree = "<group>"; };
 		E25555A10E9D8B2300EF6FC1 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
@@ -518,6 +529,8 @@
 				E26B4F8F0E8DFCF9009FC7B8 /* Emissive.cpp */,
 				E283D7BB0EAF905400AE18A4 /* Reflective.h */,
 				E283D7BC0EAF905400AE18A4 /* Reflective.cpp */,
+				E24A5AEE0EB1404D006C8E40 /* GlossyReflector.h */,
+				E24A5AEF0EB1404D006C8E40 /* GlossyReflector.cpp */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -557,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				E2AA9A6F0E78A05900C6D560 /* BuildBBCoverPic.cpp */,
+				E24A5C070EB23CE6006C8E40 /* BuildCornellBox.cpp */,
 				E2AA9A700E78A05900C6D560 /* BuildMultipleObjects.cpp */,
 				E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */,
 				E2138ADD0EACBBD300276340 /* BuildMesh.cpp */,
@@ -580,6 +594,10 @@
 				E26E6D610E83539C00808BE1 /* RayCast.cpp */,
 				E26B4F640E8DBA29009FC7B8 /* AreaLighting.h */,
 				E26B4F650E8DBA29009FC7B8 /* AreaLighting.cpp */,
+				E24A5B8B0EB17544006C8E40 /* PathTrace.h */,
+				E24A5B8C0EB17544006C8E40 /* PathTrace.cpp */,
+				E24A5D590EB25B93006C8E40 /* GlobalTrace.h */,
+				E24A5D5A0EB25B93006C8E40 /* GlobalTrace.cpp */,
 			);
 			path = Tracers;
 			sourceTree = "<group>";
@@ -796,6 +814,10 @@
 				E283D76F0EAF8CA700AE18A4 /* PerfectSpecular.cpp in Sources */,
 				E283D7BD0EAF905400AE18A4 /* Reflective.cpp in Sources */,
 				E283D9F10EAFF57300AE18A4 /* BuildTestReflection.cpp in Sources */,
+				E24A5AF00EB1404D006C8E40 /* GlossyReflector.cpp in Sources */,
+				E24A5B8D0EB17544006C8E40 /* PathTrace.cpp in Sources */,
+				E24A5C080EB23CE6006C8E40 /* BuildCornellBox.cpp in Sources */,
+				E24A5D5B0EB25B93006C8E40 /* GlobalTrace.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

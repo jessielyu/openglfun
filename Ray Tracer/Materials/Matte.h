@@ -37,11 +37,23 @@ public:
 	void
 	set_cd(const MyRGBColor& c);
 	
+	void
+	set_cd(const float r, const float g, const float b);
+	
+	void
+	set_sampler(Sampler* sampl_ptr);
+	
 	virtual MyRGBColor
 	shade(ShadeRec& sr);
 	
 	virtual MyRGBColor
 	area_light_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
+	path_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
+	global_shade(ShadeRec& sr);
 	
 private:
 	
