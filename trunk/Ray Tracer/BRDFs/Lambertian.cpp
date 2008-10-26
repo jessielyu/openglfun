@@ -11,8 +11,8 @@
 
 Lambertian::Lambertian(void)
 :	BRDF(),
-	kd(1.0),
-	cd(MyRGBColor(0,0,0))
+	kd(0.0),
+	cd(0.0)
 {}
 
 Lambertian::Lambertian(const Lambertian& lamb)

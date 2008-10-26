@@ -12,8 +12,8 @@
 
 GlossySpecular::GlossySpecular(void)
 :	BRDF(),
-ks(1.0),
-cs(MyRGBColor(0,0,0)),
+ks(0.0),
+cs(1.0),
 exp(1.0),
 sampler_ptr(NULL)
 {}
@@ -22,7 +22,7 @@ GlossySpecular::GlossySpecular(const GlossySpecular& lamb)
 :	BRDF(lamb),
 ks(lamb.ks),
 cs(lamb.cs),
-exp(1.0)
+exp(lamb.exp)
 {
 	if (lamb.sampler_ptr)
 		sampler_ptr = lamb.sampler_ptr->clone();
@@ -79,7 +79,7 @@ GlossySpecular::f(const ShadeRec& sr, const Vector3D& wi, const Vector3D& wo) co
 }
 
 MyRGBColor
-GlossySpecular::sample_f(const ShadeRec& sr,Vector3D& wi, const Vector3D& w0) const {
+GlossySpecular::sample_f(const ShadeRec& sr,Vector3D& wi, const Vector3D& wo) const {
 	return (black);
 }
 

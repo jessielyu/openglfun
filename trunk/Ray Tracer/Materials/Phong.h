@@ -48,10 +48,16 @@ public:
 	set_cd(const float r, const float g, const float b);
 	
 	void
+	set_cd(const MyRGBColor& c);
+	
+	void
 	set_cs(const float r, const float g, const float b);
 	
 	void
 	set_exp_s(const float exp_s);
+	
+	void
+	set_exp(const float exp_s);
 	
 	void 
 	set_k(const float k);
@@ -70,5 +76,15 @@ private:
 	Lambertian* diffuse_brdf;
 	GlossySpecular* specular_brdf;
 };
+
+inline void
+Phong::set_exp(const float exp_s) {
+	set_exp_s(exp_s);
+}
+
+inline void
+Phong::set_cd(const MyRGBColor& c) {
+	set_cd(c.r, c.b, c.g);
+}
 
 #endif

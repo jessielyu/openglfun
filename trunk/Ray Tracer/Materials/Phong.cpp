@@ -111,11 +111,11 @@ Phong::shade(ShadeRec& sr) {
 				in_shadow = sr.w.lights[j]->in_shadow(shadowRay, sr);
 			}
 			
-			if (!in_shadow)
-				L += (diffuse_brdf->f(sr, wo, wi) + specular_brdf->f(sr, wo, wi)) * sr.w.lights[j]->L(sr) * ndotwi;
+			if (!in_shadow) {
+				L += (diffuse_brdf->f(sr, wi, wo) + specular_brdf->f(sr, wi, wo)) * sr.w.lights[j]->L(sr) * ndotwi;
+			}
 		}
 	}
-	
 	return (L);
 }
 
@@ -137,7 +137,7 @@ Phong::area_light_shade(ShadeRec& sr) {
 			}
 			
 			if (!in_shadow)
-				L += (diffuse_brdf->f(sr, wo, wi) + specular_brdf->f(sr, wo, wi)) * sr.w.lights[j]->L(sr) *
+				L += (diffuse_brdf->f(sr, wi, wo) + specular_brdf->f(sr, wi, wo)) * sr.w.lights[j]->L(sr) *
 				sr.w.lights[j]->G(sr) * ndotwi /
 				sr.w.lights[j]->pdf(sr);
 		}

@@ -59,6 +59,9 @@ public:
 	scale(const float x_scale, const float y_scale, const float z_scale);
 	
 	void
+	scale(const float s);
+	
+	void
 	reflect_across_x_axis();
 	
 	void
@@ -89,6 +92,11 @@ Instance::get_bounding_box(void) const {
 inline void
 Instance::transform_texture(const bool trans) {
 	transform_the_texture = trans;
+}
+
+inline void
+Instance::scale(const float s) {
+	scale(s,s,s);
 }
 
 #endif

@@ -68,6 +68,11 @@
 		E283D76F0EAF8CA700AE18A4 /* PerfectSpecular.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E283D76E0EAF8CA700AE18A4 /* PerfectSpecular.cpp */; };
 		E283D7BD0EAF905400AE18A4 /* Reflective.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E283D7BC0EAF905400AE18A4 /* Reflective.cpp */; };
 		E283D9F10EAFF57300AE18A4 /* BuildTestReflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E283D9F00EAFF57300AE18A4 /* BuildTestReflection.cpp */; };
+		E28A89660EB398B800E3E22B /* BTDF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A89650EB398B800E3E22B /* BTDF.cpp */; };
+		E28A89920EB39D1300E3E22B /* PerfectTransmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A89910EB39D1300E3E22B /* PerfectTransmitter.cpp */; };
+		E28A89F50EB3A93D00E3E22B /* Transparent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A89F40EB3A93D00E3E22B /* Transparent.cpp */; };
+		E28A8A0B0EB3AF2700E3E22B /* BuildTransparent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */; };
+		E28A8E670EB52D8F00E3E22B /* FresnelReflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */; };
 		E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */; };
 		E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC260E814FA200F18A54 /* Spherical.cpp */; };
 		E2A7CC8A0E815B4000F18A54 /* StereoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */; };
@@ -218,6 +223,15 @@
 		E283D7BB0EAF905400AE18A4 /* Reflective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reflective.h; sourceTree = "<group>"; };
 		E283D7BC0EAF905400AE18A4 /* Reflective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Reflective.cpp; sourceTree = "<group>"; };
 		E283D9F00EAFF57300AE18A4 /* BuildTestReflection.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildTestReflection.cpp; sourceTree = "<group>"; };
+		E28A89640EB398B800E3E22B /* BTDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTDF.h; path = ../BRDFs/BTDF.h; sourceTree = "<group>"; };
+		E28A89650EB398B800E3E22B /* BTDF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = BTDF.cpp; path = ../BRDFs/BTDF.cpp; sourceTree = "<group>"; };
+		E28A89900EB39D1300E3E22B /* PerfectTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfectTransmitter.h; sourceTree = "<group>"; };
+		E28A89910EB39D1300E3E22B /* PerfectTransmitter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PerfectTransmitter.cpp; sourceTree = "<group>"; };
+		E28A89F30EB3A93D00E3E22B /* Transparent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transparent.h; sourceTree = "<group>"; };
+		E28A89F40EB3A93D00E3E22B /* Transparent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Transparent.cpp; sourceTree = "<group>"; };
+		E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildTransparent.cpp; sourceTree = "<group>"; };
+		E28A8E650EB52D8F00E3E22B /* FresnelReflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresnelReflector.h; sourceTree = "<group>"; };
+		E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FresnelReflector.cpp; sourceTree = "<group>"; };
 		E2A7CAEA0E80A0E100F18A54 /* FishEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEye.h; sourceTree = "<group>"; };
 		E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FishEye.cpp; sourceTree = "<group>"; };
 		E2A7CC250E814FA200F18A54 /* Spherical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spherical.h; sourceTree = "<group>"; };
@@ -395,6 +409,8 @@
 				E26E70ED0E87EE9D00808BE1 /* GlossySpecular.cpp */,
 				E283D76D0EAF8CA700AE18A4 /* PerfectSpecular.h */,
 				E283D76E0EAF8CA700AE18A4 /* PerfectSpecular.cpp */,
+				E28A8E650EB52D8F00E3E22B /* FresnelReflector.h */,
+				E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */,
 			);
 			path = BRDFs;
 			sourceTree = "<group>";
@@ -402,6 +418,10 @@
 		E2D068F20E789ADE00E34880 /* BTDFs */ = {
 			isa = PBXGroup;
 			children = (
+				E28A89640EB398B800E3E22B /* BTDF.h */,
+				E28A89650EB398B800E3E22B /* BTDF.cpp */,
+				E28A89900EB39D1300E3E22B /* PerfectTransmitter.h */,
+				E28A89910EB39D1300E3E22B /* PerfectTransmitter.cpp */,
 			);
 			path = BTDFs;
 			sourceTree = "<group>";
@@ -531,6 +551,8 @@
 				E283D7BC0EAF905400AE18A4 /* Reflective.cpp */,
 				E24A5AEE0EB1404D006C8E40 /* GlossyReflector.h */,
 				E24A5AEF0EB1404D006C8E40 /* GlossyReflector.cpp */,
+				E28A89F30EB3A93D00E3E22B /* Transparent.h */,
+				E28A89F40EB3A93D00E3E22B /* Transparent.cpp */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -575,6 +597,7 @@
 				E2AA9A710E78A05900C6D560 /* BuildSingleSphere.cpp */,
 				E2138ADD0EACBBD300276340 /* BuildMesh.cpp */,
 				E283D9F00EAFF57300AE18A4 /* BuildTestReflection.cpp */,
+				E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */,
 			);
 			path = TheBuild;
 			sourceTree = "<group>";
@@ -818,6 +841,11 @@
 				E24A5B8D0EB17544006C8E40 /* PathTrace.cpp in Sources */,
 				E24A5C080EB23CE6006C8E40 /* BuildCornellBox.cpp in Sources */,
 				E24A5D5B0EB25B93006C8E40 /* GlobalTrace.cpp in Sources */,
+				E28A89660EB398B800E3E22B /* BTDF.cpp in Sources */,
+				E28A89920EB39D1300E3E22B /* PerfectTransmitter.cpp in Sources */,
+				E28A89F50EB3A93D00E3E22B /* Transparent.cpp in Sources */,
+				E28A8A0B0EB3AF2700E3E22B /* BuildTransparent.cpp in Sources */,
+				E28A8E670EB52D8F00E3E22B /* FresnelReflector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
