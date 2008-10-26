@@ -57,7 +57,7 @@
 //
 //void 												
 //World::build(void) {
-//	int num_samples = 512;
+//	int num_samples = 100;
 //	
 //	vp.set_hres(400); 
 //	vp.set_vres(400);
@@ -65,7 +65,8 @@
 //	//	vp.set_max_depth(0);			// for Figure 24.6(a)
 //	vp.set_max_depth(10);			// for Figure 24.6(b)
 //	
-//	tracer_ptr = new AreaLighting(this);//Whitted(this);	
+//	//tracer_ptr = new AreaLighting(this);
+//	tracer_ptr = new Whitted(this);	
 //	background_color = MyRGBColor(0.15); 
 //	
 //	Ambient* ambient_ptr = new Ambient;
@@ -107,18 +108,26 @@
 //	
 //	// yellow-green reflective sphere
 //	
-//	float exp1 = 100;
-//	
-//	GlossyReflector* reflective_ptr1 = new GlossyReflector;	
-//	reflective_ptr1->set_samples(num_samples, exp1);
+//	Reflective* reflective_ptr1 = new Reflective;			
 //	reflective_ptr1->set_ka(0.25); 
 //	reflective_ptr1->set_kd(0.5);
 //	reflective_ptr1->set_cd(0.75, 0.75, 0);    	// yellow
-//	reflective_ptr1->set_ks(0.2);
-//	reflective_ptr1->set_exp_s(exp1);
-//	reflective_ptr1->set_exponent(exp1);
+//	reflective_ptr1->set_ks(0.15);
+//	reflective_ptr1->set_exp(100.0);
 //	reflective_ptr1->set_kr(0.75);
 //	reflective_ptr1->set_cr(white); 			// default color
+//	
+////	float exp1 = 100;
+////	GlossyReflector* reflective_ptr1 = new GlossyReflector;	
+////	reflective_ptr1->set_samples(num_samples, exp1);
+////	reflective_ptr1->set_ka(0.25); 
+////	reflective_ptr1->set_kd(0.5);
+////	reflective_ptr1->set_cd(0.75, 0.75, 0);    	// yellow
+////	reflective_ptr1->set_ks(0.2);
+////	reflective_ptr1->set_exp_s(exp1);
+////	reflective_ptr1->set_exponent(exp1);
+////	reflective_ptr1->set_kr(0.75);
+////	reflective_ptr1->set_cr(white); 			// default color
 //	
 //	float radius = 23.0;
 //	Sphere* sphere_ptr1 = new Sphere(Point3D(38, radius, -25), radius); 
@@ -145,18 +154,27 @@
 //	
 //	
 //	// sphere on top of box
-//	float exp2 = 1.0;
 //	
-//	GlossyReflector* reflective_ptr2 = new GlossyReflector;		
-//	reflective_ptr2->set_samples(num_samples, exp2);
+//	Reflective* reflective_ptr2 = new Reflective;			
 //	reflective_ptr2->set_ka(0.35); 
 //	reflective_ptr2->set_kd(0.75);
-//	reflective_ptr2->set_c(black); 
+//	reflective_ptr2->set_cd(black); 
 //	reflective_ptr2->set_ks(0.0);		// default value
-//	reflective_ptr2->set_exp_s(exp2);		// default value, but irrelevant in this case
-//	reflective_ptr2->set_exponent(exp2);
+//	reflective_ptr2->set_exp(1.0);		// default value, but irrelevant in this case
 //	reflective_ptr2->set_kr(0.75);
 //	reflective_ptr2->set_cr(white); 
+//	
+////	float exp2 = 1.0;
+////	GlossyReflector* reflective_ptr2 = new GlossyReflector;		
+////	reflective_ptr2->set_samples(num_samples, exp2);
+////	reflective_ptr2->set_ka(0.35); 
+////	reflective_ptr2->set_kd(0.75);
+////	reflective_ptr2->set_c(black); 
+////	reflective_ptr2->set_ks(0.0);		// default value
+////	reflective_ptr2->set_exp_s(exp2);		// default value, but irrelevant in this case
+////	reflective_ptr2->set_exponent(exp2);
+////	reflective_ptr2->set_kr(0.75);
+////	reflective_ptr2->set_cr(white); 
 //	
 //	Sphere* sphere_ptr3 = new Sphere(Point3D(-30, 59, 35), 20);
 //	sphere_ptr3->set_material(reflective_ptr2);     
@@ -167,18 +185,27 @@
 //	
 //	
 //	// cylinder
-//	float exp3 = 100;
 //	
-//	GlossyReflector* reflective_ptr3 = new GlossyReflector;
-//	reflective_ptr3->set_samples(num_samples, exp3);
+//	Reflective* reflective_ptr3 = new Reflective;			
 //	reflective_ptr3->set_ka(0.35); 
 //	reflective_ptr3->set_kd(0.5);
 //	reflective_ptr3->set_cd(0, 0.5, 0.75);   // cyan
 //	reflective_ptr3->set_ks(0.2);
-//	reflective_ptr3->set_exp_s(exp3);
-//	reflective_ptr3->set_exponent(exp3);
+//	reflective_ptr3->set_exp(100.0);
 //	reflective_ptr3->set_kr(0.75);
 //	reflective_ptr3->set_cr(white);
+//	
+////	float exp3 = 100;
+////	GlossyReflector* reflective_ptr3 = new GlossyReflector;
+////	reflective_ptr3->set_samples(num_samples, exp3);
+////	reflective_ptr3->set_ka(0.35); 
+////	reflective_ptr3->set_kd(0.5);
+////	reflective_ptr3->set_cd(0, 0.5, 0.75);   // cyan
+////	reflective_ptr3->set_ks(0.2);
+////	reflective_ptr3->set_exp_s(exp3);
+////	reflective_ptr3->set_exponent(exp3);
+////	reflective_ptr3->set_kr(0.75);
+////	reflective_ptr3->set_cr(white);
 //	
 //	double bottom 			= 0.0;
 //	double top 				= 85;   

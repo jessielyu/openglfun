@@ -12,7 +12,7 @@
 PerfectSpecular::PerfectSpecular(void)
 :	BRDF(),
 kr(1.0),
-cr(MyRGBColor(0,0,0))
+cr(MyRGBColor(1.0,1.0,1.0))
 {}
 
 PerfectSpecular::PerfectSpecular(const PerfectSpecular& lamb)
@@ -53,7 +53,7 @@ PerfectSpecular::sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo)
 	float ndotwo = sr.normal * wo;
 	wi = -wo + 2.0 * sr.normal * ndotwo;
 	
-	return (kr * cr / (sr.normal * wi));
+	return (kr * cr / fabs(sr.normal * wi));
 }
 
 // for global lighting
