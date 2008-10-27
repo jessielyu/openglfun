@@ -51,8 +51,8 @@ public:
 	
 private:
 	
-	float kd;
-	MyRGBColor cd;
+	float kd;		// diffuse coefficient
+	MyRGBColor cd;	// diffuse color
 };
 	
 inline void

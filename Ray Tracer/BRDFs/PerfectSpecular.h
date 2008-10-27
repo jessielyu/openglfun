@@ -49,8 +49,8 @@ public:
 	
 private:
 	
-	float kr;
-	MyRGBColor cr;
+	float kr;	// reflectance coefficient
+	MyRGBColor cr;	// reflectance color
 };
 
 inline void

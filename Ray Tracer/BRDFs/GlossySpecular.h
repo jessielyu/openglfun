@@ -59,7 +59,7 @@ public:
 	
 private:
 	
-	float ks;
+	float ks;			// specular coefficient
 	MyRGBColor cs;		// specular color
 	float exp;			// specular exponent
 	Sampler* sampler_ptr;

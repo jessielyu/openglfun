@@ -7,7 +7,7 @@
  *
  */
 
-#include "PerfectSpecular.h"PerfectSpecular
+#include "PerfectSpecular.h"
 
 PerfectSpecular::PerfectSpecular(void)
 :	BRDF(),
