@@ -73,6 +73,11 @@
 		E28A89F50EB3A93D00E3E22B /* Transparent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A89F40EB3A93D00E3E22B /* Transparent.cpp */; };
 		E28A8A0B0EB3AF2700E3E22B /* BuildTransparent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */; };
 		E28A8E670EB52D8F00E3E22B /* FresnelReflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */; };
+		E28A8E760EB52DE300E3E22B /* FresnelTransmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8E750EB52DE300E3E22B /* FresnelTransmitter.cpp */; };
+		E28A8E800EB52E0000E3E22B /* Dielectric.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8E7F0EB52E0000E3E22B /* Dielectric.cpp */; };
+		E28A8F610EB5418E00E3E22B /* BuildFresnel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8F600EB5418E00E3E22B /* BuildFresnel.cpp */; };
+		E28A903C0EB57B1400E3E22B /* GlassOfWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A903B0EB57B1400E3E22B /* GlassOfWater.cpp */; };
+		E28A90770EB57D8500E3E22B /* ConcaveLens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */; };
 		E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */; };
 		E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC260E814FA200F18A54 /* Spherical.cpp */; };
 		E2A7CC8A0E815B4000F18A54 /* StereoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */; };
@@ -232,6 +237,15 @@
 		E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildTransparent.cpp; sourceTree = "<group>"; };
 		E28A8E650EB52D8F00E3E22B /* FresnelReflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresnelReflector.h; sourceTree = "<group>"; };
 		E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FresnelReflector.cpp; sourceTree = "<group>"; };
+		E28A8E740EB52DE300E3E22B /* FresnelTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FresnelTransmitter.h; sourceTree = "<group>"; };
+		E28A8E750EB52DE300E3E22B /* FresnelTransmitter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FresnelTransmitter.cpp; sourceTree = "<group>"; };
+		E28A8E7E0EB52E0000E3E22B /* Dielectric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dielectric.h; sourceTree = "<group>"; };
+		E28A8E7F0EB52E0000E3E22B /* Dielectric.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Dielectric.cpp; sourceTree = "<group>"; };
+		E28A8F600EB5418E00E3E22B /* BuildFresnel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildFresnel.cpp; sourceTree = "<group>"; };
+		E28A903A0EB57B1400E3E22B /* GlassOfWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassOfWater.h; sourceTree = "<group>"; };
+		E28A903B0EB57B1400E3E22B /* GlassOfWater.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GlassOfWater.cpp; sourceTree = "<group>"; };
+		E28A90750EB57D8500E3E22B /* ConcaveLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcaveLens.h; sourceTree = "<group>"; };
+		E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConcaveLens.cpp; sourceTree = "<group>"; };
 		E2A7CAEA0E80A0E100F18A54 /* FishEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEye.h; sourceTree = "<group>"; };
 		E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FishEye.cpp; sourceTree = "<group>"; };
 		E2A7CC250E814FA200F18A54 /* Spherical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spherical.h; sourceTree = "<group>"; };
@@ -422,6 +436,8 @@
 				E28A89650EB398B800E3E22B /* BTDF.cpp */,
 				E28A89900EB39D1300E3E22B /* PerfectTransmitter.h */,
 				E28A89910EB39D1300E3E22B /* PerfectTransmitter.cpp */,
+				E28A8E740EB52DE300E3E22B /* FresnelTransmitter.h */,
+				E28A8E750EB52DE300E3E22B /* FresnelTransmitter.cpp */,
 			);
 			path = BTDFs;
 			sourceTree = "<group>";
@@ -449,6 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				E26B769B0EABEEDB0044FC0D /* FlatMeshTriangle.h */,
+				E28A903A0EB57B1400E3E22B /* GlassOfWater.h */,
+				E28A903B0EB57B1400E3E22B /* GlassOfWater.cpp */,
 				E26B769C0EABEEDB0044FC0D /* FlatMeshTriangle.cpp */,
 				E26B769F0EABEEE60044FC0D /* SmoothMeshTriangle.h */,
 				E26B76A00EABEEE60044FC0D /* SmoothMeshTriangle.cpp */,
@@ -502,6 +520,8 @@
 				E26B75AA0EAB9CB80044FC0D /* Rosette.cpp */,
 				E26B76950EABEEC60044FC0D /* MeshTriangle.h */,
 				E26B76960EABEEC60044FC0D /* MeshTriangle.cpp */,
+				E28A90750EB57D8500E3E22B /* ConcaveLens.h */,
+				E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -553,6 +573,8 @@
 				E24A5AEF0EB1404D006C8E40 /* GlossyReflector.cpp */,
 				E28A89F30EB3A93D00E3E22B /* Transparent.h */,
 				E28A89F40EB3A93D00E3E22B /* Transparent.cpp */,
+				E28A8E7E0EB52E0000E3E22B /* Dielectric.h */,
+				E28A8E7F0EB52E0000E3E22B /* Dielectric.cpp */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -598,6 +620,7 @@
 				E2138ADD0EACBBD300276340 /* BuildMesh.cpp */,
 				E283D9F00EAFF57300AE18A4 /* BuildTestReflection.cpp */,
 				E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */,
+				E28A8F600EB5418E00E3E22B /* BuildFresnel.cpp */,
 			);
 			path = TheBuild;
 			sourceTree = "<group>";
@@ -846,6 +869,11 @@
 				E28A89F50EB3A93D00E3E22B /* Transparent.cpp in Sources */,
 				E28A8A0B0EB3AF2700E3E22B /* BuildTransparent.cpp in Sources */,
 				E28A8E670EB52D8F00E3E22B /* FresnelReflector.cpp in Sources */,
+				E28A8E760EB52DE300E3E22B /* FresnelTransmitter.cpp in Sources */,
+				E28A8E800EB52E0000E3E22B /* Dielectric.cpp in Sources */,
+				E28A8F610EB5418E00E3E22B /* BuildFresnel.cpp in Sources */,
+				E28A903C0EB57B1400E3E22B /* GlassOfWater.cpp in Sources */,
+				E28A90770EB57D8500E3E22B /* ConcaveLens.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

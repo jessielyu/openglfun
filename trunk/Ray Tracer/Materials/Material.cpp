@@ -10,14 +10,18 @@
 #include "Material.h"
 #include "Constants.h"
 
-Material::Material(void) {}
+Material::Material(void)
+:	shadows(true) {}
 
-Material::Material(const Material& m) {}
+Material::Material(const Material& m) 
+:	shadows(m.shadows) {}
 
 Material&
 Material::operator= (const Material& m) {
 	if (this == &m)
 		return *this;
+	
+	shadows = m.shadows;
 	
 	return *this;
 }

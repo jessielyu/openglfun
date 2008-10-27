@@ -42,6 +42,17 @@ public:
 	
 	virtual MyRGBColor
 	get_Le(ShadeRec& sr) const;
+	
+	void
+	set_shadows(bool shadow);
+	
+protected:
+	bool shadows;
 };
+
+inline void
+Material::set_shadows(bool shadow) {
+	shadows = shadow;
+}
 
 #endif
