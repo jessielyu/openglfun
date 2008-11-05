@@ -23,7 +23,9 @@ ShadeRec::ShadeRec(World& wr)
 		dir(),
 		color(black),
 		w(wr),
-		t(0.0)
+		t(0.0),
+		u(0),
+		v(0)
 {}
 
 
@@ -40,7 +42,9 @@ ShadeRec::ShadeRec(const ShadeRec& sr)
 		ray(sr.ray),
 		color(sr.color),
 		w(sr.w),
-		t(0.0)
+		t(0.0),
+		u(sr.u),
+		v(sr.v)
 {}
 
 

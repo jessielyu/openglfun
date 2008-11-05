@@ -1,35 +1,35 @@
 /*
- *  Matte.cpp
+ *  SV_Matte.cpp
  *  Ray Tracer
  *
- *  Created by NoEvilPeople on 9/19/08.
+ *  Created by NoEvilPeople on 10/27/08.
  *  Copyright 2008 jmc2385@rit.edu. All rights reserved.
  *
  */
 
-#include "Matte.h"
+#include "SV_Matte.h"
 #include "World.h"
 
-Matte::Matte(void)
+SV_Matte::SV_Matte(void)
 :	Material(),
-	ambient_ptr(new Lambertian),
-	diffuse_ptr(new Lambertian)
+ambient_ptr(new SV_Lambertian),
+diffuse_ptr(new SV_Lambertian)
 {}
- 
-Matte::Matte(const Matte& m) 
+
+SV_Matte::SV_Matte(const SV_Matte& m) 
 :	Material(m) {
 	if (m.ambient_ptr)
-		ambient_ptr = (Lambertian*)m.ambient_ptr->clone();
+		ambient_ptr = (SV_Lambertian*)m.ambient_ptr->clone();
 	else
 		ambient_ptr = NULL;
 	
 	if (m.diffuse_ptr)
-		diffuse_ptr = (Lambertian*)m.diffuse_ptr->clone();
+		diffuse_ptr = (SV_Lambertian*)m.diffuse_ptr->clone();
 	else
 		ambient_ptr = NULL;
 }
 
-Matte::~Matte(void) {
+SV_Matte::~SV_Matte(void) {
 	if (ambient_ptr) {
 		delete ambient_ptr;
 		ambient_ptr = NULL;
@@ -40,8 +40,8 @@ Matte::~Matte(void) {
 	}
 }
 
-Matte& 
-Matte::operator= (const Matte& m) {
+SV_Matte& 
+SV_Matte::operator= (const SV_Matte& m) {
 	if (this == &m)
 		return (*this);
 	
@@ -57,51 +57,41 @@ Matte::operator= (const Matte& m) {
 	}
 	
 	if (m.ambient_ptr)
-		ambient_ptr = (Lambertian*)m.ambient_ptr->clone();
+		ambient_ptr = (SV_Lambertian*)m.ambient_ptr->clone();
 	
 	
 	if (m.diffuse_ptr)
-		diffuse_ptr = (Lambertian*)m.diffuse_ptr->clone();
+		diffuse_ptr = (SV_Lambertian*)m.diffuse_ptr->clone();
 	
 	return (*this);
 }
 
 Material*
-Matte::clone(void) const {
-	return (new Matte(*this));
+SV_Matte::clone(void) const {
+	return (new SV_Matte(*this));
 }
 
 void
-Matte::set_sampler(Sampler* sampl_ptr) {
+SV_Matte::set_sampler(Sampler* sampl_ptr) {
 	
 	ambient_ptr->set_sampler(sampl_ptr);
 	diffuse_ptr->set_sampler(sampl_ptr->clone());
 }
 
 void
-Matte::set_ka(const float ka) {
+SV_Matte::set_ka(const float ka) {
 	ambient_ptr->set_kd(ka);
 }
 
 void
-Matte::set_kd(const float kd) {
+SV_Matte::set_kd(const float kd) {
 	diffuse_ptr->set_kd(kd);
 }
 
-void
-Matte::set_cd(const MyRGBColor& c) {
-	ambient_ptr->set_cd(c);
-	diffuse_ptr->set_cd(c);
-}
 
-void
-Matte::set_cd(const float r, const float g, const float b) {
-	ambient_ptr->set_cd(MyRGBColor(r,g,b));
-	diffuse_ptr->set_cd(MyRGBColor(r,g,b));
-}
 
 MyRGBColor
-Matte::shade(ShadeRec& sr) {
+SV_Matte::shade(ShadeRec& sr) {
 	Vector3D wo = -sr.ray.d;
 	MyRGBColor L = ambient_ptr->rho(sr, wo) * sr.w.ambient_ptr->L(sr);
 	int numLights = sr.w.lights.size();
@@ -126,7 +116,7 @@ Matte::shade(ShadeRec& sr) {
 }
 
 MyRGBColor
-Matte::area_light_shade(ShadeRec& sr) {
+SV_Matte::area_light_shade(ShadeRec& sr) {
 	Vector3D wo = -sr.ray.d;
 	MyRGBColor L = ambient_ptr->rho(sr, wo) * sr.w.ambient_ptr->L(sr);
 	int num_lights = sr.w.lights.size();
@@ -141,7 +131,7 @@ Matte::area_light_shade(ShadeRec& sr) {
 			if (!shadows)
 				;
 			else {		
-				in_shadow = false;
+				bool in_shadow = false;
 				if (sr.w.lights[j]->casts_shadows()) {
 					Ray shadow_ray(sr.hit_point, wi);
 					in_shadow = sr.w.lights[j]->in_shadow(shadow_ray, sr);
@@ -150,7 +140,7 @@ Matte::area_light_shade(ShadeRec& sr) {
 			
 			if (!in_shadow)
 				L += diffuse_ptr->f(sr, wo, wi) * sr.w.lights[j]->L(sr) *
-					sr.w.lights[j]->G(sr) * ndotwi /
+				sr.w.lights[j]->G(sr) * ndotwi /
 				sr.w.lights[j]->pdf(sr);
 		}
 	}
@@ -158,7 +148,7 @@ Matte::area_light_shade(ShadeRec& sr) {
 }
 
 MyRGBColor
-Matte::path_shade(ShadeRec& sr) {
+SV_Matte::path_shade(ShadeRec& sr) {
 	Vector3D wi;
 	Vector3D wo = -sr.ray.d;
 	float pdf;
@@ -170,7 +160,7 @@ Matte::path_shade(ShadeRec& sr) {
 }
 
 MyRGBColor
-Matte::global_shade(ShadeRec& sr) {
+SV_Matte::global_shade(ShadeRec& sr) {
 	MyRGBColor L;
 	
 	if (sr.depth == 0)

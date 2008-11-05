@@ -81,6 +81,7 @@ Reflective::shade(ShadeRec& sr) {
 	Vector3D wi;
 	MyRGBColor fr = reflective_brdf->sample_f(sr, wi, wo);
 	Ray reflected_ray(sr.hit_point, wi);
+	//reflected_ray.depth = sr.depth + 1;
 	
 	L += fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * (sr.normal * wi);
 	
@@ -94,6 +95,7 @@ Reflective::path_shade(ShadeRec& sr) {
 	float pdf;
 	MyRGBColor fr = reflective_brdf->sample_f(sr, wi, wo, pdf);
 	Ray reflected_ray(sr.hit_point, wi);
+
 	
 	return (fr * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * (sr.normal * wi) / pdf);
 }
