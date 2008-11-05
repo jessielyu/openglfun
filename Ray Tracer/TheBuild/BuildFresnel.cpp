@@ -56,6 +56,122 @@
 #include "Transparent.h"
 #include "Dielectric.h"
 #include "GlassOfWater.h"
+#include "SV_Matte.h"
+
+// Good bunny
+
+//void 												
+//World::build(void) {
+//	int num_samples = 100;
+//	
+//	vp.set_hres(600);	  		
+//	vp.set_vres(600);
+//	vp.set_samples(num_samples);	
+//	vp.set_max_depth(9);		
+//	
+//	background_color = MyRGBColor(0.5);
+//	
+//	tracer_ptr = new AreaLighting(this);
+//	
+//	Ambient* ambient_ptr = new Ambient;
+//	set_ambient_light(ambient_ptr);
+//	
+//	
+//	Pinhole* pinhole_ptr = new Pinhole;
+//	pinhole_ptr->set_eye(-4, 4, 20);  
+//	pinhole_ptr->set_lookat(-0.2, -0.5, 0);     
+//	pinhole_ptr->set_view_distance(6000.0);	
+//	pinhole_ptr->compute_uvw();     
+//	set_camera(pinhole_ptr);
+//	
+//	
+//	// rectangular area light
+//	
+//	Emissive* emissive_ptr = new Emissive;
+//	emissive_ptr->scale_radiance(40.0);		
+//	emissive_ptr->set_ce(white);
+//	
+//	Point3D center(5, 6, 10);
+//	double width = 4.0;
+//	double height = 5.0;
+//	
+//	Point3D p0(-0.5 * width, center.y - 0.5 * height, center.z);
+//	Vector3D a(width, 0.0, 0.0);
+//	Vector3D b(0.0, height, 0.0);
+//	Normal normal(0, 0, -1);
+//	
+//	Rectangle* rectangle_ptr = new Rectangle(p0, a, b, normal);
+//	rectangle_ptr->set_material(emissive_ptr);
+//	rectangle_ptr->set_sampler(new MultiJittered(num_samples));
+//	rectangle_ptr->set_shadows(false);
+//	add_object(rectangle_ptr);	
+//	
+//	AreaLight* area_light_ptr = new AreaLight;
+//	area_light_ptr->set_object(rectangle_ptr);
+//	area_light_ptr->set_shadows(true);
+//	add_light(area_light_ptr);
+//	
+//	
+//	// transparent bunny
+//	
+//	Dielectric* dielectric_ptr = new Dielectric;
+//	dielectric_ptr->set_ka(0.0);
+//	dielectric_ptr->set_kd(0.0); 
+//	dielectric_ptr->set_ks(0.2);     
+//	dielectric_ptr->set_exp(2000.0);
+//	dielectric_ptr->set_eta_in(1.5);   
+//	dielectric_ptr->set_eta_out(1.0);
+//	dielectric_ptr->set_cf_in(0.75, 0.45, 0);   // orange
+//	dielectric_ptr->set_cf_out(white);
+//	
+//	 char* file_name = "../../PLYFiles/Bunny4K.ply"; 	
+//	
+//	Mesh* mesh_ptr = new Mesh;
+//	Grid* bunny_ptr = new Grid(mesh_ptr);
+//	bunny_ptr->read_smooth_triangles(file_name);	
+//	bunny_ptr->set_material(dielectric_ptr); 	
+//	bunny_ptr->setup_cells();
+//	
+//	Instance* big_bunny_ptr = new Instance(bunny_ptr);
+//	big_bunny_ptr->scale(10.0);
+//	big_bunny_ptr->translate(0, -1.5, 0.0);
+//	add_object(big_bunny_ptr);
+//	
+//	
+//	PlaneChecker* plane_checker_ptr = new PlaneChecker;
+//	plane_checker_ptr->set_size(0.25);		
+//	plane_checker_ptr->set_outline_width(0.02);
+//	plane_checker_ptr->set_color1(0.75);
+//	plane_checker_ptr->set_color2(0.75);  
+//	plane_checker_ptr->set_outline_color(black); 
+//	
+//	SV_Matte* sv_matte_ptr = new SV_Matte;		
+//	sv_matte_ptr->set_ka(0.15);
+//	sv_matte_ptr->set_kd(0.65);
+//	sv_matte_ptr->set_cd(plane_checker_ptr);
+//	
+//	// ground plane	
+//	
+//	Plane* plane_ptr1 = new Plane(Point3D(0, -1.175, 0), Normal(0, 1, 0));
+//	plane_ptr1->set_material(sv_matte_ptr);
+//	plane_ptr1->set_shadows(false);
+//	add_object(plane_ptr1);
+//	
+//	// back plane
+//	
+//	Instance* plane_ptr2 = new Instance(new Plane(Point3D(0), Normal(0, 1, 0)));
+//	plane_ptr2->set_material(sv_matte_ptr);
+//	plane_ptr2->rotate_x(90);
+//	plane_ptr2->translate(0, 0, -2);
+//	plane_ptr2->set_shadows(false);
+//	add_object(plane_ptr2);
+//	
+//	
+//	
+//}
+
+
+
 
 
 //void 												
@@ -295,80 +411,80 @@
 // This image takes a huge amount of time to render because of the high recursion depth.
 // Try it initially with max_depth = 3 and one sample per pixel.
 
-void 												
-World::build(void) {
-	int num_samples = 10;
-	
-	vp.set_hres(400);	  		
-	vp.set_vres(400);
-	vp.set_samples(num_samples);    
-	vp.set_max_depth(15);
-	
-	//tracer_ptr = new Whitted(this);
-	tracer_ptr = new PathTrace(this);
-	
-	background_color = MyRGBColor(0.75);  
-	
-	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->scale_radiance(1.0);
-	set_ambient_light(ambient_ptr);	
-	
-	
-	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(10, 12, 20); 
-	pinhole_ptr->set_lookat(-3.75, 3, 0);     
-	pinhole_ptr->set_view_distance(1500.0);	
-	pinhole_ptr->set_zoom(2.0/3.0);
-	pinhole_ptr->compute_uvw();     
-	set_camera(pinhole_ptr);
-	
-	PointLight* light_ptr1 = new PointLight;
-	light_ptr1->set_location(20, 25, -20);  
-	light_ptr1->scale_radiance(3.0);  
-	light_ptr1->set_shadows(true);
-	add_light(light_ptr1);
-	
-	
-	float c = 1.75;  // this allows us to adjust the filter color without changing the hue
-	MyRGBColor glass_color(0.27*c, 0.49*c, 0.42*c);  
-	
-	
-	Dielectric* glass_ptr = new Dielectric;
-	glass_ptr->set_eta_in(1.50);		// glass
-	glass_ptr->set_eta_out(1.0);		// air
-	glass_ptr->set_cf_in(glass_color);
-	glass_ptr->set_cf_out(white); 
-	
-	double 	thickness 	= 0.25;
-	double 	height 		= 4.0;
-	double 	delta 		= 1.0;			// length change of each box
-	
-	int 	num_boxes 	= 10;
-	double 	x_min 		= -10.0;		// where the boxes start in the x direction
-	double 	gap 		= 0.5;   		// gap between the boxes
-	
-	for (int j = 0; j < num_boxes; j++) {
-		double length = thickness + j * delta;
-		Point3D p0(x_min + j * (thickness + gap), 0.0, -length);
-		Point3D p1(x_min + j * (thickness + gap) + thickness, height, 0.0);
-		
-		Box* box_ptr = new Box(p0, p1);     
-		box_ptr->set_material(glass_ptr);
-		add_object(box_ptr);
-	}
-	
-	
-	// plane
-	
-	Matte* matte_ptr = new Matte;		
-	matte_ptr->set_ka(0.5);
-	matte_ptr->set_kd(0.65);
-	matte_ptr->set_cd(0.75);
-	
-	Plane* plane_ptr = new Plane(Point3D(0.0), Normal(0, 1, 0));
-	plane_ptr->set_material(matte_ptr);
-	add_object(plane_ptr);
-}
+//void 												
+//World::build(void) {
+//	int num_samples = 100; //10
+//	
+//	vp.set_hres(1680);	  		
+//	vp.set_vres(1050);
+//	vp.set_samples(num_samples);    
+//	vp.set_max_depth(15); //15
+//	
+//	tracer_ptr = new Whitted(this);
+//	//tracer_ptr = new PathTrace(this);
+//	
+//	background_color = MyRGBColor(0.75);  
+//	
+//	Ambient* ambient_ptr = new Ambient;
+//	ambient_ptr->scale_radiance(1.0);
+//	set_ambient_light(ambient_ptr);	
+//	
+//	
+//	Pinhole* pinhole_ptr = new Pinhole;
+//	pinhole_ptr->set_eye(10, 12, 20); 
+//	pinhole_ptr->set_lookat(-3.75, 3, 0);     
+//	pinhole_ptr->set_view_distance(1500.0);	
+//	pinhole_ptr->set_zoom(3.0);
+//	pinhole_ptr->compute_uvw();     
+//	set_camera(pinhole_ptr);
+//	
+//	PointLight* light_ptr1 = new PointLight;
+//	light_ptr1->set_location(20, 25, -20);  
+//	light_ptr1->scale_radiance(3.0);  
+//	light_ptr1->set_shadows(true);
+//	add_light(light_ptr1);
+//	
+//	
+//	float c = 1.75;  // this allows us to adjust the filter color without changing the hue
+//	MyRGBColor glass_color(0.27*c, 0.49*c, 0.42*c);  
+//	
+//	
+//	Dielectric* glass_ptr = new Dielectric;
+//	glass_ptr->set_eta_in(1.50);		// glass
+//	glass_ptr->set_eta_out(1.0);		// air
+//	glass_ptr->set_cf_in(glass_color);
+//	glass_ptr->set_cf_out(white); 
+//	
+//	double 	thickness 	= 0.25;
+//	double 	height 		= 4.0;
+//	double 	delta 		= 1.0;			// length change of each box
+//	
+//	int 	num_boxes 	= 10;
+//	double 	x_min 		= -10.0;		// where the boxes start in the x direction
+//	double 	gap 		= 0.5;   		// gap between the boxes
+//	
+//	for (int j = 0; j < num_boxes; j++) {
+//		double length = thickness + j * delta;
+//		Point3D p0(x_min + j * (thickness + gap), 0.0, -length);
+//		Point3D p1(x_min + j * (thickness + gap) + thickness, height, 0.0);
+//		
+//		Box* box_ptr = new Box(p0, p1);     
+//		box_ptr->set_material(glass_ptr);
+//		add_object(box_ptr);
+//	}
+//	
+//	
+//	// plane
+//	
+//	Matte* matte_ptr = new Matte;		
+//	matte_ptr->set_ka(0.5);
+//	matte_ptr->set_kd(0.65);
+//	matte_ptr->set_cd(0.75);
+//	
+//	Plane* plane_ptr = new Plane(Point3D(0.0), Normal(0, 1, 0));
+//	plane_ptr->set_material(matte_ptr);
+//	add_object(plane_ptr);
+//}
 
 
 

@@ -61,6 +61,18 @@ public:
 //	virtual void
 //	set_material(Material* mat_ptr);
 	
+	void
+	read_flat_uv_triangles(char* file_name);
+	
+	
+	// ----------------------------------------------------------------------------- read_smooth_uv_triangles
+	
+	void												
+	read_smooth_uv_triangles(char* file_name);
+	
+	void
+	read_uv_ply_file(char* file_name, const int triangle_type);
+	
 private:
 	
 	std::vector<GeometricObject*> cells;		// 1D array

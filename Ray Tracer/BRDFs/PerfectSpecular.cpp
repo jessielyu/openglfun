@@ -53,7 +53,10 @@ PerfectSpecular::sample_f(const ShadeRec& sr,  Vector3D& wi, const Vector3D& wo)
 	float ndotwo = sr.normal * wo;
 	wi = -wo + 2.0 * sr.normal * ndotwo;
 	
-	return (kr * cr / fabs(sr.normal * wi));
+	return (kr * cr / (sr.normal * wi));
+	
+	// For Transparent material
+	//return (kr * cr / fabs(sr.normal * wi));
 }
 
 // for global lighting

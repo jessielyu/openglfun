@@ -50,13 +50,13 @@ public:
 	virtual BBox
 	get_bounding_box(void) const;
 
-//protected:
+protected:
 	
-//	float
-//	interpolate_u(const float beta, const float gamma) const;
-//	
-//	float
-//	interpolate_v(const float beta, const float gamma) const;
+	float
+	interpolate_u(const float beta, const float gamma) const;
+	
+	float
+	interpolate_v(const float beta, const float gamma) const;
 	
 };
 

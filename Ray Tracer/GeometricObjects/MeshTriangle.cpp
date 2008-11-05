@@ -128,3 +128,27 @@ MeshTriangle::get_bounding_box(void) const {
 				min(min(v1.y, v2.y), v3.y) - delta, max(max(v1.y, v2.y), v3.y) + delta, 
 				min(min(v1.z, v2.z), v3.z) - delta, max(max(v1.z, v2.z), v3.z) + delta));
 }
+
+// ---------------------------------------------------------------- interpolate_u
+// this is used for texture mapping in Chapter 29
+
+float 
+MeshTriangle::interpolate_u(const float beta, const float gamma) const {	
+	float u1 = mesh_ptr->u[index0];
+	float u2 = mesh_ptr->u[index1];
+	float u3 = mesh_ptr->u[index2];
+	return( (1 - beta - gamma) * mesh_ptr->u[index0] 
+		   + beta * mesh_ptr->u[index1] 
+		   + gamma * mesh_ptr->u[index2] );
+}
+
+
+// ---------------------------------------------------------------- interpolate_v
+// this is used for texture mapping in Chapter 29
+
+float 
+MeshTriangle::interpolate_v(const float beta, const float gamma) const {	
+	return( (1 - beta - gamma) * mesh_ptr->v[index0] 
+		   + beta * mesh_ptr->v[index1] 
+		   + gamma * mesh_ptr->v[index2] );
+}
