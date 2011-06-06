@@ -78,6 +78,20 @@
 		E28A8F610EB5418E00E3E22B /* BuildFresnel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A8F600EB5418E00E3E22B /* BuildFresnel.cpp */; };
 		E28A903C0EB57B1400E3E22B /* GlassOfWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A903B0EB57B1400E3E22B /* GlassOfWater.cpp */; };
 		E28A90770EB57D8500E3E22B /* ConcaveLens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */; };
+		E28A91B10EB6862600E3E22B /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A91B00EB6862600E3E22B /* Texture.cpp */; };
+		E28A91C90EB6873C00E3E22B /* ConstantColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A91C80EB6873C00E3E22B /* ConstantColor.cpp */; };
+		E28A91FB0EB68B1900E3E22B /* SV_Lambertian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A91FA0EB68B1900E3E22B /* SV_Lambertian.cpp */; };
+		E28A922F0EB6BB6100E3E22B /* SV_Matte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A922E0EB6BB6100E3E22B /* SV_Matte.cpp */; };
+		E28A927F0EB7D8C000E3E22B /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A927E0EB7D8C000E3E22B /* Image.cpp */; };
+		E28A92E50EB7DA7F00E3E22B /* Mapping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A92E40EB7DA7F00E3E22B /* Mapping.cpp */; };
+		E28A93530EB7DDF100E3E22B /* ImageTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A93520EB7DDF100E3E22B /* ImageTexture.cpp */; };
+		E28A93770EB8105C00E3E22B /* SphericalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A93760EB8105C00E3E22B /* SphericalMap.cpp */; };
+		E28A93980EB8144D00E3E22B /* RectangularMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A93970EB8144D00E3E22B /* RectangularMap.cpp */; };
+		E28A93B30EB8154C00E3E22B /* CylindricalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A93B20EB8154C00E3E22B /* CylindricalMap.cpp */; };
+		E28A93D00EB817AC00E3E22B /* BuildTextures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A93CF0EB817AC00E3E22B /* BuildTextures.cpp */; };
+		E28A94780EB8254300E3E22B /* LightProbe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A94770EB8254300E3E22B /* LightProbe.cpp */; };
+		E28A961A0EB8CB5400E3E22B /* FlatUVMeshTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A96190EB8CB5400E3E22B /* FlatUVMeshTriangle.cpp */; };
+		E28A962D0EB8CE9600E3E22B /* SmoothUVMeshTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28A962C0EB8CE9600E3E22B /* SmoothUVMeshTriangle.cpp */; };
 		E2A7CAEC0E80A0E100F18A54 /* FishEye.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */; };
 		E2A7CC270E814FA200F18A54 /* Spherical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC260E814FA200F18A54 /* Spherical.cpp */; };
 		E2A7CC8A0E815B4000F18A54 /* StereoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2A7CC890E815B4000F18A54 /* StereoCamera.cpp */; };
@@ -105,6 +119,8 @@
 		E2BE41F60EA3A5F500118229 /* ConvexPartSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE41F50EA3A5F500118229 /* ConvexPartSphere.cpp */; };
 		E2BE42B00EA3C40700118229 /* SolidCylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */; };
 		E2BE448F0EA6528600118229 /* Instance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2BE448E0EA6528600118229 /* Instance.cpp */; };
+		E2C602D40EC1324700A6E6DE /* Checker3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C602D30EC1324700A6E6DE /* Checker3D.cpp */; };
+		E2C603100EC13BC500A6E6DE /* PlaneChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C6030F0EC13BC500A6E6DE /* PlaneChecker.cpp */; };
 		E2D069270E789ADE00E34880 /* GeometricObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F50E789ADE00E34880 /* GeometricObject.cpp */; };
 		E2D069280E789ADE00E34880 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F70E789ADE00E34880 /* Plane.cpp */; };
 		E2D069290E789ADE00E34880 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D068F90E789ADE00E34880 /* Sphere.cpp */; };
@@ -246,6 +262,33 @@
 		E28A903B0EB57B1400E3E22B /* GlassOfWater.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GlassOfWater.cpp; sourceTree = "<group>"; };
 		E28A90750EB57D8500E3E22B /* ConcaveLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcaveLens.h; sourceTree = "<group>"; };
 		E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConcaveLens.cpp; sourceTree = "<group>"; };
+		E28A91AF0EB6862600E3E22B /* Texture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = Texture.h; sourceTree = "<group>"; };
+		E28A91B00EB6862600E3E22B /* Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Texture.cpp; sourceTree = "<group>"; };
+		E28A91C70EB6873C00E3E22B /* ConstantColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantColor.h; sourceTree = "<group>"; };
+		E28A91C80EB6873C00E3E22B /* ConstantColor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConstantColor.cpp; sourceTree = "<group>"; };
+		E28A91F90EB68B1900E3E22B /* SV_Lambertian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SV_Lambertian.h; sourceTree = "<group>"; };
+		E28A91FA0EB68B1900E3E22B /* SV_Lambertian.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SV_Lambertian.cpp; sourceTree = "<group>"; };
+		E28A922D0EB6BB6100E3E22B /* SV_Matte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SV_Matte.h; sourceTree = "<group>"; };
+		E28A922E0EB6BB6100E3E22B /* SV_Matte.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SV_Matte.cpp; sourceTree = "<group>"; };
+		E28A927D0EB7D8C000E3E22B /* Image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Image.h; sourceTree = "<group>"; };
+		E28A927E0EB7D8C000E3E22B /* Image.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Image.cpp; sourceTree = "<group>"; };
+		E28A92E30EB7DA7F00E3E22B /* Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mapping.h; path = ../Textures/Mapping.h; sourceTree = "<group>"; };
+		E28A92E40EB7DA7F00E3E22B /* Mapping.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Mapping.cpp; path = ../Textures/Mapping.cpp; sourceTree = "<group>"; };
+		E28A93510EB7DDF100E3E22B /* ImageTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTexture.h; sourceTree = "<group>"; };
+		E28A93520EB7DDF100E3E22B /* ImageTexture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ImageTexture.cpp; sourceTree = "<group>"; };
+		E28A93750EB8105C00E3E22B /* SphericalMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphericalMap.h; sourceTree = "<group>"; };
+		E28A93760EB8105C00E3E22B /* SphericalMap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SphericalMap.cpp; sourceTree = "<group>"; };
+		E28A93960EB8144D00E3E22B /* RectangularMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangularMap.h; sourceTree = "<group>"; };
+		E28A93970EB8144D00E3E22B /* RectangularMap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RectangularMap.cpp; sourceTree = "<group>"; };
+		E28A93B10EB8154C00E3E22B /* CylindricalMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CylindricalMap.h; sourceTree = "<group>"; };
+		E28A93B20EB8154C00E3E22B /* CylindricalMap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CylindricalMap.cpp; sourceTree = "<group>"; };
+		E28A93CF0EB817AC00E3E22B /* BuildTextures.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BuildTextures.cpp; sourceTree = "<group>"; };
+		E28A94760EB8254300E3E22B /* LightProbe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightProbe.h; sourceTree = "<group>"; };
+		E28A94770EB8254300E3E22B /* LightProbe.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = LightProbe.cpp; sourceTree = "<group>"; };
+		E28A96180EB8CB5400E3E22B /* FlatUVMeshTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUVMeshTriangle.h; sourceTree = "<group>"; };
+		E28A96190EB8CB5400E3E22B /* FlatUVMeshTriangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FlatUVMeshTriangle.cpp; sourceTree = "<group>"; };
+		E28A962B0EB8CE9600E3E22B /* SmoothUVMeshTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothUVMeshTriangle.h; sourceTree = "<group>"; };
+		E28A962C0EB8CE9600E3E22B /* SmoothUVMeshTriangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SmoothUVMeshTriangle.cpp; sourceTree = "<group>"; };
 		E2A7CAEA0E80A0E100F18A54 /* FishEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEye.h; sourceTree = "<group>"; };
 		E2A7CAEB0E80A0E100F18A54 /* FishEye.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FishEye.cpp; sourceTree = "<group>"; };
 		E2A7CC250E814FA200F18A54 /* Spherical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spherical.h; sourceTree = "<group>"; };
@@ -296,6 +339,10 @@
 		E2BE42AF0EA3C40700118229 /* SolidCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SolidCylinder.cpp; sourceTree = "<group>"; };
 		E2BE448D0EA6528600118229 /* Instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instance.h; sourceTree = "<group>"; };
 		E2BE448E0EA6528600118229 /* Instance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Instance.cpp; sourceTree = "<group>"; };
+		E2C602D20EC1324700A6E6DE /* Checker3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checker3D.h; sourceTree = "<group>"; };
+		E2C602D30EC1324700A6E6DE /* Checker3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Checker3D.cpp; sourceTree = "<group>"; };
+		E2C6030E0EC13BC500A6E6DE /* PlaneChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneChecker.h; sourceTree = "<group>"; };
+		E2C6030F0EC13BC500A6E6DE /* PlaneChecker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PlaneChecker.cpp; sourceTree = "<group>"; };
 		E2D068F50E789ADE00E34880 /* GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GeometricObject.cpp; sourceTree = "<group>"; };
 		E2D068F60E789ADE00E34880 /* GeometricObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometricObject.h; sourceTree = "<group>"; };
 		E2D068F70E789ADE00E34880 /* Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Plane.cpp; sourceTree = "<group>"; };
@@ -425,6 +472,8 @@
 				E283D76E0EAF8CA700AE18A4 /* PerfectSpecular.cpp */,
 				E28A8E650EB52D8F00E3E22B /* FresnelReflector.h */,
 				E28A8E660EB52D8F00E3E22B /* FresnelReflector.cpp */,
+				E28A91F90EB68B1900E3E22B /* SV_Lambertian.h */,
+				E28A91FA0EB68B1900E3E22B /* SV_Lambertian.cpp */,
 			);
 			path = BRDFs;
 			sourceTree = "<group>";
@@ -522,6 +571,10 @@
 				E26B76960EABEEC60044FC0D /* MeshTriangle.cpp */,
 				E28A90750EB57D8500E3E22B /* ConcaveLens.h */,
 				E28A90760EB57D8500E3E22B /* ConcaveLens.cpp */,
+				E28A96180EB8CB5400E3E22B /* FlatUVMeshTriangle.h */,
+				E28A96190EB8CB5400E3E22B /* FlatUVMeshTriangle.cpp */,
+				E28A962B0EB8CE9600E3E22B /* SmoothUVMeshTriangle.h */,
+				E28A962C0EB8CE9600E3E22B /* SmoothUVMeshTriangle.cpp */,
 			);
 			path = GeometricObjects;
 			sourceTree = "<group>";
@@ -552,6 +605,16 @@
 		E2D068FC0E789ADE00E34880 /* Mappings */ = {
 			isa = PBXGroup;
 			children = (
+				E28A92E30EB7DA7F00E3E22B /* Mapping.h */,
+				E28A92E40EB7DA7F00E3E22B /* Mapping.cpp */,
+				E28A93B10EB8154C00E3E22B /* CylindricalMap.h */,
+				E28A93B20EB8154C00E3E22B /* CylindricalMap.cpp */,
+				E28A94760EB8254300E3E22B /* LightProbe.h */,
+				E28A94770EB8254300E3E22B /* LightProbe.cpp */,
+				E28A93750EB8105C00E3E22B /* SphericalMap.h */,
+				E28A93760EB8105C00E3E22B /* SphericalMap.cpp */,
+				E28A93960EB8144D00E3E22B /* RectangularMap.h */,
+				E28A93970EB8144D00E3E22B /* RectangularMap.cpp */,
 			);
 			path = Mappings;
 			sourceTree = "<group>";
@@ -575,6 +638,8 @@
 				E28A89F40EB3A93D00E3E22B /* Transparent.cpp */,
 				E28A8E7E0EB52E0000E3E22B /* Dielectric.h */,
 				E28A8E7F0EB52E0000E3E22B /* Dielectric.cpp */,
+				E28A922D0EB6BB6100E3E22B /* SV_Matte.h */,
+				E28A922E0EB6BB6100E3E22B /* SV_Matte.cpp */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -606,6 +671,18 @@
 		E2D069000E789ADE00E34880 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				E28A927D0EB7D8C000E3E22B /* Image.h */,
+				E28A927E0EB7D8C000E3E22B /* Image.cpp */,
+				E28A91AF0EB6862600E3E22B /* Texture.h */,
+				E28A91B00EB6862600E3E22B /* Texture.cpp */,
+				E28A91C70EB6873C00E3E22B /* ConstantColor.h */,
+				E28A91C80EB6873C00E3E22B /* ConstantColor.cpp */,
+				E28A93510EB7DDF100E3E22B /* ImageTexture.h */,
+				E28A93520EB7DDF100E3E22B /* ImageTexture.cpp */,
+				E2C6030E0EC13BC500A6E6DE /* PlaneChecker.h */,
+				E2C6030F0EC13BC500A6E6DE /* PlaneChecker.cpp */,
+				E2C602D20EC1324700A6E6DE /* Checker3D.h */,
+				E2C602D30EC1324700A6E6DE /* Checker3D.cpp */,
 			);
 			path = Textures;
 			sourceTree = "<group>";
@@ -621,6 +698,7 @@
 				E283D9F00EAFF57300AE18A4 /* BuildTestReflection.cpp */,
 				E28A8A0A0EB3AF2700E3E22B /* BuildTransparent.cpp */,
 				E28A8F600EB5418E00E3E22B /* BuildFresnel.cpp */,
+				E28A93CF0EB817AC00E3E22B /* BuildTextures.cpp */,
 			);
 			path = TheBuild;
 			sourceTree = "<group>";
@@ -874,6 +952,22 @@
 				E28A8F610EB5418E00E3E22B /* BuildFresnel.cpp in Sources */,
 				E28A903C0EB57B1400E3E22B /* GlassOfWater.cpp in Sources */,
 				E28A90770EB57D8500E3E22B /* ConcaveLens.cpp in Sources */,
+				E28A91B10EB6862600E3E22B /* Texture.cpp in Sources */,
+				E28A91C90EB6873C00E3E22B /* ConstantColor.cpp in Sources */,
+				E28A91FB0EB68B1900E3E22B /* SV_Lambertian.cpp in Sources */,
+				E28A922F0EB6BB6100E3E22B /* SV_Matte.cpp in Sources */,
+				E28A927F0EB7D8C000E3E22B /* Image.cpp in Sources */,
+				E28A92E50EB7DA7F00E3E22B /* Mapping.cpp in Sources */,
+				E28A93530EB7DDF100E3E22B /* ImageTexture.cpp in Sources */,
+				E28A93770EB8105C00E3E22B /* SphericalMap.cpp in Sources */,
+				E28A93980EB8144D00E3E22B /* RectangularMap.cpp in Sources */,
+				E28A93B30EB8154C00E3E22B /* CylindricalMap.cpp in Sources */,
+				E28A93D00EB817AC00E3E22B /* BuildTextures.cpp in Sources */,
+				E28A94780EB8254300E3E22B /* LightProbe.cpp in Sources */,
+				E28A961A0EB8CB5400E3E22B /* FlatUVMeshTriangle.cpp in Sources */,
+				E28A962D0EB8CE9600E3E22B /* SmoothUVMeshTriangle.cpp in Sources */,
+				E2C602D40EC1324700A6E6DE /* Checker3D.cpp in Sources */,
+				E2C603100EC13BC500A6E6DE /* PlaneChecker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

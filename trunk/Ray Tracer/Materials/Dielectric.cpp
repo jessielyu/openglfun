@@ -116,6 +116,82 @@ Dielectric::shade(ShadeRec& sr) {
 	
 }
 
+
+// THIS METHOD NEEDS WORK
+
+MyRGBColor
+Dielectric::area_light_shade(ShadeRec& sr) {
+	
+	return shade(sr);
+	
+	MyRGBColor L(Phong::area_light_shade(sr));
+	
+	Vector3D 	wi;
+	Vector3D 	wo(-sr.ray.d);
+	MyRGBColor 	fr = fresnel_brdf->sample_f(sr, wi, wo);  	// computes wi
+	Ray 		reflected_ray(sr.hit_point, wi); 
+	double 		t;
+	MyRGBColor 	Lr, Lt;
+	float 		ndotwi =  sr.normal * wi;
+	
+	int num_lights = sr.w.lights.size();
+	
+	for (int j = 0; j < num_lights; j++) {
+		
+		wi - sr.w.lights[j]->get_direction(sr);
+		ndotwi = sr.normal * wi;
+		
+		if(fresnel_btdf->tir(sr)) {								// total internal reflection
+			if (ndotwi < 0.0) {  	
+				// reflected ray is inside
+				
+				Lr = sr.w.tracer_ptr->trace_ray(reflected_ray, t, sr.depth + 1);
+				// GUESS
+				L += (cf_in.powc(t) * Lr) * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr);   						// inside filter color
+			}
+			else {				
+				// reflected ray is outside
+				
+				Lr = sr.w.tracer_ptr->trace_ray(reflected_ray, t, sr.depth + 1);   // kr = 1  
+				L += (cf_out.powc(t) * Lr)  * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr);   					// outside filter color
+			}
+		}
+		else { 													// no total internal reflection
+			Vector3D wt;
+			MyRGBColor ft = fresnel_btdf->sample_f(sr, wo, wt);  	// computes wt
+			Ray transmitted_ray(sr.hit_point, wt);
+			float ndotwt = sr.normal * wt;
+			
+			if (ndotwi < 0.0) {
+				// reflected ray is inside
+				
+				Lr = fr * sr.w.tracer_ptr->trace_ray(reflected_ray, t, sr.depth + 1) * fabs(ndotwi);
+				L += (cf_in.powc(t) * Lr) * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr);     					// inside filter color
+				
+				// transmitted ray is outside
+				
+				Lt = ft * sr.w.tracer_ptr->trace_ray(transmitted_ray, t, sr.depth + 1) * fabs(ndotwt); 
+				L += (cf_out.powc(t) * Lt) * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr);   					// outside filter color
+			}
+			else {				
+				// reflected ray is outside
+				
+				Lr = fr * sr.w.tracer_ptr->trace_ray(reflected_ray, t, sr.depth + 1) * fabs(ndotwi); 
+				L += (cf_out.powc(t) * Lr) * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr);						// outside filter color
+				
+				// transmitted ray is inside
+				
+				Lt = ft * sr.w.tracer_ptr->trace_ray(transmitted_ray, t, sr.depth + 1) * fabs(ndotwt); 
+				L += (cf_in.powc(t) * Lt)  * sr.w.lights[j]->G(sr) * fabs(ndotwi) / sr.w.lights[j]->pdf(sr); 						// inside filter color
+			}		
+		}
+	}
+	
+	return (L);
+	
+}
+
+
 MyRGBColor
 Dielectric::path_shade(ShadeRec& sr) {
 	
