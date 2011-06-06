@@ -183,6 +183,10 @@ Box::hit(const Ray& ray, double& tmin, ShadeRec& sr) const {
 
 bool
 Box::shadow_hit(const Ray& ray, float& tmin) const {
+	if (!shadows)
+		return false;
+	
+	
 	double ox = ray.o.x;
 	double oy = ray.o.y;
 	double oz = ray.o.z;

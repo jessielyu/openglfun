@@ -41,6 +41,9 @@ public:
 	void
 	set_location(const float x, const float y, const float z);
 	
+	void
+	set_location(const Point3D& p);
+	
 	virtual Vector3D
 	get_direction(ShadeRec& sr);
 	
@@ -94,6 +97,11 @@ FakeSphericalLight::set_color(const float r, const float g, const float b) {
 inline void
 FakeSphericalLight::set_location(const float x, const float y, const float z) {
 	location.x = x; location.y = y; location.z = z;
+}
+
+inline void
+FakeSphericalLight::set_location(const Point3D& p) {
+	location = p;
 }
 
 inline void

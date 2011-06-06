@@ -72,6 +72,9 @@ public:
 	shade(ShadeRec& sr);
 	
 	virtual MyRGBColor
+	area_light_shade(ShadeRec& sr);
+	
+	virtual MyRGBColor
 	path_shade(ShadeRec& sr);
 	
 private:
