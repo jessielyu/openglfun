@@ -88,7 +88,7 @@
     TestClass::Instance().accelY = acceleration.y;
     TestClass::Instance().accelZ = acceleration.z;
     
-    NSLog(@"X:%f, Y:%f, Z:%f\n", acceleration.x, acceleration.y, acceleration.z);
+    //NSLog(@"X:%f, Y:%f, Z:%f\n", acceleration.x, acceleration.y, acceleration.z);
 }
 
 //---fired when the user finger(s) touches the screen---
