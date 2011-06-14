@@ -7,4 +7,4 @@
 //
 
 // TODO: Why does making this const fail?
-void ASSERT(bool condition, char* text);
+void ASSERT(bool condition, const char* text);
