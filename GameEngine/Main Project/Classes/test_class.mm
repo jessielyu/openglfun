@@ -245,9 +245,9 @@ void TestClass::DrawSomething(void)
     glTranslatef(0.0, 0.0, -3.0);
     
     static GLfloat rotation = 180.0f;
-    static GLfloat yRot = 180.0f;
-    static GLfloat zRot = 180.0f;
-    static GLfloat wRot = 0.0f;
+//    static GLfloat yRot = 180.0f;
+//    static GLfloat zRot = 180.0f;
+//    static GLfloat wRot = 0.0f;
     
     if (doOrientation)
     {
@@ -280,11 +280,11 @@ void TestClass::DrawSomething(void)
     glDisableClientState(GL_NORMAL_ARRAY);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);    
     static NSTimeInterval lastDrawTime = 0;
-    if (lastDrawTime)
-    {
-        NSTimeInterval timeSinceLastDraw = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime;
-        //rotation += 50 * timeSinceLastDraw;
-    }
+//    if (lastDrawTime)
+//    {
+//        NSTimeInterval timeSinceLastDraw = [NSDate timeIntervalSinceReferenceDate] - lastDrawTime;
+//        rotation += 50 * timeSinceLastDraw;
+//    }
     lastDrawTime = [ NSDate timeIntervalSinceReferenceDate];
     
     GLint rb_binding, rb_wide, rb_high, rb_format;

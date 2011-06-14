@@ -34,7 +34,8 @@
 
 @synthesize context;
 @synthesize animationTimer;
-@synthesize animationInterval;
+@dynamic animationInterval;
+@synthesize accelerometer;
 
 
 // You must implement this method
@@ -90,6 +91,7 @@
     
     //NSLog(@"X:%f, Y:%f, Z:%f\n", acceleration.x, acceleration.y, acceleration.z);
 }
+
 
 //---fired when the user finger(s) touches the screen---
 
