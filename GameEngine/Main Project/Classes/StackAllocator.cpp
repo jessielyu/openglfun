@@ -45,7 +45,14 @@ StackAllocator::~StackAllocator()
 		ASSERT(false, "StackAllocator Class deleted before all memory freed!");
 	}
 	
-	free((void*)mBase);
+	if (mBase)
+	{
+		free((void*)mBase);
+	}
+	else
+	{
+		ASSERT(mBase, "StackAllocator destructor: Memory could not be released!");
+	}
 }
 
 // New block of given size from top of stack
@@ -53,7 +60,7 @@ void* StackAllocator::alloc(u32 size_bytes)
 {
 	if (!mBase || !mCurrentTop || !mMax)
 	{
-		ASSERT(false, "StackAllocator:: mBase is NULL");
+		ASSERT(false, "StackAllocator:: Pointer is NULL");
 		return 0;
 	}
 	
@@ -77,13 +84,13 @@ void* StackAllocator::alloc(u32 size_bytes)
 // Roll stack back to a previous marker
 void StackAllocator::freeToMarker(Marker marker)
 {
-	if (!mBase || !mCurrentTop || !mMax)
+	if (!mBase || !mCurrentTop || !mMax || !marker)
 	{
-		ASSERT(false, "StackAllocator:: mBase is NULL");
+		ASSERT(false, "StackAllocator:: Pointer is NULL");
 		return;
 	}
 	
-	if (marker < mBase || marker > mMax)
+	if (marker < mBase || marker >= mMax)
 	{
 		ASSERT(false, "StackAllocator::freeToMarker:: marker is not in this stack");
 		return;
@@ -100,6 +107,8 @@ void StackAllocator::freeToMarker(Marker marker)
 void StackAllocator::clear()
 {
 	mCurrentTop = mBase;
+	
+	ASSERT((void*)(mCurrentTop) != NULL, "StackAllocator::clear() mCurrentTop is NULL");
 	
 //	printf("stack base after clear %X\n", mBase);
 //	printf("stack curtop after clear %X\n", mCurrentTop);
