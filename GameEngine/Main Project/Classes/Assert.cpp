@@ -9,9 +9,12 @@
 #include "Assert.h"
 #include <stdio.h>
 
-void ASSERT(bool condition, char* text)
+void ASSERT(bool condition, const char* text)
 {
-	// TODO: Add filename and line number
-	printf("%s\n", text);
-	asm("trap");
+	if (!condition)
+	{
+		// TODO: Add filename and line number
+		printf("%s\n", text);
+		asm("trap");
+	}
 }
