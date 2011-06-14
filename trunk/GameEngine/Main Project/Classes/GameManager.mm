@@ -14,6 +14,7 @@
 
 #include "ConstantsAndMacros.h"
 #include "OpenGLCommon.h"
+#include "PoolAllocator.h"
 #include "StackAllocator.h"
 #include "test_class.h"
 
@@ -24,7 +25,10 @@ GameManager::GameManager(void)
 	
 	StackAllocator* stack = new StackAllocator(totalSize);
 	
-	char* test1 = (char*) stack->alloc(individualSize);
+	PoolAllocator* pool = new PoolAllocator(32, 8);
+	
+	char* test1 = (char*) pool->useBlock();
+	//char* test1 = (char*) stack->alloc(individualSize);
 //	int* test1 = (int*) stack->alloc(individualSize);
 
 //	*test1 = 1000;
@@ -41,10 +45,11 @@ GameManager::GameManager(void)
 	printf("%s\n", test1);
 	//printf("%d\n", *test1);
 	
-	char* test2 = (char*) stack->alloc(individualSize);
+	char* test2 = (char*) pool->useBlock();
+	//char* test2 = (char*) stack->alloc(individualSize);
 	//int* test2 = (int*) stack->alloc(individualSize);
 	
-	*test2 = 2000;
+	//*test2 = 2000;
 	
 	test2[0] = 'a';
 	test2[1] = 'b';
@@ -61,10 +66,12 @@ GameManager::GameManager(void)
 //	printf("%d\n", *test1);
 //	printf("%d\n", *test2);
 	
-	stack->freeToMarker((StackAllocator::Marker)test2);
+	pool->freeBlock(test2);
+	//stack->freeToMarker((StackAllocator::Marker)test2);
 	test2 = NULL;
 	
-	char* test3 = (char*) stack->alloc(individualSize);
+	char* test3 = (char*) pool->useBlock();
+	//char* test3 = (char*) stack->alloc(individualSize);
 	//int* test3 = (int*) stack->alloc(individualSize);
 	
 //	*test3 = 3000;
@@ -88,7 +95,11 @@ GameManager::GameManager(void)
 	
 	stack->clear();
 	
+	pool->freeBlock(test1);
+	pool->freeBlock(test3);
+	
 	delete stack;
+	delete pool;
 }
 
 /////////////////////////////////////
