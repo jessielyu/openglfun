@@ -15,6 +15,7 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		66DD14861047012E002942C6 /* test_class.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66DD14851047012E002942C6 /* test_class.mm */; };
+		E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */; };
 		E211F0F11383F34C00DDB6CF /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E211F0F01383F34C00DDB6CF /* GameManager.mm */; };
 		E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EB139F9BF60049F9CE /* Memory.cpp */; };
 		E26870F113A0ECA70049F9CE /* StackAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EF13A0ECA70049F9CE /* StackAllocator.cpp */; };
@@ -41,6 +42,8 @@
 		66DD14841047012E002942C6 /* test_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_class.h; sourceTree = "<group>"; };
 		66DD14851047012E002942C6 /* test_class.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = test_class.mm; sourceTree = "<group>"; };
 		66DD15E11047045B002942C6 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeapAllocator.cpp; sourceTree = "<group>"; };
+		E207F6C113AE37F700A2D4F7 /* HeapAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeapAllocator.h; sourceTree = "<group>"; };
 		E211F0EE1383F33C00DDB6CF /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		E211F0F01383F34C00DDB6CF /* GameManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameManager.mm; sourceTree = "<group>"; };
 		E2149D19139CF47300FD412A /* GameEngine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine_Prefix.pch; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				E26870F413A0FAC40049F9CE /* Assert.h */,
 				E2D6418A13A3897F00BE7AAB /* PoolAllocator.cpp */,
 				E2D6418B13A3897F00BE7AAB /* PoolAllocator.h */,
+				E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */,
+				E207F6C113AE37F700A2D4F7 /* HeapAllocator.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				E26870F113A0ECA70049F9CE /* StackAllocator.cpp in Sources */,
 				E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */,
 				E2D6418C13A3897F00BE7AAB /* PoolAllocator.cpp in Sources */,
+				E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +255,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GameEngine_Prefix.pch;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=1";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "GameEngine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -265,6 +272,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GameEngine_Prefix.pch;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=0";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "GameEngine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
