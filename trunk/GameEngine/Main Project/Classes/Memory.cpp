@@ -9,7 +9,7 @@
 #include "Memory.h"
 #include "Assert.h"
 
-void* operator new (size_t size)
+void* operator new (size_t size) throw(std::bad_alloc)
 {
     void* p = malloc(size);
 	    
@@ -23,7 +23,26 @@ void* operator new (size_t size)
     return p;
 }
 
-void operator delete (void* p)
+void* operator new[](size_t size) throw(std::bad_alloc)
+{
+	void* p = malloc(size); // correct?
+	
+	// Did malloc fail?
+    if (p==0)
+    {
+        // uh oh
+		ASSERT(p, "out of memory");
+    }
+    
+    return p;
+}
+
+void operator delete (void* p) throw()
 {
     free(p);
+}
+
+void operator delete[] (void* p) throw()
+{
+	free(p);
 }
