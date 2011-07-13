@@ -24,6 +24,9 @@ public:
 	// Put an unused block back on the free list
 	bool freeBlock(void* ptr);
 	
+	// Print out contents of free list
+	void printFreeList() const;
+	
 private:
 	
 	// Struct for tracking free blocks of memory

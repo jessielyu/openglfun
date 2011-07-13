@@ -9,9 +9,9 @@
 #include "HeapAllocator.h"
 
 #include <cstdlib>  // For malloc and free
-#include <stdio.h>
 
 #include "Assert.h"
+#include "Log.h"
 
 // Allocate a new pool of total size poolSize in bytes, and of individual block size of blockSize, also in bytes
 HeapAllocator::HeapAllocator(u32 size_bytes)
@@ -20,9 +20,9 @@ HeapAllocator::HeapAllocator(u32 size_bytes)
 	mFreeListStart(NULL)
 {
 	// Must be large enough to hold a pointer and a size
-	if (size_bytes > sizeof(FreeBlockInfo))
+	if (size_bytes < sizeof(FreeBlockInfo))
 	{
-		ASSERT(false, "HeapAllocator: Size must be > sizeod(void*)");
+		ASSERT(size_bytes >= sizeof(FreeBlockInfo), "Size must be >= sizeof(FreeBlockInfo) (%d bytes)", sizeof(FreeBlockInfo));
 		return;
 	}
 		
@@ -40,7 +40,7 @@ HeapAllocator::HeapAllocator(u32 size_bytes)
 	mHeapStart = ptr;
 	
 	// Memory address right after the pool
-	void* endMemoryAddress = (void*)((u32)mHeapStart + (size_bytes));
+	void* endMemoryAddress = (void*)(((u32)mHeapStart) + (size_bytes));
 	
 	// Zero out all the memory
 	// Maybe this should only happen in debug?
@@ -154,13 +154,20 @@ void* HeapAllocator::useBlock(u32 requested_size_bytes)
 		// But we don't want to leave less bits free than we need to store tracking information
 		// If it is large enough, we split the current block and return part
 		else if (candidateBlock->size - sizeof(FreeBlockInfo) >= totalRequiredSize)
-		{
+		{			
 			// Create a new block at the location of the start of the current block moved up by the required size
-			FreeBlockInfo* newBlockFromRemainder = (FreeBlockInfo*) ((u32)candidateBlock) + totalRequiredSize;
+			FreeBlockInfo* newBlockFromRemainder = (FreeBlockInfo*) (((u32)candidateBlock) + totalRequiredSize);
+			
+			// For debug
+			//ASSERT((void*)newBlockFromRemainder > mFreeListStart, "New block is before start of heap.");
+			//ASSERT((u32)newBlockFromRemainder <= ((u32)mHeapStart) + mHeapSize, "New block starts after heap.");
 			
 			// Set new block's fields
 			newBlockFromRemainder->size = candidateBlock->size - totalRequiredSize;
 			newBlockFromRemainder->next_ptr = candidateBlock->next_ptr;
+			
+			// For debug
+			//ASSERT( ((u32)newBlockFromRemainder) + newBlockFromRemainder->size <= ((u32)mHeapStart) + mHeapSize, "New block extends past end of heap.");
 			
 			// Middle or end of the list
 			if (candidateBlockPrev)
@@ -183,7 +190,7 @@ void* HeapAllocator::useBlock(u32 requested_size_bytes)
 		// Just try the next block
 		else
 		{
-			candidateBlock = findNextSufficientlyLargeBlock(candidateBlock, requested_size_bytes, candidateBlockPrev);
+			candidateBlock = findNextSufficientlyLargeBlock(candidateBlock->next_ptr, requested_size_bytes, candidateBlockPrev);
 		}
 	}
 	
@@ -192,7 +199,7 @@ void* HeapAllocator::useBlock(u32 requested_size_bytes)
 	// Store the requested size for freeing later
 	if (candidateBlock)
 	{
-		ptrToRtn = ((u32*)candidateBlock) + sizeof(UsedBlockInfo);
+		ptrToRtn = (void*) (((u32)candidateBlock) + sizeof(UsedBlockInfo));
 		
 		UsedBlockInfo* usedBlockInfo = (UsedBlockInfo*)candidateBlock;
 		
@@ -201,25 +208,30 @@ void* HeapAllocator::useBlock(u32 requested_size_bytes)
 	
 	ASSERT(ptrToRtn, "No available memory to fulfil this request.");
 	
+	// For Debug
+	// ASSERT(ptrToRtn >= mHeapStart && ptrToRtn < (void*)( ((u32)mHeapStart) + mHeapSize), "Pointer to return does not belong to this heap.");
+	
 	return ptrToRtn;
 }
 
 // Put an unused block back on the free list
 bool HeapAllocator::freeBlock(void* ptr)
 {
-	ASSERT(mFreeListStart, "mFreeListStart is NULL!");
 	ASSERT(ptr, "Pointer to free is NULL!");
-	ASSERT(ptr < mHeapStart || ptr > (void*)((u32)mHeapStart + mHeapSize), "Pointer to free does not belong to this heap.");
+	ASSERT(ptr >= mHeapStart && ptr < (void*)(((u32)mHeapStart) + mHeapSize), "Pointer to free does not belong to this heap.");
 	
 	// Push the ptr back by sizeof(UsedBlockInfo) to get the meta data
-	FreeBlockInfo* real_ptr = (FreeBlockInfo*) (u32)ptr - sizeof(UsedBlockInfo);
+	FreeBlockInfo* real_ptr = (FreeBlockInfo*) ((u32)ptr - sizeof(UsedBlockInfo));
 	
-	// Store the size to free as the new free block's size	
-	real_ptr->size = ((UsedBlockInfo*)real_ptr)->size;
+	// Store the size to free as the new free block's size (plus the size stored to track the used amount)
+	real_ptr->size = ((UsedBlockInfo*)real_ptr)->size + sizeof(UsedBlockInfo);
+	
+	ASSERT((((u32)real_ptr) + real_ptr->size) <= (((u32)mHeapStart) + mHeapSize), "The block to free extends beyond the end of this heap.");
 	
 	ASSERT(real_ptr->size < mHeapSize, "Size to free is too large.");
 	
-	if (real_ptr && mFreeListStart && real_ptr < mHeapStart || (u32)real_ptr > ((u32)mHeapStart + mHeapSize))
+	if (real_ptr && real_ptr >= mHeapStart || 
+		(((u32)real_ptr) + real_ptr->size) <= (((u32)mHeapStart) + mHeapSize))
 	{
 		// Find nearest free blocks
 		FreeBlockInfo* prev = NULL;
@@ -236,23 +248,32 @@ bool HeapAllocator::freeBlock(void* ptr)
 		// Block to free is after start of the free list
 		else if (mFreeListStart < real_ptr)
 		{
-			prev = mFreeListStart;
-			
-			while (prev->next_ptr && prev->next_ptr < real_ptr)
+			// If free list is currently empty, then this newly freed block becomes our entire new free list
+			if (mFreeListStart == NULL)
 			{
-				prev = prev->next_ptr;
+				mFreeListStart = real_ptr;
+				mFreeListStart->next_ptr = NULL;
 			}
-			
-			next = prev->next_ptr;
+			else
+			{			
+				prev = mFreeListStart;
+				
+				while (prev->next_ptr && prev->next_ptr < real_ptr)
+				{
+					prev = prev->next_ptr;
+				}
+				
+				next = prev->next_ptr;
+			}
 		}
 
 		
 		if (prev)
 		{
-			ASSERT(prev + prev->size <= real_ptr, "The previous block overlaps the block to free.");
+			ASSERT(((u32)prev) + prev->size <= (u32)real_ptr, "The previous block overlaps the block to free.");
 			
 			// Previous block is adjacent
-			if (prev + prev->size == real_ptr)
+			if (((u32)prev) + prev->size == (u32)real_ptr)
 			{
 				// Merge the blocks
 				prev->size += real_ptr->size;
@@ -270,12 +291,16 @@ bool HeapAllocator::freeBlock(void* ptr)
 		}
 		if (next)
 		{
-			ASSERT(real_ptr + real_ptr->size <= next, "The block to free overlaps the next block.");
+			ASSERT(((u32)real_ptr) + real_ptr->size <= (u32)next, "The block to free overlaps the next block.");
 			
-			if (real_ptr + real_ptr->size == next)
+			// Next block is adjacent
+			if (((u32)real_ptr) + real_ptr->size == (u32)next)
 			{
 				// Merge the blocks
 				real_ptr->size += next->size;
+				
+				// Point to the block after next now
+				real_ptr->next_ptr = next->next_ptr;
 			}
 			// Otherwise they are just neighbors in the list
 			else
@@ -283,9 +308,50 @@ bool HeapAllocator::freeBlock(void* ptr)
 				real_ptr->next_ptr = next;
 			}
 		}
+		else
+		{
+			// Next is null
+			real_ptr->next_ptr = NULL;
+		}
 		
 		return true;
 	}
 	
 	return false;
+}
+
+// Print out the contents of the free list
+void HeapAllocator::printFreeList() const
+{
+	FreeBlockInfo* currentBlock = mFreeListStart;
+	
+	u32 heapEnd = (((u32)mHeapStart) + mHeapSize);
+	
+	LOG("*** Heap Free List Contents:");
+	LOG("Heap Start: %X: ", (u32)mHeapStart);
+	LOG("Heap Size: %d: ", mHeapSize);
+	LOG("Heap End: %X: ", heapEnd);
+	
+	int blockNum = 0;
+	
+	while (currentBlock != NULL)
+	{
+		u32 blockEnd = ((u32)currentBlock) + currentBlock->size;
+		
+		if (currentBlock < mHeapStart && blockEnd > heapEnd)
+		{
+			ASSERT(currentBlock >= mHeapStart && blockEnd <= heapEnd, "Current block does not belong to this heap.");
+			return;
+		}
+		
+		LOG("Block Number: %d", blockNum);
+		LOG("Block Address: %X", (u32)currentBlock);
+		LOG("Block Size: %d", currentBlock->size);
+		LOG("Block End: %d", blockEnd);
+		
+		currentBlock = currentBlock->next_ptr;
+		++blockNum;
+	}
+	
+	LOG("*** End Heap Free List Contents\n");
 }
