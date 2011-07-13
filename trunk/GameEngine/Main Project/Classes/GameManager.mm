@@ -16,12 +16,15 @@
 #include "OpenGLCommon.h"
 #include "PoolAllocator.h"
 #include "StackAllocator.h"
+#include "HeapAllocator.h"
 #include "test_class.h"
+#include "Assert.h"
+#include "Log.h"
 
 GameManager::GameManager(void)
 {	
 	int totalSize = 16;
-	int individualSize = 8;//sizeof(int);
+//	int individualSize = 8;//sizeof(int);
 	
 	StackAllocator* stack = new StackAllocator(totalSize);
 	
@@ -100,6 +103,58 @@ GameManager::GameManager(void)
 	
 	delete stack;
 	delete pool;
+	
+	HeapAllocator* heap = new HeapAllocator(32 + 16);
+	
+	LOG("Empty Heap");
+	heap->printFreeList();
+	
+	u32* heapTest1 = (u32*)heap->useBlock(8);
+	
+	LOG("1 block allocated");
+	heap->printFreeList();
+	
+	u32* heapTest2 = (u32*)heap->useBlock(8);
+	
+	LOG("2 blocks allocated");
+	heap->printFreeList();
+	
+	u32* heapTest3 = (u32*)heap->useBlock(8);
+	
+	LOG("3 blocks allocated");
+	heap->printFreeList();
+	
+	u32* heapTest4 = (u32*)heap->useBlock(8);
+	ASSERT(heapTest4, "heapTest4 is NULL");
+	
+	LOG("4 blocks allocated");
+	heap->printFreeList();
+	
+	heap->freeBlock(heapTest1);
+	heapTest1 = NULL;
+	
+	LOG("Block 1 Unallocated");
+	heap->printFreeList();
+	
+	heap->freeBlock(heapTest3);
+	heapTest3 = NULL;
+	
+	LOG("Block 2 Unallocated");
+	heap->printFreeList();
+	
+	heap->freeBlock(heapTest2);
+	heapTest2 = NULL;
+	
+	LOG("Block 3 Unallocated");
+	heap->printFreeList();
+	
+	LOG("Block 4 Unallocated");
+	heap->freeBlock(heapTest4);
+	heapTest4 = NULL;
+	
+	heap->printFreeList();
+	
+	delete heap;
 }
 
 /////////////////////////////////////
