@@ -26,6 +26,7 @@
 		E2EF898513437C6400CB960F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF898413437C6400CB960F /* CoreGraphics.framework */; };
 		E2EF898713437D6D00CB960F /* hw.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EF898613437D6D00CB960F /* hw.png */; };
 		E2F7ABD41344CF51007A31F3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F7ABD31344CF51007A31F3 /* Icon.png */; };
+		E2F91B8913CD6C70002AC57F /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2F91B8713CD6C70002AC57F /* Log.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		E2EF898413437C6400CB960F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E2EF898613437D6D00CB960F /* hw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hw.png; sourceTree = "<group>"; };
 		E2F7ABD31344CF51007A31F3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		E2F91B8713CD6C70002AC57F /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
+		E2F91B8813CD6C70002AC57F /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				E2D6418B13A3897F00BE7AAB /* PoolAllocator.h */,
 				E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */,
 				E207F6C113AE37F700A2D4F7 /* HeapAllocator.h */,
+				E2F91B8713CD6C70002AC57F /* Log.cpp */,
+				E2F91B8813CD6C70002AC57F /* Log.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */,
 				E2D6418C13A3897F00BE7AAB /* PoolAllocator.cpp in Sources */,
 				E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */,
+				E2F91B8913CD6C70002AC57F /* Log.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
