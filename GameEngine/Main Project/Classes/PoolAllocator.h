@@ -6,6 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#ifndef GameEngine_PoolAllocator_h
+#define GameEngine_PoolAllocator_h
+
 #include "Types.h"
 
 class PoolAllocator
@@ -34,3 +37,5 @@ private:
 	u32* mFreeListStart;	// Start of the free list
 	//void* freeListEnd;		// End of the free list
 };
+
+#endif

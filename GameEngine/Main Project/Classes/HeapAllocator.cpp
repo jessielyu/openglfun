@@ -215,7 +215,7 @@ void* HeapAllocator::useBlock(u32 requested_size_bytes)
 }
 
 // Put an unused block back on the free list
-bool HeapAllocator::freeBlock(void* ptr)
+bool HeapAllocator::freeBlock(const void* ptr)
 {
 	ASSERT(ptr, "Pointer to free is NULL!");
 	ASSERT(ptr >= mHeapStart && ptr < (void*)(((u32)mHeapStart) + mHeapSize), "Pointer to free does not belong to this heap.");
@@ -230,7 +230,7 @@ bool HeapAllocator::freeBlock(void* ptr)
 	
 	ASSERT(real_ptr->size < mHeapSize, "Size to free is too large.");
 	
-	if (real_ptr && real_ptr >= mHeapStart || 
+	if (real_ptr && real_ptr >= mHeapStart && 
 		(((u32)real_ptr) + real_ptr->size) <= (((u32)mHeapStart) + mHeapSize))
 	{
 		// Find nearest free blocks
@@ -347,7 +347,7 @@ void HeapAllocator::printFreeList() const
 		LOG("Block Number: %d", blockNum);
 		LOG("Block Address: %X", (u32)currentBlock);
 		LOG("Block Size: %d", currentBlock->size);
-		LOG("Block End: %d", blockEnd);
+		LOG("Block End: %X", blockEnd);
 		
 		currentBlock = currentBlock->next_ptr;
 		++blockNum;

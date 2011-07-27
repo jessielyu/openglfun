@@ -6,10 +6,15 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#ifndef GameEngine_HeapAllocator_h
+#define GameEngine_HeapAllocator_h
+
 #include "Types.h"
 
 class HeapAllocator
 {
+	friend class DefragmentableHeapAllocator;
+	
 public:
 	
 	// Allocate a new heap of size size_bytes
@@ -22,7 +27,7 @@ public:
 	void* useBlock(u32 requested_size_bytes);
 	
 	// Put an unused block back on the free list
-	bool freeBlock(void* ptr);
+	bool freeBlock(const void* ptr);
 	
 	// Print out contents of free list
 	void printFreeList() const;
@@ -51,3 +56,5 @@ private:
 	
 	FreeBlockInfo* mFreeListStart;	// Start of the free list
 };
+
+#endif

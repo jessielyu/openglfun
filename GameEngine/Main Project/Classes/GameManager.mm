@@ -20,6 +20,8 @@
 #include "test_class.h"
 #include "Assert.h"
 #include "Log.h"
+#include "DefragmentableHeapAllocator.h"
+#include "SmartPointer.h"
 
 GameManager::GameManager(void)
 {	
@@ -139,13 +141,13 @@ GameManager::GameManager(void)
 	heap->freeBlock(heapTest3);
 	heapTest3 = NULL;
 	
-	LOG("Block 2 Unallocated");
+	LOG("Block 3 Unallocated");
 	heap->printFreeList();
 	
 	heap->freeBlock(heapTest2);
 	heapTest2 = NULL;
 	
-	LOG("Block 3 Unallocated");
+	LOG("Block 2 Unallocated");
 	heap->printFreeList();
 	
 	LOG("Block 4 Unallocated");
@@ -155,6 +157,75 @@ GameManager::GameManager(void)
 	heap->printFreeList();
 	
 	delete heap;
+	
+	DefragmentableHeapAllocator* defragHeap = new DefragmentableHeapAllocator(32 + 16);
+	
+	SmartPointerAllocator::Instance().startUp();
+	
+	LOG("Empty Heap");
+	heap->printFreeList();
+	
+	SmartPointer<void>* defragHeapTest1 = defragHeap->useBlock(8);
+	
+	LOG("1 block allocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	SmartPointer<void>* defragHeapTest2 = defragHeap->useBlock(8);
+	
+	LOG("2 blocks allocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	SmartPointer<void>* defragHeapTest3 = defragHeap->useBlock(8);
+	
+	LOG("3 blocks allocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	SmartPointer<void>* defragHeapTest4 = defragHeap->useBlock(8);
+	ASSERT(defragHeapTest4, "heapTest4 is NULL");
+	
+	LOG("4 blocks allocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	defragHeap->freeBlock(defragHeapTest3);
+	defragHeapTest3 = NULL;
+	
+	LOG("Block 3 Unallocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	defragHeap->defragmentOneBlock();
+	LOG("Defragmented 1 Block");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	defragHeap->freeBlock(defragHeapTest1);
+	defragHeapTest1 = NULL;
+	
+	LOG("Block 1 Unallocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	defragHeap->freeBlock(defragHeapTest2);
+	defragHeapTest2 = NULL;
+	
+	LOG("Block 2 Unallocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	LOG("Block 4 Unallocated");
+	defragHeap->freeBlock(defragHeapTest4);
+	defragHeapTest4 = NULL;
+	
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	
+	delete defragHeap;
+	
+	SmartPointerAllocator::Instance().shutDown();
 }
 
 /////////////////////////////////////
