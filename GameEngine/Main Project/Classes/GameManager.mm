@@ -165,63 +165,115 @@ GameManager::GameManager(void)
 	LOG("Empty Heap");
 	heap->printFreeList();
 	
-	SmartPointer<void>* defragHeapTest1 = defragHeap->useBlock(8);
+	
+	SmartPointer<char>* defragTestArray[4];
+	
+	defragTestArray[0] = (SmartPointer<char>*) defragHeap->useBlock(8);
 	
 	LOG("1 block allocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
 	
-	SmartPointer<void>* defragHeapTest2 = defragHeap->useBlock(8);
+	defragTestArray[1] = (SmartPointer<char>*) defragHeap->useBlock(8);
 	
 	LOG("2 blocks allocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
 	
-	SmartPointer<void>* defragHeapTest3 = defragHeap->useBlock(8);
+	defragTestArray[2] = (SmartPointer<char>*) defragHeap->useBlock(8);
 	
 	LOG("3 blocks allocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
 	
-	SmartPointer<void>* defragHeapTest4 = defragHeap->useBlock(8);
-	ASSERT(defragHeapTest4, "heapTest4 is NULL");
+	defragTestArray[3] = (SmartPointer<char>*) defragHeap->useBlock(8);
+	ASSERT(defragTestArray[3], "heapTest4 is NULL");
 	
 	LOG("4 blocks allocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 1; i < 5; ++i)
+	{
+		std::sprintf(defragTestArray[i-1]->get(), "Test 0%d", i);
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i-1] ? defragTestArray[i-1]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
 	
-	defragHeap->freeBlock(defragHeapTest3);
-	defragHeapTest3 = NULL;
+	defragHeap->freeBlock((SmartPointer<void>*)defragTestArray[0]);
+	defragTestArray[0] = NULL;
+	
+	LOG("Block 1 Unallocated");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
+	
+	// Returns false when defragmentation done
+	while (defragHeap->defragmentOneBlock()) {	}
+	LOG("Heap defragmented.");
+	defragHeap->printFreeList();
+	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
+	
+	defragHeap->freeBlock((SmartPointer<void>*)defragTestArray[2]);
+	defragTestArray[2] = NULL;
 	
 	LOG("Block 3 Unallocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
 	
 	defragHeap->defragmentOneBlock();
 	LOG("Defragmented 1 Block");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
 	
-	defragHeap->freeBlock(defragHeapTest1);
-	defragHeapTest1 = NULL;
-	
-	LOG("Block 1 Unallocated");
-	defragHeap->printFreeList();
-	SmartPointerAllocator::Instance().printSmartPointerVector();
-	
-	defragHeap->freeBlock(defragHeapTest2);
-	defragHeapTest2 = NULL;
+	defragHeap->freeBlock((SmartPointer<void>*)defragTestArray[1]);
+	defragTestArray[1] = NULL;
 	
 	LOG("Block 2 Unallocated");
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
 	
 	LOG("Block 4 Unallocated");
-	defragHeap->freeBlock(defragHeapTest4);
-	defragHeapTest4 = NULL;
+	defragHeap->freeBlock((SmartPointer<void>*)defragTestArray[3]);
+	defragTestArray[3] = NULL;
 	
 	defragHeap->printFreeList();
 	SmartPointerAllocator::Instance().printSmartPointerVector();
+	LOG("*** Smart Pointer Raw Contents:");
+	for (int i = 0; i < 4; ++i)
+	{
+		LOG("Raw value of smart pointer %d: %s", i, defragTestArray[i] ? defragTestArray[i]->get() : "NULL");
+	}
+	LOG("*** End Smart Pointer Raw Contents\n");
 	
 	delete defragHeap;
 	

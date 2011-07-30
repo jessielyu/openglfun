@@ -44,7 +44,9 @@ public:
 			}
 			else
 			{
-				delete mRawPointer;
+				ASSERT(false, "not implemented.");
+				// TODO: fix "Delete void* is undefined warning"
+				//delete mRawPointer;
 			}
 		}
 		// Remove yourself from the old lists
@@ -71,7 +73,9 @@ public:
 			}
 			else
 			{
-				delete mRawPointer;
+				ASSERT(false, "not implemented.");
+				// TODO: fix "Delete void* is undefined warning"
+				//delete mRawPointer;
 			}
 		}
 		
@@ -114,7 +118,9 @@ public:
 			}
 			else
 			{
-				delete mRawPointer;
+				ASSERT(false, "not implemented.");
+				// TODO: fix "Delete void* is undefined warning"
+				//delete mRawPointer;
 			}
 		}
 		
@@ -157,8 +163,7 @@ public:
 	//T& operator*() const {return *mRawPointer;}
 	T operator->() const {return mRawPointer;}
 	
-	// TODO: This const seems weird to me, but without it there are compilation errors
-	const T* get() const {return mRawPointer;}
+	T* get() const {return mRawPointer;}
 	
 	// TODO: Implement
 	void swap(SmartPointer & b);
