@@ -6,6 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#ifndef GameEngine_Types_h
+#define GameEngine_Types_h
+
 typedef unsigned char u8;
 typedef signed char i8;
 
@@ -22,3 +25,5 @@ typedef float f32;
 
 //typedef unsigned __int32 U32;
 //typedef signed __int32 I32 ;
+
+#endif
