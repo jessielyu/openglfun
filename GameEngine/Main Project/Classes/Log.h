@@ -6,6 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#ifndef GameEngine_Log_h
+#define GameEngine_Log_h
+
 // Assert functionality only in debug
 #ifdef DEBUG
 #define LOG(x,...)					Log(__FILE__,__FUNCTION__,__LINE__,false,x,##__VA_ARGS__)
@@ -16,3 +19,5 @@
 #endif
 
 void Log(const char* file, const char* function, const int line, bool printMetaInfo, const char* format, ...);
+
+#endif
