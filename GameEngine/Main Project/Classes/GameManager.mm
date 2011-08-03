@@ -30,7 +30,7 @@ GameManager::GameManager(void)
 	
 	StackAllocator* stack = new StackAllocator(totalSize);
 	
-	PoolAllocator* pool = new PoolAllocator(32, 8);
+	PoolAllocator* pool = new PoolAllocator(32, 8, 64);
 	
 	char* test1 = (char*) pool->useBlock();
 	//char* test1 = (char*) stack->alloc(individualSize);

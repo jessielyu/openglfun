@@ -12,9 +12,10 @@
 #include <stdio.h>
 
 #include "Assert.h"
+#include "MemoryAlignment.h"
 
-// Allocate a new pool of total size poolSize in bytes, and of individual block size of blockSize, also in bytes
-PoolAllocator::PoolAllocator(u32 poolSize_bytes, u32 blockSize_bytes)
+// Allocate a new pool of total size poolSize in bytes, and of individual block size of blockSize, also in bytes, with the base of the pool aligned to baseAlignment bytes
+PoolAllocator::PoolAllocator(u32 poolSize_bytes, u32 blockSize_bytes, u32 baseAlignment)
 :	mPoolStart(NULL),
 	mPoolSize(poolSize_bytes),
 	mBlockSize(blockSize_bytes),
@@ -38,8 +39,28 @@ PoolAllocator::PoolAllocator(u32 poolSize_bytes, u32 blockSize_bytes)
 		return;
 	}
 	
-	// Allocate total bytes
-	void* ptr = malloc(poolSize_bytes);
+	void* ptr;
+	
+	// If there is a an alignment requirement
+	if (baseAlignment != 0)
+	{
+		// Allocate for the worst case, extra size equal to the alignment
+		void* rawPtr = malloc(poolSize_bytes + baseAlignment);
+		
+		// Call a helper function to find the first aligned address in the range we allocated
+		ptr = (void*) Helper::MemoryAlignment::alignAddress((u32)rawPtr, baseAlignment);
+		
+		// Store the offset so we know how much to free
+		mBaseAlignmentOffset = ((u32)ptr) - ((u32)rawPtr);
+	}
+	else
+	{
+		// Allocate total bytes
+		ptr = malloc(poolSize_bytes);
+		
+		// No alignment
+		mBaseAlignmentOffset = 0;
+	}
 	
 	// Did malloc fail?
     if (ptr == 0)
@@ -61,8 +82,8 @@ PoolAllocator::PoolAllocator(u32 poolSize_bytes, u32 blockSize_bytes)
 	void* endMemoryAddress = (void*)((u32)mPoolStart + (numPoolItems * blockSize_bytes));
 	
 	// if debug, 0 out all the memory
-	// maybe this is not something we want to be different between debug and release?
-	// Actually we need the last item in the free list to contain a pointer to NULL, so it at least has to be 0
+	// Maybe we don't want to bother to 0 out ALL the memory
+	// But we need the last item in the free list to contain a pointer to NULL, so it at least has to be 0
 	u32* temp_ptr = (u32*)ptr;
 	while (temp_ptr != endMemoryAddress)
 	{
@@ -107,14 +128,24 @@ PoolAllocator::~PoolAllocator()
 		ASSERT(false, "PoolAllocator::~PoolAllocator: Not all memory has been freed!");
 	}
 	
-	// Free the pool memory
-	if (mPoolStart)
+	void* ptrToFree = NULL;
+	
+	// If we had an alignment, push the address to free back to the start of the allocated memory
+	if (mBaseAlignmentOffset != 0)
 	{
-		free(mPoolStart);
+		ptrToFree = (void*)( ((u32)mPoolStart) - mBaseAlignmentOffset );
 	}
 	else
 	{
-		ASSERT(mPoolStart, "PoolAllocator destructor: Can't release memory!");
+		ptrToFree = mPoolStart;
+	}
+	
+	ASSERT(ptrToFree, "PoolAllocator destructor: Can't release memory!");
+	
+	// Free the pool memory
+	if (ptrToFree)
+	{
+		free(ptrToFree);
 	}
 }
 
