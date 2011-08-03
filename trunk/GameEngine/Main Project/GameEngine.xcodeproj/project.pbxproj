@@ -64,6 +64,8 @@
 		E2D6418A13A3897F00BE7AAB /* PoolAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolAllocator.cpp; sourceTree = "<group>"; };
 		E2D6418B13A3897F00BE7AAB /* PoolAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolAllocator.h; sourceTree = "<group>"; };
 		E2DBB53513D86CB000B1BD44 /* SmartPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPointer.h; sourceTree = "<group>"; };
+		E2DD65E213E5829600017A89 /* MemoryAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryAlignment.h; sourceTree = "<group>"; };
+		E2DD65E413E587C900017A89 /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
 		E2E7EA9E13438872001A17E5 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E2EF8967133CD34200CB960F /* OpenGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLCommon.h; sourceTree = "<group>"; };
 		E2EF8968133CDAA000CB960F /* ConstantsAndMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsAndMacros.h; sourceTree = "<group>"; };
@@ -121,6 +123,8 @@
 				E25B56D213E04D0600E356F7 /* SmartPointer.cpp */,
 				E255D32D13D9AF640007A607 /* DefragmentableHeapAllocator.cpp */,
 				E255D33013D9AF810007A607 /* DefragmentableHeapAllocator.h */,
+				E2DD65E213E5829600017A89 /* MemoryAlignment.h */,
+				E2DD65E413E587C900017A89 /* MathHelper.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
