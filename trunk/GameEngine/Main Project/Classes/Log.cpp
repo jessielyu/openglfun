@@ -10,7 +10,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void Log(const char* file, const char* function, const int line, bool printMetaInfo, const char* format, ...)
+void internal_Log(const char* file, const char* function, const int line, bool printMetaInfo, const char* format, ...)
 {
 	if (printMetaInfo)
 	{

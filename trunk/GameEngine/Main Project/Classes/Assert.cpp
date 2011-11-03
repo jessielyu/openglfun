@@ -10,7 +10,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void Assert(const char* file, const char* function, const int line, bool condition, const char* format, ...)
+void internal_Assert(const char* file, const char* function, const int line, bool condition, const char* format, ...)
 {
 	if (!condition)
 	{

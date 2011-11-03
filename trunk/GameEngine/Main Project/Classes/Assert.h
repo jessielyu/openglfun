@@ -11,11 +11,12 @@
 
 // Assert functionality only in debug
 #ifdef DEBUG
-#define ASSERT(x,y,...)	Assert(__FILE__,__FUNCTION__,__LINE__,x,y,##__VA_ARGS__)
+#define ASSERT(x,y,...)	internal_Assert(__FILE__,__FUNCTION__,__LINE__,x,y,##__VA_ARGS__)
 #else
 #define ASSERT(x,y,...)
 #endif
 
-void Assert(const char* file, const char* function, const int line, bool condition, const char* format, ...);
+// Don't use me directly! Use the macro above
+void internal_Assert(const char* file, const char* function, const int line, bool condition, const char* format, ...);
 
 #endif
