@@ -20,7 +20,6 @@
 		E255D32E13D9AF640007A607 /* DefragmentableHeapAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E255D32D13D9AF640007A607 /* DefragmentableHeapAllocator.cpp */; };
 		E25B56D313E04D0700E356F7 /* SmartPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E25B56D213E04D0600E356F7 /* SmartPointer.cpp */; };
 		E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EB139F9BF60049F9CE /* Memory.cpp */; };
-		E26870F113A0ECA70049F9CE /* StackAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EF13A0ECA70049F9CE /* StackAllocator.cpp */; };
 		E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870F313A0FAC40049F9CE /* Assert.cpp */; };
 		E2733A00133A34C8003C09CF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27339FF133A34C8003C09CF /* MainWindow-iPad.xib */; };
 		E2D6418C13A3897F00BE7AAB /* PoolAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2D6418A13A3897F00BE7AAB /* PoolAllocator.cpp */; };
@@ -55,7 +54,6 @@
 		E25B56D213E04D0600E356F7 /* SmartPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPointer.cpp; sourceTree = "<group>"; };
 		E26870EB139F9BF60049F9CE /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		E26870EC139F9BF60049F9CE /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
-		E26870EF13A0ECA70049F9CE /* StackAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StackAllocator.cpp; sourceTree = "<group>"; };
 		E26870F013A0ECA70049F9CE /* StackAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackAllocator.h; sourceTree = "<group>"; };
 		E26870F213A0ED4F0049F9CE /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		E26870F313A0FAC40049F9CE /* Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Assert.cpp; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				E211F0F01383F34C00DDB6CF /* GameManager.mm */,
 				E26870EB139F9BF60049F9CE /* Memory.cpp */,
 				E26870EC139F9BF60049F9CE /* Memory.h */,
-				E26870EF13A0ECA70049F9CE /* StackAllocator.cpp */,
 				E26870F013A0ECA70049F9CE /* StackAllocator.h */,
 				E26870F213A0ED4F0049F9CE /* Types.h */,
 				E26870F313A0FAC40049F9CE /* Assert.cpp */,
@@ -260,7 +257,6 @@
 				66DD14861047012E002942C6 /* test_class.mm in Sources */,
 				E211F0F11383F34C00DDB6CF /* GameManager.mm in Sources */,
 				E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */,
-				E26870F113A0ECA70049F9CE /* StackAllocator.cpp in Sources */,
 				E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */,
 				E2D6418C13A3897F00BE7AAB /* PoolAllocator.cpp in Sources */,
 				E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */,

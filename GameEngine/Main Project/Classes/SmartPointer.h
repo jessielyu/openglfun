@@ -15,6 +15,7 @@
 #include "Log.h"
 #include "Memory.h"
 #include "PoolAllocator.h"
+#include "RamMemorySource.h"
 #include "singleton.h"
 
 // Pointers that can reference count and be reassigned
@@ -202,7 +203,7 @@ public:
 	SmartPointer<void>* getLowestAddressPointerBetween(u32 lowAddress, u32 highAddress);
 	
 private:
-	PoolAllocator* pool;
+	PoolAllocator<RamMemorySource>* pool;
 	std::vector<SmartPointer<void>*> smartPointerTrackingVector;
 };
 

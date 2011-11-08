@@ -32,7 +32,7 @@ void SmartPointerAllocator::startUp()
 	if (!pool)
 	{
 		// Void type should cover our bases since smart pointers only store pointers to their type, and pointers are the same size
-		pool = new PoolAllocator(SMART_POINTER_MAX_NUM*sizeof(SmartPointer<void>), sizeof(SmartPointer<void>)); 
+		pool = new PoolAllocator<RamMemorySource>(SMART_POINTER_MAX_NUM*sizeof(SmartPointer<void>), sizeof(SmartPointer<void>)); 
 		
 		// Allocate space to globally track smart pointers (to enable things like defragmenting in-use memory)
 		smartPointerTrackingVector.reserve(SMART_POINTER_MAX_NUM);
