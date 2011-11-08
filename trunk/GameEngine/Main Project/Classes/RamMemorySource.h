@@ -18,7 +18,7 @@
 class RamMemorySource
 {
 public:	
-	void* malloc(u32 size_bytes)
+	static void* malloc(u32 size_bytes)
 	{
 		void* pointerToMemory = std::malloc(size_bytes);
 		
@@ -27,7 +27,7 @@ public:
 		return pointerToMemory;
 	}
 	
-	void free(void* pointerToFree)
+	static void free(void* pointerToFree)
 	{
 		ASSERT(pointerToFree, "Passed NULL pointer to free!");
 		

@@ -29,9 +29,7 @@ GameManager::GameManager(void)
 	int stack_totalSize = 16;
 	int stack_individualSize = sizeof(int);
 	
-	RamMemorySource ramSource;
-	
-	StackAllocator<RamMemorySource>* stack = new StackAllocator<RamMemorySource>(stack_totalSize, &ramSource);
+	StackAllocator<RamMemorySource>* stack = new StackAllocator<RamMemorySource>(stack_totalSize);
 	
 	//char* test1 = (char*) stack->alloc(stack_individualSize);
 	int* stack_test1 = (int*) stack->alloc(stack_individualSize);
@@ -96,7 +94,7 @@ GameManager::GameManager(void)
 	int pool_individualSize = 8;//sizeof(int);
 	int pool_alignmentSize = 64;
 	
-	PoolAllocator* pool = new PoolAllocator(pool_totalSize, pool_individualSize, pool_alignmentSize);
+	PoolAllocator<RamMemorySource>* pool = new PoolAllocator<RamMemorySource>(pool_totalSize, pool_individualSize, pool_alignmentSize);
 	
 	char* pool_test1 = (char*) pool->useBlock();
 

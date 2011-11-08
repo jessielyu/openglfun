@@ -26,22 +26,18 @@ private:
 	Marker mCurrentTop;			// Current top of the stack
 	Marker mBase;				// Bottom of the stack
 	Marker mMax;				// Bottom + stackSize_bytes
-	MemorySource* memorySource;	// Where to allocate memory from
 	
 public:
 	
 	// Get the current top of the stack
 	Marker getMarker() {return mCurrentTop;}
 	
-	StackAllocator(u32 stackSize_bytes, MemorySource* memSource)
+	StackAllocator(u32 stackSize_bytes)
 	:	mBase(NULL),
 	mCurrentTop(NULL),
-	mMax(NULL),
-	memorySource(memSource)
-	{
-		ASSERT(memorySource, "memory Source is NULL!");
-		
-		void* p = memorySource->malloc(stackSize_bytes);
+	mMax(NULL)
+	{		
+		void* p = MemorySource::malloc(stackSize_bytes);
 		
 		// Did malloc fail?
 		if (p==0)
@@ -70,7 +66,7 @@ public:
 		
 		if (mBase)
 		{
-			memorySource->free((void*)mBase);
+			MemorySource::free((void*)mBase);
 		}
 		else
 		{
