@@ -61,6 +61,7 @@
 		E26870F313A0FAC40049F9CE /* Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Assert.cpp; sourceTree = "<group>"; };
 		E26870F413A0FAC40049F9CE /* Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assert.h; sourceTree = "<group>"; };
 		E27339FF133A34C8003C09CF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E29CFF561462A71F00223249 /* RamMemorySource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RamMemorySource.h; sourceTree = "<group>"; };
 		E2D6418A13A3897F00BE7AAB /* PoolAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolAllocator.cpp; sourceTree = "<group>"; };
 		E2D6418B13A3897F00BE7AAB /* PoolAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolAllocator.h; sourceTree = "<group>"; };
 		E2DBB53513D86CB000B1BD44 /* SmartPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPointer.h; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				E255D33013D9AF810007A607 /* DefragmentableHeapAllocator.h */,
 				E2DD65E213E5829600017A89 /* MemoryAlignment.h */,
 				E2DD65E413E587C900017A89 /* MathHelper.h */,
+				E29CFF561462A71F00223249 /* RamMemorySource.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -215,7 +217,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GameEngine" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -282,7 +284,7 @@
 				GCC_PREFIX_HEADER = GameEngine_Prefix.pch;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=1";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GameEngine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = GameEngine;
@@ -300,7 +302,7 @@
 				GCC_PREFIX_HEADER = GameEngine_Prefix.pch;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=0";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "GameEngine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = GameEngine;
