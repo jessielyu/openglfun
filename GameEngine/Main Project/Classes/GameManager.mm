@@ -22,88 +22,135 @@
 #include "Log.h"
 #include "DefragmentableHeapAllocator.h"
 #include "SmartPointer.h"
+#include "RamMemorySource.h"
 
 GameManager::GameManager(void)
 {	
-	int totalSize = 16;
-//	int individualSize = 8;//sizeof(int);
+	int stack_totalSize = 16;
+	int stack_individualSize = sizeof(int);
 	
-	StackAllocator* stack = new StackAllocator(totalSize);
+	RamMemorySource ramSource;
 	
-	PoolAllocator* pool = new PoolAllocator(32, 8, 64);
+	StackAllocator<RamMemorySource>* stack = new StackAllocator<RamMemorySource>(stack_totalSize, &ramSource);
 	
-	char* test1 = (char*) pool->useBlock();
-	//char* test1 = (char*) stack->alloc(individualSize);
-//	int* test1 = (int*) stack->alloc(individualSize);
+	//char* test1 = (char*) stack->alloc(stack_individualSize);
+	int* stack_test1 = (int*) stack->alloc(stack_individualSize);
+	
+	*stack_test1 = 1000;
+	
+//	stack_test1[0] = '1';
+//	stack_test1[1] = '2';
+//	stack_test1[2] = '3';
+//	stack_test1[3] = '4';
+//	stack_test1[4] = '5';
+//	stack_test1[5] = '6';
+//	stack_test1[6] = '7';
+//	stack_test1[7] = 0;
+	
+	printf("%d\n", *stack_test1);	
+	
+	//char* test2 = (char*) stack->alloc(stack_individualSize);
+	int* stack_test2 = (int*) stack->alloc(stack_individualSize);
+	
+	*stack_test2 = 2000;
+	
+//	stack_test2[0] = 'a';
+//	stack_test2[1] = 'b';
+//	stack_test2[2] = 'c';
+//	stack_test2[3] = 'd';
+//	stack_test2[4] = 'e';
+//	stack_test2[5] = 'f';
+//	stack_test2[6] = 'g';
+//	stack_test2[7] = 0;
+	
+	printf("%d\n", *stack_test1);
+	printf("%d\n", *stack_test2);
+	
+	//char* test3 = (char*) stack->alloc(stack_individualSize);
+	int* stack_test3 = (int*) stack->alloc(stack_individualSize);
+	
+	*stack_test3 = 3000;
+	
+//	stack_test3[0] = 'z';
+//	stack_test3[1] = 'y';
+//	stack_test3[2] = 'x';
+//	stack_test3[3] = 'w';
+//	stack_test3[4] = 'v';
+//	stack_test3[5] = 'u';
+//	stack_test3[6] = 't';
+//	stack_test3[7] = 0;
+	
+	printf("%d\n", *stack_test1);
+	printf("%d\n", *stack_test3);
 
-//	*test1 = 1000;
+	stack->freeToMarker((StackAllocator<RamMemorySource>::Marker)stack_test2);
 	
-	test1[0] = '1';
-	test1[1] = '2';
-	test1[2] = '3';
-	test1[3] = '4';
-	test1[4] = '5';
-	test1[5] = '6';
-	test1[6] = '7';
-	test1[7] = 0;
-	
-	printf("%s\n", test1);
-	//printf("%d\n", *test1);
-	
-	char* test2 = (char*) pool->useBlock();
-	//char* test2 = (char*) stack->alloc(individualSize);
-	//int* test2 = (int*) stack->alloc(individualSize);
-	
-	//*test2 = 2000;
-	
-	test2[0] = 'a';
-	test2[1] = 'b';
-	test2[2] = 'c';
-	test2[3] = 'd';
-	test2[4] = 'e';
-	test2[5] = 'f';
-	test2[6] = 'g';
-	test2[7] = 0;
-	
-	printf("%s\n", test1);
-	printf("%s\n", test2);
-	
-//	printf("%d\n", *test1);
-//	printf("%d\n", *test2);
-	
-	pool->freeBlock(test2);
-	//stack->freeToMarker((StackAllocator::Marker)test2);
-	test2 = NULL;
-	
-	char* test3 = (char*) pool->useBlock();
-	//char* test3 = (char*) stack->alloc(individualSize);
-	//int* test3 = (int*) stack->alloc(individualSize);
-	
-//	*test3 = 3000;
-	
-	
-	
-//	printf("%d\n", *test1);
-//	printf("%d\n", *test3);
-	
-	test3[0] = 'z';
-	test3[1] = 'y';
-	test3[2] = 'x';
-	test3[3] = 'w';
-	test3[4] = 'v';
-	test3[5] = 'u';
-	test3[6] = 't';
-	test3[7] = 0;
-	
-	printf("%s\n", test1);
-	printf("%s\n", test3);
+	printf("%d\n", *stack_test1);
 	
 	stack->clear();
-	
-	pool->freeBlock(test1);
-	pool->freeBlock(test3);
-	
 	delete stack;
+	
+	// POOL ALLOCATOR TEST
+	
+	int pool_totalSize = 32;
+	int pool_individualSize = 8;//sizeof(int);
+	int pool_alignmentSize = 64;
+	
+	PoolAllocator* pool = new PoolAllocator(pool_totalSize, pool_individualSize, pool_alignmentSize);
+	
+	char* pool_test1 = (char*) pool->useBlock();
+
+	
+	pool_test1[0] = '1';
+	pool_test1[1] = '2';
+	pool_test1[2] = '3';
+	pool_test1[3] = '4';
+	pool_test1[4] = '5';
+	pool_test1[5] = '6';
+	pool_test1[6] = '7';
+	pool_test1[7] = 0;
+	
+	printf("%s\n", pool_test1);
+
+	
+	char* pool_test2 = (char*) pool->useBlock();
+
+	
+	pool_test2[0] = 'a';
+	pool_test2[1] = 'b';
+	pool_test2[2] = 'c';
+	pool_test2[3] = 'd';
+	pool_test2[4] = 'e';
+	pool_test2[5] = 'f';
+	pool_test2[6] = 'g';
+	pool_test2[7] = 0;
+	
+	printf("%s\n", pool_test1);
+	printf("%s\n", pool_test2);
+	
+	
+	pool->freeBlock(pool_test2);
+
+	pool_test2 = NULL;
+	
+	char* pool_test3 = (char*) pool->useBlock();
+	
+	pool_test3[0] = 'z';
+	pool_test3[1] = 'y';
+	pool_test3[2] = 'x';
+	pool_test3[3] = 'w';
+	pool_test3[4] = 'v';
+	pool_test3[5] = 'u';
+	pool_test3[6] = 't';
+	pool_test3[7] = 0;
+	
+	printf("%s\n", pool_test1);
+	printf("%s\n", pool_test3);
+	
+	pool->freeBlock(pool_test1);
+	pool->freeBlock(pool_test3);
+	
+	
 	delete pool;
 	
 	HeapAllocator* heap = new HeapAllocator(32 + 16);
