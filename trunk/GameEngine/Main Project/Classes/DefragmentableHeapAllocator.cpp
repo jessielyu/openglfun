@@ -8,6 +8,7 @@
 
 #include "DefragmentableHeapAllocator.h"
 
+#include "RamMemorySource.h"
 #include "SmartPointer.h"
 
 // Just call our underlying heap constructor
@@ -57,32 +58,32 @@ bool DefragmentableHeapAllocator::defragmentOneBlock()
 	}
 	
 	// Push the ptr back by sizeof(UsedBlockInfo) to get the meta data
-	HeapAllocator::UsedBlockInfo* real_ptr = (HeapAllocator::UsedBlockInfo*) ((u32)lowestFragmentedBlock->get() - sizeof(HeapAllocator::UsedBlockInfo)); 
+	HeapAllocator<RamMemorySource>::UsedBlockInfo* real_ptr = (HeapAllocator<RamMemorySource>::UsedBlockInfo*) ((u32)lowestFragmentedBlock->get() - sizeof(HeapAllocator<RamMemorySource>::UsedBlockInfo)); 
 	
 	// New location
-	HeapAllocator::UsedBlockInfo* newStart = (HeapAllocator::UsedBlockInfo*) heap.mFreeListStart;
+	HeapAllocator<RamMemorySource>::UsedBlockInfo* newStart = (HeapAllocator<RamMemorySource>::UsedBlockInfo*) heap.mFreeListStart;
 	
 	u32 usedBlockSize = real_ptr->size;
 	u32 freeBlockSize = heap.mFreeListStart->size;
 	
-	ASSERT(freeBlockSize >= sizeof(HeapAllocator::FreeBlockInfo), "Size must be >= sizeof(FreeBlockInfo) (%d bytes)", sizeof(HeapAllocator::FreeBlockInfo));
+	ASSERT(freeBlockSize >= sizeof(HeapAllocator<RamMemorySource>::FreeBlockInfo), "Size must be >= sizeof(FreeBlockInfo) (%d bytes)", sizeof(HeapAllocator<RamMemorySource>::FreeBlockInfo));
 		
 	// Take this block off the free list
 	heap.mFreeListStart = heap.mFreeListStart->next_ptr;
 	
 	// Actually move the memory
-	memmove(newStart, real_ptr, usedBlockSize + sizeof(HeapAllocator::UsedBlockInfo));
+	memmove(newStart, real_ptr, usedBlockSize + sizeof(HeapAllocator<RamMemorySource>::UsedBlockInfo));
 	
 	// Adjust SmartPointer
-	void* newAddressToReturn = (void*) (((u32)newStart) + sizeof(HeapAllocator::UsedBlockInfo));
+	void* newAddressToReturn = (void*) (((u32)newStart) + sizeof(HeapAllocator<RamMemorySource>::UsedBlockInfo));
 	lowestFragmentedBlock->reset(newAddressToReturn);
 		
 	// Create a new used block info to aid in freeing
-	HeapAllocator::UsedBlockInfo* usedBlockToFree = (HeapAllocator::UsedBlockInfo*)(((u32)newAddressToReturn) + usedBlockSize);
-	usedBlockToFree->size = freeBlockSize - sizeof(HeapAllocator::UsedBlockInfo);
+	HeapAllocator<RamMemorySource>::UsedBlockInfo* usedBlockToFree = (HeapAllocator<RamMemorySource>::UsedBlockInfo*)(((u32)newAddressToReturn) + usedBlockSize);
+	usedBlockToFree->size = freeBlockSize - sizeof(HeapAllocator<RamMemorySource>::UsedBlockInfo);
 	
 	// Actually free the memory
-	void* addressToFree = (void*) (((u32)usedBlockToFree) + sizeof(HeapAllocator::UsedBlockInfo));
+	void* addressToFree = (void*) (((u32)usedBlockToFree) + sizeof(HeapAllocator<RamMemorySource>::UsedBlockInfo));
 	heap.freeBlock(addressToFree);
 	
 	return true;
