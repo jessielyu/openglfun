@@ -14,6 +14,8 @@
 template <class T>
 class SmartPointer;
 
+#include "RamMemorySource.h"
+
 class DefragmentableHeapAllocator
 {
 public:
@@ -41,7 +43,7 @@ public:
 	
 private:
 	
-	HeapAllocator heap;		// Building on top of the basic functionality of a Heap Allocator
+	HeapAllocator<RamMemorySource> heap;		// Building on top of the basic functionality of a Heap Allocator
 };
 
 #endif

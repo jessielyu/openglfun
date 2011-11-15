@@ -151,7 +151,7 @@ GameManager::GameManager(void)
 	
 	delete pool;
 	
-	HeapAllocator* heap = new HeapAllocator(32 + 16);
+	HeapAllocator<RamMemorySource>* heap = new HeapAllocator<RamMemorySource>(32 + 16);
 	
 	LOG("Empty Heap");
 	heap->printFreeList();
