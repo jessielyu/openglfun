@@ -18,7 +18,7 @@
 template <class MemorySource>
 class HeapAllocator
 {
-	friend class DefragmentableHeapAllocator;
+	template <class T> friend class DefragmentableHeapAllocator;
 	
 public:
 	

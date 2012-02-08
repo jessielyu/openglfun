@@ -203,7 +203,7 @@ GameManager::GameManager(void)
 	
 	delete heap;
 	
-	DefragmentableHeapAllocator* defragHeap = new DefragmentableHeapAllocator(32 + 16);
+	DefragmentableHeapAllocator<RamMemorySource>* defragHeap = new DefragmentableHeapAllocator<RamMemorySource>(32 + 16);
 	
 	SmartPointerAllocator::Instance().startUp();
 	
