@@ -22,8 +22,8 @@ class DefragmentableHeapAllocator
 public:
 	// Allocate a new defragmentable heap of size size_bytes
 	// Just call our underlying heap constructor
-	DefragmentableHeapAllocator(u32 size_bytes)
-	: heap(size_bytes)
+	DefragmentableHeapAllocator(u32 size_bytes, u32 baseAlignment = 0)
+	: heap(size_bytes, baseAlignment)
 	{
 		
 	}
@@ -48,7 +48,7 @@ public:
 	bool freeBlock(SmartPointer<void>* ptr) 
 	{	
 		bool success = heap.freeBlock(ptr->get());
-		return SmartPointerAllocator::Instance().freeSmartPointer(ptr) & success;
+		return SmartPointerAllocator::Instance().freeSmartPointer(ptr) && success;
 	}
 	
 	// Print out contents of free list

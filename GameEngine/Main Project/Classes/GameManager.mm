@@ -151,9 +151,9 @@ GameManager::GameManager(void)
 	
 	delete pool;
 	
-	HeapAllocator<RamMemorySource>* heap = new HeapAllocator<RamMemorySource>(32 + 16);
+	HeapAllocator<RamMemorySource>* heap = new HeapAllocator<RamMemorySource>(32 + 16, 64);
 	
-	LOG("Empty Heap");
+	LOG("Empty (Non-Defragmentable) Heap");
 	heap->printFreeList();
 	
 	u32* heapTest1 = (u32*)heap->useBlock(8);
@@ -203,7 +203,7 @@ GameManager::GameManager(void)
 	
 	delete heap;
 	
-	DefragmentableHeapAllocator<RamMemorySource>* defragHeap = new DefragmentableHeapAllocator<RamMemorySource>(32 + 16);
+	DefragmentableHeapAllocator<RamMemorySource>* defragHeap = new DefragmentableHeapAllocator<RamMemorySource>(32 + 16, 128);
 	
 	SmartPointerAllocator::Instance().startUp();
 	
