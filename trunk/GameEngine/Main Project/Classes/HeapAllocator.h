@@ -23,10 +23,11 @@ class HeapAllocator
 public:
 	
 	// Allocate a new pool of total size poolSize in bytes, and of individual block size of blockSize, also in bytes
-	HeapAllocator(u32 size_bytes)
+	HeapAllocator(u32 size_bytes, u32 baseAlignment = 0)
 	:	mHeapStart(NULL),
 	mHeapSize(size_bytes),
-	mFreeListStart(NULL)
+	mFreeListStart(NULL),
+	mBaseAlignmentOffset(baseAlignment)
 	{
 		// Must be large enough to hold a pointer and a size
 		if (size_bytes < sizeof(FreeBlockInfo))
@@ -35,8 +36,28 @@ public:
 			return;
 		}
 		
-		// Allocate total bytes
-		void* ptr = MemorySource::malloc(size_bytes);
+		void* ptr;
+		
+		// If there is a an alignment requirement
+		if (baseAlignment != 0)
+		{
+			// Allocate for the worst case, extra size equal to the alignment
+			void* rawPtr = MemorySource::malloc(size_bytes + baseAlignment);
+			
+			// Call a helper function to find the first aligned address in the range we allocated
+			ptr = (void*) Helper::MemoryAlignment::alignAddress((u32)rawPtr, baseAlignment);
+			
+			// Store the offset so we know how much to free
+			mBaseAlignmentOffset = ((u32)ptr) - ((u32)rawPtr);
+		}
+		else
+		{
+			// Allocate total bytes
+			ptr = MemorySource::malloc(size_bytes);
+			
+			// No alignment
+			mBaseAlignmentOffset = 0;
+		}
 		
 		// Did malloc fail?
 		if (ptr == 0)
@@ -90,14 +111,24 @@ public:
 		ASSERT(freeSpace == mHeapSize, "Not all memory has been freed!");
 #endif
 		
-		// Free the heap memory
-		if (mHeapStart)
+		void* ptrToFree = NULL;
+		
+		// If we had an alignment, push the address to free back to the start of the allocated memory
+		if (mBaseAlignmentOffset != 0)
 		{
-			MemorySource::free(mHeapStart);
+			ptrToFree = (void*)( ((u32)mHeapStart) - mBaseAlignmentOffset );
 		}
 		else
 		{
-			ASSERT(mHeapStart, "Can't release memory!");
+			ptrToFree = mHeapStart;
+		}
+		
+		ASSERT(ptrToFree, "Can't release memory!");
+		
+		// Free the heap memory
+		if (ptrToFree)
+		{
+			MemorySource::free(ptrToFree);
 		}
 	}
 	
@@ -384,6 +415,7 @@ private:
 	void* mHeapStart;		// Starting memory address of the heap
 	
 	u32 mHeapSize;			// Size of the pool (in total)
+	u32 mBaseAlignmentOffset;	// How many bytes we moved up the base address to achieve the requested alignment (necessary for freeing)
 	
 	FreeBlockInfo* mFreeListStart;	// Start of the free list
 };
