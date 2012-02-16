@@ -15,9 +15,7 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		66DD14861047012E002942C6 /* test_class.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66DD14851047012E002942C6 /* test_class.mm */; };
-		E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */; };
 		E211F0F11383F34C00DDB6CF /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E211F0F01383F34C00DDB6CF /* GameManager.mm */; };
-		E255D32E13D9AF640007A607 /* DefragmentableHeapAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E255D32D13D9AF640007A607 /* DefragmentableHeapAllocator.cpp */; };
 		E25B56D313E04D0700E356F7 /* SmartPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E25B56D213E04D0600E356F7 /* SmartPointer.cpp */; };
 		E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EB139F9BF60049F9CE /* Memory.cpp */; };
 		E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870F313A0FAC40049F9CE /* Assert.cpp */; };
@@ -43,12 +41,10 @@
 		66DD14841047012E002942C6 /* test_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_class.h; sourceTree = "<group>"; };
 		66DD14851047012E002942C6 /* test_class.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = test_class.mm; sourceTree = "<group>"; };
 		66DD15E11047045B002942C6 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
-		E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeapAllocator.cpp; sourceTree = "<group>"; };
 		E207F6C113AE37F700A2D4F7 /* HeapAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeapAllocator.h; sourceTree = "<group>"; };
 		E211F0EE1383F33C00DDB6CF /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		E211F0F01383F34C00DDB6CF /* GameManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameManager.mm; sourceTree = "<group>"; };
 		E2149D19139CF47300FD412A /* GameEngine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine_Prefix.pch; sourceTree = "<group>"; };
-		E255D32D13D9AF640007A607 /* DefragmentableHeapAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefragmentableHeapAllocator.cpp; sourceTree = "<group>"; };
 		E255D33013D9AF810007A607 /* DefragmentableHeapAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefragmentableHeapAllocator.h; sourceTree = "<group>"; };
 		E25B56D213E04D0600E356F7 /* SmartPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPointer.cpp; sourceTree = "<group>"; };
 		E26870EB139F9BF60049F9CE /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
@@ -110,13 +106,11 @@
 				E26870F313A0FAC40049F9CE /* Assert.cpp */,
 				E26870F413A0FAC40049F9CE /* Assert.h */,
 				E2D6418B13A3897F00BE7AAB /* PoolAllocator.h */,
-				E207F6C013AE37F700A2D4F7 /* HeapAllocator.cpp */,
 				E207F6C113AE37F700A2D4F7 /* HeapAllocator.h */,
 				E2F91B8713CD6C70002AC57F /* Log.cpp */,
 				E2F91B8813CD6C70002AC57F /* Log.h */,
 				E2DBB53513D86CB000B1BD44 /* SmartPointer.h */,
 				E25B56D213E04D0600E356F7 /* SmartPointer.cpp */,
-				E255D32D13D9AF640007A607 /* DefragmentableHeapAllocator.cpp */,
 				E255D33013D9AF810007A607 /* DefragmentableHeapAllocator.h */,
 				E2DD65E213E5829600017A89 /* MemoryAlignment.h */,
 				E2DD65E413E587C900017A89 /* MathHelper.h */,
@@ -255,9 +249,7 @@
 				E211F0F11383F34C00DDB6CF /* GameManager.mm in Sources */,
 				E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */,
 				E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */,
-				E207F6C213AE37F700A2D4F7 /* HeapAllocator.cpp in Sources */,
 				E2F91B8913CD6C70002AC57F /* Log.cpp in Sources */,
-				E255D32E13D9AF640007A607 /* DefragmentableHeapAllocator.cpp in Sources */,
 				E25B56D313E04D0700E356F7 /* SmartPointer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
