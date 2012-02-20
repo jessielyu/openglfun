@@ -133,14 +133,14 @@ public:
 	}
 	
 	// Return a block from the free list for use
-	void* useBlock(u32 requested_size_bytes)
+	void* useBlock(u32 requested_size_bytes, u32 alignment = 0 )
 	{
-		ASSERT(mFreeListStart, "mFreeListStart is NULL!");
+		ASSERT(mFreeListStart, "mFreeListStart is NULL! Out of Memory?");
 		
 		FreeBlockInfo* candidateBlock = mFreeListStart;
 		FreeBlockInfo* candidateBlockPrev = NULL;
 		
-		u32 totalRequiredSize = requested_size_bytes + sizeof(UsedBlockInfo);
+		u32 totalRequiredSize = requested_size_bytes + sizeof(UsedBlockInfo) + alignment;
 		
 		while (candidateBlock != NULL)
 		{
@@ -210,14 +210,30 @@ public:
 		
 		void* ptrToRtn = NULL;
 		
-		// Store the requested size for freeing later
+		// Ensure we have a block to return
 		if (candidateBlock)
 		{
+			void* alignedPtr = NULL;
+			u32 alignmentOffset = 0;
+			
 			ptrToRtn = (void*) (((u32)candidateBlock) + sizeof(UsedBlockInfo));
 			
-			UsedBlockInfo* usedBlockInfo = (UsedBlockInfo*)candidateBlock;
+			// Handle requested alignment
+			if (alignment)
+			{
+				alignedPtr = (void*) Helper::MemoryAlignment::alignAddress((u32)ptrToRtn, alignment);	
+				alignmentOffset = ((u32)alignedPtr) - ((u32)ptrToRtn);
+				ptrToRtn = alignedPtr;
+			}
 			
-			usedBlockInfo->size = requested_size_bytes;
+			// Store the requested size and alignment offset for freeing later
+			UsedBlockInfo* usedBlockInfo = (UsedBlockInfo*) (((u32)candidateBlock) + alignmentOffset);
+			
+			// For Debug
+			//ASSERT((u32)usedBlockInfo == ((u32)ptrToRtn) - sizeof(UsedBlockInfo), "Storage location for UsedBlockInfo is incorrect!");
+			
+			usedBlockInfo->size = requested_size_bytes + alignment;
+			usedBlockInfo->alignmentOffset = alignmentOffset;
 		}
 		
 		ASSERT(ptrToRtn, "No available memory to fulfil this request.");
@@ -235,11 +251,14 @@ public:
 		ASSERT(ptr, "Pointer to free is NULL!");
 		ASSERT(ptr >= mHeapStart && ptr < (void*)(((u32)mHeapStart) + mHeapSize), "Pointer to free does not belong to this heap.");
 		
-		// Push the ptr back by sizeof(UsedBlockInfo) to get the meta data
-		FreeBlockInfo* real_ptr = (FreeBlockInfo*) ((u32)ptr - sizeof(UsedBlockInfo));
+		// Push the ptr back by sizeof(UsedBlockInfo) to get the UsedBlockInfo
+		UsedBlockInfo* usedBlockInfo = (UsedBlockInfo*) (((u32)ptr) - sizeof(UsedBlockInfo));
+		
+		// Push the UsedBlockInfo ptr back by alignmentOffset to get the original memory start address, where we will store the FreeBlockInfo
+		FreeBlockInfo* real_ptr = (FreeBlockInfo*) (void*)(((u32)usedBlockInfo) - usedBlockInfo->alignmentOffset);
 		
 		// Store the size to free as the new free block's size (plus the size stored to track the used amount)
-		real_ptr->size = ((UsedBlockInfo*)real_ptr)->size + sizeof(UsedBlockInfo);
+		real_ptr->size = usedBlockInfo->size + sizeof(UsedBlockInfo);
 		
 		ASSERT((((u32)real_ptr) + real_ptr->size) <= (((u32)mHeapStart) + mHeapSize), "The block to free extends beyond the end of this heap.");
 		
@@ -281,7 +300,6 @@ public:
 					next = prev->next_ptr;
 				}
 			}
-			
 			
 			if (prev)
 			{
@@ -384,6 +402,7 @@ private:
 	struct UsedBlockInfo
 	{
 		u32 size;
+		u8 alignmentOffset;
 	};
 	
 	// Find next sufficiently large memory block

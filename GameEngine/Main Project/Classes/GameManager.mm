@@ -151,28 +151,35 @@ GameManager::GameManager(void)
 	
 	delete pool;
 	
-	HeapAllocator<RamMemorySource>* heap = new HeapAllocator<RamMemorySource>(32 + 16, 64);
+	u32 alignmentPadding = 16+32+64+128;
+	
+	// Requested Size + UsedBlockInfoSize (8 bytes) + alignment padding
+	HeapAllocator<RamMemorySource>* heap = new HeapAllocator<RamMemorySource>(32 + 32 + alignmentPadding);
 	
 	LOG("Empty (Non-Defragmentable) Heap");
 	heap->printFreeList();
 	
-	u32* heapTest1 = (u32*)heap->useBlock(8);
+	u32* heapTest1 = (u32*)heap->useBlock(8, 16);
 	
 	LOG("1 block allocated");
 	heap->printFreeList();
+	LOG("Block 1 Useable Address: %X", heapTest1);
 	
-	u32* heapTest2 = (u32*)heap->useBlock(8);
+	u32* heapTest2 = (u32*)heap->useBlock(8, 32);
 	
 	LOG("2 blocks allocated");
 	heap->printFreeList();
+	LOG("Block 2 Useable Address: %X", heapTest2);
 	
-	u32* heapTest3 = (u32*)heap->useBlock(8);
+	u32* heapTest3 = (u32*)heap->useBlock(8, 64);
 	
 	LOG("3 blocks allocated");
 	heap->printFreeList();
+	LOG("Block 3 Useable Address: %X", heapTest3);
 	
-	u32* heapTest4 = (u32*)heap->useBlock(8);
+	u32* heapTest4 = (u32*)heap->useBlock(8, 128);
 	ASSERT(heapTest4, "heapTest4 is NULL");
+	LOG("Block 4 Useable Address: %X", heapTest4);
 	
 	LOG("4 blocks allocated");
 	heap->printFreeList();
@@ -203,7 +210,10 @@ GameManager::GameManager(void)
 	
 	delete heap;
 	
-	DefragmentableHeapAllocator<RamMemorySource>* defragHeap = new DefragmentableHeapAllocator<RamMemorySource>(32 + 16, 128);
+	//u32 defragHeapAlignmentPadding = 16+32+64+128;
+	
+	// Requested Size + UsedBlockInfoSize (8 bytes) + alignment padding
+	DefragmentableHeapAllocator<RamMemorySource>* defragHeap = new DefragmentableHeapAllocator<RamMemorySource>(32 + 32, 128);
 	
 	SmartPointerAllocator::Instance().startUp();
 	
