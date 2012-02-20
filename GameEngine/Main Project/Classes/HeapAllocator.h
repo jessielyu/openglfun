@@ -114,14 +114,7 @@ public:
 		void* ptrToFree = NULL;
 		
 		// If we had an alignment, push the address to free back to the start of the allocated memory
-		if (mBaseAlignmentOffset != 0)
-		{
-			ptrToFree = (void*)( ((u32)mHeapStart) - mBaseAlignmentOffset );
-		}
-		else
-		{
-			ptrToFree = mHeapStart;
-		}
+		ptrToFree = (void*)( ((u32)mHeapStart) - mBaseAlignmentOffset );
 		
 		ASSERT(ptrToFree, "Can't release memory!");
 		

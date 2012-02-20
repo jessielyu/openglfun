@@ -23,31 +23,53 @@ public:
 	typedef u32 Marker;
 	
 private:
-	Marker mCurrentTop;			// Current top of the stack
-	Marker mBase;				// Bottom of the stack
-	Marker mMax;				// Bottom + stackSize_bytes
+	Marker	mCurrentTop;		// Current top of the stack
+	Marker	mBase;				// Bottom of the stack
+	Marker	mMax;				// Bottom + stackSize_bytes
+	u32		mBaseAlignmentOffset;		// Base alignment of the stack
 	
 public:
 	
 	// Get the current top of the stack
 	Marker getMarker() {return mCurrentTop;}
 	
-	StackAllocator(u32 stackSize_bytes)
+	StackAllocator(u32 stackSize_bytes, u32 baseAlignment = 0)
 	:	mBase(NULL),
 	mCurrentTop(NULL),
 	mMax(NULL)
-	{		
-		void* p = MemorySource::malloc(stackSize_bytes);
+	{
+		void* ptr;
 		
-		// Did malloc fail?
-		if (p==0)
+		// If there is a an alignment requirement
+		if (baseAlignment != 0)
 		{
-			// uh oh
-			ASSERT(p, "Couldn't create StackAllocator: out of memory");
+			// Allocate for the worst case, extra size equal to the alignment
+			void* rawPtr = MemorySource::malloc(stackSize_bytes + baseAlignment);
+			
+			// Call a helper function to find the first aligned address in the range we allocated
+			ptr = (void*) Helper::MemoryAlignment::alignAddress((u32)rawPtr, baseAlignment);
+			
+			// Store the offset so we know how much to free
+			mBaseAlignmentOffset = ((u32)ptr) - ((u32)rawPtr);
 		}
 		else
 		{
-			mBase = (Marker) p;
+			// Allocate total bytes
+			ptr = MemorySource::malloc(stackSize_bytes);
+			
+			// No alignment
+			mBaseAlignmentOffset = 0;
+		}
+		
+		// Did malloc fail?
+		if (ptr==0)
+		{
+			// uh oh
+			ASSERT(ptr, "Couldn't create StackAllocator: out of memory");
+		}
+		else
+		{
+			mBase = (Marker) ptr;
 			mCurrentTop = mBase;
 			mMax = mBase + stackSize_bytes;
 		}
@@ -64,13 +86,16 @@ public:
 			ASSERT(false, "StackAllocator Class deleted before all memory freed!");
 		}
 		
-		if (mBase)
+		void* ptrToFree = NULL;
+		
+		// If we had an alignment, push the address to free back to the start of the allocated memory
+		ptrToFree = (void*)( ((u32)mBase) - mBaseAlignmentOffset );
+		
+		ASSERT(ptrToFree, "Can't release memory!");
+		
+		if (ptrToFree)
 		{
-			MemorySource::free((void*)mBase);
-		}
-		else
-		{
-			ASSERT(mBase, "StackAllocator destructor: Memory could not be released!");
+			MemorySource::free((void*)ptrToFree);
 		}
 	}
 	
