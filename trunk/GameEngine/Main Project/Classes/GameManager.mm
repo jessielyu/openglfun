@@ -29,7 +29,7 @@ GameManager::GameManager(void)
 	int stack_totalSize = 16;
 	int stack_individualSize = sizeof(int);
 	
-	StackAllocator<RamMemorySource>* stack = new StackAllocator<RamMemorySource>(stack_totalSize);
+	StackAllocator<RamMemorySource>* stack = new StackAllocator<RamMemorySource>(stack_totalSize, 128);
 	
 	//char* test1 = (char*) stack->alloc(stack_individualSize);
 	int* stack_test1 = (int*) stack->alloc(stack_individualSize);

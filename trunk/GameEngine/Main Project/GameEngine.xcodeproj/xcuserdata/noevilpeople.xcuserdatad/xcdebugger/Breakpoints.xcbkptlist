@@ -161,11 +161,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/HeapAllocator.h"
-         timestampString = "351090677.271104"
+         timestampString = "351436853.715525"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "224"
-         endingLineNumber = "224"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "useBlock(u32 requested_size_bytes, u32 alignment = 0 )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -175,11 +175,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/HeapAllocator.h"
-         timestampString = "351431206.165006"
+         timestampString = "351436853.715525"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "useBlock(u32 requested_size_bytes, u32 alignment = 0 )"
          landmarkType = "5">
       </FileBreakpoint>
@@ -189,11 +189,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/HeapAllocator.h"
-         timestampString = "351433128.333215"
+         timestampString = "351436853.715525"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "330"
-         endingLineNumber = "330"
+         startingLineNumber = "323"
+         endingLineNumber = "323"
          landmarkName = "freeBlock(const void* ptr)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/HeapAllocator.h"
-         timestampString = "351433117.969011"
+         timestampString = "351436853.715525"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "258"
-         endingLineNumber = "258"
+         startingLineNumber = "251"
+         endingLineNumber = "251"
          landmarkName = "freeBlock(const void* ptr)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -217,12 +217,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/HeapAllocator.h"
-         timestampString = "351433154.960999"
+         timestampString = "351436853.715525"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "261"
-         endingLineNumber = "261"
+         startingLineNumber = "254"
+         endingLineNumber = "254"
          landmarkName = "freeBlock(const void* ptr)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Classes/StackAllocator.h"
+         timestampString = "351437387.961211"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
+         landmarkName = "StackAllocator(u32 stackSize_bytes, u32 baseAlignment = 0)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
