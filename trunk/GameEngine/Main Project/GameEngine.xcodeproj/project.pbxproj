@@ -16,6 +16,7 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		66DD14861047012E002942C6 /* test_class.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66DD14851047012E002942C6 /* test_class.mm */; };
 		E211F0F11383F34C00DDB6CF /* GameManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E211F0F01383F34C00DDB6CF /* GameManager.mm */; };
+		E218101B15627F2B009D7330 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E218101A15627F2B009D7330 /* Vector3D.cpp */; };
 		E25B56D313E04D0700E356F7 /* SmartPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E25B56D213E04D0600E356F7 /* SmartPointer.cpp */; };
 		E26870ED139F9BF60049F9CE /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870EB139F9BF60049F9CE /* Memory.cpp */; };
 		E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E26870F313A0FAC40049F9CE /* Assert.cpp */; };
@@ -45,6 +46,9 @@
 		E211F0EE1383F33C00DDB6CF /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		E211F0F01383F34C00DDB6CF /* GameManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameManager.mm; sourceTree = "<group>"; };
 		E2149D19139CF47300FD412A /* GameEngine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine_Prefix.pch; sourceTree = "<group>"; };
+		E21810161562799A009D7330 /* Point3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point3D.h; sourceTree = "<group>"; };
+		E218101A15627F2B009D7330 /* Vector3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3D.cpp; sourceTree = "<group>"; };
+		E218101C15627F3B009D7330 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3D.h; sourceTree = "<group>"; };
 		E255D33013D9AF810007A607 /* DefragmentableHeapAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefragmentableHeapAllocator.h; sourceTree = "<group>"; };
 		E25B56D213E04D0600E356F7 /* SmartPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartPointer.cpp; sourceTree = "<group>"; };
 		E26870EB139F9BF60049F9CE /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
@@ -115,6 +119,9 @@
 				E2DD65E213E5829600017A89 /* MemoryAlignment.h */,
 				E2DD65E413E587C900017A89 /* MathHelper.h */,
 				E29CFF561462A71F00223249 /* RamMemorySource.h */,
+				E21810161562799A009D7330 /* Point3D.h */,
+				E218101A15627F2B009D7330 /* Vector3D.cpp */,
+				E218101C15627F3B009D7330 /* Vector3D.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				E26870F513A0FAC50049F9CE /* Assert.cpp in Sources */,
 				E2F91B8913CD6C70002AC57F /* Log.cpp in Sources */,
 				E25B56D313E04D0700E356F7 /* SmartPointer.cpp in Sources */,
+				E218101B15627F2B009D7330 /* Vector3D.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
