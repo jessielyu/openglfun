@@ -239,5 +239,17 @@
          landmarkName = "StackAllocator(u32 stackSize_bytes, u32 baseAlignment = 0)"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Classes/Vector3D.h"
+         timestampString = "358866286.75844"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

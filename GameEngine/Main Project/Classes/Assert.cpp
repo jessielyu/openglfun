@@ -28,6 +28,8 @@ void internal_Assert(const char* file, const char* function, const int line, boo
 		printf("\n");
 		
 		// Halt execution
+#ifdef TARGET_IPHONE_SIMULATOR
 		asm("trap");
+#endif
 	}
 }
